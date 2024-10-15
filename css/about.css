@@ -251,7 +251,8 @@ body {
 /* :::: js용 CSS :::: */
 .anim-out {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(20px);
+    transition: 0.1s;
 }
 .invisible {
     display: none;
