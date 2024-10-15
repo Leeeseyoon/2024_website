@@ -24,7 +24,7 @@
 
     <!-- 메인 컨텐츠 -->
     <div class="main">
-        <div class="sub_nav">
+        <!-- <div class="sub_nav">
             <div class="selector">
                 <select name="Major" id="">
                     <option value="">Digital Design</option>
@@ -34,225 +34,407 @@
             <div class="search">
                 <input name="" placeholder="search" type="search">
             </div>
+        </div> -->
+
+        <!-- 수정한 셀렉바 -->
+        <div class="sub_nav">
+            <div class="select_mate" data-mate-select="active" >
+                <select name="" onchange="" onclick="return false;" id="">
+                <option value=""  >Digital Design </option>
+                <option value="1">Visual Design</option>
+                </select>
+                <p class="selecionado_opcion"  onclick="open_select(this)" ></p><span onclick="open_select(this)" class="icon_select_mate" ><svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
+                    <path d="M0-.75h24v24H0z" fill="none"/>
+                </svg></span>
+                <div class="cont_list_select_mate">
+                <ul class="cont_select_int">  </ul> 
+                </div>
+            </div>
+            <div class="search">
+                <input name="" placeholder="search" type="search">
+            </div>
         </div>
+        <!-- 수정한 셀렉바의 js -->
+        <script>
+            window.onload = function(){
+            crear_select();
+            }
+
+            function isMobileDevice() {
+                return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+            };
+
+            
+            var li = new Array();
+            function crear_select(){
+            var div_cont_select = document.querySelectorAll("[data-mate-select='active']");
+            var select_ = '';
+            for (var e = 0; e < div_cont_select.length; e++) {
+            div_cont_select[e].setAttribute('data-indx-select',e);
+            div_cont_select[e].setAttribute('data-selec-open','false');
+            var ul_cont = document.querySelectorAll("[data-indx-select='"+e+"'] > .cont_list_select_mate > ul");
+            select_ = document.querySelectorAll("[data-indx-select='"+e+"'] >select")[0];
+            if (isMobileDevice()) { 
+            select_.addEventListener('change', function () {
+            _select_option(select_.selectedIndex,e);
+            });
+            }
+            var select_optiones = select_.options;
+            document.querySelectorAll("[data-indx-select='"+e+"']  > .selecionado_opcion ")[0].setAttribute('data-n-select',e);
+            document.querySelectorAll("[data-indx-select='"+e+"']  > .icon_select_mate ")[0].setAttribute('data-n-select',e);
+            for (var i = 0; i < select_optiones.length; i++) {
+            li[i] = document.createElement('li');
+            if (select_optiones[i].selected == true || select_.value == select_optiones[i].innerHTML ) {
+            li[i].className = 'active';
+            document.querySelector("[data-indx-select='"+e+"']  > .selecionado_opcion ").innerHTML = select_optiones[i].innerHTML;
+            };
+            li[i].setAttribute('data-index',i);
+            li[i].setAttribute('data-selec-index',e);
+            // funcion click al selecionar 
+            li[i].addEventListener( 'click', function(){  _select_option(this.getAttribute('data-index'),this.getAttribute('data-selec-index')); });
+
+            li[i].innerHTML = select_optiones[i].innerHTML;
+            ul_cont[0].appendChild(li[i]);
+
+                }; // Fin For select_optiones
+            }; // fin for divs_cont_select
+            } // Fin Function 
+
+
+
+            var cont_slc = 0;
+            function open_select(idx){
+            var idx1 =  idx.getAttribute('data-n-select');
+            var ul_cont_li = document.querySelectorAll("[data-indx-select='"+idx1+"'] .cont_select_int > li");
+            var hg = 0;
+            var slect_open = document.querySelectorAll("[data-indx-select='"+idx1+"']")[0].getAttribute('data-selec-open');
+            var slect_element_open = document.querySelectorAll("[data-indx-select='"+idx1+"'] select")[0];
+            if (isMobileDevice()) { 
+            if (window.document.createEvent) { // All
+            var evt = window.document.createEvent("MouseEvents");
+            evt.initMouseEvent("mousedown", false, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+                slect_element_open.dispatchEvent(evt);
+            } else if (slect_element_open.fireEvent) { // IE
+            slect_element_open.fireEvent("onmousedown");
+            }else {
+            slect_element_open.click();
+            }
+            }else {
+
+            
+            for (var i = 0; i < ul_cont_li.length; i++) {
+            hg += ul_cont_li[i].offsetHeight;
+            }; 
+            if (slect_open == 'false') {  
+            document.querySelectorAll("[data-indx-select='"+idx1+"']")[0].setAttribute('data-selec-open','true');
+            document.querySelectorAll("[data-indx-select='"+idx1+"'] > .cont_list_select_mate > ul")[0].style.height = hg+"px";
+            document.querySelectorAll("[data-indx-select='"+idx1+"'] > .icon_select_mate")[0].style.transform = 'rotate(180deg)';
+            }else{
+            document.querySelectorAll("[data-indx-select='"+idx1+"']")[0].setAttribute('data-selec-open','false');
+            document.querySelectorAll("[data-indx-select='"+idx1+"'] > .icon_select_mate")[0].style.transform = 'rotate(0deg)';
+            document.querySelectorAll("[data-indx-select='"+idx1+"'] > .cont_list_select_mate > ul")[0].style.height = "0px";
+            }
+            }
+
+            } // fin function open_select
+
+            function salir_select(indx){
+            var select_ = document.querySelectorAll("[data-indx-select='"+indx+"'] > select")[0];
+            document.querySelectorAll("[data-indx-select='"+indx+"'] > .cont_list_select_mate > ul")[0].style.height = "0px";
+            document.querySelector("[data-indx-select='"+indx+"'] > .icon_select_mate").style.transform = 'rotate(0deg)';
+            document.querySelectorAll("[data-indx-select='"+indx+"']")[0].setAttribute('data-selec-open','false');
+            }
+
+
+            function _select_option(indx,selc){
+            if (isMobileDevice()) { 
+            selc = selc -1;
+            }
+                var select_ = document.querySelectorAll("[data-indx-select='"+selc+"'] > select")[0];
+
+            var li_s = document.querySelectorAll("[data-indx-select='"+selc+"'] .cont_select_int > li");
+            var p_act = document.querySelectorAll("[data-indx-select='"+selc+"'] > .selecionado_opcion")[0].innerHTML = li_s[indx].innerHTML;
+            var select_optiones = document.querySelectorAll("[data-indx-select='"+selc+"'] > select > option");
+            for (var i = 0; i < li_s.length; i++) {
+            if (li_s[i].className == 'active') {
+            li_s[i].className = '';
+            };
+            li_s[indx].className = 'active';
+
+            };
+            select_optiones[indx].selected = true;
+            select_.selectedIndex = indx;
+            select_.onchange();
+            salir_select(selc); 
+            }
+        </script>
 
         <div class="content_wrap">
             <ul> <!-- 학생 수에 따라서 리스트 ctrl+c, ctrl+v -->
                 <li>
-                    <div class="stu_img">
-                        <img src="" alt="">
-                    </div>
-                    <div class="stu_txt">
-                        <div class="name_kr">김민경</div>
-                        <div class="name_eng">Kim Mingyeong</div>
-                    </div>
+                    <a href="#">
+                        <div class="stu_img">
+                            <img src="" alt="">
+                        </div>
+                        <div class="stu_txt">
+                            <div class="name_kr">김민경</div>
+                            <div class="name_eng">Kim Mingyeong</div>
+                        </div>
+                    </a>
                 </li>
                 <li>
-                    <div class="stu_img">
-                        <img src="" alt="">
-                    </div>
-                    <div class="stu_txt">
-                        <div class="name_kr">김민경</div>
-                        <div class="name_eng">Kim Mingyeong</div>
-                    </div>
+                    <a href="#">
+                        <div class="stu_img">
+                            <img src="" alt="">
+                        </div>
+                        <div class="stu_txt">
+                            <div class="name_kr">김민경</div>
+                            <div class="name_eng">Kim Mingyeong</div>
+                        </div>
+                    </a>
                 </li>
                 <li>
-                    <div class="stu_img">
-                        <img src="" alt="">
-                    </div>
-                    <div class="stu_txt">
-                        <div class="name_kr">김수빈</div>
-                        <div class="name_eng">Kim Su Bin</div>
-                    </div>
+                    <a href="#">
+                        <div class="stu_img">
+                            <img src="" alt="">
+                        </div>
+                        <div class="stu_txt">
+                            <div class="name_kr">김수빈</div>
+                            <div class="name_eng">Kim Su Bin</div>
+                        </div>
+                    </a>
                 </li>
                 <li>
-                    <div class="stu_img">
-                        <img src="" alt="">
-                    </div>
-                    <div class="stu_txt">
-                        <div class="name_kr">김수아</div>
-                        <div class="name_eng">Kim Sua</div>
-                    </div>
+                    <a href="#">
+                        <div class="stu_img">
+                            <img src="" alt="">
+                        </div>
+                        <div class="stu_txt">
+                            <div class="name_kr">김수아</div>
+                            <div class="name_eng">Kim Sua</div>
+                        </div>
+                    </a>
                 </li>
                 <li>
-                    <div class="stu_img">
-                        <img src="" alt="">
-                    </div>
-                    <div class="stu_txt">
-                        <div class="name_kr">김승찬</div>
-                        <div class="name_eng">Kim Seung Chan</div>
-                    </div>
+                    <a href="#">
+                        <div class="stu_img">
+                            <img src="" alt="">
+                        </div>
+                        <div class="stu_txt">
+                            <div class="name_kr">김승찬</div>
+                            <div class="name_eng">Kim Seung Chan</div>
+                        </div>
+                    </a>
                 </li>
                 <li>
-                    <div class="stu_img">
-                        <img src="" alt="">
-                    </div>
-                    <div class="stu_txt">
-                        <div class="name_kr">김준희</div>
-                        <div class="name_eng">Kim June Hee</div>
-                    </div>
+                    <a href="#">
+                        <div class="stu_img">
+                            <img src="" alt="">
+                        </div>
+                        <div class="stu_txt">
+                            <div class="name_kr">김준희</div>
+                            <div class="name_eng">Kim June Hee</div>
+                        </div>
+                    </a>
                 </li>
                 <li>
-                    <div class="stu_img">
-                        <img src="" alt="">
-                    </div>
-                    <div class="stu_txt">
-                        <div class="name_kr">김태호</div>
-                        <div class="name_eng">Kim Tae Ho</div>
-                    </div>
+                    <a href="#">
+                        <div class="stu_img">
+                            <img src="" alt="">
+                        </div>
+                        <div class="stu_txt">
+                            <div class="name_kr">김태호</div>
+                            <div class="name_eng">Kim Tae Ho</div>
+                        </div>
+                    </a>
                 </li>
                 <li>
-                    <div class="stu_img">
-                        <img src="" alt="">
-                    </div>
-                    <div class="stu_txt">
-                        <div class="name_kr">류시은</div>
-                        <div class="name_eng">Ryu Si Eun</div>
-                    </div>
+                    <a href="#">
+                        <div class="stu_img">
+                            <img src="" alt="">
+                        </div>
+                        <div class="stu_txt">
+                            <div class="name_kr">류시은</div>
+                            <div class="name_eng">Ryu Si Eun</div>
+                        </div>
+                    </a>
                 </li>
                 <li>
-                    <div class="stu_img">
-                        <img src="" alt="">
-                    </div>
-                    <div class="stu_txt">
-                        <div class="name_kr">박가람</div>
-                        <div class="name_eng">Park Ga Ram</div>
-                    </div>
+                    <a href="#">
+                        <div class="stu_img">
+                            <img src="" alt="">
+                        </div>
+                        <div class="stu_txt">
+                            <div class="name_kr">박가람</div>
+                            <div class="name_eng">Park Ga Ram</div>
+                        </div>
+                    </a>
                 </li>
                 <li>
-                    <div class="stu_img">
-                        <img src="" alt="">
-                    </div>
-                    <div class="stu_txt">
-                        <div class="name_kr">심재정</div>
-                        <div class="name_eng">Shim Jae Jeong</div>
-                    </div>
+                    <a href="#">
+                        <div class="stu_img">
+                            <img src="" alt="">
+                        </div>
+                        <div class="stu_txt">
+                            <div class="name_kr">심재정</div>
+                            <div class="name_eng">Shim Jae Jeong</div>
+                        </div>
+                    </a>
                 </li>
                 <li>
-                    <div class="stu_img">
-                        <img src="" alt="">
-                    </div>
-                    <div class="stu_txt">
-                        <div class="name_kr">양성우</div>
-                        <div class="name_eng">Yang Seong Woo</div>
-                    </div>
+                    <a href="#">
+                        <div class="stu_img">
+                            <img src="" alt="">
+                        </div>
+                        <div class="stu_txt">
+                            <div class="name_kr">양성우</div>
+                            <div class="name_eng">Yang Seong Woo</div>
+                        </div>
+                    </a>
                 </li>
                 <li>
-                    <div class="stu_img">
-                        <img src="" alt="">
-                    </div>
-                    <div class="stu_txt">
-                        <div class="name_kr">우수지</div>
-                        <div class="name_eng">Woo Su Ji</div>
-                    </div>
+                    <a href="#">
+                        <div class="stu_img">
+                            <img src="" alt="">
+                        </div>
+                        <div class="stu_txt">
+                            <div class="name_kr">우수지</div>
+                            <div class="name_eng">Woo Su Ji</div>
+                        </div>
+                    </a>
                 </li>
                 <li>
-                    <div class="stu_img">
-                        <img src="" alt="">
-                    </div>
-                    <div class="stu_txt">
-                        <div class="name_kr">원세연</div>
-                        <div class="name_eng">Won Se Yeon</div>
-                    </div>
+                    <a href="#">
+                        <div class="stu_img">
+                            <img src="" alt="">
+                        </div>
+                        <div class="stu_txt">
+                            <div class="name_kr">원세연</div>
+                            <div class="name_eng">Won Se Yeon</div>
+                        </div>
+                    </a>
                 </li>
                 <li>
-                    <div class="stu_img">
-                        <img src="" alt="">
-                    </div>
-                    <div class="stu_txt">
-                        <div class="name_kr">유지수</div>
-                        <div class="name_eng">Yoo Ji Su</div>
-                    </div>
+                    <a href="#">
+                        <div class="stu_img">
+                            <img src="" alt="">
+                        </div>
+                        <div class="stu_txt">
+                            <div class="name_kr">유지수</div>
+                            <div class="name_eng">Yoo Ji Su</div>
+                        </div>
+                    </a>
                 </li>
                 <li>
-                    <div class="stu_img">
-                        <img src="" alt="">
-                    </div>
-                    <div class="stu_txt">
-                        <div class="name_kr">윤 비</div>
-                        <div class="name_eng">Yoon Bi</div>
-                    </div>
+                    <a href="#">
+                        <div class="stu_img">
+                            <img src="" alt="">
+                        </div>
+                        <div class="stu_txt">
+                            <div class="name_kr">윤 비</div>
+                            <div class="name_eng">Yoon Bi</div>
+                        </div>
+                    </a>
                 </li>
                 <li>
-                    <div class="stu_img">
-                        <img src="" alt="">
-                    </div>
-                    <div class="stu_txt">
-                        <div class="name_kr">이세윤</div>
-                        <div class="name_eng">Lee Se Yoon</div>
-                    </div>
+                    <a href="#">
+                        <div class="stu_img">
+                            <img src="" alt="">
+                        </div>
+                        <div class="stu_txt">
+                            <div class="name_kr">이세윤</div>
+                            <div class="name_eng">Lee Se Yoon</div>
+                        </div>
+                    </a>
                 </li>
                 <li>
-                    <div class="stu_img">
-                        <img src="" alt="">
-                    </div>
-                    <div class="stu_txt">
-                        <div class="name_kr">이지우</div>
-                        <div class="name_eng">Lee Ji Woo</div>
-                    </div>
+                    <a href="#">
+                        <div class="stu_img">
+                            <img src="" alt="">
+                        </div>
+                        <div class="stu_txt">
+                            <div class="name_kr">이지우</div>
+                            <div class="name_eng">Lee Ji Woo</div>
+                        </div>
+                    </a>
                 </li>
                 <li>
-                    <div class="stu_img">
-                        <img src="" alt="">
-                    </div>
-                    <div class="stu_txt">
-                        <div class="name_kr">임 율</div>
-                        <div class="name_eng">Lim Yul</div>
-                    </div>
+                    <a href="#">
+                        <div class="stu_img">
+                            <img src="" alt="">
+                        </div>
+                        <div class="stu_txt">
+                            <div class="name_kr">임 율</div>
+                            <div class="name_eng">Lim Yul</div>
+                        </div>
+                    </a>
                 </li>
                 <li>
-                    <div class="stu_img">
-                        <img src="" alt="">
-                    </div>
-                    <div class="stu_txt">
-                        <div class="name_kr">임현준</div>
-                        <div class="name_eng">Lim Hyun Jun</div>
-                    </div>
+                    <a href="#">
+                        <div class="stu_img">
+                            <img src="" alt="">
+                        </div>
+                        <div class="stu_txt">
+                            <div class="name_kr">임현준</div>
+                            <div class="name_eng">Lim Hyun Jun</div>
+                        </div>
+                    </a>
                 </li>
                 <li>
-                    <div class="stu_img">
-                        <img src="" alt="">
-                    </div>
-                    <div class="stu_txt">
-                        <div class="name_kr">장천수</div>
-                        <div class="name_eng">Jang Chun Soo</div>
-                    </div>
+                    <a href="#">
+                        <div class="stu_img">
+                            <img src="" alt="">
+                        </div>
+                        <div class="stu_txt">
+                            <div class="name_kr">장천수</div>
+                            <div class="name_eng">Jang Chun Soo</div>
+                        </div>
+                    </a>
                 </li>
                 <li>
-                    <div class="stu_img">
-                        <img src="" alt="">
-                    </div>
-                    <div class="stu_txt">
-                        <div class="name_kr">최은지</div>
-                        <div class="name_eng">Choi Eun Ji </div>
-                    </div>
+                    <a href="#">
+                        <div class="stu_img">
+                            <img src="" alt="">
+                        </div>
+                        <div class="stu_txt">
+                            <div class="name_kr">최은지</div>
+                            <div class="name_eng">Choi Eun Ji </div>
+                        </div>
+                    </a>
                 </li>
                 <li>
-                    <div class="stu_img">
-                        <img src="" alt="">
-                    </div>
-                    <div class="stu_txt">
-                        <div class="name_kr">최훈석</div>
-                        <div class="name_eng">Choi Hun Seock </div>
-                    </div>
+                    <a href="#">
+                        <div class="stu_img">
+                            <img src="" alt="">
+                        </div>
+                        <div class="stu_txt">
+                            <div class="name_kr">최훈석</div>
+                            <div class="name_eng">Choi Hun Seock </div>
+                        </div>
+                    </a>
                 </li>
                 <li>
-                    <div class="stu_img">
-                        <img src="" alt="">
-                    </div>
-                    <div class="stu_txt">
-                        <div class="name_kr">황세희</div>
-                        <div class="name_eng">Hwang Se Hee </div>
-                    </div>
+                    <a href="#">
+                        <div class="stu_img">
+                            <img src="" alt="">
+                        </div>
+                        <div class="stu_txt">
+                            <div class="name_kr">황세희</div>
+                            <div class="name_eng">Hwang Se Hee </div>
+                        </div>
+                    </a>
                 </li>
                 <li>
-                    <div class="stu_img">
-                        <img src="" alt="">
-                    </div>
-                    <div class="stu_txt">
-                        <div class="name_kr">---</div>
-                        <div class="name_eng">Hwang Se Hee </div>
-                    </div>
+                    <a href="#">
+                        <div class="stu_img">
+                            <img src="" alt="">
+                        </div>
+                        <div class="stu_txt">
+                            <div class="name_kr">---</div>
+                            <div class="name_eng">Hwang Se Hee </div>
+                        </div>
+                    </a>
                 </li>
             </ul>
             
