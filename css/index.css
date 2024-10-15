@@ -1,0 +1,33 @@
+body {
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+
+.main {
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    padding-top: 303px;
+    box-sizing: border-box;
+
+}
+/*메인 내비게이션 현재 접속중인 페이지 글씨 하얗게*/
+.header .h_nav li:nth-child() a {
+    color: var(--color-white);
+}
+
+/* 메인 텍스트 */
+.info_title{
+    width: 60%;
+    color: white;
+    border: 1px solid red;
+    margin-left: 20%;
+}
+.info_title h2{
+    font-size: 200px;
+    font-family: "Literata", serif;
+}
+.info_title h3{
+    font-size: 36px;
+    font-weight: 400;
+}
