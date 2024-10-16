@@ -9,17 +9,32 @@ document.addEventListener("DOMContentLoaded", function () {
     const centerY = window.innerHeight / 2;
     const angleIncrement = (2 * Math.PI) / numberOfItems;
 
+
+    let isDragging = false; // 드래그 상태를 추적
+    let startY = 0; // 드래그 시작 Y 좌표
+
+
+
     for (let i = 0; i < numberOfItems; i++) {
         const item = document.createElement("div");
         item.className = "item";
         const p = document.createElement("p");
         const count = document.createElement("span");
+        const stuSpan = document.createElement("span"); // stu를 담을 span 요소 생성
 
-        p.textContent = interiors[i].name;
-        count.textContent = `(${Math.floor(Math.random() * 50) + 1})`;
+        p.textContent = interiors[i].name; // 이름 설정
+        stuSpan.textContent = interiors[i].stu; // 학생 이름 설정
+        stuSpan.style.fontSize = "20px"; // stu 크기 조정 (예: 30px)
+        stuSpan.style.color = "#fff"; // 필요에 따라 색상 조정
+        stuSpan.style.fontWeight = "300"
+        stuSpan.style.marginLeft = "10px"; // 이름과 학생 이름 간의 간격 조정
+
+        // p 요소에 stuSpan 추가
+        p.appendChild(stuSpan);
         item.appendChild(p);
-        p.appendChild(count);
         gallery.appendChild(item);
+
+        
 
         const angle = i * angleIncrement;
         const x = centerX + radius * Math.cos(angle);
@@ -69,15 +84,19 @@ document.addEventListener("DOMContentLoaded", function () {
             imgContainer.style.display = "flex"; // flexbox 사용
             imgContainer.style.alignItems = "flex-end"; // 수직 아래 정렬
             imgContainer.style.pointerEvents = "none"; // 마우스 이벤트 차단
-            imgContainer.style.marginTop = "20px";
-            imgContainer.style.marginLeft = "900px"; // 이미지와 텍스트 간의 간격 조정
-            imgContainer.style.width = "300px"; // 이미지 너비 조정
+            imgContainer.style.marginTop = "320px";
+            imgContainer.style.marginLeft = "1430px"; // 이미지와 텍스트 간의 간격 조정
+            imgContainer.style.width = "600px"; // 이미지 너비 조정
+            
+
 
             const imgSrc = `./assets/img${i + 1}.jpg`;
             const img = document.createElement("img");
             img.src = imgSrc;
-            img.style.width = "300px"; // 이미지 너비 조정
-            img.style.height = "auto"; // 비율 유지
+            img.style.width = "550px"; // 이미지 너비 조정
+            img.style.height = "380px"; // 비율 유지
+            img.style.marginTop = "300px";
+            img.style.marginLeft = "280px"; 
             img.style.clipPath = "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)";
 
             // 이미지를 로드한 후 텍스트 위치 조정
@@ -98,6 +117,12 @@ document.addEventListener("DOMContentLoaded", function () {
             imgContainer.appendChild(newText);
             cursor.innerHTML = ''; // 기존 내용을 비우고
             cursor.appendChild(imgContainer); // cursor에 이미지와 텍스트 추가
+
+
+            // imgContainer의 위치를 조정
+            const itemRect = item.getBoundingClientRect(); // 현재 항목의 위치를 가져옴
+            imgContainer.style.top = `${itemRect.bottom + window.scrollY}px`; // 아래쪽으로 위치 설정
+            imgContainer.style.right = `${itemRect.right}px`; // 왼쪽으로 위치 설정
 
             gsap.to(img, {
                 clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
@@ -143,7 +168,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function updatePosition() {
-        const scrollAmount = window.scrollY * 0.0001;
+        const scrollAmount = window.scrollY * 0.00035;
         document.querySelectorAll(".item").forEach(function (item, index) {
             const angle = index * angleIncrement + scrollAmount;
             const x = centerX + radius * Math.cos(angle);
@@ -163,13 +188,51 @@ document.addEventListener("DOMContentLoaded", function () {
     updatePosition();
     document.addEventListener("scroll", updatePosition);
 
-    document.addEventListener("mousemove", function(e) {
+      // 드래그 기능 추가
+      document.addEventListener("mousedown", (event) => {
+        isDragging = true;
+        startY = event.clientY; // 드래그 시작 Y 좌표 저장
+    });
+
+    /* 마우스 드래그 기능 */
+    document.addEventListener("mousedown", (event) => {
+        isDragging = true;
+        startY = event.clientY; // 드래그 시작 Y 좌표 저장
+    });
+
+    document.addEventListener("mousemove", (event) => {
+        if (isDragging) {
+            const deltaY = event.clientY - startY; // 드래그한 거리 계산
+            const angleOffset = deltaY * 0.001; // 각도 변화를 위한 스케일 조정
+    
+            document.querySelectorAll(".item").forEach((item, index) => {
+                const angle = index * angleIncrement + angleOffset; // 회전 각도 업데이트
+                const x = centerX + radius * Math.cos(angle);
+                const y = centerY + radius * Math.sin(angle);
+    
+                gsap.to(item, {
+                    duration: 0.05,
+                    x: x + "px",
+                    y: y + "px",
+                    rotation: (angle * 180) / Math.PI,
+                    ease: "elastic.out(1, 0.3)",
+                });
+            });
+        }
+    });
+
+    document.addEventListener("mouseup", () => {
+        isDragging = false; // 드래그 종료
+    });
+
+    /* 일단 mouseover */
+/*     document.addEventListener("mousemove", function(e) {
         gsap.to(cursor, {
             x: e.clientX - 150,
             y: e.clientY - 200,
             duration: 1,
             ease: "power3.out",
         });
-    });
+    }); */
 });
 
