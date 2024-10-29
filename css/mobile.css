@@ -1,0 +1,88 @@
+.con {
+    width: 100%;
+    padding: 0 20px;
+    display: none;
+}
+
+.navigation {
+    margin-bottom: 20px;
+    color: white;
+    display: flex;
+    gap: 20px;
+    padding: 0 20px;
+    justify-content: space-between; /* 요소들을 양 끝으로 배치 */
+}
+
+.nav_left{
+    display: flex;
+}
+
+.container2 {
+    display: flex;
+    justify-content: center;
+}
+
+.image-grid {
+    display: flex;
+    flex-direction: column;
+}
+
+.image-row {
+    display: flex;
+    justify-content: center; /* 중앙 정렬 */
+    margin-bottom: 10px; /* 각 행 간의 간격 */
+    gap: 10px;
+}
+
+.image-container {
+    position: relative; /* 자식 요소의 위치 설정을 위해 */
+    width: 160px; /* 이미지 너비 */
+    height: 160px; /* 이미지 높이 */
+}
+
+.project-image {
+    width: 100%; /* 이미지 너비를 100%로 설정 */
+    height: 100%; /* 이미지 높이를 100%로 설정 */
+    object-fit: cover; /* 비율 유지하며 잘림 */
+    margin: 0; /* 각 이미지 간의 간격 없앰 */
+    border-radius: 10px;
+}
+
+.gradient-overlay {
+    position: absolute; /* 이미지 위에 위치 */
+    bottom: 0; /* 이미지 아래에 위치 */
+    left: 0; /* 왼쪽에 위치 */
+    right: 0; /* 오른쪽에 위치 */
+    height: 30%; /* 그라데이션 높이 */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.808), rgba(0, 0, 0, 0)); /* 아래에서 위로 그라데이션 */
+    z-index: 1; /* 이미지 위에 위치하게 설정 */
+    border-radius: 10px;
+}
+
+.overlay {
+    width: 100%;
+    position: absolute; /* 이미지 위에 텍스트 위치 설정 */
+    bottom: 10px; /* 아래 여백 설정 */
+    left: 50%; /* 중앙 정렬을 위한 위치 */
+    transform: translate(-50%, 0); /* 중앙 정렬을 위한 변환 */
+    color: white; /* 텍스트 색상 */
+    padding: 5px 10px; /* 텍스트 패딩 */
+    border-radius: 5px; /* 둥근 모서리 */
+    font-size: 14px; /* 폰트 크기 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+    z-index: 2; /* 텍스트가 그라데이션 위에 위치하게 설정 */
+}
+
+
+.vis, .dig {
+    margin-right: 10px; /* 두 텍스트 사이의 간격 */
+}
+
+
+@media (max-width: 768px) {
+    .con{
+        display: block;
+    }
+}
+
+
