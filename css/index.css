@@ -32,3 +32,10 @@ body {
     font-size: 36px;
     font-weight: 400;
 }
+
+.info_img{
+    width: 100%;
+    position: absolute;
+    left: 40%;
+    opacity: 30%;
+} 
