@@ -4,10 +4,16 @@ body {
 }
 
 .main {
-    width: 1200px;
-    margin: 0 auto;
-    padding-top: 200px;
+    width: 100%;
+    /* max-width: 1200px; */
+    height: fit-content;
+    /* margin: 0 auto; */
     box-sizing: border-box;
+    outline: solid 1px red;
+}
+.main_wrap{
+    padding: 10.417vw 18.75vw 0;
+    outline: soild 1px rgb(0, 4, 255);
 }
 
 /*메인 내비게이션 현재 접속중인 페이지 글씨 하얗게*/
@@ -40,19 +46,19 @@ body {
 
 .icon_select_mate {
     position: absolute;
-    top:20px;
+    top: 1.042vw;
     right: 2%;
-    font-size: 16px;
-    height: 22px;
+    font-size: 1rem;
+    height: 1.375rem;
     transition: all 275ms;
 }
 
 .select_mate {
     position: relative;
     float: left;
-    width: 500px;
-    height: 80px;
-    font-size: 46px;
+    width: 26.042vw;
+    height: 4.167vw;
+    font-size: 2.875rem;
     color: var(--color-white);
     background-color: transparent;
     border: 0 none;
@@ -86,43 +92,41 @@ body {
     padding: 0px;
     margin-bottom: 0px;
     margin-top: 0px;
-    border-radius: 0px 0px 3px 3px;
-    box-shadow: 1px 4px 10px -2px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 0.156vw 0.156vw;
+    box-shadow: 0.052vw 0.208vw 0.521vw -0.104vw rgba(0, 0, 0, 0.2);
     transition: all 375ms ease-in-out;
 
     li {
-    position: relative;
-    float: left;
-    width: 96%;
-    border-bottom:1px solid #E0E0E0;
-    background-color: var(--color-black);
-    list-style-type: none;
-    padding: 10px 2%;
-    margin: 0px;  
-    transition: all 275ms ease-in-out;
-    display: block;
-    cursor:pointer;
+        position: relative;
+        float: left;
+        width: 96%;
+        border-bottom: 0.052vw solid #E0E0E0;
+        background-color: var(--color-black);
+        list-style-type: none;
+        padding: 0.625rem 2%;
+        margin: 0px;  
+        transition: all 275ms ease-in-out;
+        display: block;
+        cursor: pointer;
         
         &:last-child {
-        border-radius: 3px;
-        border-bottom:0px; 
-
+            border-radius: 0.156vw;
+            border-bottom: 0px;
         }
         &:hover {
-        background-color: var(--color-white);
-        color: var(--color-black);
+            background-color: var(--color-white);
+            color: var(--color-black);
         } 
     }
 
     .active {
-    background-color: var(--color-black);
+        background-color: var(--color-black);
     }
-
 }
 
 /* etiqueta <p> con la opcion selecionada  */
 .selecionado_opcion {
-    padding: 20px 2%;
+    padding: 1.042vw 2%;
     width: 96%;
     display: block;
     margin: 0px;
@@ -131,23 +135,23 @@ body {
 
 /* ::::서치::::: */
 .sub_nav .search{
-    padding: 30px 0;
+    padding: 1.563vw 0;
 }
 .sub_nav .search input {
-    width: 388px;
-    height: 46px;
-    border-radius: 50px;
+    width: 20.208vw;
+    height: 2.396vw;
+    border-radius: 2.604vw;
     background-color: var(--color-darkgray);
-    border: 2px solid var(--color-stroke);
+    border: 0.104vw solid var(--color-stroke);
     color: var(--color-white);
     box-sizing: border-box;
-    padding: 0px 20px;
+    padding: 0 1.042vw;
 }
 
 /* :::: 학생 갤러리 :::: */
 .content_wrap {
     width: 100%;
-    margin-bottom: 560px;
+    margin-bottom: 29.167vw;
 }
 .content_wrap ul {
     flex-wrap: wrap;
@@ -155,10 +159,10 @@ body {
     justify-content: space-between;
 }
 .content_wrap ul li {
-    width: 368px;
-    height: 560px;
+    width: 19.167vw;
+    height: 29.167vw;
     cursor: pointer;
-    margin-bottom: 30px;
+    margin-bottom: 1.563vw;
     /* border: solid 1px red; */
 }
 .content_wrap ul li a{
@@ -168,26 +172,30 @@ body {
     align-items: center;
 }
 .content_wrap ul li .stu_img img {
-    width: 368px;
-    height: 491px;
+    width: 19.167vw;
+    height: 25.573vw;
     background-color: var(--color-gray);
     box-sizing: border-box;
     overflow: hidden;
 }
 .content_wrap ul li .stu_txt {
-    margin-top: 5px;
+    margin-top: 0.26vw;
 }
 .content_wrap ul li .stu_txt .name_kr {
     float: left;
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 700;
-    line-height: 35px;
+    line-height: 1.823vw;
 }
 .content_wrap ul li .stu_txt .name_eng {
     display: inline-block;
-    margin-left: 6px;
-    font-size: 18px;
+    margin-left: 0.313vw;
+    font-size: 1.125rem;
     font-weight: 500;
-    line-height: 35px;
+    line-height: 1.823vw;
     color: var(--color-darkgray);
+}
+
+@media (max-width: 480px) {
+    
 }
