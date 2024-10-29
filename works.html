@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/works.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <link rel="stylesheet" href="css/mobile2.css">
     
     <title>Document</title>
 </head>
@@ -40,8 +42,472 @@
             <div class="gallery"></div>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script type="module" src="js/data.js"></script>
-    <script type="module" src="js/script.js"></script>
+
+
+    <div class="con">
+        <div class="navigation">
+  
+          <div class="nav_left">
+            <div class="vis" onclick="showOriginal()">visual</div>
+            <div class="dig" onclick="showNew2()">digital</div>
+              </div>
+            <div class="view_option">
+            <svg width="85" height="70">
+              <!-- 큰 정사각형 (37x37) 왼쪽에 위치 -->
+              <path class="view1" d="M 0,0 H 35 V 35 H 0 Z" fill="#4F4F4F" onclick="toggleView('view1')" />
+              
+              <!-- 4개의 작은 정사각형 (15x15) 오른쪽에 위치 -->
+              <path class="view2" d="M 50,0 H 65 V 15 H 50 Z M 70,0 H 85 V 15 H 70 Z M 50,20 H 65 V 35 H 50 Z M 70,20 H 85 V 35 H 70 Z" fill="#4F4F4F" onclick="toggleView('view2')" />
+          </svg>
+      </div>
+        </div>
+    
+        <div class="container2">
+            <div class="image-grid">
+                <div class="image-row">
+                    <div class="image-container">
+                        <img src="images/img1.jpg" alt="프로젝트 이미지" class="project-image" id="project-image-1">
+                        <div class="gradient-overlay"></div> <!-- 그라데이션 추가 -->
+                        <div class="overlay">UI Redesign</div>
+                    </div>
+                    <div class="image-container">
+                        <img src="images/img2.jpg" alt="프로젝트 이미지" class="project-image" id="project-image-2">
+                        <div class="gradient-overlay"></div> <!-- 그라데이션 추가 -->
+                        <div class="overlay">UI Redesign</div>
+                    </div>
+                </div>
+                <div class="image-row">
+                    <div class="image-container">
+                        <img src="images/img3.jpg" alt="프로젝트 이미지 3" class="project-image">
+                        <div class="gradient-overlay"></div> <!-- 그라데이션 추가 -->
+                        <div class="overlay">UI Redesign</div>
+                    </div>
+                    <div class="image-container">
+                        <img src="images/img4.jpg" alt="프로젝트 이미지 4" class="project-image">
+                        <div class="gradient-overlay"></div> <!-- 그라데이션 추가 -->
+                        <div class="overlay">UI Redesign</div>
+                    </div>
+                </div>
+                <div class="image-row">
+                    <div class="image-container">
+                        <img src="images/img5.jpg" alt="프로젝트 이미지 5" class="project-image">
+                        <div class="gradient-overlay"></div> <!-- 그라데이션 추가 -->
+                        <div class="overlay">UI Redesign</div>
+                    </div>
+                    <div class="image-container">
+                        <img src="images/img6.jpg" alt="프로젝트 이미지 6" class="project-image">
+                        <div class="gradient-overlay"></div> <!-- 그라데이션 추가 -->
+                        <div class="overlay">UI Redesign</div>
+                    </div>
+                </div>
+                <div class="image-row">
+                    <div class="image-container">
+                        <img src="images/img7.jpg" alt="프로젝트 이미지 7" class="project-image">
+                        <div class="gradient-overlay"></div> <!-- 그라데이션 추가 -->
+                        <div class="overlay">UI Redesign</div>
+                    </div>
+                    <div class="image-container">
+                        <img src="images/img8.jpg" alt="프로젝트 이미지 8" class="project-image">
+                        <div class="gradient-overlay"></div> <!-- 그라데이션 추가 -->
+                        <div class="overlay">UI Redesign</div>
+                    </div>
+                </div>
+                <div class="image-row">
+                    <div class="image-container">
+                        <img src="images/img9.jpg" alt="프로젝트 이미지 9" class="project-image">
+                        <div class="gradient-overlay"></div> <!-- 그라데이션 추가 -->
+                        <div class="overlay">UI Redesign</div>
+                    </div>
+                    <div class="image-container">
+                        <img src="images/img10.jpg" alt="프로젝트 이미지 10" class="project-image">
+                        <div class="gradient-overlay"></div> <!-- 그라데이션 추가 -->
+                        <div class="overlay">UI Redesign</div>
+                    </div>
+                </div>
+                <div class="image-row">
+                    <div class="image-container">
+                        <img src="images/img11.jpg" alt="프로젝트 이미지 11" class="project-image">
+                        <div class="gradient-overlay"></div> <!-- 그라데이션 추가 -->
+                        <div class="overlay">UI Redesign</div>
+                    </div>
+                    <div class="image-container">
+                        <img src="images/img12.jpg" alt="프로젝트 이미지 12" class="project-image">
+                        <div class="gradient-overlay"></div> <!-- 그라데이션 추가 -->
+                        <div class="overlay">UI Redesign</div>
+                    </div>
+                </div>
+                <div class="image-row">
+                    <div class="image-container">
+                        <img src="images/img13.jpg" alt="프로젝트 이미지 13" class="project-image">
+                        <div class="gradient-overlay"></div> <!-- 그라데이션 추가 -->
+                        <div class="overlay">UI Redesign</div>
+                    </div>
+                    <div class="image-container">
+                        <img src="images/img14.jpg" alt="프로젝트 이미지 14" class="project-image">
+                        <div class="gradient-overlay"></div> <!-- 그라데이션 추가 -->
+                        <div class="overlay">UI Redesign</div>
+                    </div>
+                </div>
+                <div class="image-row">
+                    <div class="image-container">
+                        <img src="images/img15.jpg" alt="프로젝트 이미지 15" class="project-image">
+                        <div class="gradient-overlay"></div> <!-- 그라데이션 추가 -->
+                        <div class="overlay">UI Redesign</div>
+                    </div>
+                    <div class="image-container">
+                        <img src="images/img16.jpg" alt="프로젝트 이미지 16" class="project-image">
+                        <div class="gradient-overlay"></div> <!-- 그라데이션 추가 -->
+                        <div class="overlay">UI Redesign</div>
+                    </div>
+                </div>
+                <div class="image-row">
+                    <div class="image-container">
+                        <img src="images/img17.jpg" alt="프로젝트 이미지 17" class="project-image">
+                        <div class="gradient-overlay"></div> <!-- 그라데이션 추가 -->
+                        <div class="overlay">UI Redesign</div>
+                    </div>
+                    <div class="image-container">
+                        <img src="images/img18.jpg" alt="프로젝트 이미지 18" class="project-image">
+                        <div class="gradient-overlay"></div> <!-- 그라데이션 추가 -->
+                        <div class="overlay">UI Redesign</div>
+                    </div>
+                </div>
+                <div class="image-row">
+                    <div class="image-container">
+                        <img src="images/img19.jpg" alt="프로젝트 이미지 19" class="project-image">
+                        <div class="gradient-overlay"></div> <!-- 그라데이션 추가 -->
+                        <div class="overlay">UI Redesign</div>
+                    </div>
+                    <div class="image-container">
+                        <img src="images/img20.jpg" alt="프로젝트 이미지 20" class="project-image">
+                        <div class="gradient-overlay"></div> <!-- 그라데이션 추가 -->
+                        <div class="overlay">UI Redesign</div>
+                    </div>
+                </div>
+                <div class="image-row">
+                    <div class="image-container">
+                        <img src="images/img21.jpg" alt="프로젝트 이미지 21" class="project-image">
+                        <div class="gradient-overlay"></div> <!-- 그라데이션 추가 -->
+                        <div class="overlay">UI Redesign</div>
+                    </div>
+                    <div class="image-container">
+                        <img src="images/img22.jpg" alt="프로젝트 이미지 22" class="project-image">
+                        <div class="gradient-overlay"></div> <!-- 그라데이션 추가 -->
+                        <div class="overlay">UI Redesign</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+  
+        
+        
+        <div class="new-container" style="display: none;">
+  
+  
+          <div class="con3">
+          <div class="con2">
+  
+            <div class="container3">
+                <img src="images/img1.jpg" alt="프로젝트 이미지" class="project-image2" id="project-image">
+        
+                <!-- 스크롤바 추가 -->
+                <div class="scrollbar-container" id="scrollbar-container">
+                    <!-- 22개의 스크롤 라인 생성 -->
+                    <div class="scroll-line"></div>
+                    <div class="scroll-line"></div>
+                    <div class="scroll-line"></div>
+                    <div class="scroll-line"></div>
+                    <div class="scroll-line"></div>
+                    <div class="scroll-line"></div>
+                    <div class="scroll-line"></div>
+                    <div class="scroll-line"></div>
+                    <div class="scroll-line"></div>
+                    <div class="scroll-line"></div>
+                    <div class="scroll-line"></div>
+                    <div class="scroll-line"></div>
+                    <div class="scroll-line"></div>
+                    <div class="scroll-line"></div>
+                    <div class="scroll-line"></div>
+                    <div class="scroll-line"></div>
+                    <div class="scroll-line"></div>
+                    <div class="scroll-line"></div>
+                    <div class="scroll-line"></div>
+                    <div class="scroll-line"></div>
+                    <div class="scroll-line"></div>
+                    <div class="scroll-line"></div>
+                    <div class="scroll-line"></div>
+                </div>
+        
+                <h1 class="project-title" id="project-title">프로젝트 제목</h1>
+                <h2 class="project-name" id="project-name">프로젝트 이름</h2>
+            </div>
+        </div>
+  
+  </div>
+        </div>
+  
+        <div class="digital-container" style="display: none;">
+          <div class="container2">
+              <div class="image-grid">
+                  <div class="image-row">
+                      <div class="image-container">
+                          <img src="images/img23.jpg" alt="프로젝트 이미지" class="project-image" id="project-image-1">
+                          <div class="gradient-overlay"></div> <!-- 그라데이션 추가 -->
+                          <div class="overlay">UI Redesign</div>
+                      </div>
+                      <div class="image-container">
+                          <img src="images/img24.jpg" alt="프로젝트 이미지" class="project-image" id="project-image-2">
+                          <div class="gradient-overlay"></div> <!-- 그라데이션 추가 -->
+                          <div class="overlay">UI Redesign</div>
+                      </div>
+                  </div>
+                  <div class="image-row">
+                      <div class="image-container">
+                          <img src="images/img25.jpg" alt="프로젝트 이미지 3" class="project-image">
+                          <div class="gradient-overlay"></div> <!-- 그라데이션 추가 -->
+                          <div class="overlay">UI Redesign</div>
+                      </div>
+                      <div class="image-container">
+                          <img src="images/img26.jpg" alt="프로젝트 이미지 4" class="project-image">
+                          <div class="gradient-overlay"></div> <!-- 그라데이션 추가 -->
+                          <div class="overlay">UI Redesign</div>
+                      </div>
+                  </div>
+                  <div class="image-row">
+                      <div class="image-container">
+                          <img src="images/img27.jpg" alt="프로젝트 이미지 5" class="project-image">
+                          <div class="gradient-overlay"></div> <!-- 그라데이션 추가 -->
+                          <div class="overlay">UI Redesign</div>
+                      </div>
+                      <div class="image-container">
+                          <img src="images/img28.jpg" alt="프로젝트 이미지 6" class="project-image">
+                          <div class="gradient-overlay"></div> <!-- 그라데이션 추가 -->
+                          <div class="overlay">UI Redesign</div>
+                      </div>
+                  </div>
+                  <div class="image-row">
+                      <div class="image-container">
+                          <img src="images/img29.jpg" alt="프로젝트 이미지 7" class="project-image">
+                          <div class="gradient-overlay"></div> <!-- 그라데이션 추가 -->
+                          <div class="overlay">UI Redesign</div>
+                      </div>
+                      <div class="image-container">
+                          <img src="images/img30.jpg" alt="프로젝트 이미지 8" class="project-image">
+                          <div class="gradient-overlay"></div> <!-- 그라데이션 추가 -->
+                          <div class="overlay">UI Redesign</div>
+                      </div>
+                  </div>
+                  <div class="image-row">
+                      <div class="image-container">
+                          <img src="images/img31.jpg" alt="프로젝트 이미지 9" class="project-image">
+                          <div class="gradient-overlay"></div> <!-- 그라데이션 추가 -->
+                          <div class="overlay">UI Redesign</div>
+                      </div>
+                      <div class="image-container">
+                          <img src="images/img32.jpg" alt="프로젝트 이미지 10" class="project-image">
+                          <div class="gradient-overlay"></div> <!-- 그라데이션 추가 -->
+                          <div class="overlay">UI Redesign</div>
+                      </div>
+                  </div>
+                  <div class="image-row">
+                      <div class="image-container">
+                          <img src="images/img33.jpg" alt="프로젝트 이미지 11" class="project-image">
+                          <div class="gradient-overlay"></div> <!-- 그라데이션 추가 -->
+                          <div class="overlay">UI Redesign</div>
+                      </div>
+                      <div class="image-container">
+                          <img src="images/img34.jpg" alt="프로젝트 이미지 12" class="project-image">
+                          <div class="gradient-overlay"></div> <!-- 그라데이션 추가 -->
+                          <div class="overlay">UI Redesign</div>
+                      </div>
+                  </div>
+                  <div class="image-row">
+                      <div class="image-container">
+                          <img src="images/img35.jpg" alt="프로젝트 이미지 13" class="project-image">
+                          <div class="gradient-overlay"></div> <!-- 그라데이션 추가 -->
+                          <div class="overlay">UI Redesign</div>
+                      </div>
+                      <div class="image-container">
+                          <img src="images/img36.jpg" alt="프로젝트 이미지 14" class="project-image">
+                          <div class="gradient-overlay"></div> <!-- 그라데이션 추가 -->
+                          <div class="overlay">UI Redesign</div>
+                      </div>
+                  </div>
+                  <div class="image-row">
+                      <div class="image-container">
+                          <img src="images/img37.jpg" alt="프로젝트 이미지 15" class="project-image">
+                          <div class="gradient-overlay"></div> <!-- 그라데이션 추가 -->
+                          <div class="overlay">UI Redesign</div>
+                      </div>
+                      <div class="image-container">
+                          <img src="images/img38.jpg" alt="프로젝트 이미지 16" class="project-image">
+                          <div class="gradient-overlay"></div> <!-- 그라데이션 추가 -->
+                          <div class="overlay">UI Redesign</div>
+                      </div>
+                  </div>
+                  <div class="image-row">
+                      <div class="image-container">
+                          <img src="images/img39.jpg" alt="프로젝트 이미지 17" class="project-image">
+                          <div class="gradient-overlay"></div> <!-- 그라데이션 추가 -->
+                          <div class="overlay">UI Redesign</div>
+                      </div>
+                      <div class="image-container">
+                          <img src="images/img40.jpg" alt="프로젝트 이미지 18" class="project-image">
+                          <div class="gradient-overlay"></div> <!-- 그라데이션 추가 -->
+                          <div class="overlay">UI Redesign</div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          
+      </div>
+  
+      <div class="visual-container" style="display: none;">
+          <div class="con3">
+              <div class="con2">
+      
+                <div class="container3">
+                    <img src="images/img1.jpg" alt="프로젝트 이미지" class="project-image2" id="project-image">
+            
+                    <!-- 스크롤바 추가 -->
+                    <div class="scrollbar-container" id="scrollbar-container">
+                        <!-- 18개의 스크롤 라인 생성 -->
+                        <div class="scroll-line"></div>
+                        <div class="scroll-line"></div>
+                        <div class="scroll-line"></div>
+                        <div class="scroll-line"></div>
+                        <div class="scroll-line"></div>
+                        <div class="scroll-line"></div>
+                        <div class="scroll-line"></div>
+                        <div class="scroll-line"></div>
+                        <div class="scroll-line"></div>
+                        <div class="scroll-line"></div>
+                        <div class="scroll-line"></div>
+                        <div class="scroll-line"></div>
+                        <div class="scroll-line"></div>
+                        <div class="scroll-line"></div>
+                        <div class="scroll-line"></div>
+                        <div class="scroll-line"></div>
+                        <div class="scroll-line"></div>
+                        <div class="scroll-line"></div>
+                        <div class="scroll-line"></div>
+                    </div>
+            
+                    <h1 class="project-title" id="project-title">프로젝트 제목</h1>
+                    <h2 class="project-name" id="project-name">프로젝트 이름</h2>
+                </div>
+            </div>
+      
+      </div>
+      </div>
+  
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script type="module" src="js/data.js"></script>
+  <script type="module" src="js/script.js"></script>
+      <script src="js/mobile.js"></script>
+      <script src="js/click.js"></script>
+      <script src="js/mobile2.js"></script>
+
+<!-- 모바일 네비 스크립트 -->
+<script>
+    let currentView = 'container2'; // 현재 선택된 뷰를 저장
+
+    // 페이지가 로드될 때 실행되는 함수
+    window.onload = function() {
+        showOriginal(); // .vis 기본으로 선택
+        toggleView('view1'); // view1 기본으로 선택
+    };
+
+    function showOriginal() {
+        document.querySelector('.container2').style.display = 'block';  // 원래 콘텐츠 표시
+        document.querySelector('.new-container').style.display = 'none'; // 새 콘텐츠 숨기기
+        document.querySelector('.digital-container').style.display = 'none'; // 디지털 콘텐츠 숨기기
+
+        // .vis 요소에 active 클래스 추가
+        document.querySelector('.vis').classList.add('active');
+        // .dig 요소에서 active 클래스 제거
+        document.querySelector('.dig').classList.remove('active');
+        
+        currentView = 'container2'; // 현재 뷰 업데이트
+    }
+    
+    function showNew() {
+        document.querySelector('.container2').style.display = 'none';    // 원래 콘텐츠 숨기기
+        document.querySelector('.new-container').style.display = 'block'; // 새 콘텐츠 표시
+        document.querySelector('.digital-container').style.display = 'none'; // 디지털 콘텐츠 숨기기
+        
+        // .vis 요소에서 active 클래스 제거
+        document.querySelector('.vis').classList.remove('active');
+        // .dig 요소에 active 클래스 추가
+        document.querySelector('.dig').classList.add('active');
+
+        currentView = 'new-container'; // 현재 뷰 업데이트
+    }
+    
+    function showNew2() {
+        document.querySelector('.container2').style.display = 'none';    // 원래 콘텐츠 숨기기
+        document.querySelector('.new-container').style.display = 'none'; // 새 콘텐츠 숨기기
+        document.querySelector('.digital-container').style.display = 'block'; // 디지털 콘텐츠 표시
+        
+        // .vis 요소에서 active 클래스 제거
+        document.querySelector('.vis').classList.remove('active');
+        // .dig 요소에 active 클래스 추가
+        document.querySelector('.dig').classList.add('active');
+
+        currentView = 'digital-container'; // 현재 뷰 업데이트
+    }
+    
+    function toggleView(view) {
+        const container2 = document.querySelector('.container2');
+        const newContainer = document.querySelector('.new-container');
+        const digitalContainer = document.querySelector('.digital-container');
+        const visualContainer = document.querySelector('.visual-container');
+
+        // 선택 상태 초기화
+        document.querySelector('.view1').classList.remove('selected');
+        document.querySelector('.view2').classList.remove('selected');
+
+        if (currentView === 'digital-container') {
+            // .dig 선택된 상태일 때
+            if (view === 'view1') {
+                visualContainer.style.display = 'block'; // visual-container 표시
+                digitalContainer.style.display = 'none'; // 디지털 콘텐츠 숨김
+                document.querySelector('.view1').classList.add('selected'); // 선택 상태 추가
+            } else if (view === 'view2') {
+                visualContainer.style.display = 'none'; // visual-container 숨김
+                digitalContainer.style.display = 'block'; // 디지털 콘텐츠 표시
+                document.querySelector('.view2').classList.add('selected'); // 선택 상태 추가
+            }
+        } else {
+            // .vis 선택된 상태일 때
+            if (view === 'view1') {
+                newContainer.style.display = 'block'; // new-container 표시
+                container2.style.display = 'none'; // container2 숨김
+                digitalContainer.style.display = 'none'; // 디지털 콘텐츠 숨김
+                document.querySelector('.view1').classList.add('selected'); // 선택 상태 추가
+            } else if (view === 'view2') {
+                newContainer.style.display = 'none'; // new-container 숨김
+                container2.style.display = 'block'; // container2 표시
+                digitalContainer.style.display = 'none'; // 디지털 콘텐츠 숨김
+                document.querySelector('.view2').classList.add('selected'); // 선택 상태 추가
+            }
+        }
+    }
+
+    function resetContent() {
+        document.querySelector('.container2').style.display = 'block';    // 기존 콘텐츠 다시 표시
+        document.querySelector('.new-container').style.display = 'none';   // 새로운 콘텐츠 숨김
+        document.querySelector('.digital-container').style.display = 'none'; // 디지털 콘텐츠 숨기기
+        document.querySelector('.visual-container').style.display = 'none'; // visual-container 숨기기
+        
+        // .vis 요소에서 active 클래스 제거
+        document.querySelector('.vis').classList.remove('active');
+        // .dig 요소에서 active 클래스 제거
+        document.querySelector('.dig').classList.remove('active');
+    }
+</script>
 </body>
 </html>

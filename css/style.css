@@ -79,3 +79,12 @@ a {
 .header .h_nav a:hover {
     color: var(--color-white);
 }
+
+@media (max-width: 768px){
+    .header {
+        width: 100%;
+        height: 200px;
+        background-color: var(--color-black);
+        position: relative; 
+    }
+}
