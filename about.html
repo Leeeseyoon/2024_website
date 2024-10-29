@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/about.css">
-    <title>ABOUT</title>
+    <title>IDENTITY</title>
 </head>
 <body>
     <!-- 사이트 공통 내비게이션 -->
@@ -18,7 +18,7 @@
                 <li><button><a href="about.html">IDENTITY</a></button></li>
                 <li><button><a href="works.html">WORKS</a></button></li>
                 <li><button><a href="designer.html">DESIGNERS</a></button></li>
-                <li><button><a href="#">INFO</a></button></li>
+                <li><button><a href="info.html">INFO</a></button></li>
             </ul>
         </div>
     </div>
@@ -62,25 +62,20 @@
         <!-- 카테고리별 탭 섹션 -->
         <div class="tab_wrap">
 
-            <!-- 카테고리 탭 -->
-            <div class="category_wrap">
-                <button class="category_btn selected" data-filter="identity">IDENTITY</button>
-                <button class="category_btn" data-filter="comittee">COMITTEE</button>
-                <button class="category_btn" data-filter="participants">PARTICIPANTS</button>
-                <button class="category_btn" data-filter="thanksto">THANKS TO</button>
-            </div>
 
             <div class="tab_container">
                 <!-- content_wrap, tab_section은 css 일괄 적용을 위한 공통 클래스명 -->
                 <!-- identity 섹션 -->
+                <!-- 기존 identity 섹션 css를 사용해야하기 때문에 tab_wrap과 container는 수정하지 않음 -->
                 <section id="identity" class="sections" target="_blank" data-type="identity">
                     <div class="content_wrap tab_identity">
 
                         <!-- 섹션 1 -->
                         <div class="tab_section">
-        
+                            <h2 class="identity_title">IDENTITY</h2>
                             <!-- 이미지 -->
                             <div class="tab_img img1">
+                                
                                 <img src="" alt="포스터 이미지">
                             </div>
         
@@ -141,311 +136,12 @@
                         </div>   
                     </div>
                 </section>
-                
-                
 
-                <!-- comittee 섹션 -->
-                <section id="comittee" class="sections invisible"  target="_blank" data-type="comittee">
-                    <div class="content_wrap tab_comittee">
-
-                        <!-- 섹션 1 -->
-                        <div class="tab_section">
-                            <!-- 제목 -->
-                            <div class="tab_title">
-                                <h2>2024 졸업전시 준비위원회</h2>
-                            </div>
-        
-                            <!-- 설명글 -->
-                            <div class="tab_article">
-                                <div class="comittee_info">
-                                    <p>
-                                        이번 졸업작품 전시회에는 총 11명의 학생들이 ‘ 파노라마 : 시각의 경계를 넘어 우리들의 이야기를 담다. ’ 라는 주제로 졸업전시를 준비하기 위해 참여하였습니다. 졸업전시 준비위원회는 서로 협력하여 좋은 전시를 만들어 갈 수 있도록 노력했습니다. 
-                                    </p>
-                                </div>
-                                <div class="comittee_name main_comittee">
-                                    <div class="name_left">
-                                        <ul>
-                                            <li>위원장</li>
-                                            <li>부위원장</li>
-                                            <li>부위원장</li>
-                                            <li>위원장</li>
-                                        </ul>
-                                    </div>
-                                    <div class="name_right">
-                                        <ul>
-                                            <li>심재정</li>
-                                            <li>황세희</li>
-                                            <li>박윤민</li>
-                                            <li>이세윤</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-        
-                        <!-- 섹션 2 -->
-                        <div class="tab_section">
-                            <!-- 제목 -->
-                            <div class="tab_title">
-                                <h2>Web Design</h2>
-                            </div>
-        
-                            <!-- 설명글 -->
-                            <div class="tab_article">
-                                <div class="comittee_info">
-                                    <p>
-                                        졸업생들의 포트폴리오를 한 공간에 모아볼 수 있는 웹사이트 제작팀입니다. 학교에서 활동한 2년간의 작품을 영화처럼 표현 할수 있게 기획하였습니다. 언제 어디서나 모바일에서도 즐길 수 있도록 반응형으로 구현하였습니다.
-                                    </p>
-                                </div>
-                                <div class="comittee_name">
-                                    <div class="name_left">
-                                        <ul>
-                                            <li>팀원</li>
-                                            <li>팀원</li>
-                                            <li>팀원</li>
-                                            <li>팀원</li>
-                                            <li>팀원</li>
-                                        </ul>
-                                    </div>
-                                    <div class="name_right">
-                                        <ul>
-                                            <li>김민경</li>
-                                            <li>김수아</li>
-                                            <li>양성우</li>
-                                            <li>이세윤</li>
-                                            <li>황세희</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-        
-                        <!-- 섹션 3 -->
-                        <div class="tab_section">
-                            <!-- 제목 -->
-                            <div class="tab_title">
-                                <h2>Banner Team</h2>
-                            </div>
-        
-                            <!-- 설명글 -->
-                            <div class="tab_article">
-                                <div class="comittee_info">
-                                    <p>
-                                        졸업생들의 작품을 오프라인에서도 볼 수 있게 배너로 제작하는  팀입니다. 학교에서 활동한 2년간의 작품을 한 장면에 담을 수 있게 레이아웃을 기획했습니다. 대형 현수막과 소형 배너를 통해 학생들의 작품을 감상할 수 있습니다.
-                                    </p>
-                                </div>
-                                <div class="comittee_name">
-                                    <div class="name_left">
-                                        <ul>
-                                            <li>팀원</li>
-                                            <li>팀원</li>
-                                            <li>팀원</li>
-                                        </ul>
-                                    </div>
-                                    <div class="name_right">
-                                        <ul>
-                                            <li>박가람</li>
-                                            <li>이세윤</li>
-                                            <li>윤혜원</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-        
-                        <!-- 섹션 4 -->
-                        <div class="tab_section">
-                            <!-- 제목 -->
-                            <div class="tab_title">
-                                <h2>Video Team</h2>
-                            </div>
-        
-                            <!-- 설명글 -->
-                            <div class="tab_article">
-                                <div class="comittee_info">
-                                    <p>
-                                        졸업생들의 포트폴리오 웹사이트의 랜딩페이지에 들어갈 영상과 더불어 졸업전시 현장에 전시될 영상을 제작하는 팀입니다. 졸업 전시 컨셉을 영상미 있게 표현할 수 있도록 기획하였습니다. 모션그래픽을 이용한 영상으로 몰입감을 높이도록 노력했습니다.
-                                    </p>
-                                </div>
-                                <div class="comittee_name">
-                                    <div class="name_left">
-                                        <ul>
-                                            <li>팀원</li>
-                                            <li>팀원</li>
-                                            <li>팀원</li>
-                                            <li>팀원</li>
-                                        </ul>
-                                    </div>
-                                    <div class="name_right">
-                                        <ul>
-                                            <li>최훈석</li>
-                                            <li>양성우</li>
-                                            <li>이세윤</li>
-                                            <li>황세희</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- participants 섹션 -->
-                <section id="participants" class="sections invisible"  target="_blank" data-type="participants">
-                    <div class="content_wrap tab_participants">
-
-                        <!-- 섹션 1 -->
-                        <div class="tab_section">
-                            <!-- 제목 -->
-                            <div class="tab_title">
-                                <h2>전시참여자</h2>
-                            </div>
-        
-                            <!-- 설명글 -->
-                            <div class="tab_article">
-                                <ul>
-                                    <li>강찬우</li>
-                                    <li>김민경</li>
-                                    <li>김민경</li>
-                                    <li>김수빈</li>
-                                    <li>김수아</li>
-                                    <li>김승빈</li>
-                                    <li>김승찬</li>
-                                    <li>김은서</li>
-                                    <li>김준희</li>
-                                    <li>김태호</li>
-                                    <li>류시은</li>
-                                    <li>박가람</li>
-                                    <li>박경호</li>
-                                    <li>박윤민</li>
-                                    <li>손상현</li>
-                                    <li>송다은</li>
-                                    <li>송민서</li>
-                                    <li>심재정</li>
-                                    <li>양성우</li>
-                                    <li>오난영</li>
-                                    <li>우수지</li>
-                                    <li>원세연</li>
-                                    <li>유지수</li>
-                                    <li>윤 비</li>
-                                    <li>윤혜원</li>
-                                    <li>이동현</li>
-                                    <li>이세윤</li>
-                                    <li>이연지</li>
-                                    <li>이영은</li>
-                                    <li>이지우</li>
-                                    <li>임영은</li>
-                                    <li>임 율</li>
-                                    <li>임재형</li>
-                                    <li>임현준</li>
-                                    <li>장천수</li>
-                                    <li>정회강</li>
-                                    <li>최민주</li>
-                                    <li>최은지</li>
-                                    <li>최훈석</li>
-                                    <li>황세희</li>
-                                    <li>허준우</li>
-                                    <li>   </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                
-
-                <!-- thanks to 섹션 -->
-                <section id="thanksto" class="sections invisible"  target="_blank" data-type="thanksto">
-                    <div class="content_wrap tab_thanksto">
-
-                        <!-- 섹션 1 -->
-                        <div class="tab_section">
-                            <!-- 제목 -->
-                            <div class="tab_title">
-                                <h2>도움을 주신 분들</h2>
-                            </div>
-        
-                            <!-- 설명글 -->
-                            <div class="tab_article">
-                                <div class="article_professor">
-                                    <div class="left_title">
-                                        <h4>지도교수님</h4>
-                                    </div>
-                                    <div class="right_txt">
-                                        <p>
-                                            배민식 이길배 김경조 문경아
-                                        </p>
-                                    </div>
-                                </div>
-        
-                                <div class="article_donation">
-                                    <div class="left_title">
-                                        <h4>동문 후원</h4>
-                                    </div>
-                                    <div class="right_txt">
-                                        <p>
-                                            토스뱅크 23130-3123-12111221
-                                        </p>
-                                    </div>
-                                </div>
-        
-                                <div class="article_event">
-                                    <div class="left_title">
-                                        <h4>행사 준비 </h4>
-                                    </div>
-                                    <div class="right_txt">
-                                        <ul>
-                                            <li>졸업대표 : 권지연</li>
-                                            <li>브랜딩팀 : 팀장 박소정 김민주 박채경 배인혜</li>
-                                            <li>포스터팀 : 팀장 조 안 김예원 도경민 안수현 박건우</li>
-                                            <li>웹사이트팀 : 팀장 장태웅 김지우 박수민</li>
-                                            <li>회계팀 : 팀장 이유진 이지은 전지호</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                </div>
+            </div>
             
         </div>
     </div>
 
-    <!--js코드-->
-    <script>
-        const tabBtnContainer = document.querySelector('.category_wrap');
-const tabContainer = document.querySelector('.tab_container');
-const projects = document.querySelectorAll('.sections');
 
-// 탭 버튼별 화면표출기능
-tabBtnContainer.addEventListener('click', (e) => {
-    const filter = e.target.dataset.filter || e.target.parentNode.dataset.filter;
-    if (filter == null) {
-        return;
-    }
-
-    const active = document.querySelector('.category_btn.selected');
-    active.classList.remove('selected'); // 클릭했을 때 selected라는 엘리먼트를 remove
-    const target = e.target.nodeName === 'BUTTON' ? e.target : e.target.parentNode;
-    target.classList.add('selected');
-
-    // 클릭하면 프로젝트 항목 사라지게 하는 거
-    tabContainer.classList.add('anim-out');
-    setTimeout(() => {
-        projects.forEach((project) => {
-            // 필터 타입과 프로젝트 타입이 같으면 invisible 지워 표출, 다르면 invisible 추가해 숨기기
-            if (filter === '*' || filter === project.dataset.type) {
-                project.classList.remove('invisible');
-            } else {
-                project.classList.add('invisible');
-            }
-        });
-
-        tabContainer.classList.remove('anim-out'); // 지워졌던 거 다시 나타나게 
-    }, 200);
-});
-/* 시간 1000>200 */
-
-    </script>
 </body>
 </html>

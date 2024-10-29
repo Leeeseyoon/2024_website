@@ -1,0 +1,238 @@
+body {
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+
+.main {
+    width: 1200px;
+    margin: 0 auto;
+    padding-top: 303px;
+    box-sizing: border-box;
+}
+
+/*메인 내비게이션 현재 접속중인 페이지 글씨 하얗게*/
+.header .h_nav li:nth-child(4) a {
+    color: var(--color-white);
+}
+
+/* :::: 메인 이미지+설명글 :::: */
+.main .info_wrap {}
+.main .info_wrap .info_img {
+    width: 100%;
+    height: 600px;
+    background-color: lightgray;
+}
+.main .info_wrap .info_txt {
+    width: 100%;
+}
+.main .info_wrap .info_txt .info_title {}
+.main .info_wrap .info_txt .info_title h2 {
+    font-size: 64px;
+    font-weight: 700;
+    margin-top: 63px;
+    margin-bottom: 14px;
+}
+.main .info_wrap .info_txt .info_title h3 {
+    font-size: 32px;
+    font-weight: 500;
+    color: var(--color-darkgray);
+}
+.main .info_wrap .info_txt .info_article {
+    width: 100%;
+    margin-top: 52px;
+    text-align: justify;
+
+    /*문단 2단 효과*/
+    display: flex;
+    justify-content: space-between;
+}
+.main .info_wrap .info_txt .info_article .article_kr,
+.main .info_wrap .info_txt .info_article .article_eng {
+    width: 552px;  
+}
+.main .info_wrap .info_txt .info_article .article_kr p,
+.main .info_wrap .info_txt .info_article .article_eng p {
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 30px;
+}
+
+/* :::: 카테고리별 탭 섹션 시작 :::: */
+.tab_wrap {
+    width: 100%;
+    margin-top: 217px;
+    margin-bottom: 150px;
+}
+
+/* :::: 탭 섹션 버튼 스타일 :::: */
+.category_wrap {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.category_wrap button {
+    background-color: var(--color-black);
+    color: var(--color-darkgray);
+    border: none;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 43.57px;
+    transition: .3s;
+}
+.category_btn.selected,
+.category_btn:hover {
+    color: var(--color-white);
+    cursor: pointer;
+}
+
+
+/* :::: 탭 섹션 공통 스타일 지정 :::: */
+.content_wrap {
+    width: 100%;
+}
+.tab_container { /*js적용시 애니메이션 효과*/
+    transition: .3s;
+}
+.tab_section {
+    width: 100%;
+}
+.tab_section h2 { /*제목 폰트*/
+    font-size: 40px;
+}
+.tab_section p { /*본문 폰트*/
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 30px;
+}
+.tab_img {
+    margin-top: 200px;
+    margin-bottom: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.tab_img img { /*이미지 위치 확인용! 나중에 삭제할 것*/
+    background-color: lightgray;
+    color: var(--color-black);
+    font-size: 30px;
+}
+
+
+
+
+/* :::: 임원 명단 섹션 :::: */
+#comittee {
+    padding-bottom: 140px;
+}
+#comittee .tab_section {
+    clear: both;
+    width: 100%;
+}
+#comittee .tab_title {
+    padding-top: 145px;
+    margin-bottom: 33px;
+}
+#comittee .tab_article .comittee_info {
+    float: left;
+    width: 627px; /*설명글 가로길이*/
+    text-align: justify;
+}
+#comittee .tab_article .comittee_name {
+    float: right;
+    width: 150px; /*임원진 이름목록 가로길이*/
+}
+#comittee .tab_article .main_comittee {
+    float: right;
+    width: 187px; /*위원장 부위원장~~ 길이 혼자 긴 부분*/
+}
+#comittee .tab_article .comittee_name ul li {
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+/*직함*/
+#comittee .tab_article .comittee_name .name_left {
+    float: left;
+}
+/*이름*/
+#comittee .tab_article .comittee_name .name_right {
+    float: right;
+    letter-spacing: 10px;
+}
+/*이름 왼쪽에 붙는 작대기*/
+#comittee .tab_article .comittee_name .name_right ul li::before {
+    content: '|';
+    color: var(--color-darkgray);
+}
+
+/* :::: 졸전참여자 섹션 :::: */
+#participants .tab_title {
+    padding-top: 145px;
+}
+#participants .tab_article {
+    width: 100%;
+    margin-top: 50px;
+}
+#participants .tab_article ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+#participants .tab_article ul li {
+    /* border: 1px solid red; */
+    width: 95px;
+    margin-right: 100px;
+    margin-bottom: 57px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 300;
+}
+#participants .tab_article ul li:nth-child(6n+1) {
+    text-align: left;
+}
+#participants .tab_article ul li:nth-child(6n) {
+    width: 95px;
+    margin-right: 0;
+    text-align: right;
+}
+
+/* :::: 도움 주신 분들 섹션 :::: */
+#thanksto .tab_title {
+    padding-top: 145px;
+    padding-bottom: 50px;
+}
+#thanksto .tab_article {
+}
+#thanksto .tab_article .left_title h4 {
+    font-size: 27px;
+    font-weight: 600;
+}
+#thanksto .tab_article .right_txt p {
+    font-size: 20px;
+    line-height: 40px;
+}
+#thanksto .tab_article .article_professor,
+#thanksto .tab_article .article_donation,
+#thanksto .tab_article .article_event {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+#thanksto .tab_article .article_event ul li {
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+
+/* :::: js용 CSS :::: */
+.anim-out {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.1s;
+}
+.invisible {
+    display: none;
+}
+
