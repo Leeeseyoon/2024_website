@@ -4,6 +4,7 @@
     --color-darkgray: #797979;
     --color-gray: #C9C9C9;
     --color-white: #ffffff;
+    --color-stroke: #716E6B;
 }
 
 /*폰트 설정*/
@@ -36,6 +37,7 @@ a {
     height: 200px;
     background-color: var(--color-black);
     position: fixed; /*내비게이션 고정*/
+    z-index: 999;
 }
 .header .nav_wrap {
     width: 1200px;
