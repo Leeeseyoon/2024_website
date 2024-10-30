@@ -234,7 +234,7 @@
                             <img src="images/designer/b/2B_김준희_프로필사진.jpg" alt="">
                         </div>
                         <div class="stu_txt">
-                            <div class="name_kr">김준희</div>
+                            <div class="name_kr">김���희</div>
                             <div class="name_eng">Kim Junehee</div>
                         </div>
                     </a>
@@ -642,40 +642,49 @@
         var li_s = document.querySelectorAll("[data-indx-select='" + selc + "'] .cont_select_int > li");
         var p_act = document.querySelectorAll("[data-indx-select='" + selc + "'] > .selecionado_opcion")[0].innerHTML = li_s[indx].innerHTML;
         
-        // 검색창 초기화
+        // 검색창 초기화 및 모든 항목 표시
         const searchInput = document.querySelector('.sub_nav .search input');
-        searchInput.value = '';
+        searchInput.value = ''; // 검색어 초기화
         
-        // 리스트 전환 로직
+        // 디지털/비주얼 리스트의 모든 항목 표시
         const digitalList = document.getElementById('DigitalDesignList');
         const visualList = document.getElementById('VisualDesignList');
+        
+        [digitalList, visualList].forEach(list => {
+            list.querySelectorAll('li').forEach(li => {
+                li.style.position = 'relative';
+                li.style.visibility = 'visible';
+                li.style.display = 'block';
+                li.classList.remove('fade-out');
+                li.style.marginRight = '1.563vw'; // 기본 마진 설정
+            });
+            
+            // 3의 배수 아이템의 마진 조정
+            const items = list.querySelectorAll('li');
+            items.forEach((item, index) => {
+                if ((index + 1) % 3 === 0) {
+                    item.style.marginRight = '0';
+                }
+            });
+        });
         
         // 선택된 옵션의 값 확인
         const selectedValue = select_.options[indx].value;
         
-        // 모든 li 요소 표시 상태로 초기화
-        const resetListDisplay = (list) => {
-            list.querySelectorAll('li').forEach(li => {
-                li.style.display = 'block';
-            });
-        };
-        
         // 값에 따라 리스트 전환
-        if (selectedValue === 'digital') {  // Digital Design 선택
+        if (selectedValue === 'digital') {
             visualList.style.opacity = '0';
             setTimeout(() => {
                 visualList.style.display = 'none';
-                resetListDisplay(digitalList);  // 디지털 리스트 초기화
                 digitalList.style.display = 'flex';
                 setTimeout(() => {
                     digitalList.style.opacity = '1';
                 }, 50);
             }, 300);
-        } else if (selectedValue === 'visual') {  // Visual Design 선택
+        } else if (selectedValue === 'visual') {
             digitalList.style.opacity = '0';
             setTimeout(() => {
                 digitalList.style.display = 'none';
-                resetListDisplay(visualList);  // 비주얼 리스트 초기화
                 visualList.style.display = 'flex';
                 setTimeout(() => {
                     visualList.style.opacity = '1';
@@ -711,87 +720,150 @@
     </script>
     <!-- 초성 검색, 일반 검색 js -->
     <script>
-    // 한글 초성 분리 함수
-    function getChosung(str) {
-        const cho = ["ㄱ","ㄲ","ㄴ","ㄷ","ㄸ","ㄹ","ㅁ","ㅂ","ㅃ","ㅅ","ㅆ","ㅇ","ㅈ","ㅉ","ㅊ","ㅋ","ㅌ","ㅍ","ㅎ"];
-        let result = "";
-        for (let i = 0; i < str.length; i++) {
-            const code = str.charCodeAt(i) - 44032;
-            if (code > -1 && code < 11172) {
-                result += cho[Math.floor(code / 588)];
+        // 한글 초성 분리 함수는 그대로 유지
+        function getChosung(str) {
+            const cho = ["ㄱ","ㄲ","ㄴ","ㄷ","ㄸ","ㄹ","ㅁ","ㅂ","ㅃ","ㅅ","ㅆ","ㅇ","ㅈ","ㅉ","ㅊ","ㅋ","ㅌ","ㅍ","ㅎ"];
+            let result = "";
+            for (let i = 0; i < str.length; i++) {
+                const code = str.charCodeAt(i) - 44032;
+                if (code > -1 && code < 11172) {
+                    result += cho[Math.floor(code / 588)];
+                }
             }
+            return result;
         }
-        return result;
-    }
-
-    // 검색 기능 구현
-    document.querySelector('.sub_nav .search input').addEventListener('input', function(e) {
-        const searchValue = e.target.value.trim();
-        
-        // 현재 활성화된 리스트 확인
-        const digitalList = document.getElementById('DigitalDesignList');
-        const visualList = document.getElementById('VisualDesignList');
-        const currentList = digitalList.style.display !== 'none' ? digitalList : visualList;
-        
-        // 해당 리스트의 모든 li 요소 선택
-        const items = currentList.querySelectorAll('li');
-        
-        items.forEach(item => {
-            const nameKr = item.querySelector('.name_kr').textContent;
-            const nameChosung = getChosung(nameKr);
-            const searchChosung = getChosung(searchValue);
+    
+        // 디바운스 함수 추가
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+    
+        // 검색 실행 함수 수정
+        function executeSearch(searchValue) {
+            const digitalList = document.getElementById('DigitalDesignList');
+            const visualList = document.getElementById('VisualDesignList');
+            const currentList = digitalList.style.display !== 'none' ? digitalList : visualList;
             
-            // 검색어가 초성인지 확인
-            const isChosung = /^[ㄱ-ㅎ]+$/.test(searchValue);
+            const items = currentList.querySelectorAll('li');
+            let hasResults = false;
             
-            if (searchValue === '') {
-                // 검색어가 없으면 모든 항목 표시
-                item.style.display = 'block';
-            } else if (isChosung) {
-                // 초성 검색
-                if (nameChosung.startsWith(searchValue)) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
-            } else {
-                // 일반 검색
-                if (nameKr.includes(searchValue)) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
+            // 기존 "검색 결과 없음" 메시지 제거
+            const existingNoResult = currentList.querySelector('.no-result-message');
+            if (existingNoResult) {
+                existingNoResult.remove();
             }
+            
+            items.forEach(item => {
+                const nameKr = item.querySelector('.name_kr').textContent;
+                const nameEng = item.querySelector('.name_eng').textContent.toLowerCase();
+                const nameChosung = getChosung(nameKr);
+                const searchLower = searchValue.toLowerCase();
+                
+                // 초성 검색 여부 확인
+                const isChosung = /^[ㄱ-ㅎ]+$/.test(searchValue);
+                
+                // 검색 조건 수정
+                const shouldShow = 
+                    searchValue === '' || 
+                    (isChosung && getChosung(nameKr).includes(searchValue)) ||  // 초성 검색
+                    (!isChosung && (
+                        nameKr.includes(searchValue) ||  // 한글 이름 검색
+                        nameEng.includes(searchLower)    // 영문 이름 검색
+                    ));
+
+                if (shouldShow) {
+                    hasResults = true;
+                    item.style.position = 'relative';
+                    item.style.visibility = 'visible';
+                    item.style.display = 'block';
+                    item.classList.remove('fade-out');
+                } else {
+                    item.classList.add('fade-out');
+                    setTimeout(() => {
+                        item.style.position = 'absolute';
+                        item.style.visibility = 'hidden';
+                        item.style.display = 'none';
+                    }, 300); // fade-out 애니메이션 시간
+                }
+            });
+
+            // 검색 결과가 없을 때 메시지 표시
+            if (!hasResults && searchValue !== '') {
+                const noResultMessage = document.createElement('div');
+                noResultMessage.className = 'no-result-message';
+                noResultMessage.innerHTML = `
+                    <strong>'${searchValue}'에 대한 검색 결과가 없습니다.</strong>
+                    <p>단어의 철자가 정확한지 확인해 보세요.</p>
+                    <p>한글을 영어로 혹은 영어를 한글로 입력했는지 확인해 보세요.</p>
+                    <p>학번 또는 생년월일은 검색할 수 없습니다.</p>
+                `;
+                noResultMessage.style.cssText = `
+                    text-align: center;
+                    padding: 40px 20px;
+                    color: #666;
+                    width: 100%;
+                `;
+                currentList.appendChild(noResultMessage);
+            }
+
+            // 보이는 아이템들의 margin 조정
+            const visibleItems = Array.from(items).filter(item => 
+                !item.classList.contains('fade-out')
+            );
+
+            visibleItems.forEach((item, index) => {
+                // 기본적으로 오른쪽 마진 설정
+                item.style.marginRight = '1.563vw';
+                
+                // 3의 배수번째 아이템이면 마진 제거
+                if ((index + 1) % 3 === 0) {
+                    item.style.marginRight = '0';
+                }
+            });
+        }
+    
+        // 디바운스된 검색 함수 (이전과 동일)
+        const debouncedSearch = debounce((searchValue) => {
+            executeSearch(searchValue);
+        }, 500);
+    
+        // 검색 이벤트 리스너 (이전과 동일)
+        document.querySelector('.sub_nav .search input').addEventListener('input', function(e) {
+            const searchValue = e.target.value.trim();
+            debouncedSearch(searchValue);
         });
-
-        // 보이는 항목들의 레이아웃 조정
-        adjustLayout(currentList);
-    });
-
-    // 레이아웃 조정 함수
-    function adjustLayout(list) {
-        const visibleItems = Array.from(list.querySelectorAll('li')).filter(item => 
-            item.style.display !== 'none'
-        );
-        
-        // 마지막 줄의 아이템들 정렬 조정
-        const remainder = visibleItems.length % 3;
-        if (remainder > 0) {
-            const lastRowStart = visibleItems.length - remainder;
-            for (let i = lastRowStart; i < visibleItems.length; i++) {
-                visibleItems[i].style.marginRight = '1.563vw';
+    
+        // 레이아웃 조정 함수는 그대로 유지
+        function adjustLayout(list) {
+            const visibleItems = Array.from(list.querySelectorAll('li')).filter(item => 
+                item.style.display !== 'none'
+            );
+            
+            const remainder = visibleItems.length % 3;
+            if (remainder > 0) {
+                const lastRowStart = visibleItems.length - remainder;
+                for (let i = lastRowStart; i < visibleItems.length; i++) {
+                    visibleItems[i].style.marginRight = '1.563vw';
+                }
+                visibleItems[visibleItems.length - 1].style.marginRight = 'auto';
             }
-            visibleItems[visibleItems.length - 1].style.marginRight = 'auto';
         }
-    }
-
-    // 페이지 로드 시 초기 레이아웃 설정
-    window.addEventListener('load', function() {
-        const digitalList = document.getElementById('DigitalDesignList');
-        const visualList = document.getElementById('VisualDesignList');
-        adjustLayout(digitalList);
-        adjustLayout(visualList);
-    });
+    
+        // 페이지 로드 시 초기 레이아웃 설정
+        window.addEventListener('load', function() {
+            const digitalList = document.getElementById('DigitalDesignList');
+            const visualList = document.getElementById('VisualDesignList');
+            adjustLayout(digitalList);
+            adjustLayout(visualList);
+        });
     </script>
 </body>
 </html>

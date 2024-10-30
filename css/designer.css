@@ -219,41 +219,41 @@ body {
 .content_wrap ul {
     display: flex;
     flex-wrap: wrap;
-    gap: 1.563vw;
     width: 100%;
     margin: 0;
     padding: 0;
 }
 
 .content_wrap ul li {
-    width: calc((100% - 3.126vw) / 3);
-    height: 29.167vw;
-    cursor: pointer;
-    margin: 0;
+    width: calc((100% - 3.126vw) / 3);  /* 3개의 li와 2개의 간격을 고려한 너비 */
+    margin-right: 1.563vw;  /* 간격 */
+    margin-bottom: 1.563vw;  /* 행간 간격 */
+    aspect-ratio: 0.75;
 }
 
-/* 마지막 줄 정렬 조정 */
-.content_wrap ul::after {
-    content: "";
-    width: calc((100% - 3.126vw) / 3); /* li와 동일한 너비 */
-    height: 0; /* 높이는 0으로 설정하여 공간만 차지 */
+/* 3n번째 아이템의 오른쪽 마진 제거 */
+.content_wrap ul li:nth-child(3n) {
+    margin-right: 0;
 }
 
 .content_wrap ul li a{
     color: var(--color-white);
 }
 .content_wrap ul li .stu_img {
-    align-items: center;
+    width: 100%;
+    height: 87.5%;
 }
 .content_wrap ul li .stu_img img {
-    width: 19.167vw;
-    height: 25.573vw;
+    width: 100%;
+    height: 100%;
     background-color: var(--color-gray);
     box-sizing: border-box;
     overflow: hidden;
+    object-fit: cover;
 }
 .content_wrap ul li .stu_txt {
     margin-top: 0.26vw;
+    height: 12.5%;
 }
 .content_wrap ul li .stu_txt .name_kr {
     float: left;
@@ -324,4 +324,13 @@ body {
 
 #DigitalDesignList {
     opacity: 1;  /* 초기 상태는 Digital Design 리스트 표시 */
+}
+.content_wrap li {
+    transition: opacity 0.3s ease;
+    opacity: 1;
+}
+
+.content_wrap li.fade-out {
+    opacity: 0;
+    pointer-events: none;
 }
