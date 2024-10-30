@@ -5,6 +5,8 @@
     --color-gray: #C9C9C9;
     --color-white: #ffffff;
     --color-stroke: #716E6B;
+    --color-orange: #f86222;
+    --color-lightorange:  #f86222;
 }
 
 /*폰트 설정*/
@@ -91,7 +93,7 @@ a {
     transition: .3s;
 }
 .header .h_nav a:hover {
-    color: var(--color-white);
+    color: var(--color-gray);
 }
 
 @media (max-width: 768px){

@@ -35,7 +35,7 @@ body {
 .main .info_wrap .info_txt .info_title h3 {
     font-size: 32px;
     font-weight: 500;
-    color: var(--color-darkgray);
+    color: var(--color-orange);
 }
 .main .info_wrap .info_txt .info_article {
     width: 100%;
