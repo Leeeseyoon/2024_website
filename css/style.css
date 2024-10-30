@@ -7,6 +7,7 @@
     --color-stroke: #716E6B;
     --color-orange: #f86222;
     --color-lightorange:  #f86222;
+    --color-placeholder: #949494;
 }
 
 /*폰트 설정*/
@@ -70,8 +71,8 @@ a {
     
 }
 .header .h_logo {
-    width: 194px;
-    height: 50px;
+    width: 10.104vw;
+    height: 2.604vw;
     background-color: lightgray;
 }
 .header .h_nav li {

@@ -41,8 +41,8 @@
         <div class="sub_nav">
             <div class="select_mate" data-mate-select="active" >
                 <select name="" onchange="" onclick="return false;" id="">
-                <option value=""  >Digital Design &#9660;</option>
-                <option value="1">Visual Design &#9660;</option>
+                    <option value="digital">Digital Design</option>
+                    <option value="visual">Visual Design</option>
                 </select>
                 <p class="selecionado_opcion"  onclick="open_select(this)" ></p><span onclick="open_select(this)" class="icon_select_mate" ><svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
                     <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
@@ -53,7 +53,7 @@
                 </div>
             </div>
             <div class="search">
-                <input name="" placeholder="search" type="search">
+                <input name="" placeholder="이름을 검색하세요" type="search" spellcheck="false">
             </div>
         </div>
         <!-- 수정한 셀렉바의 js -->
@@ -148,7 +148,7 @@
             }
 
 
-            function _select_option(indx,selc){
+            function _select_option(indx, selc){
             if (isMobileDevice()) { 
             selc = selc -1;
             }
@@ -172,7 +172,7 @@
         </script>
 
         <div class="content_wrap">
-            <ul id="digitalDesignList"> <!-- 학생 수에 따라서 리스트 ctrl+c, ctrl+v -->
+            <ul id="DigitalDesignList"> <!-- 학생 수에 따라서 리스트 ctrl+c, ctrl+v -->
                 <li>
                     <a href="#">
                         <div class="stu_img">
@@ -202,7 +202,7 @@
                         </div>
                         <div class="stu_txt">
                             <div class="name_kr">김수빈</div>
-                            <div class="name_eng">Kim Su Bin</div>
+                            <div class="name_eng">Kim Subin</div>
                         </div>
                     </a>
                 </li>
@@ -224,7 +224,7 @@
                         </div>
                         <div class="stu_txt">
                             <div class="name_kr">김승찬</div>
-                            <div class="name_eng">Kim Seung Chan</div>
+                            <div class="name_eng">Kim Seungchan</div>
                         </div>
                     </a>
                 </li>
@@ -235,7 +235,7 @@
                         </div>
                         <div class="stu_txt">
                             <div class="name_kr">김준희</div>
-                            <div class="name_eng">Kim June Hee</div>
+                            <div class="name_eng">Kim Junehee</div>
                         </div>
                     </a>
                 </li>
@@ -246,7 +246,7 @@
                         </div>
                         <div class="stu_txt">
                             <div class="name_kr">김태호</div>
-                            <div class="name_eng">Kim Tae Ho</div>
+                            <div class="name_eng">Kim Taeho</div>
                         </div>
                     </a>
                 </li>
@@ -257,7 +257,7 @@
                         </div>
                         <div class="stu_txt">
                             <div class="name_kr">류시은</div>
-                            <div class="name_eng">Ryu Si Eun</div>
+                            <div class="name_eng">Ryu Sieun</div>
                         </div>
                     </a>
                 </li>
@@ -268,7 +268,7 @@
                         </div>
                         <div class="stu_txt">
                             <div class="name_kr">박가람</div>
-                            <div class="name_eng">Park Ga Ram</div>
+                            <div class="name_eng">Park Garam</div>
                         </div>
                     </a>
                 </li>
@@ -279,7 +279,7 @@
                         </div>
                         <div class="stu_txt">
                             <div class="name_kr">심재정</div>
-                            <div class="name_eng">Shim Jae Jeong</div>
+                            <div class="name_eng">Shim Jaejeong</div>
                         </div>
                     </a>
                 </li>
@@ -290,7 +290,7 @@
                         </div>
                         <div class="stu_txt">
                             <div class="name_kr">양성우</div>
-                            <div class="name_eng">Yang Seong Woo</div>
+                            <div class="name_eng">Yang Seongwoo</div>
                         </div>
                     </a>
                 </li>
@@ -301,7 +301,7 @@
                         </div>
                         <div class="stu_txt">
                             <div class="name_kr">우수지</div>
-                            <div class="name_eng">Woo Su Ji</div>
+                            <div class="name_eng">Woo Suji</div>
                         </div>
                     </a>
                 </li>
@@ -312,7 +312,7 @@
                         </div>
                         <div class="stu_txt">
                             <div class="name_kr">원세연</div>
-                            <div class="name_eng">Won Se Yeon</div>
+                            <div class="name_eng">Won Seyeon</div>
                         </div>
                     </a>
                 </li>
@@ -323,7 +323,7 @@
                         </div>
                         <div class="stu_txt">
                             <div class="name_kr">유지수</div>
-                            <div class="name_eng">Yoo Ji Su</div>
+                            <div class="name_eng">Yoo Jisu</div>
                         </div>
                     </a>
                 </li>
@@ -345,7 +345,7 @@
                         </div>
                         <div class="stu_txt">
                             <div class="name_kr">이세윤</div>
-                            <div class="name_eng">Lee Se Yoon</div>
+                            <div class="name_eng">Lee Seyoon</div>
                         </div>
                     </a>
                 </li>
@@ -356,7 +356,7 @@
                         </div>
                         <div class="stu_txt">
                             <div class="name_kr">이지우</div>
-                            <div class="name_eng">Lee Ji Woo</div>
+                            <div class="name_eng">Lee Jiwoo</div>
                         </div>
                     </a>
                 </li>
@@ -378,7 +378,7 @@
                         </div>
                         <div class="stu_txt">
                             <div class="name_kr">임현준</div>
-                            <div class="name_eng">Lim Hyun Jun</div>
+                            <div class="name_eng">Lim Hyunjun</div>
                         </div>
                     </a>
                 </li>
@@ -389,7 +389,7 @@
                         </div>
                         <div class="stu_txt">
                             <div class="name_kr">장천수</div>
-                            <div class="name_eng">Jang Chun Soo</div>
+                            <div class="name_eng">Jang Chunsoo</div>
                         </div>
                     </a>
                 </li>
@@ -400,7 +400,7 @@
                         </div>
                         <div class="stu_txt">
                             <div class="name_kr">최은지</div>
-                            <div class="name_eng">Choi Eun Ji </div>
+                            <div class="name_eng">Choi Eunji </div>
                         </div>
                     </a>
                 </li>
@@ -411,7 +411,7 @@
                         </div>
                         <div class="stu_txt">
                             <div class="name_kr">최훈석</div>
-                            <div class="name_eng">Choi Hun Seock </div>
+                            <div class="name_eng">Choi Hunseock </div>
                         </div>
                     </a>
                 </li>
@@ -422,7 +422,20 @@
                         </div>
                         <div class="stu_txt">
                             <div class="name_kr">황세희</div>
-                            <div class="name_eng">Hwang Se Hee </div>
+                            <div class="name_eng">Hwang Sehee </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <ul id="VisualDesignList"> <!-- 학생 수에 따라서 리스트 ctrl+c, ctrl+v -->
+                <li>
+                    <a href="#">
+                        <div class="stu_img">
+                            <img src="" alt="">
+                        </div>
+                        <div class="stu_txt">
+                            <div class="name_kr">강찬우</div>
+                            <div class="name_eng">Kang Chanwoo</div>
                         </div>
                     </a>
                 </li>
@@ -432,30 +445,256 @@
                             <img src="" alt="">
                         </div>
                         <div class="stu_txt">
-                            <div class="name_kr">---</div>
-                            <div class="name_eng">Hwang Se Hee </div>
+                            <div class="name_kr">김승빈</div>
+                            <div class="name_eng">Kim Seungbin</div>
                         </div>
                     </a>
                 </li>
-            </ul>
-            <ul id="visualDesignList"> <!-- 학생 수에 따라서 리스트 ctrl+c, ctrl+v -->
                 <li>
                     <a href="#">
                         <div class="stu_img">
                             <img src="" alt="">
                         </div>
                         <div class="stu_txt">
-                            <div class="name_kr">a반</div>
-                            <div class="name_eng">Kim Mingyeong</div>
+                            <div class="name_kr">김은서</div>
+                            <div class="name_eng">Kim Eunseo</div>
                         </div>
                     </a>
                 </li>
-                
-
+                <li>
+                    <a href="#">
+                        <div class="stu_img">
+                            <img src="" alt="">
+                        </div>
+                        <div class="stu_txt">
+                            <div class="name_kr">박경호</div>
+                            <div class="name_eng">Park Geoungho</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="stu_img">
+                            <img src="" alt="">
+                        </div>
+                        <div class="stu_txt">
+                            <div class="name_kr">박윤민</div>
+                            <div class="name_eng">Park Yunmin</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="stu_img">
+                            <img src="" alt="">
+                        </div>
+                        <div class="stu_txt">
+                            <div class="name_kr">손상현</div>
+                            <div class="name_eng">---</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="stu_img">
+                            <img src="" alt="">
+                        </div>
+                        <div class="stu_txt">
+                            <div class="name_kr">송다은</div>
+                            <div class="name_eng">Song Daeun</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="stu_img">
+                            <img src="" alt="">
+                        </div>
+                        <div class="stu_txt">
+                            <div class="name_kr">송민서</div>
+                            <div class="name_eng">Song Minseo</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="stu_img">
+                            <img src="" alt="">
+                        </div>
+                        <div class="stu_txt">
+                            <div class="name_kr">오난영</div>
+                            <div class="name_eng">Oh Nanyeong</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="stu_img">
+                            <img src="" alt="">
+                        </div>
+                        <div class="stu_txt">
+                            <div class="name_kr">윤혜원</div>
+                            <div class="name_eng">Yun Hyewon</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="stu_img">
+                            <img src="" alt="">
+                        </div>
+                        <div class="stu_txt">
+                            <div class="name_kr">이동현</div>
+                            <div class="name_eng">Rhee Donghyeon</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="stu_img">
+                            <img src="" alt="">
+                        </div>
+                        <div class="stu_txt">
+                            <div class="name_kr">이연지</div>
+                            <div class="name_eng">Lee Yeonji</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="stu_img">
+                            <img src="" alt="">
+                        </div>
+                        <div class="stu_txt">
+                            <div class="name_kr">이영은</div>
+                            <div class="name_eng">Lee Youngeun</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="stu_img">
+                            <img src="" alt="">
+                        </div>
+                        <div class="stu_txt">
+                            <div class="name_kr">임재형</div>
+                            <div class="name_eng">Lim Jaehyeong</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="stu_img">
+                            <img src="" alt="">
+                        </div>
+                        <div class="stu_txt">
+                            <div class="name_kr">정회강</div>
+                            <div class="name_eng">Jung Hwaegang</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="stu_img">
+                            <img src="" alt="">
+                        </div>
+                        <div class="stu_txt">
+                            <div class="name_kr">최민주</div>
+                            <div class="name_eng"> Choi Minju</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="stu_img">
+                            <img src="" alt="">
+                        </div>
+                        <div class="stu_txt">
+                            <div class="name_kr">한병헌</div>
+                            <div class="name_eng">---</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="stu_img">
+                            <img src="" alt="">
+                        </div>
+                        <div class="stu_txt">
+                            <div class="name_kr">허준우</div>
+                            <div class="name_eng">Heo Junwoo</div>
+                        </div>
+                    </a>
+                </li>
             </ul>
-            
-            </div>
-        </div> <!-- main_wrap -->
+        </div> <!-- //content_wrap -->
+        </div> <!-- //main_wrap -->
     </div>
+
+    <!-- 디지털/비주얼 리스트 불러오는 js -->
+    <script>
+    function _select_option(indx, selc) {
+        if (isMobileDevice()) { 
+            selc = selc - 1;
+        }
+        
+        var select_ = document.querySelectorAll("[data-indx-select='" + selc + "'] > select")[0];
+        var li_s = document.querySelectorAll("[data-indx-select='" + selc + "'] .cont_select_int > li");
+        var p_act = document.querySelectorAll("[data-indx-select='" + selc + "'] > .selecionado_opcion")[0].innerHTML = li_s[indx].innerHTML;
+        
+        // 리스트 전환 로직 수정
+        const digitalList = document.getElementById('DigitalDesignList');
+        const visualList = document.getElementById('VisualDesignList');
+        
+        // 선택된 옵션의 값 확인
+        const selectedValue = select_.options[indx].value;
+        
+        // 값에 따라 리스트 전환
+        if (selectedValue === 'digital') {  // Digital Design 선택
+            visualList.style.opacity = '0';
+            setTimeout(() => {
+                visualList.style.display = 'none';
+                digitalList.style.display = 'flex';
+                setTimeout(() => {
+                    digitalList.style.opacity = '1';
+                }, 50);
+            }, 300);
+        } else if (selectedValue === 'visual') {  // Visual Design 선택
+            digitalList.style.opacity = '0';
+            setTimeout(() => {
+                digitalList.style.display = 'none';
+                visualList.style.display = 'flex';
+                setTimeout(() => {
+                    visualList.style.opacity = '1';
+                }, 50);
+            }, 300);
+        }
+
+        // 기존 셀렉트 로직
+        var select_optiones = select_.options;
+        for (var i = 0; i < li_s.length; i++) {
+            if (li_s[i].className == 'active') {
+                li_s[i].className = '';
+            };
+            li_s[indx].className = 'active';
+        };
+        select_optiones[indx].selected = true;
+        select_.selectedIndex = indx;
+        select_.onchange();
+        salir_select(selc);
+    }
+
+    // 페이지 로드 시 초기 상태 설정
+    window.addEventListener('load', function() {
+        const digitalList = document.getElementById('DigitalDesignList');
+        const visualList = document.getElementById('VisualDesignList');
+        
+        // 초기 상태 설정
+        digitalList.style.display = 'flex';
+        digitalList.style.opacity = '1';
+        visualList.style.display = 'none';
+        visualList.style.opacity = '0';
+    });
+    </script>
 </body>
 </html>
