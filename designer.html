@@ -12,7 +12,7 @@
     <div class="header">
         <div class="nav_wrap">
             <div class="h_logo">
-                <h1><a href="index.html"><img src="" alt="로고 이미지"></a></h1>
+                <h1><a href="index.html"><img src="" alt=""></a></h1>
             </div>
             <ul class="h_nav">
                 <li><button><a href="about.html">IDENTITY</a></button></li>
@@ -642,18 +642,30 @@
         var li_s = document.querySelectorAll("[data-indx-select='" + selc + "'] .cont_select_int > li");
         var p_act = document.querySelectorAll("[data-indx-select='" + selc + "'] > .selecionado_opcion")[0].innerHTML = li_s[indx].innerHTML;
         
-        // 리스트 전환 로직 수정
+        // 검색창 초기화
+        const searchInput = document.querySelector('.sub_nav .search input');
+        searchInput.value = '';
+        
+        // 리스트 전환 로직
         const digitalList = document.getElementById('DigitalDesignList');
         const visualList = document.getElementById('VisualDesignList');
         
         // 선택된 옵션의 값 확인
         const selectedValue = select_.options[indx].value;
         
+        // 모든 li 요소 표시 상태로 초기화
+        const resetListDisplay = (list) => {
+            list.querySelectorAll('li').forEach(li => {
+                li.style.display = 'block';
+            });
+        };
+        
         // 값에 따라 리스트 전환
         if (selectedValue === 'digital') {  // Digital Design 선택
             visualList.style.opacity = '0';
             setTimeout(() => {
                 visualList.style.display = 'none';
+                resetListDisplay(digitalList);  // 디지털 리스트 초기화
                 digitalList.style.display = 'flex';
                 setTimeout(() => {
                     digitalList.style.opacity = '1';
@@ -663,6 +675,7 @@
             digitalList.style.opacity = '0';
             setTimeout(() => {
                 digitalList.style.display = 'none';
+                resetListDisplay(visualList);  // 비주얼 리스트 초기화
                 visualList.style.display = 'flex';
                 setTimeout(() => {
                     visualList.style.opacity = '1';
@@ -694,6 +707,90 @@
         digitalList.style.opacity = '1';
         visualList.style.display = 'none';
         visualList.style.opacity = '0';
+    });
+    </script>
+    <!-- 초성 검색, 일반 검색 js -->
+    <script>
+    // 한글 초성 분리 함수
+    function getChosung(str) {
+        const cho = ["ㄱ","ㄲ","ㄴ","ㄷ","ㄸ","ㄹ","ㅁ","ㅂ","ㅃ","ㅅ","ㅆ","ㅇ","ㅈ","ㅉ","ㅊ","ㅋ","ㅌ","ㅍ","ㅎ"];
+        let result = "";
+        for (let i = 0; i < str.length; i++) {
+            const code = str.charCodeAt(i) - 44032;
+            if (code > -1 && code < 11172) {
+                result += cho[Math.floor(code / 588)];
+            }
+        }
+        return result;
+    }
+
+    // 검색 기능 구현
+    document.querySelector('.sub_nav .search input').addEventListener('input', function(e) {
+        const searchValue = e.target.value.trim();
+        
+        // 현재 활성화된 리스트 확인
+        const digitalList = document.getElementById('DigitalDesignList');
+        const visualList = document.getElementById('VisualDesignList');
+        const currentList = digitalList.style.display !== 'none' ? digitalList : visualList;
+        
+        // 해당 리스트의 모든 li 요소 선택
+        const items = currentList.querySelectorAll('li');
+        
+        items.forEach(item => {
+            const nameKr = item.querySelector('.name_kr').textContent;
+            const nameChosung = getChosung(nameKr);
+            const searchChosung = getChosung(searchValue);
+            
+            // 검색어가 초성인지 확인
+            const isChosung = /^[ㄱ-ㅎ]+$/.test(searchValue);
+            
+            if (searchValue === '') {
+                // 검색어가 없으면 모든 항목 표시
+                item.style.display = 'block';
+            } else if (isChosung) {
+                // 초성 검색
+                if (nameChosung.startsWith(searchValue)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            } else {
+                // 일반 검색
+                if (nameKr.includes(searchValue)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            }
+        });
+
+        // 보이는 항목들의 레이아웃 조정
+        adjustLayout(currentList);
+    });
+
+    // 레이아웃 조정 함수
+    function adjustLayout(list) {
+        const visibleItems = Array.from(list.querySelectorAll('li')).filter(item => 
+            item.style.display !== 'none'
+        );
+        
+        // 마지막 줄의 아이템들 정렬 조정
+        const remainder = visibleItems.length % 3;
+        if (remainder > 0) {
+            const lastRowStart = visibleItems.length - remainder;
+            for (let i = lastRowStart; i < visibleItems.length; i++) {
+                visibleItems[i].style.marginRight = '1.563vw';
+            }
+            visibleItems[visibleItems.length - 1].style.marginRight = 'auto';
+        }
+    }
+
+    // 페이지 로드 시 초기 레이아웃 설정
+    window.addEventListener('load', function() {
+        const digitalList = document.getElementById('DigitalDesignList');
+        const visualList = document.getElementById('VisualDesignList');
+        adjustLayout(digitalList);
+        adjustLayout(visualList);
     });
     </script>
 </body>
