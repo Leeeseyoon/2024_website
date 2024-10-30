@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/designer.css">
     <title>DESIGNER</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 </head>
 <body>
     <!-- 사이트 공통 내비게이션 -->
@@ -22,29 +24,54 @@
             </ul>
         </div>
     </div>
+    <!-- 모바일 헤더 -->
+    <!-- <div class="phone">
+        <div class="container">
+            <span class="logo"><img src="" alt=""></span>
+            <span class="location">DESIGNERS</span>
+            <span class="menu-trigger">
+                <i class="menu-trigger-bar top"></i>
+                <i class="menu-trigger-bar middle"></i>
+                <i class="menu-trigger-bar bottom"></i>
+            </span>
+            <span class="close-trigger">
+                <i class="close-trigger-bar left"></i>
+                <i class="close-trigger-bar right"></i>
+            </span>
+            <div class="inner-container">
+                <i class="menu-bg top"></i>
+                <i class="menu-bg middle"></i>
+                <i class="menu-bg bottom"></i>
+                <div class="menu-container">
+                <ul class="menu">
+                    <li>
+                    <a href="about.html">IDENTITY</a>
+                    </li>
+                    <li>
+                    <a href="works.html">WORKS</a>
+                    </li>
+                    <li>
+                    <a href="designer.html">DESIGNERS</a>
+                    </li>
+                    <li>
+                    <a href="info.html">INFO</a>
+                    </li>
+                </ul>
+                </div>
+            </div>
+        </div>
+    </div> -->
 
     <!-- 메인 컨텐츠 -->
     <div class="main">
-        <!-- <div class="sub_nav">
-            <div class="selector">
-                <select name="Major" id="">
-                    <option value="">Digital Design</option>
-                    <option value="">Visual Design</option>
-                </select>
-            </div>
-            <div class="search">
-                <input name="" placeholder="search" type="search">
-            </div>
-        </div> -->
         <div class="main_wrap">
-        <!-- 수정한 셀렉바 -->
         <div class="sub_nav">
             <div class="select_mate" data-mate-select="active" >
                 <select name="" onchange="" onclick="return false;" id="">
                     <option value="digital">Digital Design</option>
                     <option value="visual">Visual Design</option>
                 </select>
-                <p class="selecionado_opcion"  onclick="open_select(this)" ></p><span onclick="open_select(this)" class="icon_select_mate" ><svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                <p class="selecionado_opcion"  onclick="open_select(this)" ></p><span onclick="open_select(this)" class="icon_select_mate" >
                     <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
                     <path d="M0-.75h24v24H0z" fill="none"/>
                 </svg></span>
@@ -56,7 +83,7 @@
                 <input name="" placeholder="이름을 검색하세요" type="search" spellcheck="false">
             </div>
         </div>
-        <!-- 수정한 셀렉바의 js -->
+        <!-- 셀렉바 js -->
         <script>
             window.onload = function(){
             crear_select();
@@ -234,7 +261,7 @@
                             <img src="images/designer/b/2B_김준희_프로필사진.jpg" alt="">
                         </div>
                         <div class="stu_txt">
-                            <div class="name_kr">김���희</div>
+                            <div class="name_kr">김준희</div>
                             <div class="name_eng">Kim Junehee</div>
                         </div>
                     </a>
@@ -355,7 +382,7 @@
                             <img src="images/designer/b/2B_이지우_프로필사진.jpg" alt="">
                         </div>
                         <div class="stu_txt">
-                            <div class="name_kr">이지우</div>
+                            <div class="name_kr">이지</div>
                             <div class="name_eng">Lee Jiwoo</div>
                         </div>
                     </a>
@@ -642,7 +669,7 @@
         var li_s = document.querySelectorAll("[data-indx-select='" + selc + "'] .cont_select_int > li");
         var p_act = document.querySelectorAll("[data-indx-select='" + selc + "'] > .selecionado_opcion")[0].innerHTML = li_s[indx].innerHTML;
         
-        // 검색창 초기화 및 모든 항목 표시
+        // 검색창 초기화 및 모든 항목 표
         const searchInput = document.querySelector('.sub_nav .search input');
         searchInput.value = ''; // 검색어 초기화
         
@@ -864,6 +891,153 @@
             adjustLayout(digitalList);
             adjustLayout(visualList);
         });
+    </script>
+    <!-- 모바일 헤더 -->
+    <script>
+        //OPEN TRIGGER
+    var openTrigger = $('.menu-trigger');
+    var openTriggerTop = openTrigger.find('.menu-trigger-bar.top');
+    var openTriggerMiddle = openTrigger.find('.menu-trigger-bar.middle');
+    var openTriggerBottom = openTrigger.find('.menu-trigger-bar.bottom');
+
+    //CLOSE TRIGGER
+    var closeTrigger = $('.close-trigger');
+    var closeTriggerLeft = closeTrigger.find('.close-trigger-bar.left');
+    var closeTriggerRight = closeTrigger.find('.close-trigger-bar.right');
+
+    //LOGO
+    var logo = $('.logo');
+
+    //MENU
+    var menuContainer = $('.menu-container');
+    var menu = $('.menu');
+    var menuTop = $('.menu-bg.top');
+    var menuMiddle = $('.menu-bg.middle');
+    var menuBottom = $('.menu-bg.bottom');
+
+    //TL
+    var tlOpen = new TimelineMax({paused: true});
+    var tlClose = new TimelineMax({paused: true});
+
+    //OPEN TIMELINE
+    tlOpen.add("preOpen")
+    .to(logo, 0.4, {
+                scale: 0.8,
+                opacity: 0,
+                ease: Power2.easeOut
+            }, "preOpen")
+    .to(openTriggerTop, 0.4, {
+    x: "+80px", y: "-80px", delay: 0.1, ease: Power4.easeIn, onComplete: function() {
+        closeTrigger.css('z-index','25');
+    }
+    }, "preOpen")
+    .to(openTriggerMiddle, 0.4, {
+    x: "+=80px", y: "-=80px", ease: Power4.easeIn,
+    onComplete: function() {
+        openTrigger.css('visibility','hidden');
+    }
+    }, "preOpen")
+    .to(openTriggerBottom, 0.4, {
+    x: "+=80px", y: "-=80px", delay: 0.2, ease: Power4.easeIn
+    }, "preOpen")
+    .add("open", "-=0.4")
+    .to(menuTop, 0.8, {
+    y: "13%",
+    ease: Power4.easeInOut
+    }, "open")
+    .to(menuMiddle, 0.8, {
+    scaleY: 1,
+    ease: Power4.easeInOut
+    }, "open")
+    .to(menuBottom, 0.8, {
+    y: "-114%",
+    ease: Power4.easeInOut
+    }, "open")
+    .fromTo(menu, 0.6, {
+    y: 30, opacity: 0, visibility: 'hidden'
+    }, {
+    y: 0, opacity: 1, visibility: 'visible', ease: Power4.easeOut
+    }, "-=0.2")
+    .add("preClose", "-=0.8")
+    .to(closeTriggerLeft, 0.8, {
+    x: "-=100px", y: "+=100px", ease: Power4.easeOut
+    }, "preClose")
+    .to(closeTriggerRight, 0.8, {
+    x: "+=100px", y: "+=100px", delay: 0.2, ease: Power4.easeOut
+    }, "preClose");
+
+    //CLOSE TIMELINE
+    tlClose.add("close")
+    .to(menuTop, 0.2, {
+    backgroundColor: "var(--color-black)", ease: Power4.easeInOut, onComplete: function() {
+        logo.css('z-index','26');
+        closeTrigger.css('z-index','5');
+    openTrigger.css('visibility','visible');
+    }
+    }, "close")
+    .to(menuMiddle, 0.2, {
+    backgroundColor: "var(--color-black)", ease: Power4.easeInOut
+    }, "close") 
+    .to(menuBottom, 0.2, {
+    backgroundColor: "var(--color-black)", ease: Power4.easeInOut
+    }, "close")
+    .to(menu, 0.6, {
+    y: 20, opacity: 0, ease: Power4.easeOut, onComplete: function() {
+        menu.css('visibility','hidden');
+    }
+    }, "close")
+    .to(logo, 0.8, {
+    scale: 1, opacity: 1, ease: Power4.easeInOut
+    }, "close", "+=0.2")
+    .to(menuTop, 0.8, {
+    y: "-113%",
+    ease: Power4.easeInOut
+    }, "close", "+=0.2")
+    .to(menuMiddle, 0.8, {
+    scaleY: 0,
+    ease: Power4.easeInOut
+    }, "close", "+=0.2")
+    .to(menuBottom, 0.8, {
+    y: "23%",
+    ease: Power4.easeInOut,
+    onComplete: function() {
+        menuTop.css('background-color','#ffffff');
+        menuMiddle.css('background-color','#ffffff');
+        menuBottom.css('background-color','#ffffff');
+    }
+    }, "close", "+=0.2")
+    .to(closeTriggerLeft, 0.2, {
+    x: "+=100px", y: "-=100px", ease: Power4.easeIn
+    }, "close")
+    .to(closeTriggerRight, 0.2, {
+    x: "-=100px", y: "-=100px", delay: 0.1, ease: Power4.easeIn
+    }, "close")
+    .to(openTriggerTop, 1, {
+    x: "-=80px", y: "+=80px", delay: 0.2, ease: Power4.easeOut
+    }, "close")
+    .to(openTriggerMiddle, 1, {
+    x: "-=80px", y: "+=80px", ease: Power4.easeOut
+    }, "close")
+    .to(openTriggerBottom, 1, {
+    x: "-=80px", y: "+=80px", delay: 0.1, ease: Power4.easeOut
+    }, "close");
+
+    //EVENTS
+    openTrigger.on('click', function(){
+    if(tlOpen.progress() < 1){
+                    tlOpen.play();
+                } else {
+                    tlOpen.restart();
+                }
+    });
+        
+    closeTrigger.on('click', function(){
+    if(tlClose.progress() < 1){
+                    tlClose.play();
+                } else {
+                    tlClose.restart();
+                }
+    });
     </script>
 </body>
 </html>
