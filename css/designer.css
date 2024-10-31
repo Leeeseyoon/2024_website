@@ -296,7 +296,7 @@ body {
         height: fit-content;
         display: flex;
         justify-content: space-between;
-        margin-bottom: 47px;
+        margin-bottom: 20px;
     }
     
     .icon_select_mate {
@@ -374,20 +374,25 @@ body {
     }
 
     .content_wrap ul li {
-        width: calc((100% - 10px) / 2);  /* 2개의 li와 1개의 간격(10px)을 고려한 너비 */
-        margin-right: 10px;  /* 고정 간격으로 변경 */
-        margin-bottom: 10px;  /* 고정 간격으로 변경 */
+        width: calc((100% - 10px) / 2);
+        margin-right: 10px !important;
+        margin-bottom: 30px;
         aspect-ratio: 0.75;
     }
 
-    /* 2n번째(짝수) 아이템의 오른쪽 마진 제거 */
+    /* 2n번째 아이템에만 마진 제거 */
     .content_wrap ul li:nth-child(2n) {
-        margin-right: 0;
+        margin-right: 0 !important;
     }
 
-    /* 기존 3n 규칙 제거 */
+    /* 3n 규칙 완전 무효화 */
     .content_wrap ul li:nth-child(3n) {
-        margin-right: 10px;
+        margin-right: 10px !important;
+    }
+    
+    /* 2n인 경우는 항상 margin-right 0 유지 */
+    .content_wrap ul li:nth-child(2n) {
+        margin-right: 0 !important;
     }
 
     .content_wrap ul li .stu_txt {
@@ -410,7 +415,7 @@ body {
         margin-top: 10px;
         color: var(--color-darkgray);
     }
-        }
+}
     
 
 /* 리스트 전환 애니메이션 스타일 */
