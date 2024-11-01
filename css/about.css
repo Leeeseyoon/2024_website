@@ -35,7 +35,7 @@ body {
 .main .info_wrap .info_txt .info_title h3 {
     font-size: 32px;
     font-weight: 500;
-    color: var(--color-darkgray);
+    color: var(--color-orange);
 }
 .main .info_wrap .info_txt .info_article {
     width: 100%;
@@ -86,18 +86,18 @@ body {
     line-height: 30px;
 }
 .tab_img {
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin-top: 250px;
+    margin-bottom: 200px;
     width: 100%;
     display: flex;
     justify-content: center;
 }
-.tab_img img { /*이미지 위치 확인용! 나중에 삭제할 것*/
+/* .tab_img img {
     background-color: lightgray;
     color: var(--color-black);
     font-size: 30px;
 }
-
+ */
 
 /* :::: 아이덴티티 섹션 :::: */
 #identity .tab_txt .tab_article {
@@ -123,6 +123,7 @@ body {
     height: 705px;
 }
 #identity .tab_section .img2 img {
-    width: 500px;
-    height: 270px;
+    max-width: 100%;    /* 반응형 */
+    width: 80%;     /* 고정 크기 */
+    height: auto;
 }
