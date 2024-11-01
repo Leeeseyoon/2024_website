@@ -78,10 +78,10 @@ a {
     align-items: center;
     margin: 0 auto;
 }
-.header .h_logo {
-    width: 10.104vw;
-    height: 2.604vw;
-    background-color: lightgray;
+.header .h_logo img{
+    width: 22.8vw;
+    height: 5vw;
+    margin-top: 5%;
 }
 .header .h_nav li {
     float: left;

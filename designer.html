@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/designer.css">
+    <link rel="stylesheet" href="css/topbutton.css">
     <title>DESIGNER</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -14,7 +15,7 @@
     <div class="header">
         <div class="nav_wrap">
             <div class="h_logo">
-                <h1><a href="index.html"><img src="" alt=""></a></h1>
+                <h1><a href="index.html"><img src="./images/logo.png" alt="Panorama logo"></a></h1>
             </div>
             <ul class="h_nav">
                 <li><button><a href="about.html">IDENTITY</a></button></li>
@@ -64,6 +65,12 @@
 
     <!-- 메인 컨텐츠 -->
     <div class="main">
+        <!-- 배경 텍스트 추가 -->
+        <div class="background-text">
+            <span>DESIGNERS</span>
+            <span>CREATIVE</span>
+        </div>
+        
         <div class="main_wrap">
         <div class="sub_nav">
             <div class="select_mate" data-mate-select="active" >
@@ -390,7 +397,7 @@
                 <li>
                     <a href="#">
                         <div class="stu_img">
-                            <img src="images/designer/b/2B_임율_프로필사진.jpg" alt="">
+                            <img src="images/designer/b/2B_임율_프로��사진.jpg" alt="">
                         </div>
                         <div class="stu_txt">
                             <div class="name_kr">임 율</div>
@@ -656,7 +663,14 @@
             </ul>
         </div> <!-- //content_wrap -->
         </div> <!-- //main_wrap -->
+        
     </div>
+
+    <!-- Top 버튼 -->
+    <div class="button-container"></div>
+            <div class="moveTopBtn"><h1>▲</h1></div>
+        </div>
+        <script src="js/topbutton.js"></script>
 
     <!-- 디지털/비주얼 리스트 불러오는 js -->
     <script>
@@ -760,7 +774,7 @@
             return result;
         }
     
-        // 디바운스 함수 추가
+        // 디바스 함수 추가
         function debounce(func, wait) {
             let timeout;
             return function executedFunction(...args) {
@@ -1039,5 +1053,37 @@
                 }
     });
     </script>
+
+
+<!-- 글자 스크립트 -->
+    <script>
+    window.addEventListener('scroll', function() {
+        const scrollPosition = window.scrollY;
+        const backgroundText = document.querySelector('.background-text');
+        
+        // 스크롤 위치에 따라 투명도 계산 (0.08에서 0.05까지)
+        let opacity = 0.8 - (scrollPosition * 0.5);
+        
+        // 최소, 최대 투명도 제한
+        opacity = Math.max(0.5, Math.min(0.8, opacity));
+        
+        // 투명도 적용
+        backgroundText.style.opacity = opacity;
+    });
+    </script>
+
+    <script>
+    document.addEventListener('touchmove', function(e) {
+        const scrollPosition = window.scrollY;
+        const backgroundText = document.querySelector('.background-text');
+        
+        let opacity = 0.8 - (scrollPosition * 0.5);
+        opacity = Math.max(0.5, Math.min(0.8, opacity));
+        
+        backgroundText.style.opacity = opacity;
+    }, { passive: true });
+    </script>
+
+    
 </body>
 </html>

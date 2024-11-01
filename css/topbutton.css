@@ -1,0 +1,24 @@
+/* Top */
+/* 하단 버튼 */
+.moveTopBtn { 
+    position: fixed;
+    bottom: 1rem;
+        right: 1rem;
+        width: 4rem;
+        height: 4rem;
+        background-color: white;
+        border-radius: 50%;
+        color: #000000;
+}
+.moveTopBtn h1{font-size: 1.8rem; margin-top: 13%; margin-left: 25%;}
+.button-container {position: relative;z-index: 1;}
+
+.button-container button {
+position: absolute;
+font-size: 16px;
+}
+.moveTopBtn:hover{
+    transition: 0.5s ease;
+    background-color: #ff8623;
+    scale: 1.2;
+}
