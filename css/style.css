@@ -43,7 +43,7 @@
     margin: 0;
     padding: 0;
     list-style-type: none;
-    user-select: none;
+    /*user-select: none;*/
 }
 
 /*스크롤바 숨기기(삭제해도됨)*/
