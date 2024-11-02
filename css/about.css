@@ -58,7 +58,7 @@ body {
 .main .info_wrap .info_txt .info_article .article_eng p {
     font-size: 20px;
     font-weight: 300;
-    line-height: 30px;
+    line-height: 35px;
 }
 
 /* :::: 카테고리별 탭 섹션 시작 :::: */
@@ -87,7 +87,7 @@ body {
 .tab_section p { /*본문 폰트*/
     font-size: 20px;
     font-weight: 300;
-    line-height: 30px;
+    line-height: 35px;
 }
 .tab_img {
     margin-top: 250px;
