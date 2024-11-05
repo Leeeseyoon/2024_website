@@ -5,9 +5,10 @@ const node3 = document.getElementById('letters3')
 
 const radius1 = 280
 const radius2 = 120
+const radius3 = 190
 const content = '시각의 경계를 넘어 우리만의 이야기로 담다'
 const content2 = 'PANORAMA'
-const content3 = 'NEW TEXT HERE'
+const content3 = '나는 집에 매우 가고 싶다'
 
 function generateLetters(text, targetNode, radius) {
   targetNode.innerHTML = ''
@@ -37,7 +38,7 @@ function transform(deg, radius = 180) {
 
 generateLetters(content, node, radius1)
 generateLetters(content2, node2, radius2)
-generateLetters(content3, node3, radius2)
+generateLetters(content3, node3, radius3)
 
 function rotate() {
   let degree = 0
