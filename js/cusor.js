@@ -23,7 +23,7 @@
     };
 
     const cursorScaleUp = function() {
-        cursor.style.transform = 'scale(2.5)';
+        cursor.style.transform = 'scale(5.5)';
         cursor.style.transition = 'transform 0.3s ease';
         cursor.style.mixBlendMode = 'difference';
     };
@@ -33,7 +33,7 @@
         cursor.style.mixBlendMode = 'normal';
     };
 
-    const infoTitle = document.querySelectorAll('.info_title h2, .identity_title');
+    const infoTitle = document.querySelectorAll('.info_title h2, .identity_title, .tab_title h2, .tab_img img');
 
     link.forEach(b => b.addEventListener('mousemove', animateit));
     link.forEach(b => b.addEventListener('mouseleave', editCursor));
