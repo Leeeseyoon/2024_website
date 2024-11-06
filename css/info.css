@@ -147,17 +147,18 @@ body {
 }
 #comittee .tab_article .comittee_name {
     float: right;
-    width: 12%;
+    width: fit-content;
+    display: flex;
+    gap: 10px;
 }
 #comittee .tab_article .main_comittee {
     float: right;
-    width: 15%;
-    outline: 1px solid red;
+    width: fit-content;
+    display: flex;
 }
 #comittee .tab_article .comittee_name ul li {
     margin-bottom: 0.5rem;
     font-size: 1.125rem;
-    outline: 1px solid red;
 }
 /*직함*/
 #comittee .tab_article .comittee_name .name_left {
@@ -244,8 +245,12 @@ body {
     font-size: 1.125rem;
     font-weight: 300;
     margin-bottom: 1.25rem;
+    white-space: nowrap;
 }
-
+/* 모바일용 -- 데스크탑에선 숨김*/
+#comittee .tab_article .mobile_ver{
+    display: none;
+}
 
 /* :::: js용 CSS :::: */
 .anim-out {
@@ -258,3 +263,90 @@ body {
 }
 
 /* 반응형 */
+@media (max-width: 768px){}
+
+@media (max-width: 480px) {
+    .main {
+        padding: 30vw 20px 20vw;
+    }
+    .main .info_wrap .info_img {
+        width: 100%;
+        height: 55vw;
+    }
+    .main .info_wrap .info_txt .info_title h2 {
+        font-size: 5rem;
+        font-weight: 500;
+        margin-top: 1rem;
+    }
+
+    .main .info_wrap .info_txt .info_title h3 {
+        font-size: 2.2rem;
+        font-weight: 400;
+        color: var(--color-darkgray);
+    }
+    .category_wrap button {
+        font-size: 2.5rem;
+        font-weight: 600;
+        margin-bottom: 5vw;
+    }
+    .tab_section h2 { /*제목 폰트*/
+        font-size: 3.5rem;
+        font-weight: 500;
+    }
+    
+    .tab_section p { /*본문 폰트*/
+        font-size: 2.5rem;
+        font-weight: 300;
+        line-height: 1.8;
+    }
+
+    #comittee .tab_article .comittee_info {
+        float: none;
+        width: 100%;
+    }
+    /* 데스크탑용 숨김 처리 */
+    #comittee .tab_article .comittee_name {
+        display: none;
+    }
+    #comittee .tab_article .main_comittee {
+        display: none;
+    }
+    /* 모바일용 활성화 */
+    #comittee .tab_article .mobile_ver{
+        width: 100%;
+        height: fit-content;
+        display: block;
+        /* outline: solid 1px rgb(0, 255, 55); */
+        margin: 5vw 0 10vw;
+        
+    }
+    #comittee .tab_article .mobile_ver ul{
+        /* outline: solid 1px rgb(0, 17, 255); */
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    #comittee .tab_article .mobile_ver ul li{
+        display: flex;
+        width: fit-content;
+        flex-direction: row;
+        /* outline: solid 1px red; */
+    }
+    #comittee .tab_article .mobile_ver ul li p{
+        font-size: 2.2rem;
+        font-weight: 400;
+    }
+    #comittee .tab_article .mobile_ver ul li span{
+        letter-spacing: 0.625rem;
+    }
+    #comittee .tab_article .mobile_ver .chair span{
+        margin-left: 11px;
+    }
+    #comittee .tab_article .mobile_ver span::before {
+        content: '|';
+        color: var(--color-darkgray);
+        margin: 0 5px;
+    }
+
+}
