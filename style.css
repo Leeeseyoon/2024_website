@@ -1,0 +1,23 @@
+.menu-container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 5;
+}
+
+.menu-container.active {
+    z-index: 330;
+}
+
+.menu {
+    display: block;
+    width: 100%;
+    padding: 20%;
+    pointer-events: auto;
+}
+
+.menu-bg {
+    z-index: 4;
+} 
