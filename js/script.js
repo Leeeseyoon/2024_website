@@ -77,16 +77,19 @@ document.addEventListener("DOMContentLoaded", function () {
                     imgContainer.style.display = "flex";
                     imgContainer.style.alignItems = "flex-end";
                     imgContainer.style.pointerEvents = "none";
-                    imgContainer.style.marginTop = "0px";
-                    imgContainer.style.marginLeft = "940px";
-                    imgContainer.style.width = "670px";
+                    
+                    imgContainer.style.marginLeft = "840px";
+                    imgContainer.style.width = "760px";
+                    imgContainer.style.height = "570px";
+                    imgContainer.style.marginTop = "130px";
+                    imgContainer.style.objectFit = "cover"; 
 
                     const imgSrc = `./assets/img${index + 1}.jpg`;
                     const img = document.createElement("img");
                     img.src = imgSrc;
-                    img.style.width = "670px";
-                    img.style.height = "480px";
-                    img.style.marginTop = "230px";
+                    img.style.width = '100%';
+                    img.style.height = "100%";
+                    img.style.marginTop = "100%";
                     img.style.objectFit = "cover"; 
                     img.style.marginLeft = "0px";
 

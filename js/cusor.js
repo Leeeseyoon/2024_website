@@ -23,7 +23,7 @@
     };
 
     const cursorScaleUp = function() {
-        cursor.style.transform = 'scale(5.5)';
+        cursor.style.transform = 'scale(4)';
         cursor.style.transition = 'transform 0.3s ease';
         cursor.style.mixBlendMode = 'difference';
     };

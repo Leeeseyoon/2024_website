@@ -79,8 +79,8 @@ a {
     margin: 0 auto;
 }
 .header .h_logo img{
-    width: 22.8vw;
-    height: 5vw;
+    width: 15vw;
+    height: auto;
     margin-top: 5%;
 }
 .header .h_nav li {
