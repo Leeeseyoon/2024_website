@@ -227,11 +227,16 @@ body {
     line-height: 2.5rem;
     text-align: left;
 }
+#thanksto .tab_article .right_txt p span::after{
+    content: '|';
+    color: var(--color-darkgray);
+    margin: 0 5px;
+}
 #thanksto .tab_article .right_txt {
     width: 35%;
 }
 #thanksto .tab_article .right_txt span {
-    font-weight: 400;
+    font-weight: 300;
 }
 #thanksto .tab_article .article_professor,
 #thanksto .tab_article .article_donation,
@@ -243,9 +248,14 @@ body {
 }
 #thanksto .tab_article .article_event ul li {
     font-size: 1.125rem;
-    font-weight: 300;
+    font-weight: 400;
     margin-bottom: 1.25rem;
     white-space: nowrap;
+}
+#thanksto .tab_article .article_event ul li span::after {
+    content: '|';
+    color: var(--color-darkgray);
+    margin: 0 5px;
 }
 /* 모바일용 -- 데스크탑에선 숨김*/
 #comittee .tab_article .mobile_ver{
@@ -293,7 +303,7 @@ body {
         font-size: 3.5rem;
         font-weight: 500;
     }
-    
+
     .tab_section p { /*본문 폰트*/
         font-size: 2.5rem;
         font-weight: 300;
@@ -347,6 +357,82 @@ body {
         content: '|';
         color: var(--color-darkgray);
         margin: 0 5px;
+    }
+    /* 졸전 참여자 */
+    #participants .tab_title {
+        padding: 7.5521vw 0 3vw 0;
+    }
+    #participants .tab_article ul {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        /* outline: solid 1px green; */
+    }
+    #participants .tab_article ul li {
+        width: calc(100% / 5);
+        margin-right: 0;
+        margin-bottom: 0;
+        text-align: center;
+        font-size: 2.6rem;
+        font-weight: 400;
+        margin-bottom: 10vw;
+    }
+    #participants .tab_article ul li:nth-child(6n+1) {
+        text-align: center;
+    }
+    #participants .tab_article ul li:nth-child(6n) {
+        text-align: center;
+    }
+    #participants .tab_article ul li:nth-child(5n+1) {
+        text-align: left;
+    }
+    #participants .tab_article ul li:nth-child(5n) {
+        text-align: right;
+    }
+    /* thanks to */
+    #thanksto .tab_title{
+        margin-bottom: 10px;
+    }
+    #thanksto .article_professor, .article_donation{
+        align-items: center;
+    }
+    #thanksto .tab_article .left_title h4 {
+        font-size: 2.5rem;
+        font-weight: 500;
+    }
+    #thanksto .tab_article .right_txt p {
+        font-size: 2.2rem;
+        line-height: 2.5rem;
+        text-align: left;
+    }
+    #thanksto .tab_article .right_txt {
+        width: fit-content;
+    }
+    #thanksto .tab_article .right_txt span {
+        font-weight: 300;
+        font-size: 2.2rem;
+    }
+    /* 행사준비 */
+    #thanksto .tab_article .article_event ul li {
+        font-size: 2.2rem;
+        font-weight: 300;
+        margin-bottom: 1.25rem;
+        white-space: nowrap;
+        width: 100%;
+    }
+    #thanksto .tab_article .article_event ul li span::after {
+        content: '|';
+        color: var(--color-darkgray);
+        margin: 0 5px;
+    }
+    #thanksto .tab_article .article_event {
+        /* outline: solid 1px red; */
+        display: flex;
+        flex-direction: column;
+    }
+    #thanksto .tab_article .article_event .left_title{
+    margin-bottom: 10px;
     }
 
 }
