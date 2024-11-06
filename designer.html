@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/designer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Odibee+Sans&display=swap" rel="stylesheet">
     <title>DESIGNER</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -25,7 +28,7 @@
         </div>
     </div>
     <!-- 모바일 헤더 -->
-    <!-- <div class="phone">
+    <div class="phone">
         <div class="container">
             <span class="logo"><img src="" alt=""></span>
             <span class="location">DESIGNERS</span>
@@ -60,7 +63,7 @@
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
 
     <!-- 메인 컨텐츠 -->
     <div class="main">
@@ -335,7 +338,7 @@
                 <li>
                     <a href="#">
                         <div class="stu_img">
-                            <img src="images/designer/b/2B_원세연_프로필사진.jpg" alt="">
+                            <img src="images/designer/b/2B_원세연_프로필사��.jpg" alt="">
                         </div>
                         <div class="stu_txt">
                             <div class="name_kr">원세연</div>
@@ -382,7 +385,7 @@
                             <img src="images/designer/b/2B_이지우_프로필사진.jpg" alt="">
                         </div>
                         <div class="stu_txt">
-                            <div class="name_kr">이지</div>
+                            <div class="name_kr">이</div>
                             <div class="name_eng">Lee Jiwoo</div>
                         </div>
                     </a>
@@ -919,6 +922,12 @@
     var tlOpen = new TimelineMax({paused: true});
     var tlClose = new TimelineMax({paused: true});
 
+    // 초기 상태 설정
+    gsap.set(menuBottom, {
+        y: "100%",  // 초기에 화면 밖으로
+        visibility: "hidden"
+    });
+
     //OPEN TIMELINE
     tlOpen.add("preOpen")
     .to(logo, 0.4, {
@@ -951,6 +960,7 @@
     }, "open")
     .to(menuBottom, 0.8, {
     y: "-114%",
+    visibility: "visible",  // 메뉴 열릴 때 보이게
     ease: Power4.easeInOut
     }, "open")
     .fromTo(menu, 0.6, {
@@ -998,7 +1008,8 @@
     ease: Power4.easeInOut
     }, "close", "+=0.2")
     .to(menuBottom, 0.8, {
-    y: "23%",
+    y: "100%",  // 다시 화면 밖으로
+    visibility: "hidden",   // 메뉴 닫힐 때 숨기기
     ease: Power4.easeInOut,
     onComplete: function() {
         menuTop.css('background-color','#ffffff');
@@ -1026,18 +1037,43 @@
     openTrigger.on('click', function(){
     if(tlOpen.progress() < 1){
                     tlOpen.play();
+                    $('.phone').css('z-index', '1000');  // 메뉴 열릴 때 z-index 증가
+                    $('.menu-container').addClass('active');
                 } else {
                     tlOpen.restart();
+                    $('.phone').css('z-index', '1000');
+                    $('.menu-container').addClass('active');
                 }
     });
         
     closeTrigger.on('click', function(){
     if(tlClose.progress() < 1){
                     tlClose.play();
+                    setTimeout(function() {
+                        $('.phone').css('z-index', '1');  // 메뉴 닫힐 때 z-index 감소
+                        $('.menu-container').removeClass('active');
+                    }, 800);  // 애니메이션 완료 후 실행
                 } else {
                     tlClose.restart();
+                    setTimeout(function() {
+                        $('.phone').css('z-index', '1');
+                        $('.menu-container').removeClass('active');
+                    }, 800);
                 }
     });
+
+    // 스크롤 제어 함수 추가
+    function disableScroll() {
+        document.body.style.overflow = 'hidden';
+        document.body.style.height = '100vh';
+        document.body.style.touchAction = 'none'; // 모바일 터치 스크롤 방지
+    }
+
+    function enableScroll() {
+        document.body.style.overflow = '';
+        document.body.style.height = '';
+        document.body.style.touchAction = '';
+    }
     </script>
 </body>
 </html>

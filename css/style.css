@@ -139,12 +139,18 @@ a {
         outline: 1px solid red;
         height: 100px;
     }
-    
+
 }
 /* 모바일 헤더 */
 .phone .container {
-    
+    width: 100%;
+    max-width: 480px;
+    min-height: 800px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
 }
+
 .phone .logo{
     outline: 1px solid red;
     position: absolute;
@@ -162,9 +168,10 @@ a {
     width: 100%;
     top: 32px;
     text-align: center;
-    font-size: 24px;
-    font-weight: 500;
+    font-size: 36px;
     z-index: 332; /* menu-trigger보다 낮은 z-index */
+    font-family: "Odibee Sans", sans-serif;
+
 }
 .menu-trigger, .close-trigger {
     position: absolute;
@@ -339,3 +346,4 @@ a {
     transform: rotate(-45deg) translateY(25%);
     left: -20%;
 }
+
