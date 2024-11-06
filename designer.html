@@ -15,6 +15,7 @@
 </head>
 <body>
     <!-- 사이트 공통 내비게이션 -->
+    <div class="cursor"></div>
     <div class="header">
         <div class="nav_wrap">
             <div class="h_logo">
@@ -29,7 +30,7 @@
         </div>
     </div>
     <!-- 모바일 헤더 -->
-    <div class="phone">
+    <!-- <div class="phone">
         <div class="container">
             <span class="logo"><img src="" alt=""></span>
             <span class="location">DESIGNERS</span>
@@ -64,7 +65,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- 메인 컨텐츠 -->
     <div class="main">
@@ -668,12 +669,16 @@
         </div> <!-- //main_wrap -->
         
     </div>
-
+    <!-- 마우스 커서 JS -->
+    <script src="js/cursor.js"></script>
     <!-- Top 버튼 -->
-    <div class="button-container"></div>
-            <div class="moveTopBtn"><h1>▲</h1></div>
+    <div class="button-container">
+        <div class="moveTopBtn">
+            <img src="images/up-arrow.png" alt="Up Arrow" class="default-img">
+            <img src="images/up-arrow-orange.png" alt="Up Arrow Orange" class="hover-img hidden">
         </div>
-        <script src="js/topbutton.js"></script>
+    </div>
+    <script src="js/topbutton.js"></script>
 
     <!-- 디지털/비주얼 리스트 불러오는 js -->
     <script>

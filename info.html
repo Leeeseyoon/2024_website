@@ -9,6 +9,7 @@
     <title>INFO</title>
 </head>
 <body>
+        <div class="cursor"></div>
         <!-- 사이트 공통 내비게이션 -->
         <div class="header">
             <div class="nav_wrap">
@@ -363,12 +364,18 @@
                     </section>
             </div> <!-- //tab_wrap -->
 
-            <div class="button-container">
-                <div class="moveTopBtn"><h1>▲</h1></div>
+        <!-- top 버튼 -->
+        <div class="button-container">
+            <div class="moveTopBtn">
+                <img src="images/up-arrow.png" alt="Up Arrow" class="default-img">
+                <img src="images/up-arrow-orange.png" alt="Up Arrow Orange" class="hover-img hidden">
             </div>
-            <script src="js/topbutton.js"></script>
+        </div>
+        <script src="js/topbutton.js"></script>
+            
         </div> <!-- //main -->
-    
+        <!-- 마우스 커서 JS -->
+        <script src="js/cursor.js"></script>
         <!--js코드-->
         <script>
             const tabBtnContainer = document.querySelector('.category_wrap');
@@ -405,5 +412,6 @@
     /* 시간 1000>200 */
     
         </script>
+        
 </body>
 </html>

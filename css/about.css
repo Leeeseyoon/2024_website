@@ -5,24 +5,6 @@ body {
 }
 
 
-/* 커서  */
-.cursor {
-    width: 15px;
-    height: 15px;
-    pointer-events: none;
-    position: fixed;
-    padding: 0.3rem;
-    background-color: #fff;
-    border-radius: 50%;
-/*     mix-blend-mode: difference; */
-    transition: transform 0.3s ease;
-}
-
-.hover-this:hover ~ .cursor {
-    transform: translate(-50%, -50%) scale(8);
-}
-
-
 .main {
     width: 100%;
     padding: 8vw 18.75vw 8vw;

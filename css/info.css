@@ -1,6 +1,7 @@
 body {
     background-color: var(--color-black);
     color: var(--color-white);
+    cursor: none;
 }
 
 .main {
@@ -9,6 +10,7 @@ body {
     box-sizing: border-box;
     height: fit-content;
 }
+
 
 /* 드래그 색상 변경 */
 ::selection {color:black;background:var(--color-orange);}
@@ -89,7 +91,7 @@ body {
 .category_btn.selected,
 .category_btn:hover {
     color: var(--color-white);
-    cursor: pointer;
+    cursor: none;
 }
 
 
@@ -273,6 +275,9 @@ body {
 
 /* 반응형 */
 @media (max-width: 480px) {
+    .cursor{
+        display: none;
+    }
     .main {
         padding: 30vw 20px 20vw;
     }
