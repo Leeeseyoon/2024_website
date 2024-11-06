@@ -165,6 +165,9 @@ body {
     .article_eng{
         display: none;
     }
+    .cursor{
+        display: none;
+    }
 
     .main {
         padding: 30vw 20px 20vw;
