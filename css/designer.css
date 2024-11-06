@@ -438,8 +438,6 @@ body {
     pointer-events: none;
 }
 
-
-
 /* 배경 텍스트의 z-index를 더 낮게 설정 */
 .background-text {
     position: fixed;
@@ -507,4 +505,3 @@ body {
         color: var(--color-white);
     }
 }
-
