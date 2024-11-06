@@ -127,7 +127,6 @@ body {
 
 
 
-
 /* :::: 임원 명단 섹션 :::: */
 #comittee {
     padding-bottom: 7.2917vw;
@@ -257,7 +256,7 @@ body {
     color: var(--color-darkgray);
     margin: 0 5px;
 }
-/* 모바일용 -- 데스크탑에선 숨김*/
+/* 모바일용 -- 웹에선 숨김*/
 #comittee .tab_article .mobile_ver{
     display: none;
 }
@@ -273,8 +272,6 @@ body {
 }
 
 /* 반응형 */
-@media (max-width: 768px){}
-
 @media (max-width: 480px) {
     .main {
         padding: 30vw 20px 20vw;
@@ -314,7 +311,7 @@ body {
         float: none;
         width: 100%;
     }
-    /* 데스크탑용 숨김 처리 */
+    /* 웹용 숨김 처리 */
     #comittee .tab_article .comittee_name {
         display: none;
     }
@@ -434,5 +431,4 @@ body {
     #thanksto .tab_article .article_event .left_title{
     margin-bottom: 10px;
     }
-
 }
