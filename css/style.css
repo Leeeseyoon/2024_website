@@ -61,7 +61,7 @@ a {
     text-decoration: none;
 }
 /* 커서  */
-.cursor {
+.custom_cursor {
     width: 15px;
     height: 15px;
     pointer-events: none;
