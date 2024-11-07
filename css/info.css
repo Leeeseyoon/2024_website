@@ -13,7 +13,7 @@ body {
 
 
 /* 드래그 색상 변경 */
-::selection {color:black;background:var(--color-orange);}
+::selection {color:rgb(255, 255, 255);background:var(--color-orange); font-weight: 600;}
 
 /*메인 내비게이션 현재 접속중인 페이지 글씨 하얗게*/
 .header .h_nav li:nth-child(4) a {
