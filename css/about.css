@@ -5,33 +5,15 @@ body {
 }
 
 
-/* 커서  */
-.cursor {
-    width: 15px;
-    height: 15px;
-    pointer-events: none;
-    position: fixed;
-    padding: 0.3rem;
-    background-color: #fff;
-    border-radius: 50%;
-/*     mix-blend-mode: difference; */
-    transition: transform 0.3s ease;
-}
-
-.hover-this:hover ~ .cursor {
-    transform: translate(-50%, -50%) scale(8);
-}
-
-
 .main {
-    width: 1200px;
-    margin: 0 auto;
-    padding-top: 303px;
+    width: 100%;
+    padding: 8vw 18.75vw 8vw;
     box-sizing: border-box;
+    height: fit-content;
 }
 
 /* 드래그 색상 변경 */
-::selection {color:black;background:var(--color-orange);}
+::selection {color:rgb(255, 255, 255);background:var(--color-orange); font-weight: 600;}
 
 
 /*메인 내비게이션 현재 접속중인 페이지 글씨 하얗게*/
@@ -43,24 +25,29 @@ body {
 .main .info_wrap {}
 .main .info_wrap .info_img {
     width: 100%;
-    height: 600px;
+    height: 35vw;
     background-color: lightgray;
+    object-fit: cover;
+}
+.main .info_wrap .info_img img{
+    width: 100%;
+    height: 100%;
 }
 .main .info_wrap .info_txt {
     width: 100%;
 }
 .main .info_wrap .info_txt .info_title {}
 .main .info_wrap .info_txt .info_title h2 {
-    font-size: 64px;
-    font-weight: 700;
-    margin-top: 63px;
-    margin-bottom: 14px;
+    font-size: 3.125rem;
+    font-weight: 500;
+    margin-top: 0.625rem;
 }
 .main .info_wrap .info_txt .info_title h3 {
-    font-size: 32px;
-    font-weight: 500;
-    color: var(--color-orange);
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--color-darkgray);
 }
+/* 전시 소개글 */
 .main .info_wrap .info_txt .info_article {
     width: 100%;
     margin-top: 52px;
@@ -72,20 +59,21 @@ body {
 }
 .main .info_wrap .info_txt .info_article .article_kr,
 .main .info_wrap .info_txt .info_article .article_eng {
-    width: 552px;  
+    width: 45%;  
 }
 .main .info_wrap .info_txt .info_article .article_kr p,
 .main .info_wrap .info_txt .info_article .article_eng p {
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: 300;
-    line-height: 35px;
+    line-height: 1.6;
+    margin-bottom: 3.125rem;
 }
 
 /* :::: 카테고리별 탭 섹션 시작 :::: */
 .tab_wrap {
     width: 100%;
-    margin-top: 150px;
-    margin-bottom: 200px;
+    margin-top: 9.375vw;
+    margin-bottom: 10.417vw;
 }
 
 
@@ -100,28 +88,25 @@ body {
 }
 .tab_section {
     width: 100%;
+    /* outline: 1px solid red; */
 }
 .tab_section h2 { /*제목 폰트*/
-    font-size: 40px;
+    font-size: 2rem;
+    margin-bottom: 1.25rem;
 }
 .tab_section p { /*본문 폰트*/
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: 300;
-    line-height: 35px;
+    line-height: 1.6;
 }
 .tab_img {
-    margin-top: 250px;
-    margin-bottom: 200px;
+    margin: 6.25rem 0;
     width: 100%;
     display: flex;
     justify-content: center;
 }
-/* .tab_img img {
-    background-color: lightgray;
-    color: var(--color-black);
-    font-size: 30px;
-}
- */
+
+
 
 /* :::: 아이덴티티 섹션 :::: */
 #identity .tab_txt .tab_article {
@@ -134,20 +119,99 @@ body {
 }
 
 #identity .identity_title{
-    font-size: 64px;
+    font-size: 4rem;
     font-weight: 700;
+    text-align: center;
+    border-top: 0.125rem solid var(--color-darkgray);
+    border-bottom: 0.125rem solid var(--color-darkgray);
+    padding: 0.625rem 0;
 }
 #identity .tab_txt .tab_article p {}
 #identity .tab_txt .tab_article .article_kr,
 #identity .tab_txt .tab_article .article_eng {
-    width: 552px;
+    width: 45%;
 }
 #identity .tab_section .img1 img {
-    width: 522px;
-    height: 705px;
+    width: 27.1875vw;
+    height: 36.5625vw;
 }
 #identity .tab_section .img2 img {
     max-width: 100%;    /* 반응형 */
-    width: 80%;     /* 고정 크기 */
-    height: auto;
+    width: 100%;     /* 고정 크기 */
+    height: 100%;
+}
+
+/* 모바일 반응형 */
+@media (max-width: 480px) {
+    /* 영문 소개 숨김 */
+    .article_eng{
+        display: none;
+    }
+    .cursor{
+        display: none;
+    }
+
+    .main {
+        padding: 30vw 20px 20vw;
+    }
+    .main .info_wrap .info_img {
+        width: 100%;
+        height: 55vw;
+    }
+    .main .info_wrap .info_txt .info_title h2 {
+        font-size: 5rem;
+        font-weight: 500;
+        margin-top: 1rem;
+    }
+
+    .main .info_wrap .info_txt .info_title h3 {
+        font-size: 2.2rem;
+        font-weight: 400;
+        color: var(--color-darkgray);
+    }
+    .category_wrap button {
+        font-size: 2.5rem;
+        font-weight: 600;
+        margin-bottom: 5vw;
+    }
+    .tab_section h2 { /*제목 폰트*/
+        font-size: 3.5rem;
+        font-weight: 500;
+    }
+    .main .info_wrap .info_txt .info_article {
+        margin-top: 30px;
+    }
+    .main .info_wrap .info_txt .info_article .article_kr,
+    #identity .tab_txt .tab_article .article_kr {
+    width: 100%;  
+    }
+    .main .info_wrap .info_txt .info_article .article_kr p,
+    .tab_section p {
+        font-size: 2.3rem;
+        margin-bottom: 5rem;
+    }
+
+    .tab_section h2 { /*제목 폰트*/
+        font-size: 3.8rem;
+        margin-bottom: 1.25rem;
+    }
+    .tab_img {
+        margin: 6.25rem 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    #identity .identity_title{
+        font-size: 5rem;
+        font-weight: 500;
+        border-top: 0.2rem solid var(--color-darkgray);
+        border-bottom: 0.2rem solid var(--color-darkgray);
+    }
+    #identity .tab_section .img1 img {
+        width: 200px;
+        height: 290px;
+    }
+
+
 }

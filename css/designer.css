@@ -95,7 +95,7 @@ body {
         margin: 0px;  
         transition: all 275ms ease-in-out;
         display: block;
-        cursor: pointer;
+        cursor: none;
         
         &:last-child {
             border-radius: 0.156vw;
@@ -118,7 +118,7 @@ body {
     width: fit-content;
     display: block;
     margin: 0px;
-    cursor: pointer;
+    cursor: none;
 }
 
 .selecionado_opcion::after {
@@ -182,7 +182,7 @@ body {
     height: 1rem;
     width: 1rem;
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23808080'><path d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/></svg>");
-    cursor: pointer;
+    cursor: none;
 }
 
 /* 포커스 시 취소 버튼 색상 변경 */
@@ -415,6 +415,10 @@ body {
         margin-top: 10px;
         color: var(--color-darkgray);
     }
+
+    .background-text span, .cursor{
+        display: none;
+    }
 }
     
 
@@ -478,7 +482,8 @@ body {
     font-size: 20vw;
     font-weight: 900;
     white-space: nowrap;
-    color: var(--color-white); /* 순수 흰색 */
+    color: var(--color-white);
+    opacity: 0.2; /* 순수 흰색 */
     transform: translateX(-0%);
     animation: textMove 10s linear infinite;
     line-height: 1; /* 줄 간격을 줄임 (기본값 1.2) */

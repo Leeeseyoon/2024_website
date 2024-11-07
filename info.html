@@ -9,6 +9,7 @@
     <title>INFO</title>
 </head>
 <body>
+        <div class="cursor"></div>
         <!-- 사이트 공통 내비게이션 -->
         <div class="header">
             <div class="nav_wrap">
@@ -44,7 +45,6 @@
     
             <!-- 카테고리별 탭 섹션 -->
             <div class="tab_wrap">
-    
                 <!-- 카테고리 탭 -->
                 <div class="category_wrap">
                     <button class="category_btn selected" data-filter="comittee">COMITTEE</button>
@@ -54,12 +54,9 @@
     
                 <div class="tab_container">
                     <!-- content_wrap, tab_section은 css 일괄 적용을 위한 공통 클래스명 -->
-                    
-    
                     <!-- comittee 섹션 -->
                     <section id="comittee" class="sections" data-type="comittee">
-                        <div class="content_wrap tab_comittee">
-    
+                            <div class="content_wrap tab_comittee">
                             <!-- 섹션 1 -->
                             <div class="tab_section">
                                 <!-- 제목 -->
@@ -80,21 +77,31 @@
                                                 <li>위원장</li>
                                                 <li>부위원장</li>
                                                 <li>부위원장</li>
-                                                <li>위원장</li>
+                                                <li>총괄팀장</li>
                                             </ul>
                                         </div>
                                         <div class="name_right">
                                             <ul>
                                                 <li>심재정</li>
-                                                <li>황세희</li>
                                                 <li>박윤민</li>
+                                                <li>황세희</li>
                                                 <li>이세윤</li>
                                             </ul>
                                         </div>
                                     </div>
-                                </div>
+                                    <div class="comittee_name main_comittee mobile_ver">
+                                        <ul class="top">
+                                            <li><p class="chair">위원장<span>심재정</span></p></li>
+                                            <li><p>부위원장<span>박윤민</span></p></li>
+                                        </ul>
+                                        <ul class="down">
+                                            <li><p>부위원장<span>황세희</span></p></li>
+                                            <li><p>총괄팀장<span>이세윤</span></p></li>
+                                        </ul>
+                                    </div>
+                                    </div>
                             </div>
-            
+                            
                             <!-- 섹션 2 -->
                             <div class="tab_section">
                                 <!-- 제목 -->
@@ -129,6 +136,19 @@
                                             </ul>
                                         </div>
                                     </div>
+                                    <div class="comittee_name main_comittee mobile_ver">
+                                        <ul class="top">
+                                            <li><p>팀원<span>김민경</span></p></li>
+                                            <li><p>팀원<span>김수아</span></p></li>
+                                        </ul>
+                                        <ul class="middle">
+                                            <li><p>팀원<span>양성우</span></p></li>
+                                            <li><p>팀원<span>이세윤</span></p></li>
+                                        </ul>
+                                        <ul class="down">
+                                            <li><p>팀원<span>황세희</span></p></li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
             
@@ -161,6 +181,15 @@
                                                 <li>윤혜원</li>
                                             </ul>
                                         </div>
+                                    </div>
+                                    <div class="comittee_name main_comittee mobile_ver">
+                                        <ul class="top">
+                                            <li><p>팀원<span>박가람</span></p></li>
+                                            <li><p>팀원<span>이세윤</span></p></li>
+                                        </ul>
+                                        <ul class="down">
+                                            <li><p>팀원<span>윤혜원</span></p></li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -197,11 +226,21 @@
                                             </ul>
                                         </div>
                                     </div>
+                                    <div class="comittee_name main_comittee mobile_ver">
+                                        <ul class="top">
+                                            <li><p>팀원<span>최훈석</span></p></li>
+                                            <li><p>팀원<span>양성우</span></p></li>
+                                        </ul>
+                                        <ul class="down">
+                                            <li><p>팀원<span>이세윤</span></p></li>
+                                            <li><p>팀원<span>황세희</span></p></li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                            
+                            </div>
                     </section>
-    
                     <!-- participants 섹션 -->
                     <section id="participants" class="sections invisible" data-type="participants">
                         <div class="content_wrap tab_participants">
@@ -263,8 +302,6 @@
                             </div>
                         </div>
                     </section>
-                    
-    
                     <!-- thanks to 섹션 -->
                     <section id="thanksto" class="sections invisible" data-type="thanksto">
                         <div class="content_wrap tab_thanksto">
@@ -284,7 +321,7 @@
                                         </div>
                                         <div class="right_txt">
                                             <p>
-                                                배민식 이길배 김경조 문경아
+                                                배민식<span></span>이길배<span></span>김경조<span></span>문경아
                                             </p>
                                         </div>
                                     </div>
@@ -306,11 +343,11 @@
                                         </div>
                                         <div class="right_txt">
                                             <ul>
-                                                <li><span>졸업대표 :</span> 권지연</li>
-                                                <li><span>졸업대표 :</span> 팀장 박소정 김민주 박채경 배인혜</li>
-                                                <li><span>졸업대표 :</span> 팀장 조 안 김예원 도경민 안수현 박건우</li>
-                                                <li><span>졸업대표 :</span> 팀장 장태웅 김지우 박수민</li>
-                                                <li><span>졸업대표 :</span> 팀장 이유진 이지은 전지호</li>
+                                                <li><span>졸업대표</span>권지연</li>
+                                                <li><span>졸업대표</span>박소정 김민주 박채경 배인혜</li>
+                                                <li><span>졸업대표</span>조 안 김예원 도경민 안수현 박건우</li>
+                                                <li><span>졸업대표</span>장태웅 김지우 박수민</li>
+                                                <li><span>졸업대표</span>이유진 이지은 전지호</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -318,15 +355,22 @@
                             </div>
                         </div>
                     </section>
-                </div>
-                
+
+                </div> <!-- //tab_container -->
+            </div> <!-- //tab_wrap -->
+
+        <!-- top 버튼 -->
+        <div class="button-container">
+            <div class="moveTopBtn">
+                <img src="images/up-arrow.png" alt="Up Arrow" class="default-img">
+                <img src="images/up-arrow-orange.png" alt="Up Arrow Orange" class="hover-img hidden">
             </div>
-            <div class="button-container">
-                <div class="moveTopBtn"><h1>▲</h1></div>
-            </div>
-            <script src="js/topbutton.js"></script>
         </div>
-    
+        <script src="js/topbutton.js"></script>
+            
+        </div> <!-- //main -->
+        <!-- 마우스 커서 JS -->
+        <script src="js/cursor.js"></script>
         <!--js코드-->
         <script>
             const tabBtnContainer = document.querySelector('.category_wrap');
@@ -363,5 +407,6 @@
     /* 시간 1000>200 */
     
         </script>
+        
 </body>
 </html>

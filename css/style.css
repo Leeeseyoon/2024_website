@@ -43,8 +43,10 @@
     margin: 0;
     padding: 0;
     list-style-type: none;
+    /* cursor: none; */  /* 최종 때 풀기!! 지우지 말것*/
     /*user-select: none;*/
 }
+
 
 /*스크롤바 숨기기(삭제해도됨)*/
 html {
@@ -57,6 +59,23 @@ html::-webkit-scrollbar {
 
 a {
     text-decoration: none;
+}
+/* 커서  */
+.cursor {
+    width: 15px;
+    height: 15px;
+    pointer-events: none;
+    position: fixed;
+    padding: 0.3rem;
+    background-color: #fff;
+    border-radius: 50%;
+/*     mix-blend-mode: difference; */
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+
+.hover-this:hover ~ .cursor {
+    transform: translate(-50%, -50%) scale(8);
 }
 
 /*내비게이션*/
