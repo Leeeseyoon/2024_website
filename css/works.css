@@ -1,18 +1,17 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 /* 마우스 스크롤시 많은 이동이 없었으면 좋겠어요
 그래그로도 스크롤이 가능했으면 좋겠어요 (ᴗˬᴗ)⁾⁾
 html header, main 추가 */
 
-html, body {
-    width: 100%;
-    height: 6700vh;
-    background-color: var(--color-black);
-    font-family: "Noto sans Kr";
+body {
+    margin: 0;
+    background-color: #15100B;
+    overflow-x: hidden;
+    height: 800vh;
 }
 
 
@@ -25,96 +24,7 @@ html, body {
     object-fit: cover;
 } */
 
-.cursor{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 300px;
-    height: 400px;
-    z-index: 0;
-    pointer-events: none;
-}
 
-nav, footer{
-    position: fixed;
-    width: 100%;
-    padding: 2em;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 2;
-    mix-blend-mode: difference;
-}
-
-a, p{
-    text-decoration: none;
-    color: #fff;
-    font-size: 14px;
-}
-
-a span {
-    padding: 0.2em;
-}
-
-.links {
-    display: flex;
-    gap: 2em;
-}
-
-nav {
-    top: 0;
-}
-
-footer {
-    bottom: 0;
-}
-
-.gallery {
-    position: fixed;
-    width: 200%;
-    height: 100%;
-    left: -75%;
-    overflow: hidden;
-}
-
-.item {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translate(-50%, -50%);
-    width: 800px;
-    height: 80px;
-    cursor: pointer;
-}
-
-.item p{
-    width: 100%;
-    font-size: 42px;
-    font-weight: 500;
-    text-transform: uppercase;
-    color: #fff;
-    transition: font-size 0.3s ease;
-}
-
-.item p span{
-    padding: 0 20px;
-    font-size: 16px;  
-}
-
-.active {
-    font-size: 1.2em; /* 클릭 시 글씨 크기를 증가 */
-    transition: font-size 0.2s; /* 부드러운 전환 효과 */
-    color: white;
-    transform: translateY(-3px);
-}
-
-.nav_left{
-    color: rgb(161, 161, 161);
-}
-
-.selected{
-  fill: #ffff;
-}
 
 
 
@@ -138,22 +48,243 @@ footer {
 
 
 
-        /* PC 화면에서 숨기기 */
-        @media (min-width: 769px) {
-            .container2 {
-                display: none; /* PC에서 숨기기 */
-            }
-            .navigation{
-                display: none;
-            }
-        }
+
 
 
 
         
 
 
+        /* 새로 pc 버전 css */
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        
+        .text-section {
+            position: fixed;
+            left: 28%;
+            top: calc(48% + 2.6vw);
+            transform: translate(-50%, -50%);
+            height: 700px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        .text-item {
+            position: absolute;
+            font-size: 1.5em;
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+            color: transparent;
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            white-space: nowrap;
+            will-change: transform, opacity, font-size, background-image;
+            left: 50%;
+            transform: translateX(-50%);
+            line-height: 1.5;
+            background-clip: text;
+            -webkit-background-clip: text;
+            font-weight: 100;
+            z-index: 2;
+            cursor: pointer;
+        }
+        
+        /* 활성화된 텍스트 (중앙) */
+        .text-item.active {
+            font-size: 2.5em;
+            -webkit-text-stroke: 0;
+            color: #fff !important;
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            font-weight: 700;
+        }
+        
+        /* 비활성화된 텍스트 */
+        .text-item:not(.active) {
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+            color: transparent;
+            transform-origin: left center;
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .text-item.moving-up {
+            background-image: linear-gradient(to bottom, transparent 50%, #fff 50%);
+            background-position: 0 0;
+        }
+        
+        .text-item.moving-up.active {
+            background-position: 0 -100%;
+        }
+        
+        .image-section {
+            position: fixed;
+            right: 10%;
+            top: calc(50% + 2.6vw);
+            transform: translateY(-50%);
+            width: 760px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            overflow: visible;
+        }
+        
+        .image-container {
+            position: absolute;
+            width: 760px;
+            height: 570px;
+            transition: all 0.5s ease;
+            will-change: transform, opacity;
+            transform-origin: center center;
+            margin-top: -40px;
+        }
+        
+        .image-item {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .project-info-item {
+            position: absolute;
+            bottom: -40px;
+            right: 0;
+            font-size: 1.2em;
+            color: rgba(255, 255, 255, 0.5);
+            white-space: nowrap;
+        }
+        
+        .image-container.active {
+            opacity: 1;
+            z-index: 2;
+            transform: translateY(0) scale(1);
+        }
+        
+        .image-container.active .project-info-item {
+            color: rgba(255, 255, 255, 1);
+        }
+        
+        .image-container.adjacent {
+            opacity: 0.2;
+            z-index: 1;
+        }
+        
+        .image-container.adjacent .project-info-item {
+            opacity: 0.3;
+        }
+        
+        /* 위쪽 인접 이미지 */
+        .image-container.adjacent.prev {
+            transform: translateY(-80%) scale(0.8);
+        }
+        
+        /* 래쪽 인접 이미지 */
+        .image-container.adjacent.next {
+            transform: translateY(80%) scale(0.8);
+        }
+        
+        /* 다음 이미지들을 위한 새로운 클래스들 */
+        .image-item.next-1 {
+            opacity: 0.2;
+            transform: scale(0.3) translateY(40px);
+            z-index: 0;
+        }
+        
+        .image-item.next-2 {
+            opacity: 0.1;
+            transform: scale(0.2) translateY(80px);
+            z-index: -1;
+        }
+        
+        /* 프레임 컨테이너 */
+        .frame-container {
+            position: fixed;
+            left: 50px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: calc(100% - 100px);
+            height: 120px;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        /* 위아래 라인만 표시하고 길이 조절 */
+        /* .frame-container::before,
+        .frame-container::after {
+            content: '';
+            position: absolute;
+            left: -20px;
+            right: calc(50% + 200px);
+            height: 1px;
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .frame-container::before {
+            top: 0;
+        }
+        
+        .frame-container::after {
+            bottom: 0;
+        } */
+        
+        /* 기존의 가이드라인 제거 */
+        .guide-container {
+            display: none;
+        }
+        
+        .project-info {
+            position: fixed;
+            right: 10%;
+            top: calc(50% + 350px); /* 이미지 섹션 아래에 위치 */
+            transform: translateY(-50%);
+            z-index: 2;
+        }
+        
+        .project-info-item {
+            position: absolute;
+            font-size: 1.2em;
+            color: rgba(255, 255, 255, 0.5);
+            opacity: 1;
+            transition: all 0.5s ease;
+            white-space: nowrap;
+            will-change: transform, opacity;
+            transform: translateY(0);
+        }
+        
+        .project-info-item.active {
+            color: rgba(255, 255, 255, 1);
+            opacity: 1;
+        }
+        
+        .project-info-item.adjacent {
+            opacity: 0.3;
+        }
+        
+        /* text-item에 커서 포인터 추가 */
+        .text-item {
+            /* 기존 스타일 유지 */
+            cursor: pointer; /* 추가 */
+        }
+        
+        /* 호버 효과 개선 */
+        .text-item:not(.active):hover {
+            opacity: 0.8 !important;
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.7);
+            transition: all 0.3s ease;
+        }
 
+
+
+        @media screen and (max-width: 1910px) {
+            .text-section,
+            .image-section {
+                display: none;
+            }
+        }
         
 
 
