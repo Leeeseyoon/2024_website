@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+function initializeMobile() {
     console.log('Mobile JS loaded');
     
     if (window.innerWidth > 480) {
@@ -26,13 +26,77 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     console.log('Project wheel found');
 
-    const projects = [
-        { title: '배달의 민족 UI Redesign', author: '이세윤' },
-        { title: '당근마켓 UI/UX Design', author: '김민지' },
-        { title: '토스 앱 Redesign', author: '박지훈' },
-        { title: '카카오톡 UI 개선', author: '이지은' },
-        { title: '넷플릭스 모바일 앱 개선', author: '최준호' },
-    ];
+    // 카테고리별 프로젝트 데이터 분리
+    const projectsData = {
+        digital: [
+            { title: 'Ready to play the GAME?', author: '김민경', image: './images/img20.jpg', link: '#' },
+            { title: 'I CREATE DESIGN MAGIC', author: '김민경', image: './images/img21.jpg' , link: '#'},
+            { title: '제목 추가', author: '김수빈', image: './images/img22.jpg' , link: '#'},
+            { title: '인터랙티브 포트폴리오', author: '김수아', image: './images/img23.jpg' , link: '#'},
+            { title: '제목 추가', author: '김승찬', image: './images/img.jpg' , link: '#'},
+            { title: '제목 추가', author: '김준희', image: './images/img25.jpg' , link: '#'},
+            { title: '제목 추가', author: '김태호', image: './images/img.jpg' , link: '#'},
+            { title: '제목 추가', author: '류시은', image: './images/img.jpg' , link: '#'},
+            { title: '제목 추가', author: '박가람', image: './images/img28.jpg' , link: '#'},
+            { title: '제목 추가', author: '심재정', image: './images/img.jpg' , link: '#'},
+            { title: '제목 추가', author: '양성우', image: './images/img.jpg' , link: '#'},
+            { title: '제목 추가', author: '우수지', image: './images/img31.jpg' , link: '#'},
+            { title: '제목 추가', author: '원세연', image: './images/img32.jpg' , link: '#'},
+            { title: '제목 추가', author: '유지수', image: './images/img33.jpg' , link: '#'},
+            { title: '제목 추가', author: '윤비', image: './images/img.jpg' , link: '#'},
+            { title: '제목 추가', author: '이세윤', image: './images/img.jpg' , link: '#'},
+            { title: '제목 추가', author: '이지우', image: './images/img36jpg' , link: '#'},
+            { title: '제목 추가', author: '임율', image: './images/img.jpg' , link: '#'},
+            { title: '제목 추가', author: '임현준', image: './images/img.jpg' , link: '#'},
+            { title: '제목 추가', author: '장천수', image: './images/img.jpg' , link: '#'},
+            { title: '제목 추가', author: '최은지', image: './images/img40.jpg' , link: '#'},
+            { title: '제목 추가', author: '최훈석', image: './images/img41.jpg' , link: '#'},
+            { title: '제목 추가', author: '황세희', image: './images/img42.jpg' , link: '#'}
+        ],
+        visual: [
+            { title: 'ANAKNE(굿즈디자인)', author: '강찬우', image: './images/img.jpg', link: '#' },
+            { title: '제주여행', author: '김승빈', image: './images/img.jpg', link: '#' },
+            { title: '제목 추가', author: '김은서', image: './images/img.jpg', link: '#' },
+            { title: '하이트 100주년', author: '박경호', image: './images/img4.jpg', link: '#' },
+            { title: 'Portfolio', author: '박윤민', image: './images/img5.jpg', link: '#' },
+            { title: '제목 추가', author: '손상현', image: './images/img.jpg', link: '#' },
+            { title: 'Graphic Design', author: '송다은', image: './images/img.jpg', link: '#' },
+            { title: '제목 추가', author: '송민서', image: './images/img8.jpg', link: '#' },
+            { title: '제목 추가', author: '오난영', image: './images/img9.jpg', link: '#' },
+            { title: 'portfolio', author: '윤혜원', image: './images/img.jpg', link: '#' },
+            { title: 'portfolio', author: '이동현', image: './images/img.jpg' , link: '#'},
+            { title: '제목 추가', author: '이연지', image: './images/img12.jpg' , link: '#'},
+            { title: '앨범리디자인', author: '이영은', image: './images/img13.jpg' , link: '#'},
+            { title: '브랜드B.I디자인', author: '이재원', image: './images/img.jpg' , link: '#'},
+            { title: '월인석봉에디션', author: '임재형', image: './images/img15.jpg' , link: '#'},
+            { title: '킹부각 (패키지 디자인)', author: '정회강', image: './images/img.jpg' , link: '#'},
+            { title: '바라의 하루', author: '최민주', image: './images/img.jpg' , link: '#'},
+            { title: '자수롭게(로고, 굿즈디자인)', author: '한병헌', image: './images/img18.jpg' , link: '#'},
+            { title: 'PORTFOLIO', author: '허준우', image: './images/img19.jpg' , link: '#'}
+        ]
+    };
+
+    let currentCategory = 'digital';
+    let projects = projectsData[currentCategory];
+
+    // 카테고리 변경 시 프로젝트 목록 업데이트 함수
+    function updateProjectsList(category) {
+        currentCategory = category;
+        projects = projectsData[category];
+
+        // 프로젝트 휠 업데이트
+        projectWheel.innerHTML = ''; // 기존 항목 제거
+        initializeWheel();
+        
+        // 프로젝트 카드 업데이트
+        projectStack.innerHTML = ''; // 기존 카드 제거
+        createProjectCards();
+        
+        // 현재 인덱스와 위치 초기화
+        currentIndex = 0;
+        currentTranslate = 0; // -ITEM_HEIGHT에서 0으로 변경
+        updateWheel();
+    }
 
     const ITEM_HEIGHT = 50;
     let currentIndex = 0;
@@ -43,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 프로젝트 아이템 생성
     function initializeWheel() {
-        // 클론된 항목을 포함한 총 항목 수
+        // 클론된 항목을 포한 총 항목 수
         const totalItems = projects.length + 2; // 두 개의 복사본 추가
         
         // 클론된 항목 추가
@@ -66,8 +130,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         projectWheel.appendChild(lastClone); // 맨 뒤에 클론 추가
 
-        // 초기 위치 설정
-        currentTranslate = -ITEM_HEIGHT; // 첫 번째 클론으로 시작
+        // 초기 위치 설정을 0으로 변경
+        currentTranslate = 0; // -ITEM_HEIGHT에서 0으로 변경
         projectWheel.style.transform = `translateY(${currentTranslate}px)`;
     }
 
@@ -118,6 +182,9 @@ document.addEventListener('DOMContentLoaded', () => {
         // 강제 리플로우를 통해 transition 스타일 재설정
         projectWheel.offsetHeight;
         projectWheel.style.transition = 'transform 0.3s cubic-bezier(0.23, 1, 0.32, 1)';
+
+        // 카드 업데이트 추가
+        updateCards(currentIndex);
     }
 
     function handleTouchStart(e) {
@@ -172,4 +239,214 @@ document.addEventListener('DOMContentLoaded', () => {
     // 초기화
     initializeWheel();
     updateWheel();
+
+    // 프로젝트 스택 관련 코드 추가
+    const projectStack = document.querySelector('.project-stack');
+    
+    function createProjectCards() {
+        projects.forEach((project, index) => {
+            const card = document.createElement('div');
+            card.className = 'project-card';
+            card.innerHTML = `
+                <a href="${project.link}" class="project-link">
+                    <div class="project-image" style="background-image: url('${project.image}')"></div>
+                    <div class="project-info">
+                        <p>${project.author}</p>
+                    </div>
+                </a>
+            `;
+            projectStack.appendChild(card);
+        });
+    
+        // 첫 번째 카드를 활성화
+        updateCards(0);
+    }
+
+    function updateCards(activeIndex) {
+        const cards = document.querySelectorAll('.project-card');
+        
+        cards.forEach((card, index) => {
+            card.classList.remove('active', 'next');
+            
+            if (index === activeIndex) {
+                card.classList.add('active');
+            } else if (index === (activeIndex + 1) % projects.length) {
+                card.classList.add('next');
+            }
+        });
+    }
+
+    // 초기화 시 카드 생성 추가
+    createProjectCards();
+
+    // Grid View와 List View 버튼에 SVG 추가
+    const gridViewBtn = document.querySelector('.grid-view');
+    const listViewBtn = document.querySelector('.list-view');
+
+    if (gridViewBtn) {
+        gridViewBtn.innerHTML = `
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none">
+                <rect width="7" height="7" fill="currentColor" rx="1"/>
+                <rect width="7" height="7" y="9" fill="currentColor" rx="1"/>
+                <rect width="7" height="7" x="9" fill="currentColor" rx="1"/>
+                <rect width="7" height="7" x="9" y="9" fill="currentColor" rx="1"/>
+            </svg>
+        `;
+    }
+
+    if (listViewBtn) {
+        listViewBtn.innerHTML = `
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none">
+                <rect width="16" height="10" fill="currentColor" rx="1"/>
+                <rect width="16" height="4" y="12" fill="currentColor" rx="1"/>
+            </svg>
+        `;
+    }
+
+    // 버튼 활성화/비활성화 기능 추가
+    function setActiveView(viewType) {
+        if (viewType === 'grid') {
+            gridViewBtn.classList.add('active');
+            listViewBtn.classList.remove('active');
+        } else {
+            gridViewBtn.classList.remove('active');
+            listViewBtn.classList.add('active');
+        }
+    }
+
+    // 클릭 이벤트 리스너 추가
+    gridViewBtn.addEventListener('click', () => setActiveView('grid'));
+    listViewBtn.addEventListener('click', () => setActiveView('list'));
+
+    // 초기 상태 설정 (그리드 뷰를 기본값으로)
+    setActiveView('lis');
+
+    // 카테고리 전환 기능 수정
+    const categoryTexts = document.querySelectorAll('.category-text');
+    const projectGridDigital = document.querySelector('.project-grid.digital');
+    const projectGridVisual = document.querySelector('.project-grid.visual');
+
+    // 그리드 표시/숨김 함수
+    function toggleGrids(category) {
+        if (category === 'digital') {
+            projectGridDigital.style.cssText = 'display: grid; position: relative;';
+            projectGridVisual.style.cssText = 'display: none; position: absolute;';
+        } else {
+            projectGridDigital.style.cssText = 'display: none; position: absolute;';
+            projectGridVisual.style.cssText = 'display: grid; position: relative;';
+        }
+    }
+
+    categoryTexts.forEach(text => {
+        text.addEventListener('click', () => {
+            if (text.classList.contains('active')) return;
+            
+            // 카테고리 활성화 상태 변경
+            categoryTexts.forEach(t => t.classList.remove('active'));
+            text.classList.add('active');
+            
+            // 현재 선택된 카테고리에 따라 그리드 전환
+            const category = text.textContent.toLowerCase();
+            toggleGrids(category);
+            
+            // 리스트 뷰 업데이트
+            updateProjectsList(category);
+        });
+    });
+
+    // 뷰 전환 함수
+    function setActiveView(viewType) {
+        const projectGridView = document.querySelector('.project-grid-view');
+        const projectListView = document.querySelector('.project-list-view');
+        const gridViewBtn = document.querySelector('.grid-view');
+        const listViewBtn = document.querySelector('.list-view');
+
+        if (viewType === 'grid') {
+            gridViewBtn.classList.add('active');
+            listViewBtn.classList.remove('active');
+            projectGridView.style.display = 'block';
+            projectListView.style.display = 'none';
+            
+            // 현재 선택된 카테고리에 맞는 그리드 표시
+            const currentCategory = document.querySelector('.category-text.active').textContent.toLowerCase();
+            toggleGrids(currentCategory);
+        } else {
+            gridViewBtn.classList.remove('active');
+            listViewBtn.classList.add('active');
+            projectGridView.style.display = 'none';
+            projectListView.style.display = 'block';
+        }
+    }
+
+    // 초기 상태 설정
+    document.addEventListener('DOMContentLoaded', () => {
+        const initialCategory = document.querySelector('.category-text.active').textContent.toLowerCase();
+        toggleGrids(initialCategory);
+    });
+
+    // 초기화 시 기본 카테고리(Digital) 데이터로 시작
+    projects = projectsData.digital;
+}
+
+// DOMContentLoaded 이벤트에서 초기화
+document.addEventListener('DOMContentLoaded', initializeMobile);
+
+// resize 이벤트에서도 초기화
+let resizeTimer;
+window.addEventListener('resize', () => {
+    // 디바운싱 적용
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+        initializeMobile();
+    }, 250); // 250ms 딜레이
 });
+
+
+// 뷰 전환 함수
+function setActiveView(viewType) {
+    const projectGridView = document.querySelector('.project-grid-view');
+    const projectListView = document.querySelector('.project-list-view');
+    const gridViewBtn = document.querySelector('.grid-view');
+    const listViewBtn = document.querySelector('.list-view');
+
+    if (viewType === 'grid') {
+        // 버튼 상태 변경
+        gridViewBtn.classList.add('active');
+        listViewBtn.classList.remove('active');
+        
+        // 뷰 전환
+        projectGridView.style.display = 'grid';
+        projectListView.style.display = 'none';
+        
+        // 그리드 뷰 초기화
+        initializeGridView();
+    } else {
+        // 버튼 상태 변경
+        gridViewBtn.classList.remove('active');
+        listViewBtn.classList.add('active');
+        
+        // 뷰 전환
+        projectGridView.style.display = 'none';
+        projectListView.style.display = 'block';
+        
+        // 리스트 뷰 초기화
+        initializeListView();
+    }
+}
+
+// 리스트 뷰 초기화 함수
+function initializeListView() {
+    projectWheel.innerHTML = '';
+    initializeWheel();
+    projectStack.innerHTML = '';
+    createProjectCards();
+}
+
+// 뷰 전환 버튼 이벤트 리스너
+const gridViewBtn = document.querySelector('.grid-view');
+const listViewBtn = document.querySelector('.list-view');
+
+gridViewBtn.addEventListener('click', () => setActiveView('grid'));
+listViewBtn.addEventListener('click', () => setActiveView('list'));
+
+

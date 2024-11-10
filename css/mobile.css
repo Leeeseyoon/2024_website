@@ -1,4 +1,7 @@
 @media (max-width: 480px) {
+    body {
+        height: 100vh;
+    }
     .header, .main {
         display: none;
     }
@@ -10,6 +13,9 @@
         color: white;
         font-family: 'Noto Sans KR', sans-serif;
     }
+    .container {
+        display: none;
+    }
 
     /* 헤더 영역 */
     header {
@@ -20,8 +26,8 @@
     }
 
     .square {
-        width: 24px;
-        height: 24px;
+        width: 40px;
+        height: 40px;
         background: #fff;
     }
 
@@ -48,11 +54,43 @@
 
     .category h2 {
         font-size: 28px;
+        position: relative;
+        display: flex;
+        gap: 16px;
+        height: 32px;
+        align-items: flex-end;
     }
 
-    .category span {
+    .category-text {
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         color: rgba(255, 255, 255, 0.5);
-        margin-left: 10px;
+        font-size: 16px;
+        font-weight: 400;
+        position: absolute;
+        transform-origin: left center;
+        left: 0;
+        line-height: 32px;
+    }
+
+    .category-text.active {
+        color: rgba(255, 255, 255, 1);
+        font-size: 28px;
+        font-weight: 600;
+        left: 0;
+        margin-bottom: 4px;
+    }
+
+    .category-text:first-child.active + .category-text {
+        left: 100px;
+    }
+
+    .category-text:last-child.active ~ .category-text:first-child {
+        left: 100px;
+    }
+
+    .category-text:first-child:not(.active) {
+        left: 100px;
     }
 
     .view-options {
@@ -63,24 +101,42 @@
     .view-options button {
         width: 20px;
         height: 20px;
-        border: 1px solid rgba(255, 255, 255, 0.5);
+        border: none;
         background: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2px;
+        cursor: pointer;
+        color: #4F4F4F;
+        transition: color 0.3s ease;
+    }
+
+    .view-options button.active {
+        color: #FFFFFF;
+    }
+
+    .view-options button svg {
+        width: 16px;
+        height: 16px;
     }
 
     /* 프로젝트 카드 영역 */
     .project-stack {
         position: relative;
-        height: 230px;
+        height: 300px;
         padding: 0 20px;
-        outline: 1px solid red;
+        margin-bottom: 20px;
+        /* outline: 1px solid red; */
     }
 
     .project-card {
         position: absolute;
         width: calc(100% - 40px);
-        transition: all 0.5s ease;
+        transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
         opacity: 0;
         visibility: hidden;
+        transform: translateY(40px);
     }
 
     .project-card.active {
@@ -103,26 +159,36 @@
         border-radius: 20px;
         background: linear-gradient(180deg, #D9D9D9 0%, #383838 100%);
         margin-bottom: 15px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
     }
 
     .project-info {
+        position: absolute;
+        right: 0;left: 0;
+        top: 300px;bottom: 0;
+
         text-align: center;
+        height: 50px;
+        /* outline: 1px solid blue; */
     }
 
-    .project-info h3 {
-        font-size: 18px;
-        margin-bottom: 5px;
+    .project-card.next .project-info p {
+        opacity: 0;
+        visibility: hidden;
     }
-
-    .project-info p {
-        font-size: 14px;
+    
+    .project-card .project-info p {
+        font-size: 16px;
         color: rgba(255, 255, 255, 0.7);
+        transition: opacity 0.3s ease, visibility 0.3s ease;
     }
 
     /* 프로젝트 리스트 영역 수정 */
     .project-list {
         position: fixed;
-        bottom: 100px;
+        bottom: 40px;
         left: 0;
         width: 100%;
         height: 130px;
@@ -175,4 +241,80 @@
         text-align: center;
         transition: transform 0.3s cubic-bezier(0.21, 0.53, 0.29, 0.99);
     }
+
+    /* 그리드 뷰 스타일 */
+    .contents {
+        width: 100%;
+        overflow: hidden;
+    }
+    .project-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        overflow-y: auto;
+        height: fit-content;
+        width: 100%;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+
+    .grid-item {
+        position: relative;
+        border-radius: 10px;
+        overflow: visible;
+        width: 100%;
+        padding-bottom: calc(100% + 60px);
+    }
+
+    .grid-item .project-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: calc(100% - 60px);
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .grid-item img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .grid-item .info {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 60px;
+        color: white;
+        text-align: left;
+    }
+
+    .grid-item .info h3 {
+        font-size: 13px;
+        margin: 0;
+        font-weight: 500;
+        margin-top: 5px;
+    }
+
+    .grid-item .info p {
+        font-size: 12px;
+        margin: 2px 0 0;
+        opacity: 0.7;
+        font-weight: 400;
+    }
+
+    .project-link {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
 }
+
