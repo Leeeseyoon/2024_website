@@ -1,4 +1,5 @@
-document.addEventListener('DOMContentLoaded', () => {
+// 모바일 기능을 초기화하는 함수
+function initializeMobile() {
     console.log('Mobile JS loaded');
     
     if (window.innerWidth > 480) {
@@ -26,31 +27,77 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     console.log('Project wheel found');
 
-    const projects = [
-        { title: 'Ready to play the GAME?', author: '김민경' },
-        { title: 'I CREATE DESIGN MAGIC', author: '김민경' },
-        { title: '제목 추가', author: '김수빈' },
-        { title: '인터랙티브 포트폴리오', author: '김수아' },
-        { title: '제목 추가', author: '김승찬' },
-        { title: '제목 추가', author: '김준희' },
-        { title: '제목 추가', author: '김태호' },
-        { title: '제목 추가', author: '류시은' },
-        { title: '제목 추가', author: '박가람' },
-        { title: '제목 추가', author: '심재정' },
-        { title: '제목 추가', author: '양성우' },
-        { title: '제목 추가', author: '우수지' },
-        { title: '제목 추가', author: '원세연' },
-        { title: '제목 추가', author: '유지수' },
-        { title: '제목 추가', author: '윤비' },
-        { title: '제목 추가', author: '이세윤' },
-        { title: '제목 추가', author: '이지우' },
-        { title: '제목 추가', author: '임율' },
-        { title: '제목 추가', author: '임현준' },
-        { title: '제목 추가', author: '장천수' },
-        { title: '제목 추가', author: '최은지' },
-        { title: '제목 추가', author: '최훈석' },
-        { title: '제목 추가', author: '황세희' }
-    ];
+    // 카테고리별 프로젝트 데이터 분리
+    const projectsData = {
+        digital: [
+            { title: 'Ready to play the GAME?', author: '김민경' },
+            { title: 'I CREATE DESIGN MAGIC', author: '김민경' },
+            { title: '제목 추가', author: '김수빈' },
+            { title: '인터랙티브 포트폴리오', author: '김수아' },
+            { title: '제목 추가', author: '김승찬' },
+            { title: '제목 추가', author: '김준희' },
+            { title: '제목 추가', author: '김태호' },
+            { title: '제목 추가', author: '류시은' },
+            { title: '제목 추가', author: '박가람' },
+            { title: '제목 추가', author: '심재정' },
+            { title: '제목 추가', author: '양성우' },
+            { title: '제목 추가', author: '우수지' },
+            { title: '제목 추가', author: '원세연' },
+            { title: '제목 추가', author: '유지수' },
+            { title: '제목 추가', author: '윤비' },
+            { title: '제목 추가', author: '이세윤' },
+            { title: '제목 추가', author: '이지우' },
+            { title: '제목 추가', author: '임율' },
+            { title: '제목 추가', author: '임현준' },
+            { title: '제목 추가', author: '장천수' },
+            { title: '제목 추가', author: '최은지' },
+            { title: '제목 추가', author: '최훈석' },
+            { title: '제목 추가', author: '황세희' }
+        ],
+        visual: [
+            { title: 'ANAKNE(굿즈디자인)', author: '강찬우' },
+            { title: '제주여행', author: '김승빈' },
+            { title: '제목 추가', author: '김은서' },
+            { title: '하이트 100주년', author: '박경호' },
+            { title: 'Portfolio', author: '박윤민' },
+            { title: '제목 추가', author: '손상현' },
+            { title: 'Graphic Design', author: '송다은' },
+            { title: '제목 추가', author: '송민서' },
+            { title: '제목 추가', author: '오난영' },
+            { title: 'portfolio', author: '윤혜원' },
+            { title: 'portfolio', author: '이동현' },
+            { title: '제목 추가', author: '이연지' },
+            { title: '앨범리디자인', author: '이영은' },
+            { title: '브랜드B.I디자인', author: '이재원' },
+            { title: '월인석봉에디션', author: '임재형' },
+            { title: '킹부각 (패키지 디자인)', author: '정회강' },
+            { title: '바라의 하루', author: '최민주' },
+            { title: '자수롭게(로고, 굿즈디자인)', author: '한병헌' },
+            { title: 'PORTFOLIO', author: '허준우' }
+        ]
+    };
+
+    let currentCategory = 'digital';
+    let projects = projectsData[currentCategory];
+
+    // 카테고리 변경 시 프로젝트 목록 업데이트 함수
+    function updateProjectsList(category) {
+        currentCategory = category;
+        projects = projectsData[category];
+
+        // 프로젝트 휠 업데이트
+        projectWheel.innerHTML = ''; // 기존 항목 제거
+        initializeWheel();
+        
+        // 프로젝트 카드 업데이트
+        projectStack.innerHTML = ''; // 기존 ��드 제거
+        createProjectCards();
+        
+        // 현재 인덱스 초기화
+        currentIndex = 0;
+        currentTranslate = -ITEM_HEIGHT;
+        updateWheel();
+    }
 
     const ITEM_HEIGHT = 50;
     let currentIndex = 0;
@@ -272,6 +319,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 초기 상태 설정 (그리드 뷰를 기본값으로)
     setActiveView('grid');
+
+    // 카테고리 전환 기능 수정
+    const categoryTexts = document.querySelectorAll('.category-text');
+    
+    categoryTexts.forEach(text => {
+        text.addEventListener('click', () => {
+            if (text.classList.contains('active')) return;
+            
+            categoryTexts.forEach(t => t.classList.remove('active'));
+            text.classList.add('active');
+            
+            // 카테고리에 따라 프로젝��� 목록 업데이트
+            const category = text.textContent.toLowerCase();
+            updateProjectsList(category);
+        });
+    });
+
+    // 초기화 시 기본 카테고리(Digital) 데이터로 시작
+    projects = projectsData.digital;
+}
+
+// DOMContentLoaded 이벤트에서 초기화
+document.addEventListener('DOMContentLoaded', initializeMobile);
+
+// resize 이벤트에서도 초기화
+let resizeTimer;
+window.addEventListener('resize', () => {
+    // 디바운싱 적용
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+        initializeMobile();
+    }, 250); // 250ms 딜레이
 });
 
 

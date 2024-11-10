@@ -54,11 +54,43 @@
 
     .category h2 {
         font-size: 28px;
+        position: relative;
+        display: flex;
+        gap: 16px;
+        height: 32px;
+        align-items: flex-end;
     }
 
-    .category span {
+    .category-text {
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         color: rgba(255, 255, 255, 0.5);
-        margin-left: 10px;
+        font-size: 16px;
+        font-weight: 400;
+        position: absolute;
+        transform-origin: left center;
+        left: 0;
+        line-height: 32px;
+    }
+
+    .category-text.active {
+        color: rgba(255, 255, 255, 1);
+        font-size: 28px;
+        font-weight: 600;
+        left: 0;
+        margin-bottom: 4px;
+    }
+
+    .category-text:first-child.active + .category-text {
+        left: 100px;
+    }
+
+    .category-text:last-child.active ~ .category-text:first-child {
+        left: 100px;
+    }
+
+    .category-text:first-child:not(.active) {
+        left: 100px;
     }
 
     .view-options {
