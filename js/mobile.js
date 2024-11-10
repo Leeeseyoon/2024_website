@@ -400,3 +400,5 @@ const listViewBtn = document.querySelector('.list-view');
 
 gridViewBtn.addEventListener('click', () => setActiveView('grid'));
 listViewBtn.addEventListener('click', () => setActiveView('list'));
+
+
