@@ -27,11 +27,29 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('Project wheel found');
 
     const projects = [
-        { title: '배달의 민족 UI Redesign', author: '이세윤' },
-        { title: '당근마켓 UI/UX Design', author: '김민지' },
-        { title: '토스 앱 Redesign', author: '박지훈' },
-        { title: '카카오톡 UI 개선', author: '이지은' },
-        { title: '넷플릭스 모바일 앱 개선', author: '최준호' },
+        { title: 'Ready to play the GAME?', author: '김민경' },
+        { title: 'I CREATE DESIGN MAGIC', author: '김민경' },
+        { title: '제목 추가', author: '김수빈' },
+        { title: '인터랙티브 포트폴리오', author: '김수아' },
+        { title: '제목 추가', author: '김승찬' },
+        { title: '제목 추가', author: '김준희' },
+        { title: '제목 추가', author: '김태호' },
+        { title: '제목 추가', author: '류시은' },
+        { title: '제목 추가', author: '박가람' },
+        { title: '제목 추가', author: '심재정' },
+        { title: '제목 추가', author: '양성우' },
+        { title: '제목 추가', author: '우수지' },
+        { title: '제목 추가', author: '원세연' },
+        { title: '제목 추가', author: '유지수' },
+        { title: '제목 추가', author: '윤비' },
+        { title: '제목 추가', author: '이세윤' },
+        { title: '제목 추가', author: '이지우' },
+        { title: '제목 추가', author: '임율' },
+        { title: '제목 추가', author: '임현준' },
+        { title: '제목 추가', author: '장천수' },
+        { title: '제목 추가', author: '최은지' },
+        { title: '제목 추가', author: '최훈석' },
+        { title: '제목 추가', author: '황세희' }
     ];
 
     const ITEM_HEIGHT = 50;
@@ -118,6 +136,9 @@ document.addEventListener('DOMContentLoaded', () => {
         // 강제 리플로우를 통해 transition 스타일 재설정
         projectWheel.offsetHeight;
         projectWheel.style.transition = 'transform 0.3s cubic-bezier(0.23, 1, 0.32, 1)';
+
+        // 카드 업데이트 추가
+        updateCards(currentIndex);
     }
 
     function handleTouchStart(e) {
@@ -172,4 +193,41 @@ document.addEventListener('DOMContentLoaded', () => {
     // 초기화
     initializeWheel();
     updateWheel();
+
+    // 프로젝트 스택 관련 코드 추가
+    const projectStack = document.querySelector('.project-stack');
+    
+    function createProjectCards() {
+        projects.forEach((project, index) => {
+            const card = document.createElement('div');
+            card.className = 'project-card';
+            card.innerHTML = `
+                <div class="project-image"></div>
+                <div class="project-info">
+                    <p>${project.author}</p>
+                </div>
+            `;
+            projectStack.appendChild(card);
+        });
+
+        // 첫 번째 카드를 활성화
+        updateCards(0);
+    }
+
+    function updateCards(activeIndex) {
+        const cards = document.querySelectorAll('.project-card');
+        
+        cards.forEach((card, index) => {
+            card.classList.remove('active', 'next');
+            
+            if (index === activeIndex) {
+                card.classList.add('active');
+            } else if (index === (activeIndex + 1) % projects.length) {
+                card.classList.add('next');
+            }
+        });
+    }
+
+    // 초기화 시 카드 생성 추가
+    createProjectCards();
 });
