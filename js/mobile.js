@@ -90,7 +90,7 @@ function initializeMobile() {
         initializeWheel();
         
         // 프로젝트 카드 업데이트
-        projectStack.innerHTML = ''; // 기존 ��드 제거
+        projectStack.innerHTML = ''; // 기존 카드 제거
         createProjectCards();
         
         // 현재 인덱스 초기화
@@ -318,7 +318,7 @@ function initializeMobile() {
     listViewBtn.addEventListener('click', () => setActiveView('list'));
 
     // 초기 상태 설정 (그리드 뷰를 기본값으로)
-    setActiveView('grid');
+    setActiveView('lis');
 
     // 카테고리 전환 기능 수정
     const categoryTexts = document.querySelectorAll('.category-text');
@@ -330,7 +330,7 @@ function initializeMobile() {
             categoryTexts.forEach(t => t.classList.remove('active'));
             text.classList.add('active');
             
-            // 카테고리에 따라 프로젝��� 목록 업데이트
+            // 카테고리에 따라 프로젝트 목록 업데이트
             const category = text.textContent.toLowerCase();
             updateProjectsList(category);
         });
@@ -354,3 +354,49 @@ window.addEventListener('resize', () => {
 });
 
 
+// 뷰 전환 함수
+function setActiveView(viewType) {
+    const projectGridView = document.querySelector('.project-grid-view');
+    const projectListView = document.querySelector('.project-list-view');
+    const gridViewBtn = document.querySelector('.grid-view');
+    const listViewBtn = document.querySelector('.list-view');
+
+    if (viewType === 'grid') {
+        // 버튼 상태 변경
+        gridViewBtn.classList.add('active');
+        listViewBtn.classList.remove('active');
+        
+        // 뷰 전환
+        projectGridView.style.display = 'grid';
+        projectListView.style.display = 'none';
+        
+        // 그리드 뷰 초기화
+        initializeGridView();
+    } else {
+        // 버튼 상태 변경
+        gridViewBtn.classList.remove('active');
+        listViewBtn.classList.add('active');
+        
+        // 뷰 전환
+        projectGridView.style.display = 'none';
+        projectListView.style.display = 'block';
+        
+        // 리스트 뷰 초기화
+        initializeListView();
+    }
+}
+
+// 리스트 뷰 초기화 함수
+function initializeListView() {
+    projectWheel.innerHTML = '';
+    initializeWheel();
+    projectStack.innerHTML = '';
+    createProjectCards();
+}
+
+// 뷰 전환 버튼 이벤트 리스너
+const gridViewBtn = document.querySelector('.grid-view');
+const listViewBtn = document.querySelector('.list-view');
+
+gridViewBtn.addEventListener('click', () => setActiveView('grid'));
+listViewBtn.addEventListener('click', () => setActiveView('list'));
