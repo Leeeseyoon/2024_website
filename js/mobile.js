@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 프로젝트 아이템 생성
     function initializeWheel() {
-        // 클론된 항목을 포함한 총 항목 수
+        // 클론된 항목을 포한 총 항목 수
         const totalItems = projects.length + 2; // 두 개의 복사본 추가
         
         // 클론된 항목 추가
@@ -230,4 +230,48 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 초기화 시 카드 생성 추가
     createProjectCards();
+
+    // Grid View와 List View 버튼에 SVG 추가
+    const gridViewBtn = document.querySelector('.grid-view');
+    const listViewBtn = document.querySelector('.list-view');
+
+    if (gridViewBtn) {
+        gridViewBtn.innerHTML = `
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none">
+                <rect width="7" height="7" fill="currentColor" rx="1"/>
+                <rect width="7" height="7" y="9" fill="currentColor" rx="1"/>
+                <rect width="7" height="7" x="9" fill="currentColor" rx="1"/>
+                <rect width="7" height="7" x="9" y="9" fill="currentColor" rx="1"/>
+            </svg>
+        `;
+    }
+
+    if (listViewBtn) {
+        listViewBtn.innerHTML = `
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none">
+                <rect width="16" height="10" fill="currentColor" rx="1"/>
+                <rect width="16" height="4" y="12" fill="currentColor" rx="1"/>
+            </svg>
+        `;
+    }
+
+    // 버튼 활성화/비활성화 기능 추가
+    function setActiveView(viewType) {
+        if (viewType === 'grid') {
+            gridViewBtn.classList.add('active');
+            listViewBtn.classList.remove('active');
+        } else {
+            gridViewBtn.classList.remove('active');
+            listViewBtn.classList.add('active');
+        }
+    }
+
+    // 클릭 이벤트 리스너 추가
+    gridViewBtn.addEventListener('click', () => setActiveView('grid'));
+    listViewBtn.addEventListener('click', () => setActiveView('list'));
+
+    // 초기 상태 설정 (그리드 뷰를 기본값으로)
+    setActiveView('grid');
 });
+
+

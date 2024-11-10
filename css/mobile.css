@@ -69,8 +69,24 @@
     .view-options button {
         width: 20px;
         height: 20px;
-        border: 1px solid rgba(255, 255, 255, 0.5);
+        border: none;
         background: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2px;
+        cursor: pointer;
+        color: #4F4F4F;
+        transition: color 0.3s ease;
+    }
+
+    .view-options button.active {
+        color: #FFFFFF;
+    }
+
+    .view-options button svg {
+        width: 16px;
+        height: 16px;
     }
 
     /* 프로젝트 카드 영역 */
