@@ -1,4 +1,3 @@
-// 모바일 기능을 초기화하는 함수
 function initializeMobile() {
     console.log('Mobile JS loaded');
     
@@ -30,50 +29,50 @@ function initializeMobile() {
     // 카테고리별 프로젝트 데이터 분리
     const projectsData = {
         digital: [
-            { title: 'Ready to play the GAME?', author: '김민경' },
-            { title: 'I CREATE DESIGN MAGIC', author: '김민경' },
-            { title: '제목 추가', author: '김수빈' },
-            { title: '인터랙티브 포트폴리오', author: '김수아' },
-            { title: '제목 추가', author: '김승찬' },
-            { title: '제목 추가', author: '김준희' },
-            { title: '제목 추가', author: '김태호' },
-            { title: '제목 추가', author: '류시은' },
-            { title: '제목 추가', author: '박가람' },
-            { title: '제목 추가', author: '심재정' },
-            { title: '제목 추가', author: '양성우' },
-            { title: '제목 추가', author: '우수지' },
-            { title: '제목 추가', author: '원세연' },
-            { title: '제목 추가', author: '유지수' },
-            { title: '제목 추가', author: '윤비' },
-            { title: '제목 추가', author: '이세윤' },
-            { title: '제목 추가', author: '이지우' },
-            { title: '제목 추가', author: '임율' },
-            { title: '제목 추가', author: '임현준' },
-            { title: '제목 추가', author: '장천수' },
-            { title: '제목 추가', author: '최은지' },
-            { title: '제목 추가', author: '최훈석' },
-            { title: '제목 추가', author: '황세희' }
+            { title: 'Ready to play the GAME?', author: '김민경', image: './images/img20.jpg', link: '#' },
+            { title: 'I CREATE DESIGN MAGIC', author: '김민경', image: './images/img21.jpg' , link: '#'},
+            { title: '제목 추가', author: '김수빈', image: './images/img22.jpg' , link: '#'},
+            { title: '인터랙티브 포트폴리오', author: '김수아', image: './images/img23.jpg' , link: '#'},
+            { title: '제목 추가', author: '김승찬', image: './images/img.jpg' , link: '#'},
+            { title: '제목 추가', author: '김준희', image: './images/img25.jpg' , link: '#'},
+            { title: '제목 추가', author: '김태호', image: './images/img.jpg' , link: '#'},
+            { title: '제목 추가', author: '류시은', image: './images/img.jpg' , link: '#'},
+            { title: '제목 추가', author: '박가람', image: './images/img28.jpg' , link: '#'},
+            { title: '제목 추가', author: '심재정', image: './images/img.jpg' , link: '#'},
+            { title: '제목 추가', author: '양성우', image: './images/img.jpg' , link: '#'},
+            { title: '제목 추가', author: '우수지', image: './images/img31.jpg' , link: '#'},
+            { title: '제목 추가', author: '원세연', image: './images/img32.jpg' , link: '#'},
+            { title: '제목 추가', author: '유지수', image: './images/img33.jpg' , link: '#'},
+            { title: '제목 추가', author: '윤비', image: './images/img.jpg' , link: '#'},
+            { title: '제목 추가', author: '이세윤', image: './images/img.jpg' , link: '#'},
+            { title: '제목 추가', author: '이지우', image: './images/img36jpg' , link: '#'},
+            { title: '제목 추가', author: '임율', image: './images/img.jpg' , link: '#'},
+            { title: '제목 추가', author: '임현준', image: './images/img.jpg' , link: '#'},
+            { title: '제목 추가', author: '장천수', image: './images/img.jpg' , link: '#'},
+            { title: '제목 추가', author: '최은지', image: './images/img40.jpg' , link: '#'},
+            { title: '제목 추가', author: '최훈석', image: './images/img41.jpg' , link: '#'},
+            { title: '제목 추가', author: '황세희', image: './images/img42.jpg' , link: '#'}
         ],
         visual: [
-            { title: 'ANAKNE(굿즈디자인)', author: '강찬우' },
-            { title: '제주여행', author: '김승빈' },
-            { title: '제목 추가', author: '김은서' },
-            { title: '하이트 100주년', author: '박경호' },
-            { title: 'Portfolio', author: '박윤민' },
-            { title: '제목 추가', author: '손상현' },
-            { title: 'Graphic Design', author: '송다은' },
-            { title: '제목 추가', author: '송민서' },
-            { title: '제목 추가', author: '오난영' },
-            { title: 'portfolio', author: '윤혜원' },
-            { title: 'portfolio', author: '이동현' },
-            { title: '제목 추가', author: '이연지' },
-            { title: '앨범리디자인', author: '이영은' },
-            { title: '브랜드B.I디자인', author: '이재원' },
-            { title: '월인석봉에디션', author: '임재형' },
-            { title: '킹부각 (패키지 디자인)', author: '정회강' },
-            { title: '바라의 하루', author: '최민주' },
-            { title: '자수롭게(로고, 굿즈디자인)', author: '한병헌' },
-            { title: 'PORTFOLIO', author: '허준우' }
+            { title: 'ANAKNE(굿즈디자인)', author: '강찬우', image: './images/img.jpg', link: '#' },
+            { title: '제주여행', author: '김승빈', image: './images/img.jpg', link: '#' },
+            { title: '제목 추가', author: '김은서', image: './images/img.jpg', link: '#' },
+            { title: '하이트 100주년', author: '박경호', image: './images/img4.jpg', link: '#' },
+            { title: 'Portfolio', author: '박윤민', image: './images/img5.jpg', link: '#' },
+            { title: '제목 추가', author: '손상현', image: './images/img.jpg', link: '#' },
+            { title: 'Graphic Design', author: '송다은', image: './images/img.jpg', link: '#' },
+            { title: '제목 추가', author: '송민서', image: './images/img8.jpg', link: '#' },
+            { title: '제목 추가', author: '오난영', image: './images/img9.jpg', link: '#' },
+            { title: 'portfolio', author: '윤혜원', image: './images/img.jpg', link: '#' },
+            { title: 'portfolio', author: '이동현', image: './images/img.jpg' , link: '#'},
+            { title: '제목 추가', author: '이연지', image: './images/img12.jpg' , link: '#'},
+            { title: '앨범리디자인', author: '이영은', image: './images/img13.jpg' , link: '#'},
+            { title: '브랜드B.I디자인', author: '이재원', image: './images/img.jpg' , link: '#'},
+            { title: '월인석봉에디션', author: '임재형', image: './images/img15.jpg' , link: '#'},
+            { title: '킹부각 (패키지 디자인)', author: '정회강', image: './images/img.jpg' , link: '#'},
+            { title: '바라의 하루', author: '최민주', image: './images/img.jpg' , link: '#'},
+            { title: '자수롭게(로고, 굿즈디자인)', author: '한병헌', image: './images/img18.jpg' , link: '#'},
+            { title: 'PORTFOLIO', author: '허준우', image: './images/img19.jpg' , link: '#'}
         ]
     };
 
@@ -93,9 +92,9 @@ function initializeMobile() {
         projectStack.innerHTML = ''; // 기존 카드 제거
         createProjectCards();
         
-        // 현재 인덱스 초기화
+        // 현재 인덱스와 위치 초기화
         currentIndex = 0;
-        currentTranslate = -ITEM_HEIGHT;
+        currentTranslate = 0; // -ITEM_HEIGHT에서 0으로 변경
         updateWheel();
     }
 
@@ -131,8 +130,8 @@ function initializeMobile() {
 
         projectWheel.appendChild(lastClone); // 맨 뒤에 클론 추가
 
-        // 초기 위치 설정
-        currentTranslate = -ITEM_HEIGHT; // 첫 번째 클론으로 시작
+        // 초기 위치 설정을 0으로 변경
+        currentTranslate = 0; // -ITEM_HEIGHT에서 0으로 변경
         projectWheel.style.transform = `translateY(${currentTranslate}px)`;
     }
 
@@ -249,14 +248,16 @@ function initializeMobile() {
             const card = document.createElement('div');
             card.className = 'project-card';
             card.innerHTML = `
-                <div class="project-image"></div>
-                <div class="project-info">
-                    <p>${project.author}</p>
-                </div>
+                <a href="${project.link}" class="project-link">
+                    <div class="project-image" style="background-image: url('${project.image}')"></div>
+                    <div class="project-info">
+                        <p>${project.author}</p>
+                    </div>
+                </a>
             `;
             projectStack.appendChild(card);
         });
-
+    
         // 첫 번째 카드를 활성화
         updateCards(0);
     }
