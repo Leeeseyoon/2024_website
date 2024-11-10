@@ -322,18 +322,65 @@ function initializeMobile() {
 
     // 카테고리 전환 기능 수정
     const categoryTexts = document.querySelectorAll('.category-text');
-    
+    const projectGridDigital = document.querySelector('.project-grid.digital');
+    const projectGridVisual = document.querySelector('.project-grid.visual');
+
+    // 그리드 표시/숨김 함수
+    function toggleGrids(category) {
+        if (category === 'digital') {
+            projectGridDigital.style.cssText = 'display: grid; position: relative;';
+            projectGridVisual.style.cssText = 'display: none; position: absolute;';
+        } else {
+            projectGridDigital.style.cssText = 'display: none; position: absolute;';
+            projectGridVisual.style.cssText = 'display: grid; position: relative;';
+        }
+    }
+
     categoryTexts.forEach(text => {
         text.addEventListener('click', () => {
             if (text.classList.contains('active')) return;
             
+            // 카테고리 활성화 상태 변경
             categoryTexts.forEach(t => t.classList.remove('active'));
             text.classList.add('active');
             
-            // 카테고리에 따라 프로젝트 목록 업데이트
+            // 현재 선택된 카테고리에 따라 그리드 전환
             const category = text.textContent.toLowerCase();
+            toggleGrids(category);
+            
+            // 리스트 뷰 업데이트
             updateProjectsList(category);
         });
+    });
+
+    // 뷰 전환 함수
+    function setActiveView(viewType) {
+        const projectGridView = document.querySelector('.project-grid-view');
+        const projectListView = document.querySelector('.project-list-view');
+        const gridViewBtn = document.querySelector('.grid-view');
+        const listViewBtn = document.querySelector('.list-view');
+
+        if (viewType === 'grid') {
+            gridViewBtn.classList.add('active');
+            listViewBtn.classList.remove('active');
+            projectGridView.style.display = 'block';
+            projectListView.style.display = 'none';
+            
+            // 현재 선택된 카테고리에 맞는 그리드 표시
+            const currentCategory = document.querySelector('.category-text.active').textContent.toLowerCase();
+            toggleGrids(currentCategory);
+        } else {
+            gridViewBtn.classList.remove('active');
+            listViewBtn.classList.add('active');
+            projectGridView.style.display = 'none';
+            projectListView.style.display = 'block';
+        }
+    }
+
+    // 초기 상태 설정
+    document.addEventListener('DOMContentLoaded', () => {
+        const initialCategory = document.querySelector('.category-text.active').textContent.toLowerCase();
+        toggleGrids(initialCategory);
     });
 
     // 초기화 시 기본 카테고리(Digital) 데이터로 시작
