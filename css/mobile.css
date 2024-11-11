@@ -9,7 +9,7 @@
     .phone {
         width: 100%;
         min-height: 100vh;
-        background: #000;
+        background: var(--color-black);
         color: white;
         font-family: 'Noto Sans KR', sans-serif;
     }
@@ -120,6 +120,16 @@
         width: 16px;
         height: 16px;
     }
+    /* 헤더와 카테고리 고정 */
+    .fixed{
+        position: fixed;
+        width: 100%;
+        z-index: 100;
+        background-color: var(--color-black);
+    }
+    .contents{
+        padding-top: 180px;
+    }
 
     /* 프로젝트 카드 영역 */
     .project-stack {
@@ -166,9 +176,8 @@
 
     .project-info {
         position: absolute;
-        right: 0;left: 0;
-        top: 300px;bottom: 0;
-
+        right: 0; left: 0;
+        top: 75vw; bottom: 0; /* 320px */
         text-align: center;
         height: 50px;
         /* outline: 1px solid blue; */
@@ -318,3 +327,23 @@
     }
 }
 
+@media (max-hight: 667px) {
+    .project-list {
+        bottom: 6vh;
+    }
+}
+@media (max-hight: 896px) {
+    .project-list {
+        bottom: 20vh;
+    }
+}
+@media (max-hight: 667px) {
+    .project-list {
+        bottom: 6vh;
+    }
+}
+@media (max-hight: 667px) {
+    .project-list {
+        bottom: 6vh;
+    }
+}

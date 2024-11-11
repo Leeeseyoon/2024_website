@@ -29,10 +29,10 @@ function initializeMobile() {
     // 카테고리별 프로젝트 데이터 분리
     const projectsData = {
         digital: [
-            { title: 'Ready to play the GAME?', author: '김민경', image: './images/img20.jpg', link: '#' },
-            { title: 'I CREATE DESIGN MAGIC', author: '김민경', image: './images/img21.jpg' , link: '#'},
+            { title: 'Ready to play the GAME?', author: '김민경', image: './images/img20.jpg', link: 'https://dibi00.github.io/2301110137_kimmingyeong_zolzak/' },
+            { title: '쌩쌩몰 웹 리디자인', author: '김민경', image: './images/img21.png' , link: '#'},
             { title: '제목 추가', author: '김수빈', image: './images/img22.jpg' , link: '#'},
-            { title: '인터랙티브 포트폴리오', author: '김수아', image: './images/img23.jpg' , link: '#'},
+            { title: '인터랙티브 포트폴리오', author: '김수아', image: './images/img23.jpg' , link: 'https://suakim1021.github.io/2024-graduate-portfolio/'},
             { title: '제목 추가', author: '김승찬', image: './images/img.jpg' , link: '#'},
             { title: '제목 추가', author: '김준희', image: './images/img25.jpg' , link: '#'},
             { title: '제목 추가', author: '김태호', image: './images/img.jpg' , link: '#'},
@@ -42,7 +42,7 @@ function initializeMobile() {
             { title: '제목 추가', author: '양성우', image: './images/img.jpg' , link: '#'},
             { title: '제목 추가', author: '우수지', image: './images/img31.jpg' , link: '#'},
             { title: '제목 추가', author: '원세연', image: './images/img32.jpg' , link: '#'},
-            { title: '제목 추가', author: '유지수', image: './images/img33.jpg' , link: '#'},
+            { title: '제목 추가', author: '유지수', image: './images/img33.jpg' , link: 'https://wltn510.github.io/1107/'},
             { title: '제목 추가', author: '윤비', image: './images/img.jpg' , link: '#'},
             { title: '제목 추가', author: '이세윤', image: './images/img.jpg' , link: '#'},
             { title: '제목 추가', author: '이지우', image: './images/img36jpg' , link: '#'},
