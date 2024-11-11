@@ -1,4 +1,4 @@
-import { interiors } from "./data.js";
+/* import { interiors } from "./data.js";
 
 document.addEventListener("DOMContentLoaded", function () {
     const cursor = document.querySelector(".cursor");
@@ -265,7 +265,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // 초기 위치 업데이트
     updatePosition();
-});
+}); */
 
 
 

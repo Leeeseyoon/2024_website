@@ -1,4 +1,4 @@
-export const interiors = [
+/* export const interiors = [
     { id: 1, name: "넷플릭스 UI 리디자인 1", stu: "김민준" },
     { id: 2, name: "카카오톡 UI 개선 프로젝트 2", stu: "이서연" },
     { id: 3, name: "스타벅스 모바일 앱 리뉴얼 3", stu: "박지훈" },
@@ -40,3 +40,4 @@ export const interiors = [
     { id: 39, name: "케이크 앱 리뉴얼 39", stu: "노태준" },
     { id: 40, name: "리멤버 웹사이트 리디자인 40", stu: "한지민" }
 ];
+ */
