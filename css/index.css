@@ -23,15 +23,75 @@ body {
     color: white;
     /* border: 1px solid red; */
     margin-left: 13%;
+    padding-top: 5%;
 }
 .info_title h2{
-    font-size: 150px;
+    font-size: 80px;
     font-family: "Literata", serif;
 }
 .info_title h3{
-    font-size: 36px;
+    font-size: 24px;
     font-weight: 400;
     
+}
+
+
+
+@media screen and (min-width: 1024px) and (max-width: 1910px) {
+    .info_title h2 {
+        font-size: 70px;
+    }
+    .info_title h3 {
+        width: 400px;
+        font-size: 30px;
+    }
+}
+
+/* 태블릿 크기 */
+@media screen and (max-width: 1024px) {
+
+    .info_title{
+        padding-top: 0%;
+        margin-top: -10%;
+    }
+
+    .info_title h2 {
+        font-size: 60px;
+    }
+    .info_title h3 {
+        font-size: 20px;
+    }
+}
+
+/* 모바일 크기 */
+@media screen and (max-width: 768px) {
+
+    .info_title{
+        padding-top: 0%;
+        margin-top: -10%;
+    }
+
+    .info_title h2 {
+        font-size: 50px;
+    }
+    .info_title h3 {
+        font-size: 20px;
+    }
+}
+
+/* 작은 모바일 크기 */
+@media screen and (max-width: 480px) {
+
+    .info_title{
+        padding-top: 0%;
+        margin-top: -10%;
+    }
+    .info_title h2 {
+        font-size: 45px;
+    }
+    .info_title h3 {
+        font-size: 20px;
+    }
 }
 
 .info_img{

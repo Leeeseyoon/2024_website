@@ -3,12 +3,58 @@ const node = document.getElementById('letters')
 const node2 = document.getElementById('letters2')
 const node3 = document.getElementById('letters3')
 
-const radius1 = 280
-const radius2 = 120
-const radius3 = 190
 const content = '시각의 경계를 넘어 우리만의 이야기로 담다'
 const content2 = 'PANORAMA'
 const content3 = '나는 집에 매우 가고 싶다'
+
+// 반응형 radius 계산 함수 추가
+function calculateRadius() {
+  const windowWidth = window.innerWidth;
+  
+  // 기본 radius 값 (1024px 초과)
+  let radius1 = 280;
+  let radius2 = 120;
+  let radius3 = 190;
+  
+  // 태블릿 크기 (769px ~ 1024px)
+  if (windowWidth <= 1024) {
+    radius1 = 240;
+    radius2 = 100;
+    radius3 = 160;
+  }
+  
+  // 작은 태블릿 크기 (481px ~ 768px)
+  if (windowWidth <= 768) {
+    radius1 = 200;
+    radius2 = 90;
+    radius3 = 140;
+  }
+  
+  // 모바일 크기 (480px 이하)
+  if (windowWidth <= 480) {
+    radius1 = 150;
+    radius2 = 70;
+    radius3 = 100;
+  }
+  
+  return { radius1, radius2, radius3 };
+}
+
+// radius 값을 동적으로 설정
+let { radius1, radius2, radius3 } = calculateRadius();
+
+// 리사이즈 이벤트 리스너 추가
+window.addEventListener('resize', () => {
+  const newRadii = calculateRadius();
+  radius1 = newRadii.radius1;
+  radius2 = newRadii.radius2;
+  radius3 = newRadii.radius3;
+  
+  // 크기 변경 시 텍스트 재생성
+  generateLetters(content, node, radius1);
+  generateLetters(content2, node2, radius2);
+  generateLetters(content3, node3, radius3);
+});
 
 function generateLetters(text, targetNode, radius) {
   targetNode.innerHTML = ''

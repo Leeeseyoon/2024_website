@@ -55,150 +55,343 @@ body {
         
 
 
-        /* 새로 pc 버전 css */
-        .container {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-        }
-        
-        
-        .text-section {
-            position: fixed;
-            left: 28%;
-            top: calc(48% + 2.6vw);
-            transform: translate(-50%, -50%);
-            height: 700px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            text-align: center;
-        }
-        
-        .text-item {
-            position: absolute;
-            font-size: 1.5em;
-            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
-            color: transparent;
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-            white-space: nowrap;
-            will-change: transform, opacity, font-size, background-image;
-            left: 50%;
-            transform: translateX(-50%);
-            line-height: 1.5;
-            background-clip: text;
-            -webkit-background-clip: text;
-            font-weight: 100;
-            z-index: 2;
-            cursor: pointer;
-        }
-        
-        /* 활성화된 텍스트 (중앙) */
-        .text-item.active {
-            font-size: 2.5em;
-            -webkit-text-stroke: 0;
-            color: #fff !important;
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-            font-weight: 700;
-        }
-        
-        /* 비활성화된 텍스트 */
-        .text-item:not(.active) {
-            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
-            color: transparent;
-            transform-origin: left center;
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .text-item.moving-up {
-            background-image: linear-gradient(to bottom, transparent 50%, #fff 50%);
-            background-position: 0 0;
-        }
-        
-        .text-item.moving-up.active {
-            background-position: 0 -100%;
-        }
-        
-        .image-section {
-            position: fixed;
-            right: 10%;
-            top: calc(50% + 2.6vw);
-            transform: translateY(-50%);
-            width: 760px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            overflow: visible;
-        }
-        
-        .image-container {
-            position: absolute;
-            width: 760px;
-            height: 570px;
-            transition: all 0.5s ease;
-            will-change: transform, opacity;
-            transform-origin: center center;
-            margin-top: -40px;
-        }
-        
-        .image-item {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .project-info-item {
-            position: absolute;
-            bottom: -40px;
-            right: 0;
-            font-size: 1.2em;
-            color: rgba(255, 255, 255, 0.5);
-            white-space: nowrap;
-        }
-        
-        .image-container.active {
-            opacity: 1;
-            z-index: 2;
-            transform: translateY(0) scale(1);
-        }
-        
-        .image-container.active .project-info-item {
-            color: rgba(255, 255, 255, 1);
-        }
-        
-        .image-container.adjacent {
-            opacity: 0.2;
-            z-index: 1;
-        }
-        
-        .image-container.adjacent .project-info-item {
-            opacity: 0.3;
-        }
-        
-        /* 위쪽 인접 이미지 */
-        .image-container.adjacent.prev {
-            transform: translateY(-80%) scale(0.8);
-        }
-        
-        /* 래쪽 인접 이미지 */
-        .image-container.adjacent.next {
-            transform: translateY(80%) scale(0.8);
-        }
-        
-        /* 다음 이미지들을 위한 새로운 클래스들 */
-        .image-item.next-1 {
-            opacity: 0.2;
-            transform: scale(0.3) translateY(40px);
-            z-index: 0;
-        }
-        
-        .image-item.next-2 {
-            opacity: 0.1;
-            transform: scale(0.2) translateY(80px);
-            z-index: -1;
-        }
+        /* PC 버전 스타일링 */
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.text-section {
+    position: fixed;
+    left: 28%;
+    top: calc(48% + 2.6vw);
+    transform: translate(-50%, -50%);
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.text-item {
+    position: absolute;
+    font-size: 1.5em;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+    color: transparent;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    white-space: nowrap;
+    will-change: transform, opacity, font-size, background-image;
+    left: 50%;
+    transform: translateX(-50%);
+    line-height: 1.5;
+    background-clip: text;
+    -webkit-background-clip: text;
+    font-weight: 100;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.text-item.active {
+    font-size: 2.5em;
+    -webkit-text-stroke: 0;
+    color: #fff !important;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    font-weight: 700;
+}
+
+.text-item:not(.active) {
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+    color: transparent;
+    transform-origin: left center;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.text-item.moving-up {
+    background-image: linear-gradient(to bottom, transparent 50%, #fff 50%);
+    background-position: 0 0;
+}
+
+.text-item.moving-up.active {
+    background-position: 0 -100%;
+}
+
+.text-item:not(.active):hover {
+    opacity: 0.8 !important;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease;
+}
+
+.image-section {
+    position: fixed;
+    right: 10%;
+    top: calc(50% + 2.6vw);
+    transform: translateY(-50%);
+    width: 760px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: visible;
+}
+
+.image-container {
+    position: absolute;
+    width: 760px;
+    height: 570px;
+    transition: all 0.5s ease;
+    will-change: transform, opacity;
+    transform-origin: center center;
+    margin-top: -40px;
+}
+
+.image-item {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-info-item {
+    position: absolute;
+    bottom: -40px;
+    right: 0;
+    font-size: 1.2em;
+    color: rgba(255, 255, 255, 0.5);
+    white-space: nowrap;
+}
+
+.image-container.active {
+    opacity: 1;
+    z-index: 2;
+    transform: translateY(0) scale(1);
+}
+
+.image-container.active .project-info-item {
+    color: rgba(255, 255, 255, 1);
+}
+
+.image-container.adjacent {
+    opacity: 0.2;
+    z-index: 1;
+}
+
+.image-container.adjacent .project-info-item {
+    opacity: 0.3;
+}
+
+.image-container.adjacent.prev {
+    transform: translateY(-80%) scale(0.8);
+}
+
+.image-container.adjacent.next {
+    transform: translateY(80%) scale(0.8);
+}
+
+.image-item.next-1 {
+    opacity: 0.2;
+    transform: scale(0.3) translateY(40px);
+    z-index: 0;
+}
+
+.image-item.next-2 {
+    opacity: 0.1;
+    transform: scale(0.2) translateY(80px);
+    z-index: -1;
+}
+
+.frame-container {
+    position: fixed;
+    left: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: calc(100% - 100px);
+    height: 120px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.guide-container {
+    display: none;
+}
+
+.project-info {
+    position: fixed;
+    right: 10%;
+    top: calc(50% + 350px);
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+.project-info-item {
+    position: absolute;
+    font-size: 1.2em;
+    color: rgba(255, 255, 255, 0.5);
+    opacity: 1;
+    transition: all 0.5s ease;
+    white-space: nowrap;
+    will-change: transform, opacity;
+    transform: translateY(0);
+}
+
+.project-info-item.active {
+    color: rgba(255, 255, 255, 1);
+    opacity: 1;
+}
+
+.project-info-item.adjacent {
+    opacity: 0.3;
+}
+
+/* 반응형 디자인 */
+
+/* 중간 데스크탑 화면 (1024px ~ 1910px) */
+@media (min-width: 1025px) and (max-width: 1910px) {
+    .text-section {
+        left: calc(20% + (28% - 20%) * ((100vw - 1024px) / (1910 - 1024)));
+        top: calc(45% + (48% - 45%) * ((100vw - 1024px) / (1910 - 1024)));
+        transform: translate(-50%, -50%);
+    }
+
+    .image-section {
+        right: calc(8% + (10% - 8%) * ((100vw - 1024px) / (1910 - 1024)));
+        width: calc(600px + (760 - 600) * ((100vw - 1024px) / (1910 - 1024)));
+        max-width: 45vw; /* 최대 너비 제한 추가 */
+    }
+}
+
+/* 태블릿 반응형 설정 (768px ~ 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .text-section {
+        left: 25%;
+        top: 45%;
+        transform: translate(-50%, -50%);
+    }
+
+    .image-section {
+        right: 5%;
+        width: 45vw; /* 뷰포트 너비에 따른 상대적 크기 */
+        max-width: 600px;
+    }
+
+    .image-container {
+        width: 100%; /* 부모 요소에 맞춤 */
+        height: auto;
+        aspect-ratio: 4/3; /* 이미지 비율 유지 */
+    }
+
+    /* 섹션 간 간격 유지를 위한 여백 설정 */
+    .container {
+        gap: calc(5% + (15% - 5%) * ((100vw - 768px) / (1024 - 768)));
+    }
+}
+
+
+
+/* 태블릿 및 모바일 레이아웃 (400px ~ 1024px) */
+@media (min-width: 400px) and (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        height: 100vh; /* 뷰포트 높이로 고정 */
+        overflow: hidden; /* 스크롤 방지 */
+        position: fixed; /* 컨테이너 고정 */
+        width: 100%;
+        top: 0;
+        left: 0;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .image-section {
+        position: fixed;
+        right: auto;
+        left: 50%;
+        top: 15vh; /* 상단에서 15% 위치 */
+        transform: translateX(-50%);
+        width: 90%;
+        max-width: 600px;
+        margin: 0;
+    }
+
+    .text-section {
+        position: fixed;
+        left: 50%;
+        top: 65vh; /* 상단에서 65% 위치 */
+        transform: translateX(-50%);
+        width: 100%;
+        height: auto;
+    }
+
+    .image-container {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4/3;
+        margin-top: 0;
+    }
+
+    .project-info {
+        position: fixed;
+        left: 50%;
+        bottom: 5vh; /* 하단에서 5% 위치 */
+        transform: translateX(-50%);
+        width: 100%;
+        text-align: center;
+    }
+
+    /* 이미지 슬라이드 효과 조정 */
+    .image-container.adjacent.prev {
+        transform: translateX(-70%) scale(0.8);
+    }
+
+    .image-container.adjacent.next {
+        transform: translateX(70%) scale(0.8);
+    }
+
+    .text-item {
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(20px);
+        transition: all 0.5s ease;
+    }
+
+    /* 활성화된 항목 */
+    .text-item.active {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+
+    /* 활성화된 항목의 바로 이전 항목 */
+    .text-item.active + .text-item,
+    .text-item.active ~ .text-item:nth-child(2) {
+        opacity: 0.3;
+        pointer-events: auto;
+        transform: translateY(40px);
+    }
+
+    /* 활성화된 항목의 이전 항목 */
+    .text-item.active ~ .text-item:nth-child(n+3) {
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(60px);
+    }
+
+    /* 활성화된 항목 바로 전의 항목 */
+    .text-item.active:not(:first-child) {
+        opacity: 0.3;
+        pointer-events: auto;
+        transform: translateY(-40px);
+    }
+
+    .text-section {
+        height: 150px; /* 3개 항목이 보일 수 있는 높이로 조정 */
+        overflow: hidden;
+    }
+    .image-section{
+        padding-top: 25%;
+    }
+    
+}
         
         /* 프레임 컨테이너 */
         .frame-container {
@@ -212,24 +405,7 @@ body {
             z-index: 1;
         }
         
-        /* 위아래 라인만 표시하고 길이 조절 */
-        /* .frame-container::before,
-        .frame-container::after {
-            content: '';
-            position: absolute;
-            left: -20px;
-            right: calc(50% + 200px);
-            height: 1px;
-            background: rgba(255, 255, 255, 0.2);
-        }
-        
-        .frame-container::before {
-            top: 0;
-        }
-        
-        .frame-container::after {
-            bottom: 0;
-        } */
+
         
         /* 기존의 가이드라인 제거 */
         .guide-container {
@@ -279,13 +455,6 @@ body {
 
 
 
-        @media screen and (max-width: 1910px) {
-            .text-section,
-            .image-section {
-                display: none;
-            }
-        }
-        
 
 
 
