@@ -16,6 +16,7 @@
     font-size: 16px;
 }
 
+
 @media (max-width: 1440px) {
     :root {
         font-size: 12px;
@@ -35,6 +36,9 @@
 @media (max-width: 480px) {
     :root {
         font-size: 6px;
+    }
+    .phone{
+        display: block;
     }
 }
 
@@ -59,6 +63,10 @@ html::-webkit-scrollbar {
 
 a {
     text-decoration: none;
+}
+
+.phone{
+    display: none;
 }
 /* 커서  */
 .custom_cursor {
@@ -153,214 +161,56 @@ a {
     }
     .phone{
         display: block;
-        font-size: 20px;
-        font-weight: 500;
-        /* outline: 1px solid red; */
-        height: 100px;
+    }
+    .custom_cursor{
+        display: none;
     }
 }
 /* 모바일 헤더 */
-.phone .container{
-    width: 100%;
-    max-width: 480px;
-    min-height: 800px;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-}
-
-.phone .logo{
-    outline: 1px solid red;
-    position: absolute;
-    top: 32px;
-    left: 20px;
-    display: block;
-    width: 42px;
-    height: 42px;
-    cursor: pointer;
-    z-index: 333;
-    background-color: #fff;
-}
-.phone .location{
-    position: absolute;
-    width: 100%;
-    top: 32px;
-    text-align: center;
-    font-size: 36px;
-    z-index: 332; /* menu-trigger보다 낮은 z-index */
-    font-family: "Odibee Sans", sans-serif;
-}
-.menu-trigger, .close-trigger {
-    position: absolute;
-    top: 32px;
-    right: 20px;
-    display: block;
-    width: 42px;
-    height: 42px;
-    cursor: pointer;
-    z-index: 333;
-    /* outline: 1px solid red; */
-}
-
-.menu-trigger:hover .menu-trigger-bar:before,
-.menu-trigger:hover .close-trigger-bar:before {
-    width: 100%;
-}
-
-.close-trigger {
-    z-index: 5;
-    top: 42px;
-    /* outline: 1px solid red; */
-}
-
-.menu-trigger-bar {
-    display: block;
-    width: 100%;
-    height: 4px;
-    background-color: rgba(255,255,255,1);
-    margin-bottom: 6px;
-    transform: rotate(-45deg);
-    position: relative;
-}
-
-.menu-trigger-bar:before {
-    content: "";
-    position: absolute;
+.phone{
+    position: fixed;
     top: 0;
     left: 0;
-    display: block;
-    width: 0%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.2);
-    transition: all 0.3s cubic-bezier(.55,0,.1,1);
-}
-
-.menu-trigger-bar.top {
-    width: 50%;
-}
-
-.menu-trigger-bar.middle:before {
-    left: auto;
-    right: 0;
-}
-
-.menu-trigger-bar.bottom {
-    width: 50%;
-    margin-left: 50%;
-}
-
-.close-trigger-bar {
-    display: block;
     width: 100%;
-    height: 4px;
-    background-color: #222222;
-    position: relative;
+    z-index: 999;
+    background-color: var(--color-black);
 }
-
-.close-trigger-bar:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    width: 0%;
-    height: 100%;
-    background-color: rgba(255,255,255,0.2);
-    transition: all 0.3s cubic-bezier(.55,0,.1,1);
-}
-
-.close-trigger-bar.left {
-    transform: translateX(100px) translateY(-100px) rotate(-45deg);
-}
-
-.close-trigger-bar.right {
-    transform: translateX(-100px) translateY(-100px) rotate(45deg);
-    top: -3px;
-}
-
-
-
-.inner-container, .menu-container {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    left: 0;
-    top: 0;
-}
-
-.inner-container {
-    z-index: 20;
-}
-
-.menu-container {
+.phone header {
     display: flex;
+    justify-content: space-between;
     align-items: center;
+    padding: 20px;
 }
 
-.menu {
-    display: block;
+.phone header .square {
+    width: 40px;
+    height: 40px;
+    background: transparent;
+}
+.phone header .square img {
     width: 100%;
-    padding: 20%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.menu li {
-    text-align: left;
+.phone header h1 {
+    color: #FFF;
+    text-align: center;
+    font-family: "Odibee Sans";
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.phone header .menu-btn span {
     display: block;
-    padding: 15px 0;
+    width: 40px;
+    height: 2px;
+    background: #fff;
+    margin: 8px 0;
 }
-
-.menu a {
-    text-decoration: none;
-    color: #222222;
-    display: inline-block;
-    padding: 10px 0;
-    position: relative;
+.phone .menu-btn {
+    background: transparent;
+    border: none;
 }
-
-.menu a:hover:before {
-    opacity: 1;
-    transform: translateX(0px);
-}
-
-.menu a:before {
-    content: "";
-    display: block;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 18px;
-    height: 4px;
-    opacity: 0;
-    background-color: #222222;
-    transform: translateX(100px);
-    transition: all 0.3s cubic-bezier(.55,0,.1,1);
-}
-
-.menu-bg {
-    position: absolute;
-    display: block;
-    width: 200%;
-    left: -53%;
-    top: -25%;
-    height: 40%;
-    background-color: rgba(255,255,255,1);
-}
-
-.menu-bg.middle {
-    top: 29%;
-    left: -53%;
-    transform: rotate(-45deg) scaleY(0);
-}
-
-.menu-bg.top {
-    left: -34%;
-    top: 0;
-    transform: rotate(-45deg) translateY(-152%);
-}
-
-.menu-bg.bottom {
-    top: 105%;
-    transform: rotate(-45deg) translateY(25%);
-    left: -20%;
-}
-
