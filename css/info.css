@@ -90,7 +90,7 @@ body {
 }
 .category_btn.selected,
 .category_btn:hover {
-    color: var(--color-white);
+    color: var(--color-orange);    
     cursor: none;
 }
 
@@ -181,6 +181,7 @@ body {
 /* :::: 졸전참여자 섹션 :::: */
 #participants .tab_title {
     padding-top: 7.5521vw;
+    
 }
 #participants .tab_article {
     width: 100%;
