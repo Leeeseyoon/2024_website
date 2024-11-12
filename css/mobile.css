@@ -351,9 +351,9 @@
         height: 130px;
     }
 } */
-/* @media (max-height: 900px) {
+@media (max-height: 900px) {
     .project-list {
         bottom: 120px;
         height: 135px;
     }
-} */
+}
