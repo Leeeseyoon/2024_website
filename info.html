@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/info.css">
     <link rel="stylesheet" href="css/topbutton.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <title>INFO</title>
 </head>
 <body>
@@ -36,7 +38,7 @@
                 <!-- 텍스트 -->
                 <div class="info_txt">
                     <!--제목-->
-                    <div class="info_title">
+                    <div class="info_title fade-up">
                         <h2>Panorama</h2>
                         <h3>: 시각의 경계를 넘어 우리들의 이야기를 담다</h3>
                     </div>
@@ -46,7 +48,7 @@
             <!-- 카테고리별 탭 섹션 -->
             <div class="tab_wrap">
                 <!-- 카테고리 탭 -->
-                <div class="category_wrap">
+                <div class="category_wrap fade-up">
                     <button class="category_btn selected" data-filter="comittee">COMITTEE</button>
                     <button class="category_btn" data-filter="participants">PARTICIPANTS</button>
                     <button class="category_btn" data-filter="thanksto">THANKS TO</button>
@@ -60,18 +62,18 @@
                             <!-- 섹션 1 -->
                             <div class="tab_section">
                                 <!-- 제목 -->
-                                <div class="tab_title">
+                                <div class="tab_title fade-up" data-delay="1">
                                     <h2>2024 졸업전시 준비위원회</h2>
                                 </div>
             
                                 <!-- 설명글 -->
                                 <div class="tab_article">
-                                    <div class="comittee_info">
+                                    <div class="comittee_info fade-up" data-delay="2">
                                         <p>
                                             이번 졸업작품 전시회에는 총 11명의 학생들이 ‘ 파노라마 : 시각의 경계를 넘어 우리들의 이야기를 담다. ’ 라는 주제로 졸업전시를 준비하기 위해 참여하였습니다. 졸업전시 준비위원회는 서로 협력하여 좋은 전시를 만들어 갈 수 있도록 노력했습니다. 
                                         </p>
                                     </div>
-                                    <div class="comittee_name main_comittee">
+                                    <div class="comittee_name main_comittee fade-up" data-delay="3">
                                         <div class="name_left">
                                             <ul>
                                                 <li>위원장</li>
@@ -105,18 +107,18 @@
                             <!-- 섹션 2 -->
                             <div class="tab_section">
                                 <!-- 제목 -->
-                                <div class="tab_title">
+                                <div class="tab_title fade-up" data-delay="1">
                                     <h2>Web Design</h2>
                                 </div>
             
                                 <!-- 설명글 -->
                                 <div class="tab_article">
-                                    <div class="comittee_info">
+                                    <div class="comittee_info fade-up" data-delay="2">
                                         <p>
                                             졸업생들의 포트폴리오를 한 공간에 모아볼 수 있는 웹사이트 제작팀입니다. 학교에서 활동한 2년간의 작품을 영화처럼 표현 할수 있게 기획하였습니다. 언제 어디서나 모바일에서도 즐길 수 있도록 반응형으로 구현하였습니다.
                                         </p>
                                     </div>
-                                    <div class="comittee_name">
+                                    <div class="comittee_name fade-up" data-delay="3">
                                         <div class="name_left">
                                             <ul>
                                                 <li>팀원</li>
@@ -136,7 +138,7 @@
                                             </ul>
                                         </div>
                                     </div>
-                                    <div class="comittee_name main_comittee mobile_ver">
+                                    <div class="comittee_name main_comittee mobile_ver fade-up" data-delay="3">
                                         <ul class="top">
                                             <li><p>팀원<span>김민경</span></p></li>
                                             <li><p>팀원<span>김수아</span></p></li>
@@ -155,18 +157,18 @@
                             <!-- 섹션 3 -->
                             <div class="tab_section">
                                 <!-- 제목 -->
-                                <div class="tab_title">
+                                <div class="tab_title fade-up" data-delay="1">
                                     <h2>Banner Team</h2>
                                 </div>
             
                                 <!-- 설명글 -->
                                 <div class="tab_article">
-                                    <div class="comittee_info">
+                                    <div class="comittee_info fade-up" data-delay="2">
                                         <p>
                                             졸업생들의 작품을 오프라인에서도 볼 수 있게 배너로 제작하는  팀입니다. 학교에서 활동한 2년간의 작품을 한 장면에 담을 수 있게 레이아웃을 기획했습니다. 대형 현수막과 소형 배너를 통해 학생들의 작품을 감상할 수 있습니다.
                                         </p>
                                     </div>
-                                    <div class="comittee_name">
+                                    <div class="comittee_name fade-up">
                                         <div class="name_left">
                                             <ul>
                                                 <li>팀원</li>
@@ -182,7 +184,7 @@
                                             </ul>
                                         </div>
                                     </div>
-                                    <div class="comittee_name main_comittee mobile_ver">
+                                    <div class="comittee_name main_comittee mobile_ver fade-up">
                                         <ul class="top">
                                             <li><p>팀원<span>박가람</span></p></li>
                                             <li><p>팀원<span>이세윤</span></p></li>
@@ -197,18 +199,18 @@
                             <!-- 섹션 4 -->
                             <div class="tab_section">
                                 <!-- 제목 -->
-                                <div class="tab_title">
+                                <div class="tab_title fade-up" data-delay="1">
                                     <h2>Video Team</h2>
                                 </div>
             
                                 <!-- 설명글 -->
                                 <div class="tab_article">
-                                    <div class="comittee_info">
+                                    <div class="comittee_info fade-up" data-delay="2">
                                         <p>
                                             졸업생들의 포트폴리오 웹사이트의 랜딩페이지에 들어갈 영상과 더불어 졸업전시 현장에 전시될 영상을 제작하는 팀입니다. 졸업 전시 컨셉을 영상미 있게 표현할 수 있도록 기획하였습니다. 모션그래픽을 이용한 영상으로 몰입감을 높이도록 노력했습니다.
                                         </p>
                                     </div>
-                                    <div class="comittee_name">
+                                    <div class="comittee_name fade-up">
                                         <div class="name_left">
                                             <ul>
                                                 <li>팀원</li>
@@ -226,7 +228,7 @@
                                             </ul>
                                         </div>
                                     </div>
-                                    <div class="comittee_name main_comittee mobile_ver">
+                                    <div class="comittee_name main_comittee mobile_ver fade-up" data-delay="2">
                                         <ul class="top">
                                             <li><p>팀원<span>최훈석</span></p></li>
                                             <li><p>팀원<span>양성우</span></p></li>
@@ -332,7 +334,7 @@
                                         </div>
                                         <div class="right_txt">
                                             <p>
-                                                토스뱅크 23130-3123-12111221
+                                                토스뱅크 1000-4771-0800
                                             </p>
                                         </div>
                                     </div>
@@ -407,6 +409,8 @@
     /* 시간 1000>200 */
     
         </script>
+
+        <script src="js/scroll-animation.js"></script>
         
 </body>
 </html>
