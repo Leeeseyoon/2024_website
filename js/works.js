@@ -153,3 +153,81 @@ textItems.forEach((item, index) => {
 });
 
 // CSS 수정을 위한 스타일 추가
+
+// 이미지 지연 로딩을 위한 함수
+function lazyLoadImages() {
+    const options = {
+        root: null,
+        rootMargin: '50px',
+        threshold: 0.1
+    };
+
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                if (img.dataset.src) {
+                    img.src = img.dataset.src;
+                    img.removeAttribute('data-src');
+                }
+                observer.unobserve(img);
+            }
+        });
+    }, options);
+
+    document.querySelectorAll('.image-item[data-src]').forEach(img => {
+        imageObserver.observe(img);
+    });
+}
+
+// 초기 로딩 최적화
+function initializeWithDelay() {
+    // 초기 위치를 미리 설정
+    textItems.forEach((item, index) => {
+        const relativePosition = index - currentIndex;
+        const position = relativePosition * ITEM_SPACING;
+        
+        item.style.transform = `translate(-50%, ${position}px)`;
+        item.style.opacity = '0';
+        item.style.visibility = index === currentIndex ? 'visible' : 'hidden';
+        
+        if (index === currentIndex) {
+            item.classList.add('active');
+            item.style.color = '#fff';
+            item.style.webkitTextStroke = '0';
+        } else {
+            item.style.color = 'transparent';
+            item.style.webkitTextStroke = '1px rgba(255, 255, 255, 0.3)';
+        }
+    });
+
+    imageContainers.forEach((container, index) => {
+        const relativePosition = index - currentIndex;
+        const position = relativePosition * ITEM_SPACING;
+        
+        container.style.transform = `translateY(${position}px) scale(${index === currentIndex ? 1 : 0.4})`;
+        container.style.opacity = '0';
+        container.style.visibility = index === currentIndex ? 'visible' : 'hidden';
+    });
+
+    // 약간의 지연 후 활성 항목만 표시
+    setTimeout(() => {
+        textItems[currentIndex].style.opacity = '1';
+        imageContainers[currentIndex].style.opacity = '1';
+        
+        // 추가 지연 후 나머지 항목 표시
+        setTimeout(() => {
+            textItems.forEach(item => {
+                item.style.visibility = 'visible';
+            });
+            imageContainers.forEach(container => {
+                container.style.visibility = 'visible';
+            });
+            setInitialPositions();
+            lazyLoadImages();
+        }, 500);
+    }, 100);
+}
+
+// DOMContentLoaded 이벤트에서 초기화
+document.addEventListener('DOMContentLoaded', initializeWithDelay);
