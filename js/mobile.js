@@ -30,8 +30,8 @@ function initializeMobile() {
     const projectsData = {
         digital: [
             { title: 'Ready to play the GAME?', author: '김민경', image: './images/img20.jpg', link: 'https://dibi00.github.io/2301110137_kimmingyeong_zolzak/' },
-            { title: '쌩쌩몰 웹 리디자인', author: '김민경', image: './images/img21.png' , link: '#'},
-            { title: '제목 추가', author: '김수빈', image: './images/img22.jpg' , link: '#'},
+            { title: '쌩쌩몰 웹사이트 리디자인', author: '김민경', image: './images/img21.png' , link: '#'},
+            { title: '폴리의 아이', author: '김수빈', image: './images/img22.jpg' , link: '#'},
             { title: '인터랙티브 포트폴리오', author: '김수아', image: './images/img23.jpg' , link: 'https://suakim1021.github.io/2024-graduate-portfolio/'},
             { title: '제목 추가', author: '김승찬', image: './images/img.jpg' , link: '#'},
             { title: '제목 추가', author: '김준희', image: './images/img25.jpg' , link: '#'},
