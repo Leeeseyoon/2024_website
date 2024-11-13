@@ -1,23 +1,24 @@
+// 초기 설정 및 변수 선언
 const textItems = document.querySelectorAll('.text-item');
 const imageContainers = document.querySelectorAll('.image-container');
 let currentIndex = 2;
 const ITEM_SPACING = 100;
 
-// body의 높이를 40개 항목에 맞게 조정
+// body의 높이를 동적으로 조정
 document.body.style.height = `${40 * window.innerHeight * 0.2}px`;
 
 // 중앙 영역 범위 정의
 const CENTER_ZONE = {
-    top: window.innerHeight * 0.4,    // 화면 높이의 40% 지점
-    bottom: window.innerHeight * 0.6   // 화면 높이의 60% 지점
+    top: window.innerHeight * 0.4,
+    bottom: window.innerHeight * 0.6
 };
 
+// 초기 위치 설정 함수
 function setInitialPositions() {
     textItems.forEach((item, index) => {
         const relativePosition = index - currentIndex;
         const position = relativePosition * ITEM_SPACING;
         
-        // translate(-50%, ...)를 추가하여 처음부터 중앙 정렬
         item.style.transform = `translate(-50%, ${position}px)`;
         
         if (Math.abs(relativePosition) <= 2) {
@@ -28,7 +29,7 @@ function setInitialPositions() {
 
         if (index === currentIndex) {
             item.classList.add('active');
-            item.style.color = '#fff'; // 초기 활성화된 텍스트도 흰색으로
+            item.style.color = '#fff';
             item.style.webkitTextStroke = '0';
         } else {
             item.style.color = 'transparent';
@@ -36,7 +37,6 @@ function setInitialPositions() {
         }
     });
 
-    // 이미지 컨테이너 초기 위치 설정
     imageContainers.forEach((container, index) => {
         const relativePosition = index - currentIndex;
         const position = relativePosition * ITEM_SPACING;
@@ -45,15 +45,14 @@ function setInitialPositions() {
     });
 }
 
+// 아이템 업데이트 함수
 function updateItems(newIndex) {
     if (newIndex < 0) newIndex = 0;
     if (newIndex >= textItems.length) newIndex = textItems.length - 1;
     
-    // 이전 활성화 항목 비활성화
     textItems[currentIndex].classList.remove('active');
     imageContainers[currentIndex]?.classList.remove('active');
     
-    // 모든 이미지 컨테이너 초기화
     imageContainers.forEach(container => {
         container.classList.remove('active', 'adjacent', 'prev', 'next');
         container.style.opacity = '0';
@@ -64,7 +63,6 @@ function updateItems(newIndex) {
         const relativePosition = index - newIndex;
         const position = relativePosition * ITEM_SPACING;
         
-        // 텍스트 아이템 업데이트
         if (Math.abs(relativePosition) <= 3) {
             item.style.opacity = '1';
         } else {
@@ -72,12 +70,10 @@ function updateItems(newIndex) {
         }
         
         if (index === newIndex) {
-            // 활성화된 텍스트는 흰색으로 설정
             item.style.color = '#fff';
             item.style.webkitTextStroke = '0';
             item.classList.add('active');
         } else {
-            // 비활성화된 텍스트는 기존 스타일 유지
             item.style.color = 'transparent';
             item.style.webkitTextStroke = '1px rgba(255, 255, 255, 0.3)';
             item.classList.remove('active');
@@ -85,7 +81,6 @@ function updateItems(newIndex) {
         
         item.style.transform = `translate(-50%, ${position}px)`;
         
-        // 이미지 컨테이너 업데이트
         const container = imageContainers[index];
         if (container) {
             if (index === newIndex) {
@@ -107,73 +102,92 @@ function updateItems(newIndex) {
     currentIndex = newIndex;
 }
 
-window.addEventListener('scroll', () => {
-    const scrollPosition = window.scrollY;
-    const itemHeight = window.innerHeight * 0.15;
-    const newIndex = Math.round(scrollPosition / itemHeight);
-    
-    if (newIndex !== currentIndex && newIndex >= 0 && newIndex < textItems.length) {
-        updateItems(newIndex);
+// 쓰로틀링 함수
+function throttle(func, limit) {
+    let inThrottle;
+    return function() {
+        const args = arguments;
+        const context = this;
+        if (!inThrottle) {
+            func.apply(context, args);
+            inThrottle = true;
+            setTimeout(() => inThrottle = false, limit);
+        }
     }
-});
+}
 
-// 초기 설정
+// 스크롤 핸들러
+const throttledScrollHandler = throttle(function() {
+    const scrollPosition = window.scrollY;
+    const itemHeight = window.innerHeight * 0.2;
+    const visibleItems = Array.from(textItems)
+        .filter(item => !item.classList.contains('hidden'));
+    
+    const newVisibleIndex = Math.floor(scrollPosition / itemHeight);
+    
+    if (newVisibleIndex >= 0 && newVisibleIndex < visibleItems.length) {
+        requestAnimationFrame(() => {
+            const newOriginalIndex = Array.from(textItems).indexOf(visibleItems[newVisibleIndex]);
+            if (newOriginalIndex !== currentIndex) {
+                updateItems(newOriginalIndex);
+            }
+        });
+    }
+}, 100);
+
+// 이벤트 리스너 설정
+window.addEventListener('scroll', throttledScrollHandler, { passive: true });
+
+// 초기 설정 실행
 setInitialPositions();
 
-// 클릭 이벤트 핸들러 수정
+// 클릭 이벤트 핸들러
 textItems.forEach((item, index) => {
     item.addEventListener('click', () => {
         if (index === currentIndex) return;
         
         const targetScrollPosition = Math.max(0, index * (window.innerHeight * 0.15));
         
-        // 클릭된 항목에 transition 클래스 추가
         item.classList.add('transitioning');
-        
-        // 현재 활성 항목에도 transition 클래스 추가
         textItems[currentIndex].classList.add('transitioning');
         
-        // updateItems 호출 전에 약간의 지연
         setTimeout(() => {
             updateItems(index);
             
-            // 부드러운 스크롤 적용
             window.scrollTo({
                 top: targetScrollPosition,
                 behavior: 'smooth'
             });
             
-            // transition 클래스 제거
             setTimeout(() => {
                 item.classList.remove('transitioning');
                 textItems[currentIndex].classList.remove('transitioning');
-            }, 800); // transition 시간과 동일하게 설정
+            }, 800);
         }, 50);
     });
 });
 
-// CSS 수정을 위한 스타일 추가
-
-// 이미지 지연 로딩을 위한 함수
+// 이미지 지연 로딩
 function lazyLoadImages() {
-    const options = {
-        root: null,
-        rootMargin: '50px',
-        threshold: 0.1
-    };
-
-    const imageObserver = new IntersectionObserver((entries, observer) => {
+    const imageObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const img = entry.target;
                 if (img.dataset.src) {
-                    img.src = img.dataset.src;
-                    img.removeAttribute('data-src');
+                    const image = new Image();
+                    image.onload = () => {
+                        img.src = img.dataset.src;
+                        img.removeAttribute('data-src');
+                    };
+                    image.src = img.dataset.src;
                 }
-                observer.unobserve(img);
+                imageObserver.unobserve(img);
             }
         });
-    }, options);
+    }, {
+        rootMargin: '50px',
+        threshold: 0.1
+    });
 
     document.querySelectorAll('.image-item[data-src]').forEach(img => {
         imageObserver.observe(img);
@@ -182,7 +196,6 @@ function lazyLoadImages() {
 
 // 초기 로딩 최적화
 function initializeWithDelay() {
-    // 초기 위치를 미리 설정
     textItems.forEach((item, index) => {
         const relativePosition = index - currentIndex;
         const position = relativePosition * ITEM_SPACING;
@@ -210,12 +223,10 @@ function initializeWithDelay() {
         container.style.visibility = index === currentIndex ? 'visible' : 'hidden';
     });
 
-    // 약간의 지연 후 활성 항목만 표시
     setTimeout(() => {
         textItems[currentIndex].style.opacity = '1';
         imageContainers[currentIndex].style.opacity = '1';
         
-        // 추가 지연 후 나머지 항목 표시
         setTimeout(() => {
             textItems.forEach(item => {
                 item.style.visibility = 'visible';
@@ -229,5 +240,66 @@ function initializeWithDelay() {
     }, 100);
 }
 
-// DOMContentLoaded 이벤트에서 초기화
-document.addEventListener('DOMContentLoaded', initializeWithDelay);
+// 카테고리 필터링
+function initializeCategories() {
+    const categoryButtons = document.querySelectorAll('.category-btn');
+    
+    categoryButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            categoryButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            const selectedCategory = button.dataset.category;
+            filterItems(selectedCategory, textItems, imageContainers);
+        });
+    });
+}
+
+function filterItems(category, textItems, imageContainers) {
+    let visibleItems = [];
+    let visibleContainers = [];
+
+    textItems.forEach((item, index) => {
+        if (category === 'all' || item.dataset.category === category) {
+            item.classList.remove('hidden');
+            visibleItems.push({ item, originalIndex: index });
+        } else {
+            item.classList.add('hidden');
+        }
+    });
+
+    imageContainers.forEach((container, index) => {
+        if (category === 'all' || container.dataset.category === category) {
+            container.classList.remove('hidden');
+            visibleContainers.push({ container, originalIndex: index });
+        } else {
+            container.classList.add('hidden');
+        }
+    });
+
+    const totalVisibleItems = visibleItems.length;
+    const itemSpacing = window.innerHeight * 0.2;
+    const totalHeight = (totalVisibleItems + 1) * itemSpacing + window.innerHeight;
+    document.body.style.height = `${totalHeight}px`;
+
+    if (visibleItems.length > 0) {
+        const firstVisibleIndex = visibleItems[0].originalIndex;
+        currentIndex = firstVisibleIndex;
+        
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+
+        updateItems(firstVisibleIndex);
+    }
+
+    window.removeEventListener('scroll', throttledScrollHandler);
+    window.addEventListener('scroll', throttledScrollHandler, { passive: true });
+}
+
+// 초기화
+document.addEventListener('DOMContentLoaded', () => {
+    initializeWithDelay();
+    initializeCategories();
+});
