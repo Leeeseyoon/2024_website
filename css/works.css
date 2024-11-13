@@ -82,7 +82,7 @@ body {
     font-size: 1.5em;
     -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
     color: transparent;
-    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     white-space: nowrap;
     will-change: transform, opacity;
     left: 50%;
@@ -367,7 +367,7 @@ body {
         transform: translateY(40px);
     }
 
-    /* 활성화된 항목의 이전 항목 */
+    /* ���화된 항목의 이전 항목 */
     .text-item.active ~ .text-item:nth-child(n+3) {
         opacity: 0;
         pointer-events: none;
@@ -450,6 +450,85 @@ body {
             -webkit-text-stroke: 1px rgba(255, 255, 255, 0.7);
             transition: all 0.3s ease;
         }
+
+/* 카테고리 메뉴 스타일링 */
+.category-menu {
+    position: fixed;
+    top: 17%;
+    left: 28%;
+    transform: translateX(-50%);
+    z-index: 100;
+    display: flex;
+    gap: 20px;
+    background-color: rgba(21, 16, 11, 0.8);
+    padding: 15px 25px;
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+}
+
+.category-btn {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1em;
+    cursor: pointer;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.category-btn:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.category-btn.active {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+/* 숨겨진 아이템 스타일 */
+.text-item.hidden,
+.image-container.hidden {
+    display: none;
+}
+
+/* 반응형 대응 */
+@media (max-width: 768px) {
+    .category-menu {
+        top: 80px;
+        width: 90%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .category-btn {
+        font-size: 0.9em;
+        padding: 6px 12px;
+    }
+}
+
+.category-section {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.category-section.active {
+    display: block;
+}
+
+/* 각 카테고리별 섹션 스타일링 */
+.uiux-section .text-item,
+.web-section .text-item,
+.graphic-section .text-item {
+    margin-bottom: 60px; /* 각 카테고리별로 간격 조정 가능 */
+}
+
+.uiux-section .image-container,
+.web-section .image-container,
+.graphic-section .image-container {
+    margin-bottom: 80px; /* 각 카테고리별로 간격 조정 가능 */
+}
 
 
 

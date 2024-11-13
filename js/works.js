@@ -107,15 +107,41 @@ function updateItems(newIndex) {
     currentIndex = newIndex;
 }
 
-window.addEventListener('scroll', () => {
-    const scrollPosition = window.scrollY;
-    const itemHeight = window.innerHeight * 0.15;
-    const newIndex = Math.round(scrollPosition / itemHeight);
-    
-    if (newIndex !== currentIndex && newIndex >= 0 && newIndex < textItems.length) {
-        updateItems(newIndex);
+// 스크롤 이벤트에 쓰로틀링 적용
+function throttle(func, limit) {
+    let inThrottle;
+    return function() {
+        const args = arguments;
+        const context = this;
+        if (!inThrottle) {
+            func.apply(context, args);
+            inThrottle = true;
+            setTimeout(() => inThrottle = false, limit);
+        }
     }
-});
+}
+
+// 스크롤 핸들러 수정
+const throttledScrollHandler = throttle(function() {
+    const scrollPosition = window.scrollY;
+    const itemHeight = window.innerHeight * 0.2;
+    const visibleItems = Array.from(textItems)
+        .filter(item => !item.classList.contains('hidden'));
+    
+    const newVisibleIndex = Math.floor(scrollPosition / itemHeight);
+    
+    if (newVisibleIndex >= 0 && newVisibleIndex < visibleItems.length) {
+        requestAnimationFrame(() => {
+            const newOriginalIndex = Array.from(textItems).indexOf(visibleItems[newVisibleIndex]);
+            if (newOriginalIndex !== currentIndex) {
+                updateItems(newOriginalIndex);
+            }
+        });
+    }
+}, 100);
+
+// 이벤트 리스너 수정
+window.addEventListener('scroll', throttledScrollHandler, { passive: true });
 
 // 초기 설정
 setInitialPositions();
@@ -147,7 +173,7 @@ textItems.forEach((item, index) => {
             setTimeout(() => {
                 item.classList.remove('transitioning');
                 textItems[currentIndex].classList.remove('transitioning');
-            }, 800); // transition 시간과 동일하게 설정
+            }, 800); // transition ��간과 동일하게 설정
         }, 50);
     });
 });
@@ -156,24 +182,25 @@ textItems.forEach((item, index) => {
 
 // 이미지 지연 로딩을 위한 함수
 function lazyLoadImages() {
-    const options = {
-        root: null,
-        rootMargin: '50px',
-        threshold: 0.1
-    };
-
-    const imageObserver = new IntersectionObserver((entries, observer) => {
+    const imageObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const img = entry.target;
                 if (img.dataset.src) {
-                    img.src = img.dataset.src;
-                    img.removeAttribute('data-src');
+                    const image = new Image();
+                    image.onload = () => {
+                        img.src = img.dataset.src;
+                        img.removeAttribute('data-src');
+                    };
+                    image.src = img.dataset.src;
                 }
-                observer.unobserve(img);
+                imageObserver.unobserve(img);
             }
         });
-    }, options);
+    }, {
+        rootMargin: '50px',
+        threshold: 0.1
+    });
 
     document.querySelectorAll('.image-item[data-src]').forEach(img => {
         imageObserver.observe(img);
@@ -229,5 +256,111 @@ function initializeWithDelay() {
     }, 100);
 }
 
-// DOMContentLoaded 이벤트에서 초기화
-document.addEventListener('DOMContentLoaded', initializeWithDelay);
+// 카테고리 필터링 기능 추가
+function initializeCategories() {
+    const categoryButtons = document.querySelectorAll('.category-btn');
+    
+    categoryButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // 활성화된 버튼 스타일 변경
+            categoryButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            const selectedCategory = button.dataset.category;
+            
+            // 아이템 필터링 및 첫 번째 항목 활성화
+            filterItems(selectedCategory, textItems, imageContainers);
+        });
+    });
+}
+
+function filterItems(category, textItems, imageContainers) {
+    let visibleItems = [];
+    let visibleContainers = [];
+
+    // 아이템 필터링
+    textItems.forEach((item, index) => {
+        if (category === 'all' || item.dataset.category === category) {
+            item.classList.remove('hidden');
+            visibleItems.push({ item, originalIndex: index });
+        } else {
+            item.classList.add('hidden');
+        }
+    });
+
+    imageContainers.forEach((container, index) => {
+        if (category === 'all' || container.dataset.category === category) {
+            container.classList.remove('hidden');
+            visibleContainers.push({ container, originalIndex: index });
+        } else {
+            container.classList.add('hidden');
+        }
+    });
+
+    // 스크롤 높이 계산
+    const totalVisibleItems = visibleItems.length;
+    const itemSpacing = window.innerHeight * 0.2;
+    const minHeight = window.innerHeight * 2;
+    const totalHeight = Math.max(minHeight, totalVisibleItems * itemSpacing + window.innerHeight);
+    document.body.style.height = `${totalHeight}px`;
+
+    // 카테고리 변경 시 첫 번째 항목 활성화
+    if (visibleItems.length > 0) {
+        const firstVisibleIndex = visibleItems[0].originalIndex;
+        currentIndex = firstVisibleIndex;
+        
+        // 스크롤 위치를 첫 번째 항목으로 이동
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+
+        // 첫 번째 항목 활성화
+        updateItems(firstVisibleIndex);
+    }
+
+    // 스크롤 이벤트 리스너 갱신
+    window.removeEventListener('scroll', scrollHandler);
+    window.addEventListener('scroll', scrollHandler);
+}
+
+// 스크롤 핸들러 수정
+function scrollHandler() {
+    const scrollPosition = window.scrollY;
+    const itemHeight = window.innerHeight * 0.2;
+    const visibleItems = Array.from(textItems)
+        .filter(item => !item.classList.contains('hidden'))
+        .map((item, index) => ({
+            item,
+            originalIndex: Array.from(textItems).indexOf(item)
+        }));
+
+    const newVisibleIndex = Math.floor(scrollPosition / itemHeight);
+    
+    if (newVisibleIndex >= 0 && newVisibleIndex < visibleItems.length) {
+        const newOriginalIndex = visibleItems[newVisibleIndex].originalIndex;
+        if (newOriginalIndex !== currentIndex) {
+            updateItems(newOriginalIndex);
+        }
+    }
+}
+
+// 초기 스크롤 이벤트 리스너 제거
+window.removeEventListener('scroll', () => {
+    const scrollPosition = window.scrollY;
+    const itemHeight = window.innerHeight * 0.15;
+    const newIndex = Math.round(scrollPosition / itemHeight);
+    
+    if (newIndex !== currentIndex && newIndex >= 0 && newIndex < textItems.length) {
+        updateItems(newIndex);
+    }
+});
+
+// 새로운 스크롤 이벤트 리스너 등록
+window.addEventListener('scroll', scrollHandler);
+
+// 기존 초기화 함수에 카테고리 초기화 추가
+document.addEventListener('DOMContentLoaded', () => {
+    initializeWithDelay();
+    initializeCategories();
+});
