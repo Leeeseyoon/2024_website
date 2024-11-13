@@ -259,7 +259,7 @@ a:hover
 
 
   canvas {
-    background: black;
+    background: var(--color-black);
     display: block;
     width: 100vw;
     height: 100vh;
