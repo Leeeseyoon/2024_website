@@ -9,8 +9,19 @@ const imageContainers = document.querySelectorAll('.image-container');
 let currentIndex = 2;
 const ITEM_SPACING = 100;
 
-// body의 높이를 동적으로 조정
-document.body.style.height = isMobile() ? 'auto' : `${40 * window.innerHeight * 0.2}px`;
+// body 높이 계산 함수 추가
+function updateBodyHeight() {
+    if (isMobile()) {
+        document.body.style.height = 'auto';
+        return;
+    }
+    
+    const visibleItems = Array.from(textItems).filter(item => !item.classList.contains('hidden'));
+    const totalItems = visibleItems.length;
+    // 여유 공간을 더 확보하기 위해 계수 조정
+    const heightMultiplier = 50; // 기존 40에서 50으로 증가
+    document.body.style.height = `${heightMultiplier * window.innerHeight * 0.2}px`;
+}
 
 // 중앙 영역 범위 정의
 const CENTER_ZONE = {
@@ -342,7 +353,7 @@ function filterItems(category, textItems, imageContainers) {
     const totalVisibleItems = visibleItems.length;
     const itemSpacing = window.innerHeight * 0.2;
     const totalHeight = category === 'all' 
-        ? (40 * window.innerHeight * 0.2)
+        ? (50 * window.innerHeight * 0.2) // 기존 40에서 50으로 증가
         : ((totalVisibleItems + 1) * itemSpacing + window.innerHeight);
     document.body.style.height = `${totalHeight}px`;
 
@@ -366,6 +377,7 @@ function filterItems(category, textItems, imageContainers) {
 document.addEventListener('DOMContentLoaded', () => {
     if (!isMobile()) {
         initializeWithDelay();
+        updateBodyHeight(); // 초기 높이 설정
     }
     initializeCategories();
     
@@ -389,7 +401,7 @@ window.addEventListener('resize', () => {
             container.style.visibility = 'visible';
         });
     } else {
-        document.body.style.height = `${40 * window.innerHeight * 0.2}px`;
+        updateBodyHeight(); // 높이 업데이트
         window.addEventListener('scroll', throttledScrollHandler, { passive: true });
         setInitialPositions();
     }

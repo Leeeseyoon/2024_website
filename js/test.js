@@ -10,29 +10,25 @@ window.addEventListener('resize', setCanvasSize);
 
 // 이미지 배열 수정
 const imageUrls = [
-    'images/img20.jpg',
-    'images/img21.png',
-    'images/img22.jpg',
-    'images/img23.jpg',
-    'images/img24.jpg',
-    'images/img25.jpg',
-    'images/img26.jpg',
-    'images/img27.jpg',
-    'images/img28.jpg',
-    'images/img29.jpg',
-    'images/img30.jpg',
-    'images/img31.jpg',
-    'images/img32.jpg',
-    'images/img33.jpg',
-    'images/img34.jpg',
-    'images/img35.jpg',
-    'images/img36.jpg',
-    'images/img37.jpg',
-    'images/img38.jpg',
-    'images/img39.jpg',
-    'images/img40.jpg',
-    'images/img41.jpg',
-    'images/img42.jpg'
+    'images/works/김민경A.png',
+    'images/works/김민경B.png',
+    'images/works/김수아.jpg',
+    'images/works/김승찬.jpg',
+    'images/works/김준희.png',
+    'images/works/김태호.png',
+    'images/works/장천수.png',
+    'images/works/류시은.png',
+    'images/works/박가람.png',
+    'images/works/심재정.png',
+    'images/works/양성우.jpg',
+    'images/works/우수지.jpg',
+    'images/works/원세연.png',
+    'images/works/유지수.jpg',
+    'images/works/이세윤1.jpg',
+    'images/works/임현준.png',
+    'images/works/황세희.png',
+    'images/works/윤비.jpg',
+    'images/works/임율.jpg'
 ];
 
 // 이미지 배열에서 랜덤하게 20개만 선택하는 함수
