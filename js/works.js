@@ -53,31 +53,37 @@ function setInitialPositions() {
 }
 
 // 아이템 업데이트 함수
-function updateItems(newIndex) {
+function updateItems(newIndex, filteredIndexMap = null) {
     if (isMobile()) return;
     
     if (newIndex < 0) newIndex = 0;
     if (newIndex >= textItems.length) newIndex = textItems.length - 1;
-    
-    textItems[currentIndex].classList.remove('active');
+
+    // 현재 활성화된 아이템들의 클래스 제거
+    textItems[currentIndex]?.classList.remove('active');
     imageContainers[currentIndex]?.classList.remove('active');
-    
+
+    // 모든 컨테이너 초기화
     imageContainers.forEach(container => {
         container.classList.remove('active', 'adjacent', 'prev', 'next');
         container.style.opacity = '0';
         container.style.transform = `translateY(0) scale(0.8)`;
     });
-    
+
     textItems.forEach((item, index) => {
-        const relativePosition = index - newIndex;
+        // 필터링된 인덱스 사용
+        const mappedIndex = filteredIndexMap ? filteredIndexMap.get(index) : index;
+        if (mappedIndex === undefined && filteredIndexMap) return;
+
+        const relativePosition = mappedIndex - (filteredIndexMap ? filteredIndexMap.get(newIndex) : newIndex);
         const position = relativePosition * ITEM_SPACING;
-        
+
         if (Math.abs(relativePosition) <= 3) {
             item.style.opacity = '1';
         } else {
             item.style.opacity = '0';
         }
-        
+
         if (index === newIndex) {
             item.style.color = '#fff';
             item.style.webkitTextStroke = '0';
@@ -87,9 +93,9 @@ function updateItems(newIndex) {
             item.style.webkitTextStroke = '1px rgba(255, 255, 255, 0.3)';
             item.classList.remove('active');
         }
-        
+
         item.style.transform = `translate(-50%, ${position}px)`;
-        
+
         const container = imageContainers[index];
         if (container) {
             if (index === newIndex) {
@@ -107,7 +113,7 @@ function updateItems(newIndex) {
             }
         }
     });
-    
+
     currentIndex = newIndex;
 }
 
@@ -154,14 +160,13 @@ if (!isMobile()) {
 // 초기 설정 실행
 setInitialPositions();
 
-// 클릭 이벤트 핸들러
+// 클릭 이벤트 핸들러 부분만 수정
 textItems.forEach((item, index) => {
     item.addEventListener('click', () => {
         if (isMobile()) return;
-        
         if (index === currentIndex) return;
         
-        const targetScrollPosition = Math.max(0, index * (window.innerHeight * 0.15));
+        const targetScrollPosition = Math.max(0, index * (window.innerHeight * 0.2));
         
         item.classList.add('transitioning');
         textItems[currentIndex].classList.add('transitioning');
@@ -212,7 +217,6 @@ function lazyLoadImages() {
 // 초기 로딩 최적화
 function initializeWithDelay() {
     if (isMobile()) {
-        // 모바일에서는 기본 스타일만 적용
         textItems.forEach(item => {
             item.style.transform = 'none';
             item.style.opacity = '1';
@@ -290,7 +294,6 @@ function initializeCategories() {
 
 function filterItems(category, textItems, imageContainers) {
     if (isMobile()) {
-        // 모바일에서는 단순히 요소를 보이거나 숨기기만 함
         textItems.forEach(item => {
             if (category === 'all' || item.dataset.category === category) {
                 item.classList.remove('hidden');
@@ -307,27 +310,30 @@ function filterItems(category, textItems, imageContainers) {
             }
         });
         
-        // 모바일에서는 body 높이를 auto로 설정
         document.body.style.height = 'auto';
         return;
     }
 
     let visibleItems = [];
     let visibleContainers = [];
+    let filteredIndexMap = new Map();
 
-    textItems.forEach((item, index) => {
+    let newIndex = 0;
+    textItems.forEach((item, originalIndex) => {
         if (category === 'all' || item.dataset.category === category) {
             item.classList.remove('hidden');
-            visibleItems.push({ item, originalIndex: index });
+            visibleItems.push({ item, originalIndex });
+            filteredIndexMap.set(originalIndex, newIndex);
+            newIndex++;
         } else {
             item.classList.add('hidden');
         }
     });
 
-    imageContainers.forEach((container, index) => {
+    imageContainers.forEach((container, originalIndex) => {
         if (category === 'all' || container.dataset.category === category) {
             container.classList.remove('hidden');
-            visibleContainers.push({ container, originalIndex: index });
+            visibleContainers.push({ container, originalIndex });
         } else {
             container.classList.add('hidden');
         }
@@ -335,7 +341,9 @@ function filterItems(category, textItems, imageContainers) {
 
     const totalVisibleItems = visibleItems.length;
     const itemSpacing = window.innerHeight * 0.2;
-    const totalHeight = (totalVisibleItems + 1) * itemSpacing + window.innerHeight;
+    const totalHeight = category === 'all' 
+        ? (40 * window.innerHeight * 0.2)
+        : ((totalVisibleItems + 1) * itemSpacing + window.innerHeight);
     document.body.style.height = `${totalHeight}px`;
 
     if (visibleItems.length > 0) {
@@ -347,7 +355,7 @@ function filterItems(category, textItems, imageContainers) {
             behavior: 'smooth'
         });
 
-        updateItems(firstVisibleIndex);
+        updateItems(firstVisibleIndex, filteredIndexMap);
     }
 
     window.removeEventListener('scroll', throttledScrollHandler);
@@ -360,14 +368,16 @@ document.addEventListener('DOMContentLoaded', () => {
         initializeWithDelay();
     }
     initializeCategories();
+    
+    currentIndex = 0;
+    updateItems(currentIndex);
 });
 
 // 리사이즈 이벤트
 window.addEventListener('resize', () => {
     if (isMobile()) {
         window.removeEventListener('scroll', throttledScrollHandler);
-        // 모바일 스타일로 초기화
-        document.body.style.height = 'auto';  // 모바일에서 body 높이를 auto로 설정
+        document.body.style.height = 'auto';
         textItems.forEach(item => {
             item.style.transform = 'none';
             item.style.opacity = '1';
@@ -379,8 +389,31 @@ window.addEventListener('resize', () => {
             container.style.visibility = 'visible';
         });
     } else {
-        document.body.style.height = `${40 * window.innerHeight * 0.2}px`;  // 데스크톱에서 원래 높이로 설정
+        document.body.style.height = `${40 * window.innerHeight * 0.2}px`;
         window.addEventListener('scroll', throttledScrollHandler, { passive: true });
         setInitialPositions();
     }
+});
+
+// 커스텀 커서 관련 코드 추가
+document.addEventListener('DOMContentLoaded', function() {
+    const cursor = document.querySelector('.custom_cursor');
+    
+    document.addEventListener('mousemove', function(e) {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+    });
+
+    // 링크나 버튼에 호버했을 때 커서 크기 변경
+    const hoverElements = document.querySelectorAll('a, button, .text-item');
+    
+    hoverElements.forEach(element => {
+        element.addEventListener('mouseenter', () => {
+            cursor.style.transform = 'scale(2)';
+        });
+        
+        element.addEventListener('mouseleave', () => {
+            cursor.style.transform = 'scale(1)';
+        });
+    });
 });
