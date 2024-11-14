@@ -1,6 +1,6 @@
 @media (max-width: 480px) {
     body {
-        height: fit-content;
+        height: 100vh;
         font-family: 'Inter', sans-serif;
     }
     .header, .main {
