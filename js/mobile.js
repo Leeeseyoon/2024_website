@@ -29,48 +29,48 @@ function initializeMobile() {
     // 카테고리별 프로젝트 데이터 분리
     const projectsData = {
         digital: [
-            { title: 'Ready to play the GAME?', author: '김민경', image: './images/img20.jpg', link: 'https://dibi00.github.io/2301110137_kimmingyeong_zolzak/' },
-            { title: '쌩쌩몰 웹사이트 리디자인', author: '김민경', image: './images/img21.png' , link: '#'},
-            { title: '폴리의 아이', author: '김수빈', image: './images/img22.jpg' , link: '#'},
-            { title: 'WELAAA 2.0 프로모션 웹', author: '김수아', image: './images/img23.jpg' , link: 'https://suakim1021.github.io/2024-graduate-portfolio/'},
-            { title: 'Portfolio', author: '김승찬', image: './images/img24.jpg' , link: '#'},
-            { title: 'Portfolio', author: '김준희', image: './images/img25.jpg' , link: '#'},
-            { title: 'Portfolio', author: '김태호', image: './images/img26.jpg' , link: '#'},
-            { title: 'RYU Summary', author: '류시은', image: './images/img27.jpg' , link: '#'},
-            { title: 'I WILL MAKE MY DESIGN PATH', author: '박가람', image: './images/img28.jpg' , link: '#'},
-            { title: 'Communicative Designer', author: '심재정', image: './images/img29.jpg' , link: '#'},
-            { title: 'A NEW Encounter with Ohui', author: '양성우', image: './images/img30.jpg' , link: '#'},
-            { title: '그린피스 웹사이트 리디자인', author: '우수지', image: './images/img31.jpg' , link: '#'},
-            { title: '그리드와 소금', author: '원세연', image: './images/img32.jpg' , link: '#'},
-            { title: 'Portfolio', author: '유지수', image: './images/img33.jpg' , link: 'https://wltn510.github.io/1107/'},
-            { title: '뛰는 놈 위에 나는 놈', author: '윤비', image: './images/img34.jpg' , link: '#'},
-            { title: '카카오뱅크 웹사이트 리디자인', author: '이세윤', image: './images/img43.jpg' , link: '#'},
-            { title: '위홈 앱 리디자인', author: '이세윤', image: './images/img44.jpg' , link: '#'},
-            { title: 'Portfolio', author: '이지우', image: './images/img36.jpg' , link: '#'},
-            { title: '광염 소나타 책 표지', author: '임율', image: './images/img37.jpg' , link: '#'},
-            { title: '유튜브 앱 리디자인', author: '임현준', image: './images/img38.png' , link: '#'},
-            { title: 'Portfolio', author: '장천수', image: './images/img39.jpg' , link: '#'},
-            { title: 'Portfolio', author: '최은지', image: './images/img40.jpg' , link: '#'},
-            { title: '색과 린데만스', author: '최훈석', image: './images/img41.jpg' , link: '#'},
-            { title: '크린나라 앱 리디자인', author: '황세희', image: './images/img45.png' , link: '#'}
+            { title: 'Ready to play the GAME?', author: '김민경', image: 'images/works/김민경A.png', link: 'https://dibi00.github.io/2301110137_kimmingyeong_zolzak/' },
+            { title: '쌩쌩몰 웹사이트 리디자인', author: '김민경', image: 'images/works/김민경B.png', link: '#' },
+            { title: '폴리의 아이', author: '김수빈', image: 'images/works/김수빈.jpg', link: '#' },
+            { title: 'WELAAA 2.0 프로모션 웹', author: '김수아', image: 'images/works/김수아.jpg', link: 'https://suakim1021.github.io/2024-graduate-portfolio/' },
+            { title: 'Portfolio', author: '김승찬', image: 'images/works/김승찬.jpg', link: '#' },
+            { title: 'Portfolio', author: '김준희', image: 'images/works/김준희.png', link: '#' },
+            { title: 'Portfolio', author: '김태호', image: 'images/works/김태호.png', link: '#' },
+            { title: 'RYU Summary', author: '류시은', image: 'images/works/류시은.png', link: '#' },
+            { title: 'I WILL MAKE MY DESIGN PATH', author: '박가람', image: 'images/works/박가람.png', link: '#' },
+            { title: 'Communicative Designer', author: '심재정', image: 'images/works/심재정.png', link: '#' },
+            { title: 'A NEW Encounter with Ohui', author: '양성우', image: 'images/works/양성우.jpg', link: '#' },
+            { title: '그린피스 웹사이트 리디자인', author: '우수지', image: 'images/works/우수지.jpg', link: '#' },
+            { title: '그리드와 소금', author: '원세연', image: 'images/works/원세연.png', link: '#' },
+            { title: 'Portfolio', author: '유지수', image: 'images/works/유지수.jpg', link: 'https://wltn510.github.io/1107/' },
+            { title: '뛰는 놈 위에 나는 놈', author: '윤비', image: 'images/works/윤비.jpg', link: '#' },
+            { title: '카카오뱅크 웹사이트 리디자인', author: '이세윤', image: 'images/works/이세윤1.jpg', link: '#' },
+            { title: '위홈 앱 리디자인', author: '이세윤', image: 'images/works/이세윤2.jpg', link: '#' },
+            { title: 'Portfolio', author: '이지우', image: 'images/works/이지우.jpg', link: '#' },
+            { title: '광염 소나타 책 표지', author: '임율', image: 'images/works/임율.jpg', link: '#' },
+            { title: '유튜브 앱 리디자인', author: '임현준', image: 'images/works/임현준.png', link: '#' },
+            { title: 'Portfolio', author: '장천수', image: 'images/works/장천수.png', link: '#' },
+            { title: 'Portfolio', author: '최은지', image: 'images/works/최은지.jpg', link: '#' },
+            { title: '색과 린데만스', author: '최훈석', image: 'images/works/최훈석.jpg', link: '#' },
+            { title: '크린나라 앱 리디자인', author: '황세희', image: 'images/works/황세희.png', link: '#' }
         ],
         visual: [
-            { title: 'ANAKNE(굿즈디자인)', author: '강찬우', image: './images/img1.jpg', link: '#' },
-            { title: '제주여행', author: '김승빈', image: './images/img2.jpg', link: '#' },
-            { title: '하이트 100주년', author: '박경호', image: './images/img4.jpg', link: '#' },
-            { title: 'Portfolio', author: '박윤민', image: './images/img5.jpg', link: '#' },
-            { title: 'Graphic Design', author: '송다은', image: './images/img.jpg', link: '#' },
-            { title: '여우의 하루', author: '송민서', image: './images/img8.jpg', link: '#' },
-            { title: 'portfolio', author: '윤혜원', image: './images/img10.jpg', link: '#' },
-            { title: 'portfolio', author: '이동현', image: './images/img11.jpg' , link: '#'},
-            { title: 'Portfolio', author: '이연지', image: './images/img12.jpg' , link: '#'},
-            { title: '앨범 리디자인', author: '이영은', image: './images/img13.jpg' , link: '#'},
-            { title: '브랜드 B.I디자인', author: '이재원', image: './images/img14.jpg' , link: '#'},
-            { title: '월인석봉에디션', author: '임재형', image: './images/img15.jpg' , link: '#'},
-            { title: '킹부각 (패키지 디자인)', author: '정회강', image: './images/img16.jpg' , link: '#'},
-            { title: '바라의 하루', author: '최민주', image: './images/img17.jpg' , link: '#'},
-            { title: '자수롭게(로고, 굿즈디자인)', author: '한병헌', image: './images/img18.jpg' , link: '#'},
-            { title: 'PORTFOLIO', author: '허준우', image: './images/img19.jpg' , link: '#'}
+            { title: 'ANAKNE(굿즈디자인)', author: '강찬우', image: 'images/works/강찬우.jpg', link: '#' },
+            { title: '제주여행', author: '김승빈', image: 'images/works/김승빈.png', link: '#' },
+            { title: '하이트 100주년', author: '박경호', image: 'images/works/박경호.jpg', link: '#' },
+            { title: 'Portfolio', author: '박윤민', image: 'images/works/박윤민.jpg', link: '#' },
+            { title: 'Graphic Design', author: '송다은', image: 'images/works/송다은.jpg', link: '#' },
+            { title: '여우의 하루', author: '송민서', image: 'images/works/송민서.jpg', link: '#' },
+            { title: 'portfolio', author: '윤혜원', image: 'images/works/윤혜원.jpg', link: '#' },
+            { title: 'portfolio', author: '이동현', image: 'images/works/이동현.jpg', link: '#' },
+            { title: 'Portfolio', author: '이연지', image: 'images/works/이연지.jpg', link: '#' },
+            { title: '앨범 리디자인', author: '이영은', image: 'images/works/이영은.jpg', link: '#' },
+            { title: '브랜드 B.I디자인', author: '이재원', image: 'images/works/이재원.jpg', link: '#' },
+            { title: '월인석봉에디션', author: '임재형', image: 'images/works/임재형.jpg', link: '#' },
+            { title: '킹부각 (패키지 디자인)', author: '정회강', image: 'images/works/정회강.jpg', link: '#' },
+            { title: '바라의 하루', author: '최민주', image: 'images/works/최민주.jpg', link: '#' },
+            { title: '자수롭게(로고, 굿즈디자인)', author: '한병헌', image: 'images/works/한병헌.jpg', link: '#' },
+            { title: 'Portfolio', author: '허준우', image: 'images/works/허준우.jpg', link: '#' }
         ]
     };
 
@@ -376,7 +376,7 @@ function initializeMobile() {
         }
     }
 
-    // 초기 상태 설정
+    // 초 상태 설정
     document.addEventListener('DOMContentLoaded', () => {
         const initialCategory = document.querySelector('.category-text.active').textContent.toLowerCase();
         toggleGrids(initialCategory);
