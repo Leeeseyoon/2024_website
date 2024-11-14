@@ -71,6 +71,7 @@ body {
     justify-content: center;
     text-align: center;
     will-change: transform;
+    overflow: visible;
 }
 
 .text-item {
@@ -127,6 +128,7 @@ body {
     flex-direction: column;
     justify-content: center;
     overflow: visible;
+    will-change: transform;
 }
 
 .image-container {
@@ -254,7 +256,7 @@ body {
     }
 }
 
-/* 태블릿 반응형 설정 (768px ~ 1024px) */
+/* 태��릿 반응형 설정 (768px ~ 1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
     .text-section {
         left: 25%;
@@ -525,6 +527,11 @@ body {
 .web-section .image-container,
 .graphic-section .image-container {
     margin-bottom: 80px; /* 각 카테고리별로 간격 조정 가능 */
+}
+
+.text-item, .image-container {
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 

@@ -42,7 +42,7 @@ function initializeMobile() {
             { title: 'A NEW Encounter with Ohui', author: '양성우', image: 'images/works/양성우.jpg', link: '#' },
             { title: '그린피스 웹사이트 리디자인', author: '우수지', image: 'images/works/우수지.jpg', link: '#' },
             { title: '그리드와 소금', author: '원세연', image: 'images/works/원세연.png', link: '#' },
-            { title: 'Portfolio', author: '유지수', image: 'images/works/유지수.jpg', link: 'https://wltn510.github.io/1107/' },
+            { title: 'What’s on my desk', author: '유지수', image: 'images/works/유지수.jpg', link: 'https://wltn510.github.io/1107/' },
             { title: '뛰는 놈 위에 나는 놈', author: '윤비', image: 'images/works/윤비.jpg', link: '#' },
             { title: '카카오뱅크 웹사이트 리디자인', author: '이세윤', image: 'images/works/이세윤1.jpg', link: '#' },
             { title: '위홈 앱 리디자인', author: '이세윤', image: 'images/works/이세윤2.jpg', link: '#' },
