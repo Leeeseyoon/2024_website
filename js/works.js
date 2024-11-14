@@ -297,7 +297,6 @@ function filterItems(category, textItems, imageContainers) {
     window.removeEventListener('scroll', throttledScrollHandler);
     window.addEventListener('scroll', throttledScrollHandler, { passive: true });
 }
-
 // 초기화
 document.addEventListener('DOMContentLoaded', () => {
     initializeWithDelay();
