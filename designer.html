@@ -30,42 +30,29 @@
         </div>
     </div>
     <!-- 모바일 헤더 -->
-    <!-- <div class="phone">
-        <div class="container">
-            <span class="logo"><img src="" alt=""></span>
-            <span class="location">DESIGNERS</span>
-            <span class="menu-trigger">
-                <i class="menu-trigger-bar top"></i>
-                <i class="menu-trigger-bar middle"></i>
-                <i class="menu-trigger-bar bottom"></i>
-            </span>
-            <span class="close-trigger">
-                <i class="close-trigger-bar left"></i>
-                <i class="close-trigger-bar right"></i>
-            </span>
-            <div class="inner-container">
-                <i class="menu-bg top"></i>
-                <i class="menu-bg middle"></i>
-                <i class="menu-bg bottom"></i>
-                <div class="menu-container">
-                <ul class="menu">
-                    <li>
-                    <a href="about.html">IDENTITY</a>
-                    </li>
-                    <li>
-                    <a href="works.html">WORKS</a>
-                    </li>
-                    <li>
-                    <a href="designer.html">DESIGNERS</a>
-                    </li>
-                    <li>
-                    <a href="info.html">INFO</a>
-                    </li>
+    <div class="phone">
+        <header>
+            <div class="square"><a href="index.html"><img src="images/phone_logo.png" alt=""></a></div>
+            <h1>INFO</h1>
+            <button class="menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </header>
+        <!-- 추가: 슬라이드 메뉴 -->
+        <div class="slide-menu">
+            <nav class="mobile-nav">
+                <ul>
+                    <li><a href="about.html">IDENTITY</a></li>
+                    <li><a href="designer.html">DESIGNERS</a></li>
+                    <li><a href="works.html">WORKS</a></li>
+                    <li><a href="info.html">INFO</a></li>
                 </ul>
-                </div>
-            </div>
+            </nav>
         </div>
-    </div> -->
+        <script src="js/mobilenav.js"></script>
+    </div>
 
     <!-- 메인 컨텐츠 -->
     <div class="main">
@@ -860,6 +847,10 @@
                     color: #666;
                     width: 100%;
                 `;
+                // 모바일에서 폰트 크기 증가
+                if (isMobileDevice()) {
+                    noResultMessage.style.fontSize = '2em'; // 폰트 크기 조정
+                }
                 currentList.appendChild(noResultMessage);
             }
 
