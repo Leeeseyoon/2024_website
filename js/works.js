@@ -1,18 +1,11 @@
-// 모바일 체크 함수
-function isMobile() {
-    return window.innerWidth <= 480;
-}
-
 // 초기 설정 및 변수 선언
 const textItems = document.querySelectorAll('.text-item');
 const imageContainers = document.querySelectorAll('.image-container');
 let currentIndex = 2;
 const ITEM_SPACING = 100;
 
-// body의 높이를 동적으로 조정 (모바일 아닐 때만)
-if (!isMobile()) {
-    document.body.style.height = `${40 * window.innerHeight * 0.2}px`;
-}
+// body의 높이를 동적으로 조정
+document.body.style.height = `${40 * window.innerHeight * 0.2}px`;
 
 // 중앙 영역 범위 정의
 const CENTER_ZONE = {
@@ -22,8 +15,6 @@ const CENTER_ZONE = {
 
 // 초기 위치 설정 함수
 function setInitialPositions() {
-    if (isMobile()) return;
-    
     textItems.forEach((item, index) => {
         const relativePosition = index - currentIndex;
         const position = relativePosition * ITEM_SPACING;
@@ -56,18 +47,77 @@ function setInitialPositions() {
 
 // 아이템 업데이트 함수
 function updateItems(newIndex) {
-    if (isMobile()) return;
-    
     if (newIndex < 0) newIndex = 0;
     if (newIndex >= textItems.length) newIndex = textItems.length - 1;
     
-    // ... 나머지 updateItems 코드는 동일 ...
+    textItems[currentIndex].classList.remove('active');
+    imageContainers[currentIndex]?.classList.remove('active');
+    
+    imageContainers.forEach(container => {
+        container.classList.remove('active', 'adjacent', 'prev', 'next');
+        container.style.opacity = '0';
+        container.style.transform = `translateY(0) scale(0.8)`;
+    });
+    
+    textItems.forEach((item, index) => {
+        const relativePosition = index - newIndex;
+        const position = relativePosition * ITEM_SPACING;
+        
+        if (Math.abs(relativePosition) <= 3) {
+            item.style.opacity = '1';
+        } else {
+            item.style.opacity = '0';
+        }
+        
+        if (index === newIndex) {
+            item.style.color = '#fff';
+            item.style.webkitTextStroke = '0';
+            item.classList.add('active');
+        } else {
+            item.style.color = 'transparent';
+            item.style.webkitTextStroke = '1px rgba(255, 255, 255, 0.3)';
+            item.classList.remove('active');
+        }
+        
+        item.style.transform = `translate(-50%, ${position}px)`;
+        
+        const container = imageContainers[index];
+        if (container) {
+            if (index === newIndex) {
+                container.classList.add('active');
+                container.style.opacity = '1';
+                container.style.transform = `translateY(${position}px) scale(1)`;
+            } else if (index === newIndex - 1) {
+                container.classList.add('adjacent', 'prev');
+                container.style.opacity = '0.2';
+                container.style.transform = `translateY(${position}px) scale(0.8)`;
+            } else if (index === newIndex + 1) {
+                container.classList.add('adjacent', 'next');
+                container.style.opacity = '0.2';
+                container.style.transform = `translateY(${position}px) scale(0.8)`;
+            }
+        }
+    });
+    
+    currentIndex = newIndex;
+}
+
+// 쓰로틀링 함수
+function throttle(func, limit) {
+    let inThrottle;
+    return function() {
+        const args = arguments;
+        const context = this;
+        if (!inThrottle) {
+            func.apply(context, args);
+            inThrottle = true;
+            setTimeout(() => inThrottle = false, limit);
+        }
+    }
 }
 
 // 스크롤 핸들러
 const throttledScrollHandler = throttle(function() {
-    if (isMobile()) return;
-    
     const scrollPosition = window.scrollY;
     const itemHeight = window.innerHeight * 0.2;
     const visibleItems = Array.from(textItems)
@@ -85,7 +135,126 @@ const throttledScrollHandler = throttle(function() {
     }
 }, 100);
 
+// 이벤트 리스너 설정
+window.addEventListener('scroll', throttledScrollHandler, { passive: true });
+
+// 초기 설정 실행
+setInitialPositions();
+
+// 클릭 이벤트 핸들러
+textItems.forEach((item, index) => {
+    item.addEventListener('click', () => {
+        if (index === currentIndex) return;
+        
+        const targetScrollPosition = Math.max(0, index * (window.innerHeight * 0.15));
+        
+        item.classList.add('transitioning');
+        textItems[currentIndex].classList.add('transitioning');
+        
+        setTimeout(() => {
+            updateItems(index);
+            
+            window.scrollTo({
+                top: targetScrollPosition,
+                behavior: 'smooth'
+            });
+            
+            setTimeout(() => {
+                item.classList.remove('transitioning');
+                textItems[currentIndex].classList.remove('transitioning');
+            }, 800);
+        }, 50);
+    });
+});
+
+// 이미지 지연 로딩
+function lazyLoadImages() {
+    const imageObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                if (img.dataset.src) {
+                    const image = new Image();
+                    image.onload = () => {
+                        img.src = img.dataset.src;
+                        img.removeAttribute('data-src');
+                    };
+                    image.src = img.dataset.src;
+                }
+                imageObserver.unobserve(img);
+            }
+        });
+    }, {
+        rootMargin: '50px',
+        threshold: 0.1
+    });
+
+    document.querySelectorAll('.image-item[data-src]').forEach(img => {
+        imageObserver.observe(img);
+    });
+}
+
+// 초기 로딩 최적화
+function initializeWithDelay() {
+    textItems.forEach((item, index) => {
+        const relativePosition = index - currentIndex;
+        const position = relativePosition * ITEM_SPACING;
+        
+        item.style.transform = `translate(-50%, ${position}px)`;
+        item.style.opacity = '0';
+        item.style.visibility = index === currentIndex ? 'visible' : 'hidden';
+        
+        if (index === currentIndex) {
+            item.classList.add('active');
+            item.style.color = '#fff';
+            item.style.webkitTextStroke = '0';
+        } else {
+            item.style.color = 'transparent';
+            item.style.webkitTextStroke = '1px rgba(255, 255, 255, 0.3)';
+        }
+    });
+
+    imageContainers.forEach((container, index) => {
+        const relativePosition = index - currentIndex;
+        const position = relativePosition * ITEM_SPACING;
+        
+        container.style.transform = `translateY(${position}px) scale(${index === currentIndex ? 1 : 0.4})`;
+        container.style.opacity = '0';
+        container.style.visibility = index === currentIndex ? 'visible' : 'hidden';
+    });
+
+    setTimeout(() => {
+        textItems[currentIndex].style.opacity = '1';
+        imageContainers[currentIndex].style.opacity = '1';
+        
+        setTimeout(() => {
+            textItems.forEach(item => {
+                item.style.visibility = 'visible';
+            });
+            imageContainers.forEach(container => {
+                container.style.visibility = 'visible';
+            });
+            setInitialPositions();
+            lazyLoadImages();
+        }, 500);
+    }, 100);
+}
+
 // 카테고리 필터링
+function initializeCategories() {
+    const categoryButtons = document.querySelectorAll('.category-btn');
+    
+    categoryButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            categoryButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            const selectedCategory = button.dataset.category;
+            filterItems(selectedCategory, textItems, imageContainers);
+        });
+    });
+}
+
 function filterItems(category, textItems, imageContainers) {
     let visibleItems = [];
     let visibleContainers = [];
@@ -108,12 +277,10 @@ function filterItems(category, textItems, imageContainers) {
         }
     });
 
-    if (!isMobile()) {
-        const totalVisibleItems = visibleItems.length;
-        const itemSpacing = window.innerHeight * 0.2;
-        const totalHeight = (totalVisibleItems + 1) * itemSpacing + window.innerHeight;
-        document.body.style.height = `${totalHeight}px`;
-    }
+    const totalVisibleItems = visibleItems.length;
+    const itemSpacing = window.innerHeight * 0.2;
+    const totalHeight = (totalVisibleItems + 1) * itemSpacing + window.innerHeight;
+    document.body.style.height = `${totalHeight}px`;
 
     if (visibleItems.length > 0) {
         const firstVisibleIndex = visibleItems[0].originalIndex;
@@ -133,10 +300,6 @@ function filterItems(category, textItems, imageContainers) {
 
 // 초기화
 document.addEventListener('DOMContentLoaded', () => {
-    if (!isMobile()) {
-        initializeWithDelay();
-    }
+    initializeWithDelay();
     initializeCategories();
 });
-
-// 나머지 함수들은 그대로 유지...
