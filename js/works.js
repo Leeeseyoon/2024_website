@@ -1,3 +1,8 @@
+// 모바일 기기 감지 함수
+function isMobile() {
+    return window.innerWidth <= 768;
+}
+
 // 초기 설정 및 변수 선언
 const textItems = document.querySelectorAll('.text-item');
 const imageContainers = document.querySelectorAll('.image-container');
@@ -5,7 +10,7 @@ let currentIndex = 2;
 const ITEM_SPACING = 100;
 
 // body의 높이를 동적으로 조정
-document.body.style.height = `${40 * window.innerHeight * 0.2}px`;
+document.body.style.height = isMobile() ? 'auto' : `${40 * window.innerHeight * 0.2}px`;
 
 // 중앙 영역 범위 정의
 const CENTER_ZONE = {
@@ -15,6 +20,8 @@ const CENTER_ZONE = {
 
 // 초기 위치 설정 함수
 function setInitialPositions() {
+    if (isMobile()) return;
+    
     textItems.forEach((item, index) => {
         const relativePosition = index - currentIndex;
         const position = relativePosition * ITEM_SPACING;
@@ -47,6 +54,8 @@ function setInitialPositions() {
 
 // 아이템 업데이트 함수
 function updateItems(newIndex) {
+    if (isMobile()) return;
+    
     if (newIndex < 0) newIndex = 0;
     if (newIndex >= textItems.length) newIndex = textItems.length - 1;
     
@@ -118,6 +127,8 @@ function throttle(func, limit) {
 
 // 스크롤 핸들러
 const throttledScrollHandler = throttle(function() {
+    if (isMobile()) return;
+    
     const scrollPosition = window.scrollY;
     const itemHeight = window.innerHeight * 0.2;
     const visibleItems = Array.from(textItems)
@@ -136,7 +147,9 @@ const throttledScrollHandler = throttle(function() {
 }, 100);
 
 // 이벤트 리스너 설정
-window.addEventListener('scroll', throttledScrollHandler, { passive: true });
+if (!isMobile()) {
+    window.addEventListener('scroll', throttledScrollHandler, { passive: true });
+}
 
 // 초기 설정 실행
 setInitialPositions();
@@ -144,6 +157,8 @@ setInitialPositions();
 // 클릭 이벤트 핸들러
 textItems.forEach((item, index) => {
     item.addEventListener('click', () => {
+        if (isMobile()) return;
+        
         if (index === currentIndex) return;
         
         const targetScrollPosition = Math.max(0, index * (window.innerHeight * 0.15));
@@ -196,6 +211,24 @@ function lazyLoadImages() {
 
 // 초기 로딩 최적화
 function initializeWithDelay() {
+    if (isMobile()) {
+        // 모바일에서는 기본 스타일만 적용
+        textItems.forEach(item => {
+            item.style.transform = 'none';
+            item.style.opacity = '1';
+            item.style.visibility = 'visible';
+            item.style.color = '#fff';
+            item.style.webkitTextStroke = '0';
+        });
+
+        imageContainers.forEach(container => {
+            container.style.transform = 'none';
+            container.style.opacity = '1';
+            container.style.visibility = 'visible';
+        });
+        return;
+    }
+
     textItems.forEach((item, index) => {
         const relativePosition = index - currentIndex;
         const position = relativePosition * ITEM_SPACING;
@@ -256,6 +289,29 @@ function initializeCategories() {
 }
 
 function filterItems(category, textItems, imageContainers) {
+    if (isMobile()) {
+        // 모바일에서는 단순히 요소를 보이거나 숨기기만 함
+        textItems.forEach(item => {
+            if (category === 'all' || item.dataset.category === category) {
+                item.classList.remove('hidden');
+            } else {
+                item.classList.add('hidden');
+            }
+        });
+
+        imageContainers.forEach(container => {
+            if (category === 'all' || container.dataset.category === category) {
+                container.classList.remove('hidden');
+            } else {
+                container.classList.add('hidden');
+            }
+        });
+        
+        // 모바일에서는 body 높이를 auto로 설정
+        document.body.style.height = 'auto';
+        return;
+    }
+
     let visibleItems = [];
     let visibleContainers = [];
 
@@ -297,8 +353,34 @@ function filterItems(category, textItems, imageContainers) {
     window.removeEventListener('scroll', throttledScrollHandler);
     window.addEventListener('scroll', throttledScrollHandler, { passive: true });
 }
+
 // 초기화
 document.addEventListener('DOMContentLoaded', () => {
-    initializeWithDelay();
+    if (!isMobile()) {
+        initializeWithDelay();
+    }
     initializeCategories();
+});
+
+// 리사이즈 이벤트
+window.addEventListener('resize', () => {
+    if (isMobile()) {
+        window.removeEventListener('scroll', throttledScrollHandler);
+        // 모바일 스타일로 초기화
+        document.body.style.height = 'auto';  // 모바일에서 body 높이를 auto로 설정
+        textItems.forEach(item => {
+            item.style.transform = 'none';
+            item.style.opacity = '1';
+            item.style.visibility = 'visible';
+        });
+        imageContainers.forEach(container => {
+            container.style.transform = 'none';
+            container.style.opacity = '1';
+            container.style.visibility = 'visible';
+        });
+    } else {
+        document.body.style.height = `${40 * window.innerHeight * 0.2}px`;  // 데스크톱에서 원래 높이로 설정
+        window.addEventListener('scroll', throttledScrollHandler, { passive: true });
+        setInitialPositions();
+    }
 });
