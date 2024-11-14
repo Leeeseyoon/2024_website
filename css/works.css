@@ -363,7 +363,7 @@ body {
         transform: translateY(40px);
     }
 
-    /* ���화된 항목의 이전 항목 */
+    /* 화된 항목의 이전 항목 */
     .text-item.active ~ .text-item:nth-child(n+3) {
         opacity: 0;
         pointer-events: none;
@@ -460,6 +460,7 @@ body {
     padding: 15px 25px;
     border-radius: 30px;
     backdrop-filter: blur(10px);
+    cursor: none;
 }
 
 .category-btn {
@@ -467,7 +468,7 @@ body {
     border: none;
     color: rgba(255, 255, 255, 0.5);
     font-size: 1em;
-    cursor: pointer;
+    cursor: none !important;
     padding: 8px 16px;
     border-radius: 20px;
     transition: all 0.3s ease;

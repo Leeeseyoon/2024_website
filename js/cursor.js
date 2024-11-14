@@ -43,4 +43,31 @@
         title.addEventListener('mouseenter', cursorScaleUp);
         title.addEventListener('mouseleave', cursorScaleDown);
     });
+
+    // 커스텀 커서 관련 코드
+    document.addEventListener('DOMContentLoaded', function() {
+        const cursor = document.querySelector('.custom_cursor');
+        
+        document.addEventListener('mousemove', function(e) {
+            requestAnimationFrame(() => {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+            });
+        });
+
+        // 카테고리 버튼에 대한 커서 효과
+        const categoryButtons = document.querySelectorAll('.category-btn');
+        
+        categoryButtons.forEach(button => {
+            button.addEventListener('mouseenter', () => {
+                cursor.style.transform = 'scale(1.5)';
+                cursor.style.transition = 'transform 0.3s ease';
+            });
+            
+            button.addEventListener('mouseleave', () => {
+                cursor.style.transform = 'scale(1)';
+                cursor.style.transition = 'transform 0.3s ease';
+            });
+        });
+    });
 })();
