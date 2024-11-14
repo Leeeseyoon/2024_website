@@ -212,6 +212,8 @@ function init() {
     }
 }
 
+let animationFrameId = null;  // requestAnimationFrame의 ID를 저장할 변수 추가
+
 function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     
@@ -220,13 +222,33 @@ function animate() {
         particle.draw();
     });
 
-    requestAnimationFrame(animate);
+    animationFrameId = requestAnimationFrame(animate);
 }
 
-// 이미지가 모두 로드된 후에 애니메이션 시작
+// 페이지 가시성 변경 처리
+document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+        // 페이지가 숨겨질 때 애니메이션 중지
+        if (animationFrameId) {
+            cancelAnimationFrame(animationFrameId);
+            animationFrameId = null;
+        }
+    } else {
+        // 페이지가 다시 보일 때 애니메이션 재시작
+        if (!animationFrameId) {
+            animate();
+        }
+    }
+});
+
+// 이미지 로드 후 애니메이션 시작 부분 수정
 Promise.all(images.map(img => {
     return new Promise((resolve) => {
-        img.onload = resolve;
+        if (img.complete) {
+            resolve();
+        } else {
+            img.onload = resolve;
+        }
     });
 })).then(() => {
     init();
