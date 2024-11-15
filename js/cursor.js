@@ -1,91 +1,33 @@
 (function () {
-    const link = document.querySelectorAll('nav > .hover-this');
     const cursor = document.querySelector('.custom_cursor');
+    
+    // 메인 마우스 이동 이벤트를 단순화
+    function moveCursor(e) {
+        requestAnimationFrame(() => {
+            cursor.style.left = `${e.clientX}px`;
+            cursor.style.top = `${e.clientY}px`;
+        });
+    }
 
-    const animateit = function (e) {
-        const span = this.querySelector('span');
-        const {offsetX: x, offsetY: y} = e;
-        const {offsetWidth: width, offsetHeight: height} = this,
-        
-        move = 25;
-        xMove = x / width * (move * 2) - move,
-        yMove = y / height * (move * 2) - move;
+    // 페이지 로드 시점에 관계없이 마우스 이벤트 바로 적용
+    document.addEventListener('mousemove', moveCursor);
 
-        span.style.transform = `translate(${xMove}px, ${yMove}px)`;
-
-        if (e.type === 'mousemove') span.style.transform = '';
-    };
-
-    const editCursor = e => {
-        const { clientX: x, clientY: y } = e;
-        cursor.style.left =  x + `px`;
-        cursor.style.top = y +`px`;
-    };
-
-    const cursorScaleUp = function() {
-        cursor.style.transform = 'scale(4)';
-        cursor.style.transition = 'transform 0.3s ease';
+    // 커서 크기 변경 함수
+    function cursorScaleUp() {
+        cursor.style.transform = 'scale(4) translate(-25%, -25%)';
         cursor.style.mixBlendMode = 'difference';
-    };
+    }
     
-    const cursorScaleDown = function() {
-        cursor.style.transform = 'scale(1)';
+    function cursorScaleDown() {
+        cursor.style.transform = 'translate(-50%, -50%)';
         cursor.style.mixBlendMode = 'normal';
-    };
+    }
 
-    const infoTitle = document.querySelectorAll('.info_title h2, .identity_title, .tab_title h2, .tab_img img,');
-
-    link.forEach(b => b.addEventListener('mousemove', animateit));
-    link.forEach(b => b.addEventListener('mouseleave', editCursor));
-    window.addEventListener('mousemove', editCursor);
+    // 호버 효과가 필요한 요소들에 이벤트 추가
+    const hoverElements = document.querySelectorAll('.info_title h2, .identity_title, .tab_title h2, .tab_img img, .category_btn');
     
-    infoTitle.forEach(title => {
-        title.addEventListener('mouseenter', cursorScaleUp);
-        title.addEventListener('mouseleave', cursorScaleDown);
-    });
-
-    // 커스텀 커서 관련 코드
-    document.addEventListener('DOMContentLoaded', function() {
-        const cursor = document.querySelector('.custom_cursor');
-        
-        document.addEventListener('mousemove', function(e) {
-            requestAnimationFrame(() => {
-                cursor.style.left = e.clientX + 'px';
-                cursor.style.top = e.clientY + 'px';
-            });
-        });
-
-        // 카테고리 버튼에 대한 커서 효과
-        const categoryButtons = document.querySelectorAll('.category-btn');
-        const textItems = document.querySelectorAll('.text-item');
-        
-        categoryButtons.forEach(button => {
-            button.addEventListener('mouseenter', () => {
-                cursor.style.transform = 'scale(1.5)';
-                cursor.style.transition = 'transform 0.3s ease';
-                cursor.style.mixBlendMode = 'difference';
-            });
-            
-            button.addEventListener('mouseleave', () => {
-                cursor.style.transform = 'scale(1)';
-                cursor.style.transition = 'transform 0.3s ease';
-                cursor.style.mixBlendMode = 'normal';
-            });
-        });
-
-        // text-item에 대한 커서 효과 추가
-        textItems.forEach(item => {
-            item.addEventListener('mouseenter', () => {
-                cursor.style.transform = 'scale(1.5)';
-                cursor.style.transition = 'transform 0.3s ease';
-                cursor.style.mixBlendMode = 'difference';
-            });
-            
-            item.addEventListener('mouseleave', () => {
-                cursor.style.transform = 'scale(1)';
-                cursor.style.transition = 'transform 0.3s ease';
-                cursor.style.mixBlendMode = 'normal';
-            });
-        });
+    hoverElements.forEach(element => {
+        element.addEventListener('mouseenter', cursorScaleUp);
+        element.addEventListener('mouseleave', cursorScaleDown);
     });
 })();
