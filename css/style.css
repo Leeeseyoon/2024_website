@@ -189,6 +189,7 @@ a {
     width: 100%;
     z-index: 999;
     background-color: var(--color-black);
+    min-height: 100vh;
 }
 .phone header {
     display: flex;

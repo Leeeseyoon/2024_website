@@ -9,20 +9,28 @@ const imageContainers = document.querySelectorAll('.image-container');
 let currentIndex = 2;
 const ITEM_SPACING = 100;
 
-// body 높이 계산 함수 추가
+// body 높이 계산 함수 수정
 function updateBodyHeight() {
     if (isMobile()) {
-        document.body.style.height = 'auto';
+        // 모바일에서는 컨텐츠의 실제 높이를 사용
+        const contentHeight = Math.max(
+            ...Array.from(textItems).map(item => item.offsetTop + item.offsetHeight),
+            ...Array.from(imageContainers).map(container => container.offsetTop + container.offsetHeight)
+        );
+        
+        // 모바일에서는 실제 컨텐츠 높이에 여유 공간을 더 추가
+        const extraSpace = window.innerHeight * 0.5; // 50% 추가 여유 공간
+        document.body.style.height = 'auto'; // 자동 높이로 설정
+        document.body.style.minHeight = `${Math.max(contentHeight + extraSpace, window.innerHeight)}px`;
         return;
     }
     
+    // PC 버전의 기존 코드 유지
     const visibleItems = Array.from(textItems).filter(item => !item.classList.contains('hidden'));
     const totalItems = visibleItems.length;
-    // 여유 공간을 더 확보하기 위해 계수 조정
-    const heightMultiplier = 50; // 기존 40에서 50으로 증가
+    const heightMultiplier = 50;
     document.body.style.height = `${heightMultiplier * window.innerHeight * 0.2}px`;
 }
-
 // 중앙 영역 범위 정의
 const CENTER_ZONE = {
     top: window.innerHeight * 0.4,
@@ -48,10 +56,8 @@ function setInitialPositions() {
         if (index === currentIndex) {
             item.classList.add('active');
             item.style.color = '#fff';
-            item.style.webkitTextStroke = '0';
         } else {
-            item.style.color = 'transparent';
-            item.style.webkitTextStroke = '1px rgba(255, 255, 255, 0.3)';
+            item.style.color = 'rgba(255, 255, 255, 0.3)';
         }
     });
 
@@ -97,11 +103,9 @@ function updateItems(newIndex, filteredIndexMap = null) {
 
         if (index === newIndex) {
             item.style.color = '#fff';
-            item.style.webkitTextStroke = '0';
             item.classList.add('active');
         } else {
-            item.style.color = 'transparent';
-            item.style.webkitTextStroke = '1px rgba(255, 255, 255, 0.3)';
+            item.style.color = 'rgba(255, 255, 255, 0.3)';
             item.classList.remove('active');
         }
 
@@ -225,7 +229,7 @@ function lazyLoadImages() {
     });
 }
 
-// 초기 로딩 최적화
+// 초기 로딩 최적화 ��수 수정
 function initializeWithDelay() {
     if (isMobile()) {
         textItems.forEach(item => {
@@ -233,14 +237,20 @@ function initializeWithDelay() {
             item.style.opacity = '1';
             item.style.visibility = 'visible';
             item.style.color = '#fff';
-            item.style.webkitTextStroke = '0';
+            item.style.position = 'relative'; // 추가
+            item.style.top = 'auto'; // 추가
+            item.style.left = 'auto'; // 추가
         });
 
         imageContainers.forEach(container => {
             container.style.transform = 'none';
             container.style.opacity = '1';
             container.style.visibility = 'visible';
+            container.style.position = 'relative'; // 추가
+            container.style.top = 'auto'; // 추가
         });
+        
+        updateBodyHeight(); // 모바일에서 높이 업데이트 추가
         return;
     }
 
@@ -255,10 +265,8 @@ function initializeWithDelay() {
         if (index === currentIndex) {
             item.classList.add('active');
             item.style.color = '#fff';
-            item.style.webkitTextStroke = '0';
         } else {
-            item.style.color = 'transparent';
-            item.style.webkitTextStroke = '1px rgba(255, 255, 255, 0.3)';
+            item.style.color = 'rgba(255, 255, 255, 0.3)';
         }
     });
 
@@ -316,11 +324,14 @@ function filterItems(category, textItems, imageContainers) {
         imageContainers.forEach(container => {
             if (category === 'all' || container.dataset.category === category) {
                 container.classList.remove('hidden');
+                container.style.display = 'block';
             } else {
                 container.classList.add('hidden');
+                container.style.display = 'none';
             }
         });
-        
+
+        // 모바일에서는 컨텐츠에 맞게 자동으로 높이 조정
         document.body.style.height = 'auto';
         return;
     }
@@ -385,25 +396,52 @@ document.addEventListener('DOMContentLoaded', () => {
     updateItems(currentIndex);
 });
 
-// 리사이즈 이벤트
+// 리사이즈 이벤트 수정
 window.addEventListener('resize', () => {
     if (isMobile()) {
         window.removeEventListener('scroll', throttledScrollHandler);
-        document.body.style.height = 'auto';
         textItems.forEach(item => {
             item.style.transform = 'none';
             item.style.opacity = '1';
             item.style.visibility = 'visible';
+            item.style.position = 'relative';
+            item.style.top = 'auto';
+            item.style.left = 'auto';
         });
         imageContainers.forEach(container => {
             container.style.transform = 'none';
             container.style.opacity = '1';
             container.style.visibility = 'visible';
+            container.style.position = 'relative';
+            container.style.top = 'auto';
         });
+        updateBodyHeight();
     } else {
-        updateBodyHeight(); // 높이 업데이트
-        window.addEventListener('scroll', throttledScrollHandler, { passive: true });
+        // PC 모드로 전환 시 초기화
+        textItems.forEach(item => {
+            item.style.position = 'absolute';
+            item.style.left = '50%';
+            item.style.top = 'auto';
+            item.style.visibility = 'visible';
+        });
+        
+        imageContainers.forEach(container => {
+            container.style.position = 'absolute';
+            container.style.visibility = 'visible';
+        });
+        
+        // 기존 레이아웃 복원
+        updateBodyHeight();
         setInitialPositions();
+        
+        // 스크롤 이벤트 다시 연결
+        window.removeEventListener('scroll', throttledScrollHandler);
+        window.addEventListener('scroll', throttledScrollHandler, { passive: true });
+        
+        // 현재 인덱스 기준으로 아이템 업데이트
+        requestAnimationFrame(() => {
+            updateItems(currentIndex);
+        });
     }
 });
 
