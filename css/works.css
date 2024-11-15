@@ -7,6 +7,8 @@ body {
     margin: 0;
     background-color: #15100B;
     overflow-x: hidden;
+    height: auto;
+    min-height: 100vh;
 }
 
 
@@ -65,8 +67,8 @@ body {
 .text-item {
     position: absolute;
     font-size: 1.5em;
-    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
-    color: transparent;
+    /* -webkit-text-stroke 제거 */
+    color: rgba(255, 255, 255, 0.3); /* 비활성화된 텍스트 색상을 회색으로 변경 */
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     white-space: nowrap;
     will-change: transform, opacity;
@@ -85,7 +87,7 @@ body {
 }
 
 .text-item:not(.active) {
-    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+/*     -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3); */
     color: transparent;
     transform-origin: left center;
     transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
@@ -102,7 +104,7 @@ body {
 
 .text-item:not(.active):hover {
     opacity: 0.8 !important;
-    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.7);
+/*     -webkit-text-stroke: 1px rgba(255, 255, 255, 0.7); */
     transition: all 0.3s ease;
 }
 
@@ -275,35 +277,36 @@ body {
 /* 태블릿 및 모바일 레이아웃 (400px ~ 1024px) */
 @media (min-width: 400px) and (max-width: 1024px) {
     .container {
-        flex-direction: column;
-        height: 100vh; /* 뷰포트 높이로 고정 */
-        overflow: hidden; /* 스크롤 방지 */
-        position: fixed; /* 컨테이너 고정 */
-        width: 100%;
-        top: 0;
-        left: 0;
-        padding: 20px;
-        box-sizing: border-box;
+        display: none;
     }
 
     .image-section {
-        position: fixed;
+        position: relative;
         right: auto;
         left: 50%;
-        top: 15vh; /* 상단에서 15% 위치 */
         transform: translateX(-50%);
         width: 90%;
         max-width: 600px;
         margin: 0;
+        padding-top: 100px;
     }
 
     .text-section {
-        position: fixed;
+        position: relative;
         left: 50%;
-        top: 65vh; /* 상단에서 65% 위치 */
         transform: translateX(-50%);
         width: 100%;
         height: auto;
+        overflow: visible;
+    }
+
+    .project-info {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        text-align: center;
+        margin-bottom: 50px;
     }
 
     .image-container {
@@ -495,6 +498,10 @@ body {
         font-size: 0.9em;
         padding: 6px 12px;
     }
+
+    .container {
+        display: none;
+    }
 }
 
 .category-section {
@@ -507,7 +514,7 @@ body {
     display: block;
 }
 
-/* 각 카테고리별 섹션 스타일링 */
+/* 각 카테고리별 섹션 스일링 */
 .uiux-section .text-item,
 .web-section .text-item,
 .graphic-section .text-item {
@@ -523,6 +530,40 @@ body {
 .text-item, .image-container {
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
                 opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contents {
+    min-height: 100vh;
+    width: 100%;
+    overflow-y: auto;
+    position: relative;
+    padding-bottom: 100px;
+}
+
+@media (max-width: 480px) {
+    body {
+        height: auto;
+        overflow-y: auto;
+        position: relative;
+    }
+
+    .text-section {
+        height: auto;
+        overflow: visible;
+    }
+    
+    .contianer{
+        display: none;
+    }
+
+    .contents {
+        min-height: 100vh;
+        width: 100%;
+        overflow-y: auto;
+        position: relative;
+        padding-bottom: 100px;
+        -webkit-overflow-scrolling: touch;
+    }
 }
 
 

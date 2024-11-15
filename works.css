@@ -1,0 +1,131 @@
+@media (min-width: 1025px) and (max-width: 1910px) {
+    .text-section {
+        left: calc(20% + (28% - 20%) * ((100vw - 1024px) / (1910 - 1024)));
+        top: calc(45% + (48% - 45%) * ((100vw - 1024px) / (1910 - 1024)));
+        transform: translate(-50%, -50%);
+    }
+
+    .image-section {
+        right: calc(8% + (10% - 8%) * ((100vw - 1024px) / (1910 - 1024)));
+        width: calc(600px + (760 - 600) * ((100vw - 1024px) / (1910 - 1024)));
+        max-width: 45vw;
+    }
+
+    .image-container {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4/3;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        padding: 50px 20px;
+    }
+
+    .text-section {
+        position: relative;
+        left: auto;
+        top: auto;
+        transform: none;
+        width: 100%;
+        max-width: 600px;
+        margin-bottom: 50px;
+        height: auto;
+    }
+
+    .image-section {
+        position: relative;
+        right: auto;
+        top: auto;
+        transform: none;
+        width: 100%;
+        max-width: 600px;
+    }
+
+    .image-container {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4/3;
+        margin: 0;
+    }
+
+    .text-item {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 20px 0;
+    }
+
+    .text-item.active {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .text-section {
+        position: relative;
+        left: auto;
+        top: auto;
+        transform: none;
+        width: 100%;
+        margin-top: 80px;
+        height: auto;
+    }
+
+    .image-section {
+        position: relative;
+        right: auto;
+        top: auto;
+        transform: none;
+        width: 100%;
+        margin-top: 30px;
+    }
+
+    .image-container {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4/3;
+        margin: 0;
+        position: relative;
+    }
+
+    .text-item {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 15px 0;
+        font-size: 1.2em;
+    }
+
+    .text-item.active {
+        font-size: 1.8em;
+    }
+
+    .project-info-item {
+        font-size: 1em;
+        bottom: -30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .text-item.active {
+        font-size: 1.5em;
+    }
+
+    .text-item {
+        font-size: 1em;
+    }
+
+    .project-info-item {
+        font-size: 0.9em;
+        bottom: -25px;
+    }
+} 
