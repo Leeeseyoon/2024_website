@@ -7,6 +7,8 @@ body {
     margin: 0;
     background-color: #15100B;
     overflow-x: hidden;
+    height: auto;
+    min-height: 100vh;
 }
 
 
@@ -542,6 +544,7 @@ body {
     body {
         height: auto;
         overflow-y: auto;
+        position: relative;
     }
 
     .text-section {
@@ -551,6 +554,15 @@ body {
     
     .contianer{
         display: none;
+    }
+
+    .contents {
+        min-height: 100vh;
+        width: 100%;
+        overflow-y: auto;
+        position: relative;
+        padding-bottom: 100px;
+        -webkit-overflow-scrolling: touch;
     }
 }
 
