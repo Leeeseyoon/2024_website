@@ -46,26 +46,6 @@ body {
     font-weight: 400;
     color: var(--color-darkgray);
 }
-/* 전시 소개인데 일단 빠져있음 */
-.main .info_wrap .info_txt .info_article {
-    width: 100%;
-    margin-top: 52px;
-    text-align: justify;
-
-    /*문단 2단 효과*/
-    display: flex;
-    justify-content: space-between;
-}
-.main .info_wrap .info_txt .info_article .article_kr,
-.main .info_wrap .info_txt .info_article .article_eng {
-    width: 552px;  
-}
-.main .info_wrap .info_txt .info_article .article_kr p,
-.main .info_wrap .info_txt .info_article .article_eng p {
-    font-size: 20px;
-    font-weight: 300;
-    line-height: 30px;
-}
 
 /* :::: 카테고리별 탭 섹션 시작 :::: */
 .tab_wrap {
@@ -235,7 +215,7 @@ body {
     margin: 0 5px;
 }
 #thanksto .tab_article .right_txt {
-    width: 35%;
+    width: 45%;
 }
 #thanksto .tab_article .right_txt span {
     font-weight: 300;
@@ -247,17 +227,6 @@ body {
     justify-content: space-between;
     margin-bottom: 2.5rem;
     width: 100%;
-}
-#thanksto .tab_article .article_event ul li {
-    font-size: 1.125rem;
-    font-weight: 400;
-    margin-bottom: 1.25rem;
-    white-space: nowrap;
-}
-#thanksto .tab_article .article_event ul li span::after {
-    content: '|';
-    color: var(--color-darkgray);
-    margin: 0 5px;
 }
 /* 모바일용 -- 웹에선 숨김*/
 #comittee .tab_article .mobile_ver{
@@ -397,9 +366,6 @@ body {
     #thanksto .tab_title{
         margin-bottom: 10px;
     }
-    #thanksto .article_professor, .article_donation{
-        align-items: center;
-    }
     #thanksto .tab_article .left_title h4 {
         font-size: 2.5rem;
         font-weight: 500;
@@ -417,24 +383,14 @@ body {
         font-size: 2.2rem;
     }
     /* 행사준비 */
-    #thanksto .tab_article .article_event ul li {
-        font-size: 2.2rem;
-        font-weight: 300;
-        margin-bottom: 1.25rem;
-        white-space: nowrap;
-        width: 100%;
-    }
-    #thanksto .tab_article .article_event ul li span::after {
-        content: '|';
-        color: var(--color-darkgray);
-        margin: 0 5px;
-    }
-    #thanksto .tab_article .article_event {
-        /* outline: solid 1px red; */
+    #thanksto .tab_article .article_event, #thanksto .tab_article .article_professor {
         display: flex;
         flex-direction: column;
     }
-    #thanksto .tab_article .article_event .left_title{
+    #thanksto .tab_article .article_event p, #thanksto .tab_article .article_professor p{
+        line-height: 1.6;
+    }
+    #thanksto .tab_article .left_title{
     margin-bottom: 10px;
     }
 }

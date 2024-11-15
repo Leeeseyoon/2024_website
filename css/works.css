@@ -3,10 +3,6 @@
     padding: 0;
 }
 
-/* 마우스 스크롤시 많은 이동이 없었으면 좋겠어요
-그래그로도 스크롤이 가능했으면 좋겠어요 (ᴗˬᴗ)⁾⁾
-html header, main 추가 */
-
 body {
     margin: 0;
     background-color: #15100B;
@@ -41,14 +37,6 @@ body {
     
     
 }
-
-
-
-
-
-
-
-        
 
 
         /* PC 버전 스타일링 */
@@ -256,7 +244,7 @@ body {
     }
 }
 
-/* 태��릿 반응형 설정 (768px ~ 1024px) */
+/* 태블릿 반응형 설정 (768px ~ 1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
     .text-section {
         left: 25%;
@@ -468,12 +456,13 @@ body {
 .category-btn {
     background: none;
     border: none;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-darkgray);
     font-size: 1em;
     cursor: none !important;
     padding: 8px 16px;
     border-radius: 20px;
     transition: all 0.3s ease;
+    font-weight: 500;
 }
 
 .category-btn:hover {
@@ -482,7 +471,9 @@ body {
 
 .category-btn.active {
     background-color: rgba(255, 255, 255, 0.1);
-    color: #fff;
+    /* color: #fff; */
+    color: var(--color-orange);
+    font-weight: 600;
 }
 
 /* 숨겨진 아이템 스타일 */

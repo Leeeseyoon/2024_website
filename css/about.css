@@ -68,6 +68,9 @@ body {
     line-height: 1.6;
     margin-bottom: 3.125rem;
 }
+.main .info_wrap .info_txt .info_article .article_eng p{
+    line-height: 1.4;
+}
 
 /* :::: 카테고리별 탭 섹션 시작 :::: */
 .tab_wrap {
@@ -98,6 +101,9 @@ body {
     font-size: 1.25rem;
     font-weight: 300;
     line-height: 1.6;
+}
+.tab_section .article_eng p { /*본문 폰트*/
+    line-height: 1.4;
 }
 .tab_img {
     margin: 6.25rem 0;
