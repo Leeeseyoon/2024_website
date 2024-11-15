@@ -9,18 +9,37 @@ function setupFadeUpAnimations(elements) {
             element.animation.kill();
         }
 
-        // 새로운 애니메이션 설정
-        element.animation = gsap.to(element, {
-            scrollTrigger: {
-                trigger: element,
-                start: "top bottom-=100",
-                toggleActions: "play none none reverse"
-            },
-            opacity: 1,
-            y: 0,
-            duration: 1,
-            ease: "power2.out"
-        });
+        // 모바일 버전의 마지막 위원회 명단인 경우
+        if (element.classList.contains('mobile_ver') && element.closest('.tab_section:last-child')) {
+            element.animation = gsap.to(element, {
+                scrollTrigger: {
+                    trigger: element,
+                    // 요소가 화면 하단에서 800px 위에 도달했을 때 시작
+                    start: "top bottom-=0",
+                    // 요소가 화면 하단에서 200px 위에 도달했을 때 완료
+                    end: "top bottom-=0",
+                    toggleActions: "play none none reverse",
+                    // markers: true  // 위치 확인용
+                },
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                ease: "power2.out"
+            });
+        } else {
+            // 다른 요소들은 기존 스크롤 트리거 애니메이션 유지
+            element.animation = gsap.to(element, {
+                scrollTrigger: {
+                    trigger: element,
+                    start: "top bottom-=100",
+                    toggleActions: "play none none reverse"
+                },
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                ease: "power2.out"
+            });
+        }
     });
 }
 

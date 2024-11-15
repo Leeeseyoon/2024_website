@@ -249,7 +249,7 @@ body {
         display: none;
     }
     .main {
-        padding: 30vw 20px 40vw;
+        padding: 30vw 20px 20vw;
     }
     .main .info_wrap .info_img {
         width: 100%;
@@ -392,12 +392,6 @@ body {
     }
     #thanksto .tab_article .left_title{
     margin-bottom: 10px;
-    }
-    #thanksto {
-        margin-bottom: 10vw;
-    }
-    #thanksto .tab_article .article_event {
-        margin-bottom: 5vw;
     }
 }
 
