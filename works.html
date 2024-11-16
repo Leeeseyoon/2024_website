@@ -107,7 +107,7 @@
                 </a>
             </div>
             <div class="image-container" data-category="web">
-                <a href="#">
+                <a href="https://suakim1021.github.io/2024-graduate-portfolio/">
                     <img src="images/works/김수아.jpg" alt="WELAAA 2.0 프로모션 웹" class="image-item">
                     <div class="project-info-item">WELAAA 2.0 프로모션 웹_김수아</div>
                 </a>
@@ -420,7 +420,7 @@
                         </a>
                     </div>
                     <div class="grid-item">
-                        <a href="#">
+                        <a href="https://suakim1021.github.io/2024-graduate-portfolio/">
                             <div class="project-image">
                                 <img src="images/works/김수아.jpg" alt="WELAAA 2.0 프로모션 웹">
                             </div>
@@ -808,9 +808,18 @@
                 </div>
             </div>
         </div>
+        
     </div>
 
-
+    <script>
+        document.querySelector('.grid-view').addEventListener('click', function() {
+            document.querySelector('.contents').classList.add('grid-active');
+        });
+        
+        document.querySelector('.list-view').addEventListener('click', function() {
+            document.querySelector('.contents').classList.remove('grid-active');
+        });
+    </script>
 
 
 

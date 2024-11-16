@@ -1,7 +1,7 @@
 @media (max-width: 480px) {
     body {
         font-family: 'Inter', sans-serif;
-        overflow-y: auto;
+        position: relative;
     }
     .main {
         display: none;
@@ -95,15 +95,19 @@
     }
     
     .contents {
-        padding-top: 180px;
-        height: auto;
-        overflow-y: auto;
+        width: 100%;
+        padding-top: 50px;
+        min-height: 100vh;
+        overflow-y: auto !important;
         -webkit-overflow-scrolling: touch;
+        position: relative;
+        z-index: 1;
         padding-bottom: 200px; /* 하단 여백 추가 */
     }
 
 
     /* 프로젝트 카드 영역 */
+    
     .project-stack {
         position: relative;
         height: 300px;
@@ -225,11 +229,7 @@
     }
 
     /* 그리드 뷰 스타일 */
-    .contents {
-        width: 100%;
-        overflow: hidden;
-        font-family: Inter, Noto Sans KR;
-    }
+
     .project-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -345,4 +345,45 @@
     .project-list {
         bottom: 160px;
     }
+}
+
+/* 리스트뷰일 때의 컨테이너 설정 */
+.contents:not(.grid-active) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* 그리드뷰일 때의 컨테이너 설정 */
+.contents.grid-active {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 200px;
+    padding-top: 120px;
+}
+
+/* project-stack 위치 조정 */
+.contents:not(.grid-active) .project-stack {
+    position: relative;
+    height: 300px;
+    padding: 0 20px;
+    margin-bottom: 20px;
+    top: 120px;
+}
+
+/* project-list 위치 유지 */
+.contents:not(.grid-active) .project-list {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 130px;
+    overflow: hidden;
+    z-index: 90;
 }
