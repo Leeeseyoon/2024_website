@@ -297,6 +297,7 @@ a {
 .menu-btn.active span:nth-child(1) {
     transform: rotate(45deg) translate(7px, 7px);
     background: var(--color-black); /* X 색상을 검정색으로 변경 */
+    display: block;
 }
 
 .menu-btn.active span:nth-child(2) {
