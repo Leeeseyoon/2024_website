@@ -1,0 +1,39 @@
+/* Top */
+/* 하단 버튼 */
+.moveTopBtn { 
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+.button-container { 
+    position: relative; 
+    z-index: 1; 
+}
+
+.button-container img {
+    width: 100%;
+    transition: opacity 0.5s ease;
+}
+
+.moveTopBtn .hover-img {
+    display: none;
+}
+
+.moveTopBtn:hover .default-img {
+    display: none;
+}
+
+.moveTopBtn:hover .hover-img {
+    display: block;
+}
+
+.moveTopBtn:hover {
+    transform: scale(1.2);
+}
+
+.moveTopBtn.hidden {
+    display: none;
+}

@@ -6,41 +6,63 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/3dtext.css">
     <title>Document</title>
 </head>
 <body>
+
+    <div class="custom_cursor"></div>
+    
         <!-- 사이트 공통 내비게이션 -->
         <div class="header">
             <div class="nav_wrap">
                 <div class="h_logo">
-                    <h1><a href="index.html"><img src="" alt="로고 이미지"></a></h1>
+                    <h1><a href="index.html"><img src="./images/logo.png" alt="Panorama logo"></a></h1>
                 </div>
                 <ul class="h_nav">
                     <li><button><a href="about.html">IDENTITY</a></button></li>
                     <li><button><a href="works.html">WORKS</a></button></li>
                     <li><button><a href="designer.html">DESIGNERS</a></button></li>
-                    <li><button><a href="#">INFO</a></button></li>
+                    <li><button><a href="info.html">INFO</a></button></li>
                 </ul>
             </div>
         </div>
+
+        <!-- 모바일 헤더 -->
+    <div class="phone">
+        <header>
+            <button class="menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </header>
+        <!-- 추가: 슬라이드 메뉴 -->
+        <div class="slide-menu">
+            <nav class="mobile-nav">
+                <ul>
+                    <li><a href="about.html">IDENTITY</a></li>
+                    <li><a href="designer.html">DESIGNERS</a></li>
+                    <li><a href="works.html">WORKS</a></li>
+                    <li><a href="info.html">INFO</a></li>
+                </ul>
+            </nav>
+        </div>
+        <script src="js/mobilenav.js"></script>
+    </div>
         
         <div class="main">
-            <div class="info_img">
-                <img src="" alt="메인 이미지"> <!-- 여기에 파노라마 메인 이미지 삽입-->
-            </div>
-            <!-- 텍스트 -->
-            <div class="info_txt">
 
-                <!--제목-->
-                <div class="info_title">
-                    <h2>Panorama</h2>
-                    <h3>: 시각의 경계를 넘어 우리들의 이야기를 담다</h3>
-                </div>
-
-            </div>
-
-            
+        <!--제목-->
+        <div class="info_title">
+        <h2>Panorama</h2> 
+        <h3>: 시각의 경계를 넘어 우리들의 이야기를 담다</h3>
+        </div>
+        
+        <canvas id="canvas"></canvas>
+        <script src="js/test.js"></script>
 
         </div>
+        <script src="js/cursor.js"></script>
 </body>
 </html>

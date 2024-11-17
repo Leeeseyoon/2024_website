@@ -1,0 +1,477 @@
+body {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    cursor: none;
+}
+
+.main {
+    width: 100%;
+    padding: 9vw 18.75vw 8vw;
+    box-sizing: border-box;
+    height: fit-content;
+}
+
+
+/* 드래그 색상 변경 */
+::selection {color:rgb(255, 255, 255);background:var(--color-orange); font-weight: 600;}
+
+/*메인 내비게이션 현재 접속중인 페이지 글씨 하얗게*/
+.header .h_nav li:nth-child(4) a {
+    color: var(--color-white);
+}
+
+/* :::: 메인 이미지+설명글 :::: */
+.main .info_wrap {}
+.main .info_wrap .info_img {
+    width: 100%;
+    height: 35vw;
+    background-color: lightgray;
+    object-fit: cover;
+}
+.main .info_wrap .info_img img{
+    width: 100%;
+    height: 100%;
+}
+.main .info_wrap .info_txt {
+    width: 100%;
+}
+.main .info_wrap .info_txt .info_title {}
+.main .info_wrap .info_txt .info_title h2 {
+    font-size: 3.125rem;
+    font-weight: 500;
+    margin-top: 0.625rem;
+}
+.main .info_wrap .info_txt .info_title h3 {
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--color-darkgray);
+}
+
+/* :::: 카테고리별 탭 섹션 시작 :::: */
+.tab_wrap {
+    width: 100%;
+    margin-top: 10.42vw;
+}
+
+/* :::: 탭 섹션 버튼 스타일 :::: */
+.category_wrap {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.category_wrap button {
+    background-color: var(--color-black);
+    color: var(--color-darkgray);
+    border: none;
+    font-size: 1.625rem;
+    font-weight: 700;
+    line-height: 2.72rem;
+    transition: .3s;
+}
+.category_btn.selected,
+.category_btn:hover {
+    color: var(--color-orange);    
+    cursor: none;
+}
+
+
+/* :::: 탭 섹션 공통 스타일 지정 :::: */
+.content_wrap {
+    width: 100%;
+}
+.tab_container { /*js적용시 애니메이션 효과*/
+    transition: .3s;
+}
+.tab_section {
+    width: 100%;
+}
+.tab_section h2 { /*제목 폰트*/
+    font-size: 1.5625rem;
+    font-weight: 500;
+}
+.tab_section p { /*본문 폰트*/
+    font-size: 1.125rem;
+    font-weight: 300;
+    line-height: 1.8;
+}
+.tab_img {
+    margin-top: 10.42vw;
+    margin-bottom: 5.21vw;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.tab_img img { /*이미지 위치 확인용! 나중에 삭제할 것*/
+    background-color: lightgray;
+    color: var(--color-black);
+    font-size: 1.875rem;
+}
+
+
+
+/* :::: 임원 명단 섹션 :::: */
+#comittee {
+    padding-bottom: 7.2917vw;
+}
+#comittee .tab_section {
+    clear: both;
+    width: 100%;
+}
+#comittee .tab_title {
+    padding-top: 7.5521vw;
+    margin-bottom: 1.7188rem;
+}
+#comittee .tab_article .comittee_info {
+    float: left;
+    width: 52%;
+    text-align: justify;
+}
+#comittee .tab_article .comittee_name {
+    float: right;
+    width: fit-content;
+    display: flex;
+    gap: 10px;
+}
+#comittee .tab_article .main_comittee {
+    float: right;
+    width: fit-content;
+    display: flex;
+}
+#comittee .tab_article .comittee_name ul li {
+    margin-bottom: 0.5rem;
+    font-size: 1.125rem;
+}
+/*직함*/
+#comittee .tab_article .comittee_name .name_left {
+    float: left;
+    font-weight: 200;
+}
+/*이름*/
+#comittee .tab_article .comittee_name .name_right {
+    float: right;
+    letter-spacing: 0.625rem;
+    font-weight: 400;
+}
+/*이름 왼쪽에 붙는 작대기*/
+#comittee .tab_article .comittee_name .name_right ul li::before {
+    content: '|';
+    color: var(--color-darkgray);
+}
+
+/* :::: 졸전참여자 섹션 :::: */
+#participants .tab_title {
+    padding-top: 7.5521vw;
+    
+}
+#participants .tab_article {
+    width: 100%;
+    margin-top: 2.6042vw;
+}
+#participants .tab_article ul {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+#participants .tab_article ul li {
+    width: calc(100% / 6 - 0.8681vw);
+    margin-right: 0.8681vw;
+    margin-bottom: 2.6042vw;
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+#participants .tab_article ul li:nth-child(6n+1) {
+    text-align: left;
+}
+#participants .tab_article ul li:nth-child(6n) {
+    text-align: right;
+}
+
+/* 마지막 항목의 오른쪽 여백 제거 */
+#participants .tab_article ul li:nth-child(6n) {
+    margin-right: 0;
+}
+
+/* :::: 도움 주신 분들 섹션 :::: */
+#thanksto .tab_title {
+    padding-top: 7.5521vw;
+    padding-bottom: 2.6042vw;
+}
+#thanksto .tab_article {
+}
+#thanksto .tab_article .left_title h4 {
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+#thanksto .tab_article .right_txt p {
+    font-size: 1.125rem;
+    line-height: 2.5rem;
+    text-align: left;
+}
+#thanksto .tab_article .right_txt p span::after{
+    content: '|';
+    color: var(--color-darkgray);
+    margin: 0 5px;
+}
+#thanksto .tab_article .right_txt {
+    width: 45%;
+}
+#thanksto .tab_article .right_txt span {
+    font-weight: 300;
+}
+#thanksto .tab_article .article_professor,
+#thanksto .tab_article .article_donation,
+#thanksto .tab_article .article_event {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2.5rem;
+    width: 100%;
+}
+/* 모바일용 -- 웹에선 숨김*/
+#comittee .tab_article .mobile_ver{
+    display: none;
+}
+
+/* :::: js용 CSS :::: */
+.anim-out {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.1s;
+}
+.invisible {
+    display: none;
+}
+
+/* 반응형 */
+@media (max-width: 480px) {
+    .cursor{
+        display: none;
+    }
+    .main {
+        padding: 30vw 20px 20vw;
+    }
+    .main .info_wrap .info_img {
+        width: 100%;
+        height: 55vw;
+    }
+    .main .info_wrap .info_txt .info_title h2 {
+        font-size: 5rem;
+        font-weight: 500;
+        margin-top: 1rem;
+    }
+
+    .main .info_wrap .info_txt .info_title h3 {
+        font-size: 2.2rem;
+        font-weight: 400;
+        color: var(--color-darkgray);
+    }
+    .category_wrap button {
+        font-size: 2.5rem;
+        font-weight: 600;
+        margin-bottom: 5vw;
+    }
+    .tab_section h2 { /*제목 폰트*/
+        font-size: 3.5rem;
+        font-weight: 500;
+    }
+
+    .tab_section p { /*본문 폰트*/
+        font-size: 2.5rem;
+        font-weight: 300;
+        line-height: 1.8;
+    }
+
+    #comittee .tab_article .comittee_info {
+        float: none;
+        width: 100%;
+    }
+    /* 웹용 숨김 처리 */
+    #comittee .tab_article .comittee_name {
+        display: none;
+    }
+    #comittee .tab_article .main_comittee {
+        display: none;
+    }
+    /* 모바일용 활성화 */
+    #comittee .tab_article .mobile_ver{
+        width: 100%;
+        height: fit-content;
+        display: block;
+        /* outline: solid 1px rgb(0, 255, 55); */
+        margin: 5vw 0 10vw;
+        
+    }
+    #comittee .tab_article .mobile_ver ul{
+        /* outline: solid 1px rgb(0, 17, 255); */
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    #comittee .tab_article .mobile_ver ul li{
+        display: flex;
+        width: fit-content;
+        flex-direction: row;
+        /* outline: solid 1px red; */
+    }
+    #comittee .tab_article .mobile_ver ul li p{
+        font-size: 2.2rem;
+        font-weight: 400;
+    }
+    #comittee .tab_article .mobile_ver ul li span{
+        letter-spacing: 0.625rem;
+    }
+    #comittee .tab_article .mobile_ver .chair span{
+        margin-left: 11px;
+    }
+    #comittee .tab_article .mobile_ver span::before {
+        content: '|';
+        color: var(--color-darkgray);
+        margin: 0 5px;
+    }
+    /* 졸전 참여자 */
+    #participants .tab_title {
+        padding: 7.5521vw 0 3vw 0;
+    }
+    #participants .tab_article ul {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        /* outline: solid 1px green; */
+    }
+    #participants .tab_article ul li {
+        width: calc(100% / 5);
+        margin-right: 0;
+        margin-bottom: 0;
+        text-align: center;
+        font-size: 2.6rem;
+        font-weight: 400;
+        margin-bottom: 10vw;
+    }
+    #participants .tab_article ul li:nth-child(6n+1) {
+        text-align: center;
+    }
+    #participants .tab_article ul li:nth-child(6n) {
+        text-align: center;
+    }
+    #participants .tab_article ul li:nth-child(5n+1) {
+        text-align: left;
+    }
+    #participants .tab_article ul li:nth-child(5n) {
+        text-align: right;
+    }
+    /* thanks to */
+    #thanksto .tab_title{
+        margin-bottom: 10px;
+    }
+    #thanksto .tab_article .left_title h4 {
+        font-size: 2.5rem;
+        font-weight: 500;
+    }
+    #thanksto .tab_article .right_txt p {
+        font-size: 2.2rem;
+        line-height: 2.5rem;
+        text-align: left;
+    }
+    #thanksto .tab_article .right_txt {
+        width: fit-content;
+    }
+    #thanksto .tab_article .right_txt span {
+        font-weight: 300;
+        font-size: 2.2rem;
+    }
+    /* 행사준비 */
+    #thanksto .tab_article .article_event, #thanksto .tab_article .article_professor {
+        display: flex;
+        flex-direction: column;
+    }
+    #thanksto .tab_article .article_event p, #thanksto .tab_article .article_professor p{
+        line-height: 1.6;
+    }
+    #thanksto .tab_article .left_title{
+    margin-bottom: 10px;
+    }
+}
+
+
+
+
+.fade-up {
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.main .info_wrap{
+    position: relative;
+}
+
+/* scroll down animation */
+    #scroll-wrapper {
+        display: table;
+        width: fit-content;
+        height: 100%;
+        position: absolute;
+        top: 45%;
+        right: -20%;
+        transform: translate(-50%, -50%);
+    }
+    #scroll-wrapper {
+        display: table;
+        width: fit-content;
+        height: 100%;
+        position: absolute;
+        top: 45%;
+        right: -20%;
+        transform: translate(-50%, -50%);
+    }
+    
+    #scroll-wrapper-inner {
+        display: table-cell;
+        vertical-align: middle;
+        width: 100%;
+        height: 100%;
+    }
+    
+    #scroll-down {
+        display: block;
+        position: relative;
+        padding-top: 4.9rem;
+        text-align: center;
+    }
+    
+    #scroll-title {
+        display: block;
+        text-transform: uppercase;
+        color: #fff;
+        font-family: "raleway";
+        font-size: 1rem;
+        font-weight: bold;
+        letter-spacing: 0.4em;
+        text-align: center;
+        transform: rotate(90deg);
+        margin-bottom: 2.8rem;
+    }
+    #scroll-down::before {
+        -webkit-animation: elasticus 2.9s cubic-bezier(1, 0, 0, 1) infinite;
+        /* Safari 4+ */
+        
+        -moz-animation: elasticus 2.9s cubic-bezier(1, 0, 0, 1) infinite;
+        /* Fx 5+ */
+        
+        -o-animation: elasticus 2.9s cubic-bezier(1, 0, 0, 1) infinite;
+        /* Opera 12+ */
+        
+        animation: elasticus 2.9s cubic-bezier(1, 0, 0, 1) infinite;
+        /* IE 10+, Fx 29+ */
+        
+        position: absolute;
+        top: 0px;
+        left: 50%;
+        margin-left: -1px;
+        width: 0.125rem;
+        height: 5.6rem;
+        background: rgb(255, 255, 255);
+        content: ' ';
+    }

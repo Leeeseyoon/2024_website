@@ -1,102 +1,573 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
-/* 마우스 스크롤시 많은 이동이 없었으면 좋겠어요
-그래그로도 스크롤이 가능했으면 좋겠어요 (ᴗˬᴗ)⁾⁾
-html header, main 추가 */
-
-html, body {
-    width: 100%;
-    height: 6700vh;
-    background-color: var(--color-black);
-    font-family: "Noto sans Kr";
+body {
+    margin: 0;
+    background-color: #15100B;
+    overflow-x: hidden;
+    height: auto;
+    min-height: 100vh;
 }
 
 
-img {
+/* img {
     position: absolute;
     top: 0;
     left: 250%;
     width: 100%;
     height: 100%;
     object-fit: cover;
+} */
+
+
+
+
+
+@media (max-width: 768px) { /* 모바일 화면 크기 이하에서 적용 */
+
+
+
+    .main {
+        display: none; /* 데스크탑 갤러리 숨김 */
+    }
+
+    img {
+        position: relative;
+    }
+    
+    
 }
 
-.cursor{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 300px;
-    height: 400px;
-    z-index: 0;
-    pointer-events: none;
-}
 
-nav, footer{
-    position: fixed;
+        /* PC 버전 스타일링 */
+.container {
+    position: relative;
     width: 100%;
-    padding: 2em;
+    height: 100vh;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    z-index: 2;
-    mix-blend-mode: difference;
 }
 
-a, p{
-    text-decoration: none;
-    color: #fff;
-    font-size: 14px;
-}
-
-a span {
-    padding: 0.2em;
-}
-
-.links {
-    display: flex;
-    gap: 2em;
-}
-
-nav {
-    top: 0;
-}
-
-footer {
-    bottom: 0;
-}
-
-.gallery {
+.text-section {
     position: fixed;
-    width: 200%;
-    height: 100%;
-    left: -75%;
-    overflow: hidden;
-}
-
-.item {
-    position: absolute;
-    top: 0;
-    left: 0;
+    left: 28%;
+    top: calc(48% + 2.6vw);
     transform: translate(-50%, -50%);
-    width: 800px;
-    height: 80px;
-    cursor: pointer;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    will-change: transform;
+    overflow: visible;
 }
 
-.item p{
+.text-item {
+    position: absolute;
+    font-size: 1.5em;
+    /* -webkit-text-stroke 제거 */
+    color: rgba(255, 255, 255, 0.3); /* 비활성화된 텍스트 색상을 회색으로 변경 */
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    white-space: nowrap;
+    will-change: transform, opacity;
+    left: 50%;
+    transform: translate(-50%, 0);
+    line-height: 1.5;
+    opacity: 0;
+}
+
+.text-item.active {
+    font-size: 2.5em;
+    -webkit-text-stroke: 0;
+    color: #fff !important;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    font-weight: 700;
+}
+
+.text-item:not(.active) {
+/*     -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3); */
+    color: transparent;
+    transform-origin: left center;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.text-item.moving-up {
+    background-image: linear-gradient(to bottom, transparent 50%, #fff 50%);
+    background-position: 0 0;
+}
+
+.text-item.moving-up.active {
+    background-position: 0 -100%;
+}
+
+.text-item:not(.active):hover {
+    opacity: 0.8 !important;
+/*     -webkit-text-stroke: 1px rgba(255, 255, 255, 0.7); */
+    transition: all 0.3s ease;
+}
+
+.image-section {
+    position: fixed;
+    right: 10%;
+    top: calc(50% + 2.6vw);
+    transform: translateY(-50%);
+    width: 760px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: visible;
+    will-change: transform;
+}
+
+.image-container {
+    position: absolute;
+    width: 760px;
+    height: 570px;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform, opacity;
+    transform-origin: center center;
+    margin-top: -40px;
+    opacity: 0;
+}
+
+.image-item {
     width: 100%;
-    font-size: 42px;
-    font-weight: 500;
-    text-transform: uppercase;
-    color: #fff;
-    transition: font-size 0.3s ease;
+    height: 100%;
+    object-fit: cover;
 }
 
-.item p span{
-    padding: 0 20px;
-    font-size: 16px;  
+.project-info-item {
+    position: absolute;
+    bottom: -40px;
+    right: 0;
+    font-size: 1.2em;
+    color: rgba(255, 255, 255, 0.5);
+    white-space: nowrap;
 }
+
+.image-container.active {
+    opacity: 1;
+    z-index: 2;
+    transform: translateY(0) scale(1);
+}
+
+.image-container.active .project-info-item {
+    color: rgba(255, 255, 255, 1);
+}
+
+.image-container.adjacent {
+    opacity: 0.2;
+    z-index: 1;
+}
+
+.image-container.adjacent .project-info-item {
+    opacity: 0.3;
+}
+
+.image-container.adjacent.prev {
+    transform: translateY(-80%) scale(0.8);
+}
+
+.image-container.adjacent.next {
+    transform: translateY(80%) scale(0.8);
+}
+
+.image-item.next-1 {
+    opacity: 0.2;
+    transform: scale(0.3) translateY(40px);
+    z-index: 0;
+}
+
+.image-item.next-2 {
+    opacity: 0.1;
+    transform: scale(0.2) translateY(80px);
+    z-index: -1;
+}
+
+.frame-container {
+    position: fixed;
+    left: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: calc(100% - 100px);
+    height: 120px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.guide-container {
+    display: none;
+}
+
+.project-info {
+    position: fixed;
+    right: 10%;
+    top: calc(50% + 350px);
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+.project-info-item {
+    position: absolute;
+    font-size: 1.2em;
+    color: rgba(255, 255, 255, 0.5);
+    opacity: 1;
+    transition: all 0.5s ease;
+    white-space: nowrap;
+    will-change: transform, opacity;
+    transform: translateY(0);
+}
+
+.project-info-item.active {
+    color: rgba(255, 255, 255, 1);
+    opacity: 1;
+}
+
+.project-info-item.adjacent {
+    opacity: 0.3;
+}
+
+/* 반응형 디자인 */
+
+/* 중간 데스크탑 화면 (1024px ~ 1910px) */
+@media (min-width: 1025px) and (max-width: 1910px) {
+    .text-section {
+        left: calc(20% + (28% - 20%) * ((100vw - 1024px) / (1910 - 1024)));
+        top: calc(45% + (48% - 45%) * ((100vw - 1024px) / (1910 - 1024)));
+        transform: translate(-50%, -50%);
+    }
+
+    .image-section {
+        right: calc(8% + (10% - 8%) * ((100vw - 1024px) / (1910 - 1024)));
+        width: calc(600px + (760 - 600) * ((100vw - 1024px) / (1910 - 1024)));
+        max-width: 45vw; /* 최대 너비 제한 추가 */
+    }
+}
+
+/* 태블릿 반응형 설정 (768px ~ 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .text-section {
+        left: 25%;
+        top: 45%;
+        transform: translate(-50%, -50%);
+    }
+
+    .image-section {
+        right: 5%;
+        width: 45vw; /* 뷰포트 너비에 따른 상대적 크기 */
+        max-width: 600px;
+    }
+
+    .image-container {
+        width: 100%; /* 부모 요소에 맞춤 */
+        height: auto;
+        aspect-ratio: 4/3; /* 이미지 비율 유지 */
+    }
+
+    /* 섹션 간 간격 유지를 위한 여백 설정 */
+    .container {
+        gap: calc(5% + (15% - 5%) * ((100vw - 768px) / (1024 - 768)));
+    }
+}
+
+
+
+/* 태블릿 및 모바일 레이아웃 (400px ~ 1024px) */
+@media (min-width: 400px) and (max-width: 1024px) {
+    .container {
+        display: none;
+    }
+
+    .image-section {
+        position: relative;
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        max-width: 600px;
+        margin: 0;
+        padding-top: 100px;
+    }
+
+    .text-section {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        height: auto;
+        overflow: visible;
+    }
+
+    .project-info {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .image-container {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4/3;
+        margin-top: 0;
+    }
+
+    .project-info {
+        position: fixed;
+        left: 50%;
+        bottom: 5vh; /* 하단에서 5% 위치 */
+        transform: translateX(-50%);
+        width: 100%;
+        text-align: center;
+    }
+
+    /* 이미지 슬라이드 효과 조정 */
+    .image-container.adjacent.prev {
+        transform: translateX(-70%) scale(0.8);
+    }
+
+    .image-container.adjacent.next {
+        transform: translateX(70%) scale(0.8);
+    }
+
+    .text-item {
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(20px);
+        transition: all 0.5s ease;
+    }
+
+    /* 활성화된 항목 */
+    .text-item.active {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+
+    /* 활성화된 항목의 바로 이전 항목 */
+    .text-item.active + .text-item,
+    .text-item.active ~ .text-item:nth-child(2) {
+        opacity: 0.3;
+        pointer-events: auto;
+        transform: translateY(40px);
+    }
+
+    /* 화된 항목의 이전 항목 */
+    .text-item.active ~ .text-item:nth-child(n+3) {
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(60px);
+    }
+
+    /* 활성화된 항목 바로 전의 항목 */
+    .text-item.active:not(:first-child) {
+        opacity: 0.3;
+        pointer-events: auto;
+        transform: translateY(-40px);
+    }
+
+    .text-section {
+        height: 150px; /* 3개 항목이 보일 수 있는 높이로 조정 */
+        overflow: hidden;
+    }
+    .image-section{
+        padding-top: 25%;
+    }
+    
+}
+        
+        /* 프레임 컨테이너 */
+        .frame-container {
+            position: fixed;
+            left: 50px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: calc(100% - 100px);
+            height: 120px;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+
+        
+        /* 기존의 가이드라인 제거 */
+        .guide-container {
+            display: none;
+        }
+        
+        .project-info {
+            position: fixed;
+            right: 10%;
+            top: calc(50% + 350px); /* 이미지 섹션 아래에 위치 */
+            transform: translateY(-50%);
+            z-index: 2;
+        }
+        
+        .project-info-item {
+            position: absolute;
+            font-size: 1.2em;
+            color: rgba(255, 255, 255, 0.5);
+            opacity: 1;
+            transition: all 0.5s ease;
+            white-space: nowrap;
+            will-change: transform, opacity;
+            transform: translateY(0);
+        }
+        
+        .project-info-item.active {
+            color: rgba(255, 255, 255, 1);
+            opacity: 1;
+        }
+        
+        .project-info-item.adjacent {
+            opacity: 0.3;
+        }
+        
+        /* text-item에 커서 포인터 추가 */
+        .text-item {
+            /* 기존 스타일 유지 */
+            cursor: pointer; /* 추가 */
+        }
+        
+        /* 호버 효과 개선 */
+        .text-item:not(.active):hover {
+            opacity: 0.8 !important;
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.7);
+            transition: all 0.3s ease;
+        }
+
+/* 카테고리 메뉴 스타일링 */
+.category-menu {
+    position: fixed;
+    top: 17%;
+    left: 28%;
+    transform: translateX(-50%);
+    z-index: 100;
+    display: flex;
+    gap: 20px;
+    background-color: rgba(21, 16, 11, 0.8);
+    padding: 15px 25px;
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+    cursor: none;
+}
+
+.category-btn {
+    background: none;
+    border: none;
+    color: var(--color-darkgray);
+    font-size: 1em;
+    cursor: none !important;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.category-btn:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.category-btn.active {
+    background-color: rgba(255, 255, 255, 0.1);
+    /* color: #fff; */
+    color: var(--color-orange);
+    font-weight: 600;
+}
+
+/* 숨겨진 아이템 스타일 */
+.text-item.hidden,
+.image-container.hidden {
+    display: none;
+}
+
+/* 반응형 대응 */
+@media (max-width: 768px) {
+    .category-menu {
+        top: 80px;
+        width: 90%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .category-btn {
+        font-size: 0.9em;
+        padding: 6px 12px;
+    }
+
+    .container {
+        display: none;
+    }
+}
+
+.category-section {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.category-section.active {
+    display: block;
+}
+
+/* 각 카테고리별 섹션 스일링 */
+.uiux-section .text-item,
+.web-section .text-item,
+.graphic-section .text-item {
+    margin-bottom: 60px; /* 각 카테고리별로 간격 조정 가능 */
+}
+
+.uiux-section .image-container,
+.web-section .image-container,
+.graphic-section .image-container {
+    margin-bottom: 80px; /* 각 카테고리별로 간격 조정 가능 */
+}
+
+.text-item, .image-container {
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contents {
+    min-height: 100vh;
+    width: 100%;
+    overflow-y: auto;
+    position: relative;
+    padding-bottom: 100px;
+}
+
+@media (max-width: 480px) {
+    body {
+        height: auto;
+        overflow-y: auto;
+        position: relative;
+    }
+
+    .text-section {
+        height: auto;
+        overflow: visible;
+    }
+    
+    .contianer{
+        display: none;
+    }
+
+    .contents {
+        min-height: 100vh;
+        width: 100%;
+        overflow-y: auto;
+        position: relative;
+        padding-bottom: 100px;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+
+
+
+
+

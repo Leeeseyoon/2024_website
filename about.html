@@ -5,24 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/about.css">
-    <title>ABOUT</title>
+    <link rel="stylesheet" href="css/topbutton.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+KR:wght@100..900&family=Odibee+Sans&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <title>IDENTITY</title>
 </head>
 <body>
+
+    <div class="custom_cursor"></div>
+
     <!-- 사이트 공통 내비게이션 -->
     <div class="header">
         <div class="nav_wrap">
             <div class="h_logo">
-                <h1><a href="index.html"><img src="" alt="로고 이미지"></a></h1>
+                <h1><a href="index.html"><img src="./images/logo.png" alt="Panorama logo"></a></h1>
             </div>
             <ul class="h_nav">
                 <li><button><a href="about.html">IDENTITY</a></button></li>
                 <li><button><a href="works.html">WORKS</a></button></li>
                 <li><button><a href="designer.html">DESIGNERS</a></button></li>
-                <li><button><a href="#">INFO</a></button></li>
+                <li><button><a href="info.html">INFO</a></button></li>
             </ul>
         </div>
     </div>
-
+    <!-- 모바일 헤더 -->
+    <div class="phone">
+        <header>
+            <div class="square"><a href="index.html"><img src="images/phone_logo.png" alt=""></a></div>
+            <h1>IDENTITY</h1>
+            <button class="menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </header>
+        <!-- 추가: 슬라이드 메뉴 -->
+        <div class="slide-menu">
+            <nav class="mobile-nav">
+                <ul>
+                    <li><a href="about.html">IDENTITY</a></li>
+                    <li><a href="designer.html">DESIGNERS</a></li>
+                    <li><a href="works.html">WORKS</a></li>
+                    <li><a href="info.html">INFO</a></li>
+                </ul>
+            </nav>
+        </div>
+        <script src="js/mobilenav.js"></script>
+    </div>
     <!-- 메인 컨텐츠 -->
     <div class="main">
 
@@ -30,8 +62,8 @@
         <div class="info_wrap">
 
             <!-- 이미지 -->
-            <div class="info_img">
-                <img src="" alt="메인 이미지"> <!-- 여기에 메인 이미지 삽입-->
+            <div class="info_img fade-up">
+                <img src="images/websiteposter.jpg" alt="메인 이미지"> <!-- 여기에 메인 이미지 삽입-->
             </div>
 
             <!-- 텍스트 -->
@@ -42,18 +74,30 @@
                     <h2>Panorama</h2>
                     <h3>: 시각의 경계를 넘어 우리들의 이야기를 담다</h3>
                 </div>
+                <!-- 스크롤다운 이미지 -->
+                <div id="scroll-wrapper">
+                    <div id="scroll-wrapper-inner">
+                        <div id="scroll-title">
+                        Scroll
+                        </div>
+                        <div id="scroll-down">
+                        </div>
+                    </div>
+                </div>
+                
+                
 
                 <!--설명글-->
-                <div class="info_article">
+                <div class="info_article fade-up">
                     <div class="article_kr">
-                        <p>
-                            졸업 전시회 '파노라마: 시각의 경계를 넘어 우리만의 이야기를 담다'는 시각디자인과 학생들이 비주얼, 디지털 디자인 분야에서 그동안 쌓아온 학습과 경험을 바탕으로 창의적인 작품을 선보이는 특별한 전시입니다. 이 전시는 각기 다른 시각적 언어와 표현 방식을 통해 학생들이 개인의 이야기를 어떻게 풀어내는지를 보여줍니다. 학생들의 다양한 디자인 경험을 '파노라마'라는 하나의 주제로 모아 여러분에게 새로운 시각과 감정을 경험할 수 있도록 유도합니다.
-                        </p>
+                        <p>졸업 전시회 '파노라마: 시각의 경계를 넘어 우리만의 이야기를 담다'는 시각디자인과 학생들이 비주얼, 디지털 디자인 분야에서 그동안 쌓아온 학습과 경험을 바탕으로 창의적인 작품을 선보이는 특별한 전시입니다. 이 전시는 각기 다른 시각적 언어와 표현 방식을 통해 학생들이 개인의 이야기를 어떻게 풀어내는지를 보여줍니다. 학생들의 다양한 디자인 경험을 '파노라마'라는 하나의 주제로 모아 여러분에게 새로운 시각과 감정을 경험할 수 있도록 유도합니다.</p>
+                        <p>'파노라마' 는 '여러 사람이 모여 하나의 이야기를 만들다.' 라는 의미로 제작되었습니다. 시각디자인은 단순히 시각적 요소를 나열하는 것이 아닌, 개인의 창의성을 넘어 다양한 사람들의 아이디어와 경험이 결합되어 하나의 이야기를 만들어가는 과정이기에 이는 시각디자인을 잘 나타낼 수 있는 주제입니다. 우리들의 경험과 감정을 모아 보는이로 하여금 강력한 메시지를 전달하여 깊은 감동을 주며, 그들 또한 이 이야기의 일부가 되었으면 합니다.</p>
+                        <p>이번 전시회는 단순한 작품 전시를 넘어, 디자인의 힘과 가능성을 탐구하는 장이 될 것입니다. 다양한 작품을 통해 각기 다른 시각과 경험을 공유하게 되며, 디자인이 가진 소통의 본질을 더욱 풍부하게 만들어 줄 것입니다. 졸업생들의 열정과 창의성이 담긴 '파노라마: 시각의 경계를 넘어 우리만의 이야기를 담다' 로 여러분을 초대합니다. </p>
                     </div>
                     <div class="article_eng">
-                        <p>
-                            The graduation exhibition "Panorama: Beyond the Boundaries of Vision, Telling Our Own Stories" is a special showcase where students from the Visual Design Department present their creative works based on the knowledge and experiences they have accumulated in the fields of visual and digital design. This exhibition illustrates how students express their individual stories through various visual languages and methods. By gathering their diverse design experiences under the theme "Panorama," it invites you to experience new perspectives and emotions.
-                        </p>
+                        <p>The graduation exhibition "Panorama: Beyond the Boundaries of Vision, Telling Our Own Stories" is a special showcase where students from the Visual Design Department present their creative works based on the knowledge and experiences they have accumulated in the fields of visual and digital design. This exhibition illustrates how students express their individual stories through various visual languages and methods. By gathering their diverse design experiences under the theme "Panorama," it invites you to experience new perspectives and emotions.</p>
+                        <p>"Panorama" signifies "many people coming together to create one story." Visual design is not merely about arranging visual elements; it is a process where individual creativity merges with the ideas and experiences of many, resulting in a cohesive narrative. This theme effectively represents visual design, as it combines our experiences and emotions to convey a powerful message, hoping to evoke deep resonance and make the audience feel like a part of this story.</p>
+                        <p>This exhibition will serve as a platform to explore the power and potential of design beyond just displaying artworks. Through a variety of pieces, we will share different perspectives and experiences, enriching the essence of communication that design embodies. We invite you to join us for "Panorama: Beyond the Boundaries of Vision, Telling Our Own Stories," filled with the passion and creativity of our graduates.</p>
                     </div>
                 </div>
             </div>
@@ -62,46 +106,40 @@
         <!-- 카테고리별 탭 섹션 -->
         <div class="tab_wrap">
 
-            <!-- 카테고리 탭 -->
-            <div class="category_wrap">
-                <button class="category_btn selected" data-filter="identity">IDENTITY</button>
-                <button class="category_btn" data-filter="comittee">COMITTEE</button>
-                <button class="category_btn" data-filter="participants">PARTICIPANTS</button>
-                <button class="category_btn" data-filter="thanksto">THANKS TO</button>
-            </div>
-
             <div class="tab_container">
                 <!-- content_wrap, tab_section은 css 일괄 적용을 위한 공통 클래스명 -->
                 <!-- identity 섹션 -->
+                <!-- 기존 identity 섹션 css를 사용해야하기 때문에 tab_wrap과 container는 수정하지 않음 -->
                 <section id="identity" class="sections" target="_blank" data-type="identity">
                     <div class="content_wrap tab_identity">
 
                         <!-- 섹션 1 -->
                         <div class="tab_section">
-        
+                            <h2 class="identity_title fade-up">IDENTITY</h2>
                             <!-- 이미지 -->
-                            <div class="tab_img img1">
-                                <img src="" alt="포스터 이미지">
+                            <div class="tab_img img1 fade-up">
+                                
+                                <img src="images/poster.jpg" alt="포스터 이미지">
                             </div>
         
                             <!-- 글 -->
                             <div class="tab_txt">
         
                                 <!-- 제목 -->
-                                <div class="tab_title">
+                                <div class="tab_title fade-up">
                                     <h2>포스터</h2>
                                 </div>
                                 
                                 <!-- 설명글 -->
                                 <div class="tab_article">
-                                    <div class="article_kr">
+                                    <div class="article_kr fade-up">
                                         <p>
-                                            졸업 전시회 '파노라마: 시각의 경계를 넘어 우리만의 이야기를 담다'는 시각디자인과 학생들이 비주얼, 디지털 디자인 분야에서 그동안 쌓아온 학습과 경험을 바탕으로 창의적인 작품을 선보이는 특별한 전시입니다. 이 전시는 각기 다른 시각적 언어와 표현 방식을 통해 학생들이 개인의 이야기를 어떻게 풀어내는지를 보여줍니다. 학생들의 다양한 디자인 경험을 '파노라마'라는 하나의 주제로 모아 여러분에게 새로운 시각과 감정을 경험할 수 있도록 유도합니다.
+                                            'PANORAMA'라는 글자를 활용하여 파노라마 사진의 이미지를 형상화했으며, 원형 요소들을 통해 영사기를 표현했습니다. 이 디자인은 시각적 요소들을 통해 우리가 전하고자 하는 이야기를 효과적으로 전달하는 데 중점을 두었습니다. 원형 요소는 영사기의 상징성을 강조하며, 과거의 기억과 현재의 시각을 연결하는 매개체 역할을 수행합니다. 또한, 다양한 시각적 경계를 넘어서서 서로 다른 이야기들이 하나의 파노라마처럼 어우러지는 경험을 나타내고자 하였습니다.
                                         </p>
                                     </div>
-                                    <div class="article_eng">
+                                    <div class="article_eng fade-up">
                                         <p>
-                                            The graduation exhibition "Panorama: Beyond the Boundaries of Vision, Telling Our Own Stories" is a special showcase where students from the Visual Design Department present their creative works based on the knowledge and experiences they have accumulated in the fields of visual and digital design. This exhibition illustrates how students express their individual stories through various visual languages and methods. By gathering their diverse design experiences under the theme "Panorama," it invites you to experience new perspectives and emotions.
+                                            We utilized the word 'PANORAMA' to embody the imagery of panoramic photography and incorporated circular elements to represent a projector. This design focuses on effectively conveying the stories we wish to share through visual elements. The circular elements emphasize the symbolism of the projector, serving as a medium that connects memories of the past with our current perspectives. Additionally, we aimed to illustrate an experience where diverse narratives come together as a single panorama, transcending various visual boundaries.
                                         </p>
                                     </div>
                                 </div>
@@ -112,28 +150,28 @@
                         <div class="tab_section">
         
                             <!-- 이미지 -->
-                            <div class="tab_img img2">
-                                <img src="" alt="로고타입">
+                            <div class="tab_img img2 fade-up">
+                                <img src="images/logo.png" alt="로고타입">
                             </div>
         
                             <!-- 글 -->
                             <div class="tab_txt">
         
                                 <!-- 제목 -->
-                                <div class="tab_title">
+                                <div class="tab_title fade-up">
                                     <h2>로고</h2>
                                 </div>
                                 
                                 <!-- 설명글 -->
                                 <div class="tab_article">
-                                    <div class="article_kr">
+                                    <div class="article_kr fade-up">
                                         <p>
-                                            졸업 전시회 '파노라마: 시각의 경계를 넘어 우리만의 이야기를 담다'는 시각디자인과 학생들이 비주얼, 디지털 디자인 분야에서 그동안 쌓아온 학습과 경험을 바탕으로 창의적인 작품을 선보이는 특별한 전시입니다. 이 전시는 각기 다른 시각적 언어와 표현 방식을 통해 학생들이 개인의 이야기를 어떻게 풀어내는지를 보여줍니다. 학생들의 다양한 디자인 경험을 '파노라마'라는 하나의 주제로 모아 여러분에게 새로운 시각과 감정을 경험할 수 있도록 유도합니다.
+                                            이번 웹사이트의 로고는 'PANORAMA'라는 주제를 담아서 표현할 수 있는 영사기 이미지를 직관적으로 보여주기 위해 디자인하였습니다. 로고는 영사기에 담기는 렌즈의 한 순간을 포착하는 렌즈의 느낌을 표현하였고 주황색의 포인트 컬러로 단조로웠던 색상에 컬러감을 부여했습니다. 클래식한 폰트와 깔끔한 로고는 파노라마 웹사이트와 어우러져 주제의 모던한 이미지를 강조합니다.
                                         </p>
                                     </div>
-                                    <div class="article_eng">
+                                    <div class="article_eng fade-up">
                                         <p>
-                                            The graduation exhibition "Panorama: Beyond the Boundaries of Vision, Telling Our Own Stories" is a special showcase where students from the Visual Design Department present their creative works based on the knowledge and experiences they have accumulated in the fields of visual and digital design. This exhibition illustrates how students express their individual stories through various visual languages and methods. By gathering their diverse design experiences under the theme "Panorama," it invites you to experience new perspectives and emotions.
+                                            The logo of this website is designed to intuitively show the image of a projector that can be expressed with the theme of 'PANORAMA'. The logo expresses the feeling of the lens that captures a moment in the projector and gives color to the monotonous colors with orange point colors. Classic fonts and neat logos harmonize with the panoramic website to emphasize the modern image of the theme.
                                         </p>
                                     </div>
                                 </div>
@@ -141,311 +179,23 @@
                         </div>   
                     </div>
                 </section>
-                
-                
 
-                <!-- comittee 섹션 -->
-                <section id="comittee" class="sections invisible"  target="_blank" data-type="comittee">
-                    <div class="content_wrap tab_comittee">
-
-                        <!-- 섹션 1 -->
-                        <div class="tab_section">
-                            <!-- 제목 -->
-                            <div class="tab_title">
-                                <h2>2024 졸업전시 준비위원회</h2>
-                            </div>
-        
-                            <!-- 설명글 -->
-                            <div class="tab_article">
-                                <div class="comittee_info">
-                                    <p>
-                                        이번 졸업작품 전시회에는 총 11명의 학생들이 ‘ 파노라마 : 시각의 경계를 넘어 우리들의 이야기를 담다. ’ 라는 주제로 졸업전시를 준비하기 위해 참여하였습니다. 졸업전시 준비위원회는 서로 협력하여 좋은 전시를 만들어 갈 수 있도록 노력했습니다. 
-                                    </p>
-                                </div>
-                                <div class="comittee_name main_comittee">
-                                    <div class="name_left">
-                                        <ul>
-                                            <li>위원장</li>
-                                            <li>부위원장</li>
-                                            <li>부위원장</li>
-                                            <li>위원장</li>
-                                        </ul>
-                                    </div>
-                                    <div class="name_right">
-                                        <ul>
-                                            <li>심재정</li>
-                                            <li>황세희</li>
-                                            <li>박윤민</li>
-                                            <li>이세윤</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-        
-                        <!-- 섹션 2 -->
-                        <div class="tab_section">
-                            <!-- 제목 -->
-                            <div class="tab_title">
-                                <h2>Web Design</h2>
-                            </div>
-        
-                            <!-- 설명글 -->
-                            <div class="tab_article">
-                                <div class="comittee_info">
-                                    <p>
-                                        졸업생들의 포트폴리오를 한 공간에 모아볼 수 있는 웹사이트 제작팀입니다. 학교에서 활동한 2년간의 작품을 영화처럼 표현 할수 있게 기획하였습니다. 언제 어디서나 모바일에서도 즐길 수 있도록 반응형으로 구현하였습니다.
-                                    </p>
-                                </div>
-                                <div class="comittee_name">
-                                    <div class="name_left">
-                                        <ul>
-                                            <li>팀원</li>
-                                            <li>팀원</li>
-                                            <li>팀원</li>
-                                            <li>팀원</li>
-                                            <li>팀원</li>
-                                        </ul>
-                                    </div>
-                                    <div class="name_right">
-                                        <ul>
-                                            <li>김민경</li>
-                                            <li>김수아</li>
-                                            <li>양성우</li>
-                                            <li>이세윤</li>
-                                            <li>황세희</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-        
-                        <!-- 섹션 3 -->
-                        <div class="tab_section">
-                            <!-- 제목 -->
-                            <div class="tab_title">
-                                <h2>Banner Team</h2>
-                            </div>
-        
-                            <!-- 설명글 -->
-                            <div class="tab_article">
-                                <div class="comittee_info">
-                                    <p>
-                                        졸업생들의 작품을 오프라인에서도 볼 수 있게 배너로 제작하는  팀입니다. 학교에서 활동한 2년간의 작품을 한 장면에 담을 수 있게 레이아웃을 기획했습니다. 대형 현수막과 소형 배너를 통해 학생들의 작품을 감상할 수 있습니다.
-                                    </p>
-                                </div>
-                                <div class="comittee_name">
-                                    <div class="name_left">
-                                        <ul>
-                                            <li>팀원</li>
-                                            <li>팀원</li>
-                                            <li>팀원</li>
-                                        </ul>
-                                    </div>
-                                    <div class="name_right">
-                                        <ul>
-                                            <li>박가람</li>
-                                            <li>이세윤</li>
-                                            <li>윤혜원</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-        
-                        <!-- 섹션 4 -->
-                        <div class="tab_section">
-                            <!-- 제목 -->
-                            <div class="tab_title">
-                                <h2>Video Team</h2>
-                            </div>
-        
-                            <!-- 설명글 -->
-                            <div class="tab_article">
-                                <div class="comittee_info">
-                                    <p>
-                                        졸업생들의 포트폴리오 웹사이트의 랜딩페이지에 들어갈 영상과 더불어 졸업전시 현장에 전시될 영상을 제작하는 팀입니다. 졸업 전시 컨셉을 영상미 있게 표현할 수 있도록 기획하였습니다. 모션그래픽을 이용한 영상으로 몰입감을 높이도록 노력했습니다.
-                                    </p>
-                                </div>
-                                <div class="comittee_name">
-                                    <div class="name_left">
-                                        <ul>
-                                            <li>팀원</li>
-                                            <li>팀원</li>
-                                            <li>팀원</li>
-                                            <li>팀원</li>
-                                        </ul>
-                                    </div>
-                                    <div class="name_right">
-                                        <ul>
-                                            <li>최훈석</li>
-                                            <li>양성우</li>
-                                            <li>이세윤</li>
-                                            <li>황세희</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- participants 섹션 -->
-                <section id="participants" class="sections invisible"  target="_blank" data-type="participants">
-                    <div class="content_wrap tab_participants">
-
-                        <!-- 섹션 1 -->
-                        <div class="tab_section">
-                            <!-- 제목 -->
-                            <div class="tab_title">
-                                <h2>전시참여자</h2>
-                            </div>
-        
-                            <!-- 설명글 -->
-                            <div class="tab_article">
-                                <ul>
-                                    <li>강찬우</li>
-                                    <li>김민경</li>
-                                    <li>김민경</li>
-                                    <li>김수빈</li>
-                                    <li>김수아</li>
-                                    <li>김승빈</li>
-                                    <li>김승찬</li>
-                                    <li>김은서</li>
-                                    <li>김준희</li>
-                                    <li>김태호</li>
-                                    <li>류시은</li>
-                                    <li>박가람</li>
-                                    <li>박경호</li>
-                                    <li>박윤민</li>
-                                    <li>손상현</li>
-                                    <li>송다은</li>
-                                    <li>송민서</li>
-                                    <li>심재정</li>
-                                    <li>양성우</li>
-                                    <li>오난영</li>
-                                    <li>우수지</li>
-                                    <li>원세연</li>
-                                    <li>유지수</li>
-                                    <li>윤 비</li>
-                                    <li>윤혜원</li>
-                                    <li>이동현</li>
-                                    <li>이세윤</li>
-                                    <li>이연지</li>
-                                    <li>이영은</li>
-                                    <li>이지우</li>
-                                    <li>임영은</li>
-                                    <li>임 율</li>
-                                    <li>임재형</li>
-                                    <li>임현준</li>
-                                    <li>장천수</li>
-                                    <li>정회강</li>
-                                    <li>최민주</li>
-                                    <li>최은지</li>
-                                    <li>최훈석</li>
-                                    <li>황세희</li>
-                                    <li>허준우</li>
-                                    <li>   </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                
-
-                <!-- thanks to 섹션 -->
-                <section id="thanksto" class="sections invisible"  target="_blank" data-type="thanksto">
-                    <div class="content_wrap tab_thanksto">
-
-                        <!-- 섹션 1 -->
-                        <div class="tab_section">
-                            <!-- 제목 -->
-                            <div class="tab_title">
-                                <h2>도움을 주신 분들</h2>
-                            </div>
-        
-                            <!-- 설명글 -->
-                            <div class="tab_article">
-                                <div class="article_professor">
-                                    <div class="left_title">
-                                        <h4>지도교수님</h4>
-                                    </div>
-                                    <div class="right_txt">
-                                        <p>
-                                            배민식 이길배 김경조 문경아
-                                        </p>
-                                    </div>
-                                </div>
-        
-                                <div class="article_donation">
-                                    <div class="left_title">
-                                        <h4>동문 후원</h4>
-                                    </div>
-                                    <div class="right_txt">
-                                        <p>
-                                            토스뱅크 23130-3123-12111221
-                                        </p>
-                                    </div>
-                                </div>
-        
-                                <div class="article_event">
-                                    <div class="left_title">
-                                        <h4>행사 준비 </h4>
-                                    </div>
-                                    <div class="right_txt">
-                                        <ul>
-                                            <li>졸업대표 : 권지연</li>
-                                            <li>브랜딩팀 : 팀장 박소정 김민주 박채경 배인혜</li>
-                                            <li>포스터팀 : 팀장 조 안 김예원 도경민 안수현 박건우</li>
-                                            <li>웹사이트팀 : 팀장 장태웅 김지우 박수민</li>
-                                            <li>회계팀 : 팀장 이유진 이지은 전지호</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                </div>
+            </div>
             
         </div>
+
+        <!-- Top 버튼 -->
+        <div class="button-container">
+            <div class="moveTopBtn">
+                <img src="images/up-arrow.png" alt="Up Arrow" class="default-img">
+                <img src="images/up-arrow-orange.png" alt="Up Arrow Orange" class="hover-img hidden">
+            </div>
+        </div>
+        <script src="js/topbutton.js"></script>
     </div>
+    <!-- 마우스 커서 JS -->
+    <script src="js/cursor.js"></script>
+    <script src="js/scroll-animation.js"></script>
 
-    <!--js코드-->
-    <script>
-        const tabBtnContainer = document.querySelector('.category_wrap');
-const tabContainer = document.querySelector('.tab_container');
-const projects = document.querySelectorAll('.sections');
-
-// 탭 버튼별 화면표출기능
-tabBtnContainer.addEventListener('click', (e) => {
-    const filter = e.target.dataset.filter || e.target.parentNode.dataset.filter;
-    if (filter == null) {
-        return;
-    }
-
-    const active = document.querySelector('.category_btn.selected');
-    active.classList.remove('selected'); // 클릭했을 때 selected라는 엘리먼트를 remove
-    const target = e.target.nodeName === 'BUTTON' ? e.target : e.target.parentNode;
-    target.classList.add('selected');
-
-    // 클릭하면 프로젝트 항목 사라지게 하는 거
-    tabContainer.classList.add('anim-out');
-    setTimeout(() => {
-        projects.forEach((project) => {
-            // 필터 타입과 프로젝트 타입이 같으면 invisible 지워 표출, 다르면 invisible 추가해 숨기기
-            if (filter === '*' || filter === project.dataset.type) {
-                project.classList.remove('invisible');
-            } else {
-                project.classList.add('invisible');
-            }
-        });
-
-        tabContainer.classList.remove('anim-out'); // 지워졌던 거 다시 나타나게 
-    }, 200);
-});
-/* 시간 1000>200 */
-
-    </script>
 </body>
 </html>
