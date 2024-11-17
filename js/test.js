@@ -28,7 +28,8 @@ const imageUrls = [
     'images/works/임현준.png',
     'images/works/황세희.png',
     'images/works/윤비.png',
-    'images/works/임율.jpg'
+    'images/works/임율.jpg',
+    'images/works/최훈석.png'
 ];
 
 // 이미지 배열에서 랜덤하게 20개만 선택하는 함수
