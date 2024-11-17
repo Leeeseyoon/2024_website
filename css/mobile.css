@@ -96,7 +96,7 @@
     
     .contents {
         width: 100%;
-        padding-top: 107px;
+        padding-top: 50px;
         min-height: 100vh;
         overflow-y: auto !important;
         -webkit-overflow-scrolling: touch;
@@ -424,7 +424,7 @@
     width: 100%;
     height: auto;
     min-height: 100%;
-    padding: 0px;
+    padding: 60px;
     box-sizing: border-box;
 }
 
