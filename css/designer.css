@@ -409,6 +409,7 @@ body {
         font-size: 14px;
         font-weight: 400;
         line-height: 1.823vw;
+        font-family: 'Noto Sans KR', sans-serif;
     }
     .content_wrap ul li .stu_txt .name_eng {
         margin-left: 0;
@@ -417,6 +418,7 @@ body {
         line-height: 1;
         margin-top: 10px;
         color: var(--color-darkgray);
+        font-family: 'Inter', sans-serif;
     }
 
     .background-text span, .cursor{
