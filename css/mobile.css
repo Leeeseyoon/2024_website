@@ -96,13 +96,13 @@
     
     .contents {
         width: 100%;
-        padding-top: 50px;
+        padding-top: 107px;
         min-height: 100vh;
         overflow-y: auto !important;
         -webkit-overflow-scrolling: touch;
         position: relative;
         z-index: 1;
-        padding-bottom: 200px; /* 하단 여백 추가 */
+        padding-bottom: 20px; /* 하단 여백 추가 */
     }
 
 
@@ -362,7 +362,7 @@
 /* 그리드뷰일 때의 컨테이너 설정 */
 .contents.grid-active {
     position: absolute;
-    top: 60px;
+    top: 80px;
     left: 0;
     width: 100%;
     height: calc(100vh - 120px);

@@ -317,7 +317,7 @@ function initializeMobile() {
     listViewBtn.addEventListener('click', () => setActiveView('list'));
 
     // 초기 상태 설정 (그리드 뷰를 기본값으로)
-    setActiveView('lis');
+    setActiveView('list');
 
     // 카테고리 전환 기능 수정
     const categoryTexts = document.querySelectorAll('.category-text');

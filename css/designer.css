@@ -158,9 +158,14 @@ body {
     padding-left: 2.604vw;
     font-size: 1.125rem;
     text-decoration: none;
-    -webkit-border-radius: 2.604vw;
-    -webkit-box-sizing: border-box;
-    -webkit-tap-highlight-color: transparent;
+    
+    /* iOS 입력 문제 해결을 위한 추가 속성 */
+    position: relative;
+    z-index: 3;
+    pointer-events: auto;
+    user-select: text;
+    -webkit-user-select: text;
+    touch-action: manipulation;
 }
 
 /* placeholder 스타일 */
@@ -486,7 +491,7 @@ body {
     width: 100%;
     height: 87.5%;
     position: relative;
-    z-index: 1; /* 양수값으로 설정하여 앞으로 가져오기 */
+    z-index: 1; /* 양수값으로 설정하여 앞으로 가져오�� */
 }
 
 /* 메인 컨텐츠 래퍼의 z-index 설정 */
@@ -572,5 +577,110 @@ body {
     
     .cont_select_int {
         -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* iOS 검색 입력 필드 스타일링 */
+.sub_nav .search input[type="search"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 2.604vw;
+    /* 기존 스타일 유지 */
+}
+
+/* iOS 검색 취소 버튼 스타일링 개선 */
+.sub_nav .search input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    position: relative;
+    right: 10px;
+    height: 20px;
+    width: 20px;
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23808080'><path d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/></svg>") no-repeat center;
+    background-size: contain;
+    cursor: pointer;
+}
+
+/* iOS에서의 터치 동작 최적화 */
+@supports (-webkit-touch-callout: none) {
+    .sub_nav .search input[type="search"] {
+        font-size: 16px; /* iOS에서 자동 확대 방지 */
+        touch-action: manipulation;
+    }
+    
+    /* iOS에서의 검색 입력 필드 포커스 스타일 */
+    .sub_nav .search input[type="search"]:focus {
+        outline: none;
+        border-color: var(--color-stroke);
+    }
+}
+
+/* 모바일 대응 스타일 개선 */
+@media (max-width: 480px) {
+    .sub_nav .search input[type="search"] {
+        font-size: 16px; /* iOS에서 자동 확대 방지 */
+        padding-right: 30px; /* 취소 버튼을 위한 공간 */
+    }
+    
+    .sub_nav .search input[type="search"]::-webkit-search-cancel-button {
+        right: 8px;
+        height: 16px;
+        width: 16px;
+    }
+}
+
+/* iOS 검색 입력 관련 스타일 수정 */
+.sub_nav .search input {
+    /* 기존 스타일 유지 */
+    -webkit-appearance: none;
+    appearance: none;
+    width: 19.167vw;
+    height: 2.396vw;
+    border-radius: 2.604vw;
+    background-color: var(--color-darkgray);
+    border: 0.104vw solid var(--color-stroke);
+    color: var(--color-white);
+    box-sizing: border-box;
+    padding: 0 2.604vw;
+    padding-left: 2.604vw;
+    font-size: 1.125rem;
+    text-decoration: none;
+    
+    /* iOS 입력 문제 해결을 위한 추가 속성 */
+    position: relative;
+    z-index: 3;
+    pointer-events: auto;
+    user-select: text;
+    -webkit-user-select: text;
+    touch-action: manipulation;
+}
+
+/* iOS 특정 스타일 */
+@supports (-webkit-touch-callout: none) {
+    .sub_nav .search input {
+        /* iOS에서 입력 문제 해결을 위한 추가 속성 */
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        cursor: text;
+    }
+    
+    /* iOS에서 포커스 시 동작 보장 */
+    .sub_nav .search input:focus {
+        outline: none;
+        border: 1px solid var(--color-stroke);
+    }
+}
+
+/* 모바일 대응 스타일 수정 */
+@media (max-width: 480px) {
+    .sub_nav .search input {
+        /* 기존 모바일 스타일 유지 */
+        width: 152px;
+        height: 25px;
+        
+        /* iOS 입력 문제 해결을 위한 추가 속성 */
+        font-size: 16px; /* iOS에서 자동 확대 방지 */
+        transform: translateZ(0); /* iOS 렌더링 최적화 */
     }
 }
