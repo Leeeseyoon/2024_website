@@ -270,5 +270,13 @@ body {
     overflow: hidden;
 }
 
+.info_title{
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
 
 
