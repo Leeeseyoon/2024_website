@@ -27,7 +27,7 @@ const imageUrls = [
     'images/works/이세윤1.jpg',
     'images/works/임현준.png',
     'images/works/황세희.png',
-    'images/works/윤비.jpg',
+    'images/works/윤비.png',
     'images/works/임율.jpg'
 ];
 

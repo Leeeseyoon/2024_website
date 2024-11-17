@@ -175,30 +175,38 @@ if (!isMobile()) {
 // 초기 설정 실행
 setInitialPositions();
 
-// 클릭 이벤트 핸들러 부분만 수정
+// 클릭 이벤트 핸들러 수정
 textItems.forEach((item, index) => {
     item.addEventListener('click', () => {
         if (isMobile()) return;
+        if (item.classList.contains('hidden')) return;
         if (index === currentIndex) return;
         
-        const targetScrollPosition = Math.max(0, index * (window.innerHeight * 0.2));
+        const visibleItems = Array.from(textItems).filter(item => !item.classList.contains('hidden'));
+        const clickedItemIndex = visibleItems.indexOf(item);
+        const targetIndex = index;
         
-        item.classList.add('transitioning');
-        textItems[currentIndex].classList.add('transitioning');
+        // 클릭한 아이템과 현재 아이템 사이의 중간 인덱스들 계산
+        const direction = targetIndex > currentIndex ? 1 : -1;
+        const steps = Math.abs(targetIndex - currentIndex);
+        const stepDelay = 100; // 각 단계별 딜레이
         
+        // 중간 단계들을 거쳐가며 부드럽게 이동
+        for(let i = 1; i <= steps; i++) {
+            setTimeout(() => {
+                const intermediateIndex = currentIndex + (direction * i);
+                updateItems(intermediateIndex);
+            }, i * stepDelay);
+        }
+        
+        // 최종 스크롤 위치 계산 및 이동
+        const targetScrollPosition = Math.max(0, clickedItemIndex * (window.innerHeight * 0.2));
         setTimeout(() => {
-            updateItems(index);
-            
             window.scrollTo({
                 top: targetScrollPosition,
                 behavior: 'smooth'
             });
-            
-            setTimeout(() => {
-                item.classList.remove('transitioning');
-                textItems[currentIndex].classList.remove('transitioning');
-            }, 800);
-        }, 50);
+        }, steps * stepDelay);
     });
 });
 
@@ -229,7 +237,7 @@ function lazyLoadImages() {
     });
 }
 
-// 초기 로딩 최적화 ��수 수정
+// 초기 로딩 최적화 수 수정
 function initializeWithDelay() {
     if (isMobile()) {
         textItems.forEach(item => {
@@ -383,7 +391,6 @@ function filterItems(category, textItems, imageContainers) {
     window.removeEventListener('scroll', throttledScrollHandler);
     window.addEventListener('scroll', throttledScrollHandler, { passive: true });
 }
-
 // 초기화
 document.addEventListener('DOMContentLoaded', () => {
     if (!isMobile()) {
@@ -467,3 +474,4 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
