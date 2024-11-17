@@ -361,14 +361,14 @@
 
 /* 그리드뷰일 때의 컨테이너 설정 */
 .contents.grid-active {
-    position: relative;
+    position: absolute;
+    top: 60px;
+    left: 0;
     width: 100%;
-    height: auto;
-    min-height: 100vh;
+    height: calc(100vh - 120px);
     overflow-y: auto !important;
     -webkit-overflow-scrolling: touch;
     padding-bottom: 200px;
-    padding-top: 120px;
 }
 
 /* project-stack 위치 조정 */
@@ -417,3 +417,24 @@
     -ms-user-select: none;
     user-select: none;
 }
+
+/* 그리드 뷰 스타일 수정 */
+.project-grid-view {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+/* 헤더 영역 z-index 조정 */
+.phone .fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--color-black);
+}
+
