@@ -436,8 +436,9 @@ body {
         /* 호버 효과 개선 */
         .text-item:not(.active):hover {
             opacity: 0.8 !important;
-            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.7);
+            /* -webkit-text-stroke: 1px rgba(255, 255, 255, 0.7); */
             transition: all 0.3s ease;
+            color: #a8a8a8;
         }
 
 /* 카테고리 메뉴 스타일링 */
@@ -568,6 +569,40 @@ body {
 
 
 
+.text-section {
+    /* 기존 스타일 유지 */
+    -webkit-user-select: none;  /* Safari */
+    -moz-user-select: none;     /* Firefox */
+    -ms-user-select: none;      /* IE/Edge */
+    user-select: none;          /* 표준 구문 */
+}
 
+.text-item {
+    /* 기존 스타일 유지 */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
 
+.image-container {
+    /* 기존 스타일 유지 */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
 
+.category-menu{
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.category-btn{
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}   
