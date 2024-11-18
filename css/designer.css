@@ -233,6 +233,9 @@ body {
     width: 100%;
     gap: 1.563vw;
 }
+#VisualDesignList ul {
+    gap: none;
+}
 
 .content_wrap ul li {
     width: calc((100% - 3.126vw) / 3);
