@@ -231,20 +231,14 @@ body {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    margin: 0;
-    padding: 0;
+    gap: 1.563vw;
 }
 
 .content_wrap ul li {
-    width: calc((100% - 3.126vw) / 3);  /* 3개의 li와 2개의 간격을 고려한 너비 */
-    margin-right: 1.563vw;  /* 간격 */
-    margin-bottom: 1.563vw;  /* 행간 간격 */
-    aspect-ratio: 0.75;
-}
-
-/* 3n번째 아이템의 오른쪽 마진 제거 */
-.content_wrap ul li:nth-child(3n) {
+    width: calc((100% - 3.126vw) / 3);
     margin-right: 0;
+    margin-bottom: 1.563vw;
+    aspect-ratio: 0.75;
 }
 
 .content_wrap ul li a{
@@ -395,29 +389,17 @@ body {
         display: flex;
         flex-wrap: wrap;
         width: 100%;
-        margin: 0;
-        padding: 0;
+        gap: 10px;
     }
 
     .content_wrap ul li {
         width: calc((100% - 10px) / 2);
-        margin-right: 10px !important;
-        margin-bottom: 30px;
-        aspect-ratio: 0.75;
-    }
-
-    /* 2n번째 아이템에만 마진 제거 */
-    .content_wrap ul li:nth-child(2n) {
         margin-right: 0 !important;
+        margin-bottom: 30px;
     }
 
-    /* 3n 규칙 완전 무효화 */
+    .content_wrap ul li:nth-child(2n),
     .content_wrap ul li:nth-child(3n) {
-        margin-right: 10px !important;
-    }
-    
-    /* 2n인 경우는 항상 margin-right 0 유지 */
-    .content_wrap ul li:nth-child(2n) {
         margin-right: 0 !important;
     }
 
@@ -491,7 +473,7 @@ body {
     width: 100%;
     height: 87.5%;
     position: relative;
-    z-index: 1; /* 양수값으로 설정하여 앞으로 가져오�� */
+    z-index: 1; /* 양수값으로 설정하여 앞으로 가져오 */
 }
 
 /* 메인 컨텐츠 래퍼의 z-index 설정 */
@@ -682,5 +664,59 @@ body {
         /* iOS 입력 문제 해결을 위한 추가 속성 */
         font-size: 16px; /* iOS에서 자동 확대 방지 */
         transform: translateZ(0); /* iOS 렌더링 최적화 */
+    }
+}
+
+/* iOS 검색 입력 필드 기본 스타일 */
+.sub_nav .search input[type="search"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 19.167vw;
+    height: 2.396vw;
+    border-radius: 2.604vw;
+    background-color: var(--color-darkgray);
+    border: 0.104vw solid var(--color-stroke);
+    color: var(--color-white);
+    box-sizing: border-box;
+    padding: 0 2.604vw;
+    font-size: 16px; /* iOS에서 자동 확대 방지를 위한 최소 크기 */
+    
+    /* iOS 입력 문제 해결을 위한 추가 속성 */
+    position: relative;
+    z-index: 3;
+    -webkit-user-select: text !important;
+    user-select: text !important;
+    -webkit-touch-callout: default !important;
+    touch-action: auto !important;
+}
+
+/* iOS 특정 스타일 */
+@supports (-webkit-touch-callout: none) {
+    .sub_nav .search input[type="search"] {
+        /* iOS 입력 활성화를 위한 추가 속성 */
+        -webkit-user-select: auto !important;
+        user-select: auto !important;
+        -webkit-touch-callout: default !important;
+        pointer-events: auto !important;
+        cursor: text !important;
+    }
+    
+    /* iOS 키보드 표시 문제 해결 */
+    .sub_nav .search {
+        transform: translateZ(0);
+        -webkit-transform: translateZ(0);
+    }
+}
+
+/* 모바일 iOS 대응 */
+@media (max-width: 480px) {
+    .sub_nav .search input[type="search"] {
+        width: 152px;
+        height: 25px;
+        font-size: 16px;
+        /* 터치 이벤트 최적화 */
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
     }
 }
