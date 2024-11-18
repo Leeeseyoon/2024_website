@@ -436,8 +436,9 @@ body {
         /* 호버 효과 개선 */
         .text-item:not(.active):hover {
             opacity: 0.8 !important;
-            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.7);
+            /* -webkit-text-stroke: 1px rgba(255, 255, 255, 0.7); */
             transition: all 0.3s ease;
+            color: #a8a8a8;
         }
 
 /* 카테고리 메뉴 스타일링 */

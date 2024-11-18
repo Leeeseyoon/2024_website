@@ -176,7 +176,7 @@ if (!isMobile()) {
 setInitialPositions();
 
 // 클릭 이벤트 핸들러 수정
-textItems.forEach((item, index) => {
+/* textItems.forEach((item, index) => {
     item.addEventListener('click', () => {
         if (isMobile()) return;
         if (item.classList.contains('hidden')) return;
@@ -208,7 +208,7 @@ textItems.forEach((item, index) => {
             });
         }, steps * stepDelay);
     });
-});
+}); */
 
 // 이미지 지연 로딩
 function lazyLoadImages() {
