@@ -45,19 +45,19 @@ transform: translateY(-50%);
 z-index: 2;
 }
 .info_title h2{
-font-size: 62px;
+font-size: 3.875rem;
 font-family: "Literata", serif;
 white-space: nowrap;
 line-height: 1.2;
-letter-spacing: -1px;
+letter-spacing: -0.0625rem;
 }
 .info_title h3{
-font-size: 24px;
+font-size: 1.5rem;
 font-weight: 400;
 margin-left: 0;
 white-space: nowrap;
 line-height: 2;
-letter-spacing: 0.5px;
+letter-spacing: 0.03125rem;
 }
 
 body
@@ -196,7 +196,9 @@ a:hover
     height: 100%;
     object-fit: cover;
   }
-
+  .main_btn{
+    display: none;
+  }
 
 
 
@@ -233,58 +235,47 @@ body {
       font-size: 30px;
   }
 }
-
-/* 태블릿 크기 */
-@media screen and (max-width: 1024px) {
-
-  .info_title{
-      padding-top: 0%;
-      margin-top: -10%;
-  }
-
-  .info_title h2 {
-      font-size: 60px;
-  }
-  .info_title h3 {
-      font-size: 20px;
-  }
-}
-
-/* 모바일 크기 */
-@media screen and (max-width: 768px) {
-
-  .info_title{
-      padding-top: 0%;
-      margin-top: -10%;
-  }
-
-  .info_title h2 {
-      font-size: 50px;
-  }
-  .info_title h3 {
-      font-size: 20px;
-  }
-}
-
 /* 작은 모바일 크기 */
 @media screen and (max-width: 480px) {
-  .info_title{
+  .info_title {
     color: white;
+    width: fit-content;
     /* border: 1px solid red; */
-    margin: auto;
-    margin-left: 20px;
     z-index: 2;
-  }
-  .info_title{
-      padding-top: 0%;
-      margin-top: -10%;
-  }
-  .info_title h2 {
-      font-size: 50px;
-  }
-  .info_title h3 {
-      font-size: 16px;
-  }
+    padding-top: 0%;
+    text-align: center; /* 텍스트 중앙 정렬 추가 */
+    margin-left: 0;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.info_title h2 {
+    font-size: 32px;
+    margin: auto;
+    text-align: center; /* 텍스트 중앙 정렬 */
+}
+
+.info_title h3 {
+    font-size: 14px;
+    text-align: center; /* 텍스트 중앙 정렬 */
+    margin: auto; /* 마진 auto 추가 */
+}
+.main_btn{
+  display: block;
+  margin-top: 20px;
+  text-align: center;
+}
+.main_btn button{
+  background-color: #ffffff;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 100px;
+  font-size: 16px;
+  font-weight: 600;
+
+}
   .phone header{
       margin-top: 0;
       width: 100%;

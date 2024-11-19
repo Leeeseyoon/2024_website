@@ -40,19 +40,19 @@ function initializeMobile() {
             { title: 'I WILL MAKE MY DESIGN PATH', author: '박가람', image: 'images/works/박가람.png', link: 'https://1220asc.github.io/test1113_c/' },
             { title: 'Communicative Designer', author: '심재정', image: 'images/works/심재정.png', link: 'https://simpsonii.github.io/shimjaejeong-Portfolio-Sites/' },
             { title: 'A NEW Encounter with Ohui', author: '양성우', image: 'images/works/양성우.jpg', link: 'https://yangseongwoo.github.io/ohuiwebsite/' },
-            { title: '그린피스 웹사이트 리디자인', author: '우수지', image: 'images/works/우수지.jpg', link: '#' },
+            { title: '그린피스 웹사이트 리디자인', author: '우수지', image: 'images/works/우수지.jpg', link: 'https://wsj6328.github.io/green/' },
             { title: '그리드와 소금', author: '원세연', image: 'images/works/원세연.png', link: 'https://seyeonwon.github.io/web__portfolio/' },
             { title: 'What’s on my desk', author: '유지수', image: 'images/works/유지수.jpg', link: 'https://wltn510.github.io/1107/' },
-            { title: '서울 자전거 따릉이', author: '윤비', image: 'images/works/윤비.png', link: 'https://drive.google.com/file/d/1lYo49TlrjjIXF-Ev-oR05J9aIZa0Ygw8/view?usp=sharing' },
-            { title: '카카오뱅크 웹사이트 리디자인', author: '이세윤', image: 'images/works/이세윤1.jpg', link: '#' },
-            { title: '위홈 앱 리디자인', author: '이세윤', image: 'images/works/이세윤2.jpg', link: '#' },
+            { title: '서울 자전거 따릉이', author: '윤 비', image: 'images/works/윤비.png', link: 'https://drive.google.com/file/d/1lYo49TlrjjIXF-Ev-oR05J9aIZa0Ygw8/view?usp=sharing' },
+            { title: '카카오뱅크 웹사이트 리디자인', author: '이세윤', image: 'images/works/이세윤1.jpg', link: 'https://leeeseyoon.github.io/kakaobank_2/' },
+            { title: '위홈 앱 리디자인', author: '이세윤', image: 'images/works/이세윤2.jpg', link: 'https://drive.google.com/file/d/13hy-fX0RTd7LBDh5lOAvT34jYPpwB-FR/view?usp=sharing' },
             { title: 'Portfolio', author: '이지우', image: 'images/works/이지우.jpg', link: 'https://jiwooyoooooo.github.io/portfolio/#works' },
-            { title: '광염 소나타 책 표지', author: '임율', image: 'images/works/임율.jpg', link: 'https://drive.google.com/file/d/10WNQMcpWPJCUxRxZ1LAAWGT8Wj2dJjef/view?usp=sharing' },
+            { title: '광염 소나타 책 표지', author: '임 율', image: 'images/works/임율.jpg', link: 'https://drive.google.com/file/d/10WNQMcpWPJCUxRxZ1LAAWGT8Wj2dJjef/view?usp=sharing' },
             { title: '유튜브 앱 리디자인', author: '임현준', image: 'images/works/임현준.png', link: 'https://drive.google.com/file/d/1GzokKcUFusyRB9sxcCd2erSKArgJD_2h/view?usp=sharing' },
             { title: 'Portfolio', author: '장천수', image: 'images/works/장천수.png', link: 'https://1000soo.github.io/cs_work/' },
             { title: 'Portfolio', author: '최은지', image: 'images/works/최은지.jpg', link: 'https://choieunjiji.github.io/port/' },
-            { title: '프라임 비디오 앱', author: '최훈석', image: 'images/works/최훈석.png', link: '#' },
-            { title: '크린나라 앱 리디자인', author: '황세희', image: 'images/works/황세희.png', link: '#' }
+            { title: '프라임 비디오 앱', author: '최훈석', image: 'images/works/최훈석.png', link: 'https://drive.google.com/file/d/1d0Hjt6WTWM_oZm4IKAXztCFNDly1bO60/view?usp=sharing' },
+            { title: '크린나라 앱 리디자인', author: '황세희', image: 'images/works/황세희.png', link: 'https://drive.google.com/file/d/1j2KgnJsLtmfSR2nEsCLlLPtj3R-u2nWt/view?usp=sharing' }
         ],
         visual: [
             { title: 'ANAKNE(굿즈디자인)', author: '강찬우', image: 'images/works/강찬우.jpg', link: 'https://drive.google.com/file/d/1-5p2puEUfejx0NdwvQJxGycwxog3qRJb/view?usp=sharing' },
@@ -246,7 +246,7 @@ function initializeMobile() {
             const card = document.createElement('div');
             card.className = 'project-card';
             card.innerHTML = `
-                <a href="${project.link}" class="project-link">
+                <a href="${project.link}" target="_blank" class="project-link">
                     <div class="project-image" style="background-image: url('${project.image}')"></div>
                     <div class="project-info">
                         <p>${project.author}</p>
