@@ -229,11 +229,19 @@ body {
         font-size: 3.8rem;
         margin-bottom: 1.25rem;
     }
-    .tab_img {
-        margin: 6.25rem 0;
-        width: 100%;
-        display: flex;
-        justify-content: center;
+    .poster_box {
+        margin: 50px auto;
+    }
+    .color {
+        opacity: 0; /* 기본적으로 컬러 이미지는 숨김 */
+    }
+    
+    .poster_box:hover .black {
+        opacity: 1; /* 모바일에서는 호버 효과를 적용하지 않음 */
+    }
+
+    .poster_box:hover .color {
+        opacity: 0; /* 모바일에서는 컬러 이미지를 숨김 */
     }
 
     #identity .identity_title{
@@ -246,7 +254,6 @@ body {
         width: 200px;
         height: 290px;
     }
-
 
 }
 
