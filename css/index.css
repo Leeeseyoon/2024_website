@@ -45,15 +45,19 @@ transform: translateY(-50%);
 z-index: 2;
 }
 .info_title h2{
-font-size: 80px;
+font-size: 62px;
 font-family: "Literata", serif;
 white-space: nowrap;
+line-height: 1.2;
+letter-spacing: -1px;
 }
 .info_title h3{
 font-size: 24px;
 font-weight: 400;
 margin-left: 0;
 white-space: nowrap;
+line-height: 2;
+letter-spacing: 0.5px;
 }
 
 body

@@ -1,6 +1,11 @@
 body {
     background-color: var(--color-black);
     color: var(--color-white);
+    /* 드래그 방지 */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-use-select: none;
+    user-select: none;
 }
 
 
