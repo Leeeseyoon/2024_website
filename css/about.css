@@ -111,7 +111,35 @@ body {
     display: flex;
     justify-content: center;
 }
+.poster_box {
+    width: 30vw;
+    height: 40vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* outline: 1px solid rgb(0, 255, 255); */
+}
+.poster {
+    transition: opacity 0.5s ease; /* 부드러운 전환 효과 */
+    position: absolute;
+    width: 30vw;
+    height: auto;
+    /* outline: 1px solid blue; */
+}
 
+.color {
+    opacity: 0; /* 기본적으로 컬러 이미지는 숨김 */
+}
+
+.poster_box:hover .black {
+    opacity: 0; /* 블랙 이미지를 숨김 */
+}
+
+.poster_box:hover .color {
+    opacity: 1; /* 컬러 이미지를 보이게 함 */
+}
 
 
 /* :::: 아이덴티티 섹션 :::: */
