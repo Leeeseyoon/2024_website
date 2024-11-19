@@ -5,7 +5,7 @@
     --color-gray: #C9C9C9;
     --color-white: #ffffff;
     --color-stroke: #716E6B;
-    --color-orange: #FE4E00; /* #ba420f */
+    --color-orange: #FE4E00;
     --color-lightorange:  #ffa47d;
     --color-placeholder: #949494;
 }
@@ -161,7 +161,6 @@ a {
     background-color: transparent;
 }
 .header .h_nav a {
-    font-family: Noto Sans KR;
     font-size: 1.25rem;  /* 20px -> 1.25rem */
     font-weight: 700;
     color: var(--color-darkgray);
@@ -267,6 +266,7 @@ a {
 
 .slide-menu.active {
     right: 0;
+    color: var(--color-orange);
 }
 
 .mobile-nav {
@@ -556,3 +556,5 @@ a {
             display: none !important;
         }
     }
+
+    
