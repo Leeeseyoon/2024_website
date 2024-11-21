@@ -1,4 +1,8 @@
 @media (max-width: 480px) {
+    html, body{
+        overscroll-behavior: none;
+    }
+    /* 기본 설정 */
     body {
         font-family: 'Inter', sans-serif;
         position: relative;
