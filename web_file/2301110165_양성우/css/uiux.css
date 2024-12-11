@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.cdnfonts.com/css/pp-neue-montreal');
+
+
+
+
+body{
+    background-color: #EEEDED;
+    font-family: 'PP Neue Montreal', sans-serif;
+}
+
+
+.project-container {
+    max-width: 1200px; /* 최대 너비 설정 */
+    margin: 0 auto; /* 중앙 정렬 */
+    padding: 20px; /* 여백 추가 */  
+    text-align: center; /* 기본 텍스트 정렬을 가운데로 설정 */
+}
+
+.back-button {
+    position: fixed; /* 고정 위치 설정 */
+    top: 20px; /* 상단에서의 거리 */
+    left: 20px; /* 왼쪽에서의 거리 */
+    padding: 10px 15px; /* 버튼 패딩 */
+    background-color: #EEEDED; /* 버튼 배경색 */
+    color: rgb(0, 0, 0); /* 버튼 텍스트 색상 */
+    border: none; /* 테두리 제거 */
+    cursor: pointer; /* 포인터 ��서 */
+    border-radius: 5px; /* 둥글게 */
+    z-index: 1000; /* 다른 요소보다 위에 표시 */
+}
+
+.back-button:hover {
+    background-color: #353535; /* 호버 시 색상 변경 */
+    color: white;
+}
+
+.project-header {
+    display: flex; /* 가로 정렬 */
+    justify-content: center; /* 가운데 정렬 */
+    align-items: center; /* 수직 중앙 정렬 */
+    margin-top: 60px; /* 버튼 높이만큼 여백 추가 */
+}
+
+.project-title {
+    font-size: clamp(40px, 5vw, 70px); /* 최소 40px, 최대 70px로 설정 */
+    margin: 0;
+    text-shadow: 2px 2px 5px rgba(73, 73, 73, 0.192),
+                 0 0 20px rgba(182, 182, 182, 0.6);
+}
+
+.project-info {
+    margin-top: clamp(12px, 2vw, 18px); /* 반응형 여백 */
+    padding-bottom: 5%;
+}
+
+.project-details,
+.project-date {
+    font-size: clamp(14px, 1.5vw, 18px); /* 반응형 폰트 크기 */
+    margin: 0;
+}
+
+.project-image-container {
+    margin-top: 20px; /* 이미지와 헤더 간의 간격 */
+}
+
+.project-image {
+    width: 100%; /* 이미지 너비를 100%로 설정 */
+    height: auto; /* 비율 유지 */
+    border-radius: 8px; /* 모서리 둥글게 */
+    padding-bottom: 0%;
+}
+
+
+.role-overview-container {
+    display: flex; /* 가로 정렬 */
+    justify-content: space-between; /* 양쪽 끝으로 정렬 */
+    margin-top: 20px; /* 이미지와 섹션 간의 간격 */
+}
+
+.role-section,
+.overview-section {
+    width: 40%; /* 각각의 섹션 너비 설정 */
+}
+
+.role-title,
+.overview-title {
+    font-size: 16px; /* 타이틀 크기 */
+    margin: 10px 0; /* 위아래 여백 */
+    text-align: left;
+    font-weight: 500;
+}
+
+.role-description,
+.overview-description {
+    font-size: 20px; /* 설명 크기 */
+    color: #666; /* 설명 텍스트 색상 */
+    text-align: left;
+    padding-bottom: 3%;
+}
+
+.additional-role-section {
+    margin-top: 20px; /* 아래 추가 섹션과 여백 */
+    width: 100%; 
+}
+
+
+.user-research-container {
+    margin-top: 40px; /* User Research 섹션과 이전 섹션 간의 간격 */
+    text-align: left;
+    padding-top: 10%;
+}
+
+.user-research-title {
+    font-size: 23px; /* User Research 타이틀 크기 */
+    margin: 20px 0; /* 위아래 여백 */
+    color: #4A4A4A;
+    font-weight: 500;
+    text-shadow: 2px 2px 5px rgba(73, 73, 73, 0.192), /* 그림자 */
+    0 0 20px rgba(182, 182, 182, 0.6); /* 야광 효과 */
+}
+
+.key-sentences-title {
+    font-size: 40px; /* Key Sentences 타이틀 크기 */
+    margin-top: -10px;
+}
+
+.user-research-image-container {
+    margin: 20px 0; /* 이미지와 다른 요소 간의 간격 */
+}
+
+.user-research-image {
+    width: 100%; /* 이미지 너비를 100%로 설정 */
+    height: auto; /* 비율 유지 */
+    border-radius: 8px; /* 모서리 둥글게 */
+}
+
+.problems-solution-container {
+    max-width: 1200px;
+    display: flex; /* 가로 정렬 */
+    justify-content: space-between; /* 양쪽 끝으로 정렬 */
+    margin-bottom: 20px; /* 아래 여백 */
+}
+
+.problems-section {
+    width: 68%; /* 각 섹션 너비 설정 */
+    padding-bottom: 13%;
+}
+
+.problems-section h4 {
+    font-size: 18px; /* 문제 및 해결 제목 크기 */
+    margin: 15px 0; /* 위아래 여백 */
+    color: rgb(0, 99, 156);
+}
+
+.problems-section p {
+    font-size: 20px; /* 설명 크기 */
+    color: #666; /* 설명 텍스트 색상 */
+}
+
+
+.highlight{
+    color: rgb(39, 39, 39);
+    font-weight: bold;
+}

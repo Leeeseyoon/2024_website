@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gloock&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import url('https://fonts.cdnfonts.com/css/pp-neue-montreal');
+
+
+body{
+    background-color: #EEEDED;
+}
+
+
+.new-layout-container {
+    max-width: 1400px; /* 최대 너비 설정 */
+    margin: 0 auto; /* 중앙 정렬 */
+    padding: 20px; /* 여백 추가 */
+    font-family: "Arial", sans-serif; /* 기본 폰트 설정 */
+}
+
+.back-button {
+    padding: 10px 15px; /* 버튼 패딩 */
+    background-color: #EEEDED; /* 버튼 배경색 */
+    color: rgb(0, 0, 0); /* 버튼 텍스트 색상 */
+    border: none; /* 테두리 제거 */
+    cursor: pointer; /* 포인터 커서 */
+    border-radius: 5px; /* 둥글게 */
+    margin-bottom: 20px; /* 아래 여백 */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #353535; /* 호버 시 색상 변경 */
+    color: white;
+}
+
+.image-section {
+    margin-bottom: 40px; /* 아래 여백 */
+}
+
+.main-image {
+    width: 100%; /* 이미지 너비 설정 */
+    height: auto; /* 비율 유지 */
+    border-radius: 8px; /* 모서리 둥글게 */
+}
+
+.text-section {
+    display: flex; /* Flexbox 사용 */
+    flex-direction: column; /* 세로 정렬 */
+    align-items: flex-start; /* 왼쪽 정렬 */
+    margin-top: 20px; /* 이미지와 텍스트 간의 여백 */
+}
+
+.section-title {
+    font-size: 28px; /* 제목 크기 */
+    margin: 0; /* 기본 여백 제거 */
+}
+
+.section-description {
+    width: 100%;
+    text-align: right;
+    font-size: 16px; /* 설명 크기 */
+    color: #666; /* 설명 텍스트 색상 */
+    margin: 10px 0; /* 위아래 여백 */
+}
+
+.section-description2 {
+    width: 100%;
+    text-align: left;
+    font-size: 20px; /* 설명 크기 */
+    color: #666; /* 설명 텍스트 색상 */
+    margin: 10px 0; /* 위아래 여백 */
+}
+
+.button-container {
+    text-align: right;
+    margin-top: 10px; /* 버튼과 설명 간의 여백 */
+    justify-content: right;
+    width: 100%; /* 버튼 컨테이너 너비 설정 */
+    padding-bottom: 10%;
+}
+
+.view-profile-button {
+    text-align: center;
+    display: inline-block; /* 인라인 블록으로 설정 */
+    padding: 10px 20px; /* 버튼 패딩 */
+    background-color: #EEEDED; /* 버튼 배경색 */
+    color: rgb(0, 0, 0); /* 버튼 텍스트 색상 */
+    border: 1px solid black; /* 테두리 제거 */
+    cursor: pointer; /* 포인터 커서 */
+    border-radius: 5px; /* 둥글게 */
+    text-decoration: none; /* 링크의 기본 밑줄 제거 */
+    transition: background-color 0.3s ease, color 0.3s ease; /* 부드러운 전환 추가 */
+    position: relative;  /* 추가: 자식 요소의 기준점 */
+    overflow: hidden; 
+}
+
+.view-profile-button::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    background-color: #353535;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+    z-index: 1;
+    top: var(--ripple-y, 50%);
+    left: var(--ripple-x, 50%);
+    /* top과 left 속성 제거 - JavaScript에서 동적으로 설정할 예정 */
+}
+
+
+.view-profile-button:hover {
+    background-color: #353535; /* 호버 시 색상 변경 */
+    color: white;
+}
+
+.view-profile-button:hover::before {
+    width: 300px;  /* ripple 크기 */
+    height: 300px;
+}
+
+.view-profile-button span {
+    position: relative;
+    z-index: 2;
+    color: inherit;
+}
+
+
+.nav-image-section {
+    display: flex; /* 가로 정렬 */
+    justify-content: space-between; /* 양쪽 끝으로 정렬 */
+    margin-top: 40px; /* 위와의 여백 */
+}
+
+.navigation {
+    width: 30%; /* 네비게이션 너비 설정 */
+    position: sticky; /* 고정 위치 설정 */
+    top: 20px; /* 상단에서의 위치 */
+    height: 90vh; /* 화면 높이에 비례한 높이 설정 */
+    overflow-y: auto; /* 세로 스크롤 가능 */
+}
+
+.navigation ul {
+    list-style-type: none; /* 리스트 스타일 제거 */
+    padding: 0; /* 기본 패딩 제거 */
+}
+
+.navigation li {
+    margin: 10px 0; /* 리스트 항목 간의 여백 */
+}
+
+.nav-item2{
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 5%;
+}
+
+.navigation a {
+    text-decoration: none; /* 기본 링크 스타일 제거 */
+    color: #4A4A4A; /* 링크 색상 */
+}
+
+.navigation a:hover{
+    color: rgb(0, 99, 156);
+}
+
+.right-image {
+    width: 65%; /* 이미지 섹션 너비 설정 */
+}
+
+.right-section-image {
+    width: 100%; /* 이미지 너비를 100%로 설정 */
+    height: auto; /* 비율 유지 */
+    border-radius: 8px; /* 모서리 둥글게 */
+}
+
+.context-description {
+    font-size: 16px; /* 설명 텍스트 크기 */
+    color: #666; /* 설명 텍스트 색상 */
+    padding-bottom: 20%;
+}
+
+.context-description2 {
+    font-size: 25px; /* 설명 텍스트 크기 */
+    color: rgb(0, 99, 156);
+}
+
+.additional-content {
+    margin-top: 20px; /* 이미지와 설명 간의 여백 */
+}
+
+.additional-section-image {
+    width: 100%; /* 추가 이미지 너비를 100%로 설정 */
+    height: auto; /* 비율 유지 */
+    border-radius: 8px; /* 모서리 둥글게 */
+}
+
+/* 미디어 쿼리 추가 */
+@media (max-width: 768px) {
+    .nav-image-section {
+        flex-direction: column; /* 세로 정렬 */
+        align-items: center; /* 가운데 정렬 */
+    }
+
+    .navigation {
+        display: none; /* 네비게이션 숨기기 */
+    }
+
+    .right-image {
+        width: 100%; /* 오른쪽 이미지 섹션의 너비를 100%로 설정 */
+    }
+
+    .right-section-image,
+    .additional-section-image {
+        margin-bottom: 20px; /* 이미지 간의 여백 */
+    }
+
+    .section-description{
+        display: none;
+    }
+}
+
+
+.highlight{
+    color: rgb(39, 39, 39);
+    font-weight: bold;
+}
+
+.key-sentences-title {
+    font-size: 40px; /* User Research 타이틀 크기 */
+    margin: 20px 0; /* 위아래 여백 */
+    color: #1b1b1b;
+    font-weight: 500;
+    text-shadow: 2px 2px 5px rgba(73, 73, 73, 0.192), /* 그림자 */
+    0 0 20px rgba(182, 182, 182, 0.6); /* 야광 효과 */
+}
+
+
+/* highlight 텍스트 */
+
+.highlight-text {
+    display: inline-block;
+    position: relative;
+    transition: all 0.3s ease; /* color만이 아닌 모든 속성에 transition 적용 */
+    font-weight: 400; /* 기본 상태는 일반 굵기 */
+}
+
+.highlight-text.visible {
+    color: rgb(0, 125, 197);
+    text-shadow: 2px 2px 5px rgba(73, 73, 73, 0.192),
+                 0 0 20px rgba(182, 182, 182, 0.6);
+    font-weight: 900; /* visible 상태에서는 더 굵게 변경 */
+}

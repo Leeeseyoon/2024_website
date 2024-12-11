@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/giant.css">
+    <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+</head>
+<body>
+    <div class="new-layout-container">
+        <button class="back-button" onclick="window.location.href='index.html'">Back</button>
+        
+        <div class="image-section">
+            <img src="image/Giant_main.jpg" alt="Example Image" class="main-image">
+            
+            <div class="text-section">
+                <h1 class="section-title">Giant web</h1>
+                <p class="section-description2">역동적인 자전거를 판매하는 사이트에 알맞게 <br> <span class="highlight-text">사이트의 동적인 느낌을 위주</span>로 리디자인한 프로젝트</p>
+                <p class="section-description">REDESIGN GIANT</p>
+                <div class="button-container">
+                    <a href="https://yangseongwoo.github.io/gaint/" class="view-profile-button"><span>VIEW A SITE ></span></a>
+                </div>
+            </div>
+            <script src="js/button.js"></script>
+        </div>
+        
+        <!-- 여백을 두고 네비게이션과 이미지를 아래에 배치 -->
+        <div class="nav-image-section">
+            <div class="navigation">
+                <ul>
+                    <li><a class="nav-item2" href="#">CONTEXT</a></li>
+                    <li><a class="nav-item" href="#background">Background & Goal</a></li>
+                    <li><a class="nav-item" href="#StrategyPositioning">Strategy & Positioning</a></li>
+                    <li><a class="nav-item" href="#AsistoBe">As is - To be</a></li>
+                    <li><a class="nav-item" href="#Main">Contents info</a></li>
+                    <li><a class="nav-item" href="#Result">Result</a></li>
+                </ul>
+            </div>
+            
+            <div id="background" class="right-image">
+                <img src="image/Giant1.jpg" alt="Right Image" class="right-section-image">
+                <h2 class="context-description2">Background & Goal</h2>
+                <p class="context-description">기존의 정적이고 올드한 느낌으로 구성되어있었던 디자인은 조금 더 사용자들이 <br>
+                제품에 흥미를 느낄 수 있도록 <span class="highlight">역동적이고 현대적인 느낌</span>을 주기 위해서 리디자인을 진행하였습니다.</p>
+    
+                <!-- 추가 콘텐츠 -->
+                <div id="StrategyPositioning" class="additional-content">
+                    <img src="image/Giant2.jpg" alt="Additional Image 1" class="additional-section-image">
+                    <h2 class="context-description2">Strategy & Positioning</h2>
+                <p class="context-description">영상, 인터렉션, 사용자와 상호작용하는 기능들을 경재 사이트에서는 많이 사용하고 있었기 때문에 <br>
+                해당 <span class="highlight">자전거라는 제품의 특성을 잘 나타내기 위한 조금 더 감성적이고 동적인</span> 포지션을 잡고 진행하였습니다.</p>
+                </div>
+    
+                <div id="AsistoBe" class="additional-content">
+                    <img src="image/Giant3.jpg" alt="Additional Image 2" class="additional-section-image">
+                    <h2 class="context-description2">As is - To be</h2>
+                    <p class="context-description">3가지 정도의 문제점이 있었고 저는 강조되는 브랜드 컬러와, 정보 제공, 시각적 제공에 있어서 <br>
+                    <span class="highlight">동적으로 사용자들에게 제공</span>할 수 있는 방법에 대해 집중했습니다.</p>
+                </div>
+    
+                <div id="Main" class="additional-content">
+                    <h3 class="key-sentences-title">CONTENTS INFO</h3>
+                    <img src="image/Giant4.jpg" alt="Additional Image 3" class="additional-section-image">
+                    <h2 class="context-description2">Main page</h2>
+                    <p class="context-description">메인 페이지는 슬라이드 화면, hover와 toggle, 인터렉션 기능을 사용하여 <br> <span class="highlight">사용자가
+                        사이트와 더 직접적으로 상호작용할 수 있도록</span> 디자인하였습니다
+                    </p>
+                </div>
+
+             
+                <div id="Main" class="additional-content">
+                    <img src="image/Giant5.jpg" alt="Additional Image 3" class="additional-section-image">
+                    <h2 class="context-description2">Product page</h2>
+                    <p class="context-description">자전거를 클릭하면 자전거가 움직이면서 해당 정보가 보이는 등, <br> <span class="highlight">해당 제품에 사용자가 온전히 관심을 가질 수 있도록</span> 디자인하였습니다.</p>
+                </div>
+
+                <div id="Result" class="additional-content">
+                    <img src="image/Giant6.jpg" alt="Additional Image 3" class="additional-section-image">
+                    <h2 class="context-description2">Result</h2>
+                    <p class="context-description">Giant 자전거의 역동적인 느낌과 해당 브랜드의 파란색이 강조되는 느낌으로 디자인하였습니다. <br>
+                        또한 HOVER와 CLICK EVENT를 활용해 사용자가 해당 사이트에 흥미를 느끼고
+                        탐색할 수 있도록 구성했습니다.</p>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+<script src="js/navscroll.js"></script>
+<script src="js/profile.js"></script>
+
+    <script>
+        // Initialize Lenis
+    const lenis = new Lenis();
+    
+    // Listen for the scroll event and log the event data
+    lenis.on('scroll', (e) => {
+      console.log(e);
+    });
+    
+    // Use requestAnimationFrame to continuously update the scroll
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    
+    requestAnimationFrame(raf);
+    
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,392 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Noto Sans KR", sans-serif;
+}
+html{ scroll-behavior: smooth;}
+
+body{
+    background-color: #37393A;
+    opacity: 100%;
+    color: var(--color-brown);
+}
+
+
+.overlay-wrap{
+    padding: 60px;
+    /* outline: solid 1px red; */
+    display: flex;
+    gap: 1vw;
+}
+
+/* 왼 */
+.overlay-wrap .content{
+    width: 60vw;
+    height: 42vw;
+    border-radius: 1.5vw; 
+    background-color: #0E0E0E;
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* 오른쪽 */
+.overlay-wrap .details{
+    width: 40vw;
+    height: 43vw;
+    border: 0.5px solid var(--color-brown);
+    background-color: var(--color-lightgray);
+}
+.overlay-wrap .dpbox{
+    background-color: transparent;
+    border: none;
+    border-radius: 1vw;
+    padding: 10px;
+    margin: 0.3vw 0;
+    display: flex;
+    flex-direction: column;
+}
+.overlay-wrap .box{
+    background-color: var(--color-lightgray);
+    border: solid 1px var(--color-brown);
+    border-radius: 0.8vw;
+    overflow: hidden;
+    /* padding: 0.3vw;
+    margin: 0.3vw 0; */
+}
+.overlay-wrap .flex{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.overlay-wrap .name{
+    width: 27vw;
+    height: 4vw;
+    /* outline: solid 1px red; */
+}
+.overlay-wrap .name h3{
+    font-size: 1.8vw;
+    line-height: 2.1;
+    padding: 0 1.6vw;
+}
+.overlay-wrap .link, .close{
+    width: 4vw;
+    height: 4vw;
+    position: relative;
+
+}
+.overlay-wrap #link_none .name{
+    width: 100%;
+}
+.overlay-wrap .link img, .close img{
+    width: 2vw;
+    height: 2vw;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transition: opacity 0.3s ease-in-out;
+    cursor: pointer;
+}
+.overlay-wrap .close img{
+    width: 1.5vw;
+    height: 1.5vw;
+}
+.overlay-wrap .info{
+    width: 100%;
+    height: 6vw;
+    /* outline: solid 1px red; */
+    flex: 0 0 auto;
+    margin-bottom: 10px;
+}
+.overlay-wrap .box .hoverimg {
+    opacity: 0; /* hoverimg 기본적으로 숨김 */
+}
+
+.overlay-wrap .box:hover .hoverimg {
+    opacity: 1; /* 호버 시 hoverimg를 표시 */
+}
+
+.overlay-wrap .box:hover img:not(.hoverimg) {
+    opacity: 0; /* 호버 시 기본 이미지를 숨김 */
+}
+
+.overlay-wrap .close img {
+    width: 1.5vw;
+    height: 1.5vw;
+}
+.infoBox{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.4vw 1.6vw;
+    /* outline: solid 1px red;  */
+}
+.overlay-wrap .info .company{
+    width: max-content;
+    height: max-content;
+    /* outline: solid 1px red; */
+}
+.overlay-wrap .info p{
+    font-size: 0.8vw;
+    margin-bottom: 10px;
+}
+.overlay-wrap .info h4{
+    font-size: 1.2vw;
+    color: var(--color-brown);
+}
+
+.overlay-wrap .describe{
+    /* outline: solid 1px red; */
+    padding: 1vw 1.6vw;
+    flex-grow: 1;
+    height: calc(100% - 11vw);
+    position: relative;
+}
+.overlay-wrap .scrollBox{
+    overflow-y: scroll;
+    width: 100%;
+    height: 100%;
+    padding-right: 10px;
+    box-sizing: content-box;
+    cursor: grab;
+    user-select: none;
+    touch-action: pan-y;
+}
+
+.scrollBox::-webkit-scrollbar{
+    width: 0;
+    display: none;
+}
+.scrollBox {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.overlay-wrap .describe .overview{
+    /* outline: solid 1px red; */
+    margin-bottom: 3vw;
+}
+.overlay-wrap .describe .overview span, .contribution span{
+    font-size: 0.8vw;
+    font-weight: 500;
+}
+.overlay-wrap .describe .overview p, .contribution p{
+    font-size: 0.9vw;
+    line-height: 1.6;
+    color: var(--color-brown);
+    font-weight: 400;
+}
+
+.overlay-wrap .describe .contribution .txtBox{
+    margin-bottom: 20px;
+}
+.txtBox p {
+    position: relative;
+    padding-left: 20px; 
+}
+
+.txtBox p::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10%;
+    width: 0.5vw;
+    height: 0.5vw;
+    background-color: var(--color-brown); 
+    border-radius: 50%;
+    transform: translateY(50%); 
+}
+
+
+/* swiper */
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #000;
+}
+
+.swiper-slide img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+/* overlay */
+.overlay-wrap {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 200;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay-wrap.active {
+    display: flex;
+}
+
+/* 미디어쿼리 */
+@media screen and (max-width:480px){
+
+    .content{
+        width: 100% !important;
+        height: 30% !important;
+        margin-bottom: 5vw;
+        border-radius: 3vw !important;
+    }
+    .swiper-slide {
+        width: 100% !important;
+        
+    }
+    
+    .overlay-wrap {
+        padding: 15px;
+        flex-direction: column;
+    }
+    .dpbox {
+        width: 100%;
+    }
+    .overlay-wrap .details{
+        width: 100%;
+        height: 60%;
+    }
+    .overlay-wrap .dpbox{
+        border-radius: 3vw;
+        overflow: hidden;
+        padding: 0;
+        margin:  0;
+        /* outline: solid 1px red; */
+    }
+    .overlay-wrap .box{
+        border-radius: 2vw;
+        overflow: hidden;
+    }
+    .overlay-wrap .flex{
+        gap: 5px;
+        margin-bottom: 5px;
+        width: 100%;
+    }
+    .overlay-wrap .name{
+        width: 77vw;
+        height: 55px;
+        /* outline: solid 1px red; */
+    }
+    .overlay-wrap .name h3{
+        font-size: 20px;
+        line-height: 2.1;
+        padding: 6px 24px;
+        width: fit-content;
+        align-items: center;
+    }
+    .overlay-wrap .close{
+        width: 55px;
+        height: 55px;
+    }
+    .overlay-wrap .link{
+        display: none;
+    }
+    .overlay-wrap .close img{
+        width: 5vw;
+        height: 5vw;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        transition: opacity 0.3s ease-in-out;
+        cursor: pointer;
+    }
+    .overlay-wrap .close img{
+        width: 3.8vw;
+        height: 3.8vw;
+    }
+    .overlay-wrap .info{
+        width: 100%;
+        height: 15vw;
+        margin-bottom: 5px;
+    }
+    .infoBox{
+        width: 100%;
+        height: 60px;
+        padding: 8px 24px;
+    }
+    .infoBox div{
+        width: fit-content;
+    }
+    .overlay-wrap .info p{
+        font-size: 12px;
+        font-weight: 600;
+        color: rgb(132, 91, 91);
+        margin-bottom: 5px;
+    }
+    .overlay-wrap .info h4{
+        font-size: 16px;
+    }
+    
+    .overlay-wrap .describe{
+        /* outline: solid 1px red; */
+        padding: 10px 24px;
+    }
+    
+    .overlay-wrap .scrollBox{
+        width: 100%;
+        height: 100%;
+        /* outline: solid 1px rgb(0, 38, 255); */
+    }
+    .overlay-wrap .describe .overview{
+        /* outline: solid 1px red; */
+        margin-bottom: 3vw;
+    }
+    .overlay-wrap .describe .overview span, .contribution span{
+        font-size: 12px;
+        font-weight: 600;
+        color: rgb(132, 91, 91);
+    }
+    .overlay-wrap .describe .overview p, .contribution p{
+        font-size: 16px;
+        line-height: 1.5;
+        color: var(--color-brown);
+        font-weight: 400;
+    }
+    .overlay-wrap .describe .contribution .txtBox{
+        margin-bottom: 20px;
+    }
+    .txtBox p {
+        position: relative;
+        padding-left: 4vw; 
+    }
+    
+    .txtBox p::before {
+        width: 1.5vw;
+        height: 1.5vw;
+        background-color: var(--color-brown);
+    }
+}
+
+.scrollBox:active {
+    cursor: grabbing;
+}
+

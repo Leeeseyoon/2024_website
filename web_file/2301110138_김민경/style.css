@@ -1,0 +1,469 @@
+/*기본 설정*/
+:root {
+    --color-black: #0B0000;
+    --color-gray: #919191;
+    --color-white: #ffffff;
+    --color-brown: #43040D;
+    --color-letter: #7C0905;
+    --color-lightgray: #DBDFE6;
+}
+
+/*폰트 설정*/
+*{
+    color: var(--color-white)
+}
+
+
+/*초기화*/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&family=Noto+Serif+KR:wght@200;300;400;500;600;700&display=swap');
+html, body, h1, h2, h3, h4, h5, h6, div, p, blockquote, pre, code, address, ul, ol, li, menu, nav, section, article, aside, dl, dt, dd, table, thead, tbody, tfoot, label, caption, th, td, form, fieldset, legend, hr, input, button, textarea, object, figure, figcaption {margin:0; padding:0;}
+ul, ol, li {list-style:none;}
+a {color:inherit; text-decoration:none; outline:none;}
+input, button, select, fieldset, textarea {border-radius: 0; appearance: none; border: 0; font-family: inherit;}
+input:focus, select:focus {outline: 0;}
+button:focus, a:focus, button, a {outline: none;}
+h1, h2, h3, h4, strong, th {color:inherit;}
+em {font-style: normal;}
+html, body {font-family: 'Noto Sans KR', sans-serif;}
+html.not-scroll, html.not-scroll body {overflow-y: hidden;}
+html {color: #222; scroll-behavior: smooth;}
+.skip, legend {overflow: hidden; position: absolute; width: 1px; height: 1px; padding: 0; border: 0; clip: rect(1px, 1px, 1px, 1px);}
+* {box-sizing: border-box; word-break: keep-all; margin: 0; padding: 0;
+    list-style-type: none;
+    user-select: none;}
+i{font-style: normal;}
+a:focus, button:focus, input:focus, select:focus {outline: none;}
+button {cursor: pointer; background-color: transparent;}
+br {font-size: 0;}
+
+/* input type number 에서 화살표 제거 */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* header */
+body{
+    overflow: hidden;
+    cursor: none;
+}
+/* overlay가 열렸을 때 html 스크롤 방지 */
+
+a{
+    cursor: none;
+}
+.scroll-link:focus{
+    outline: none;
+}   
+/* 영문만 Inter 폰트 적용 */
+*:lang(en) {
+    font-family: 'Inter', sans-serif;
+}
+
+/* 한글만 Noto Sans KR 폰트 적용 */
+*:lang(ko) {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.cursor {
+    width: 1.04vw;
+    height: 1.04vw;
+    border: 2px solid var(--color-white);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transition: all 0.1s ease;
+    background-color: transparent;
+}
+/* .cursor {
+    width: 2.5vw;
+    height: 2.5vw;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transition: all 0.1s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cursor img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+} */
+.header{
+    height: fit-content;
+    width: 100%;
+    /* border: solid 1px red; */
+    /* background-color: #e2e2e2; */
+    padding: 0 18.75vw;
+    position: fixed;
+    z-index: 100;
+}
+.header_inner{
+    /* border: solid 1px red; */
+    height: 100%;
+    padding: 30px 0;
+    display: flex;
+    justify-content: space-between;
+}
+.header_inner .logo {
+    max-width: 100%; 
+    display: flex; 
+    justify-content: center;
+}
+
+.header_inner .logo a {
+    display: block;
+    width: 100%;
+    height: auto; 
+}
+
+.header_inner .logo a img {
+    width: 100%; 
+    height: auto; 
+    object-fit: contain;
+}
+.header .menu{
+    width: fit-content;
+    height: 2vw;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    margin: auto 0;
+    gap: 2vw;
+}
+.header .menu li a{
+    color: #fff;
+    font-size: 1.125rem;
+    font-weight: 400;
+    text-decoration: none;
+    display: block;
+    align-items: center;
+}
+.header .menu-btn {
+    display: none;
+    }
+
+/* 흘러가는 배너 */
+
+.marquee_wrap {
+    /* margin: 2.6vw 0;
+    padding: 50px 0; */
+    overflow: hidden;
+    font-family: 'opensans', sans-serif;
+    font-weight: 500;
+    /* outline: solid 1px rgb(0, 140, 255); */
+    width: 5.21vw;
+}
+
+.marqueeOne, .marqueeTwo {
+    font-size: 13vw;
+    line-height: 1em;
+    color: #eee;
+    display: flex;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+.marqueeOne {
+    background: linear-gradient(90deg, rgba(124, 9, 5, 0.30) 2%, rgba(226, 17, 9, 0.70) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    width: fit-content; 
+    display: inline-block; 
+    padding: 0.1em; 
+    background-size: 200% 100%;
+}
+
+.spinningStar {
+    background: none;
+    -webkit-text-fill-color: initial;
+    color: #e70000;
+}
+.marqueeOne span, .marqueeTwo span {
+    margin-right: 20px; /* 필요에 따라 조정 */
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.advantages, .contacts {
+    position: relative;
+    overflow: hidden; /* 마키가 넘치지 않도록 */
+}
+
+.advantages .marquee_wrap, .contacts .marquee_wrap {
+    position: absolute;
+    bottom: 8.33vw;
+    left: 0;
+    width: 100%;
+    z-index: 1; 
+}
+
+.advantages .marqueeTwo, .contacts .marqueeTwo {
+    font-size: 13vw;
+    line-height: 1em;
+    color: rgba(238, 238, 238, 0.1); 
+    display: flex;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+.down_con .marqueeTwo .spinningStar{
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.advantages .marqueeTwo .spinningStar, .contacts .marqueeTwo .spinningStar,
+.down_con .marqueeTwo .spinningStar {
+    opacity: 0.1; /* 스피닝 스타의 투명도 조절 */
+}
+
+.advantages_content, .contacts_content {
+    position: relative;
+    z-index: 2; /* marqueeTwo 위에 표시 */
+}
+
+/* marqueeOne 스타일 (advantages_content 내부에 있다고 가정) */
+.advantages .marqueeOne, .contacts .marqueeOne {
+    /* 기존 스타일 유지 */
+    position: relative;
+    z-index: 3; /* 필요한 경우 z-index 조정 */
+}
+
+/* down_con */
+.down_con {
+    position: relative;
+}
+
+.down_con .subject {
+    position: relative;
+    z-index: 2;
+}
+
+.marquee_container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 45%; 
+    width: 100%;
+    z-index: 1;
+    transform: translateY(-50%);
+}
+
+.marquee_wrap {
+    width: 100%;
+    overflow: hidden;
+}
+
+.marqueeTwo {
+    display: flex;
+    white-space: nowrap;
+    font-size: 13vw;
+    color: rgba(255, 255, 255, 0.3); /* 투명도를 낮춰 배경처럼 보게 함 */
+}
+
+.down_con .subject h1 {
+    position: relative;
+    z-index: 2;
+}
+
+.down_con .sub_intro {
+    position: relative;
+    z-index: 2;
+}
+
+.projects {
+    position: relative;
+    overflow: hidden;
+}
+
+.projects .inner {
+    position: relative;
+    z-index: 2;
+}
+
+.spinningStar{
+    opacity: 0.1;
+}
+
+
+/* 반응형 */
+@media (max-width: 780px) {
+    .header .menu li a{
+        font-size: 2vw;
+    }
+    body{
+        overflow: auto;
+    }
+}
+@media (max-width: 480px) {
+    .header{
+        padding: 0 20px;
+    }
+    .header_inner{
+        padding: 15px 0;
+    }
+    .header_inner .logo{
+        width: 45px;
+        height: fit-content;
+    }
+    .header_inner .logo a svg{
+        width: 100%;
+        height: 100%;
+    }
+    .header_inner ul{
+        display: none;
+    }
+    .cursor{
+        display: none;
+    }
+    .header h1 a{
+        display: block;
+    }
+     /* menu */
+        
+    .header .menu {
+        clear: both;
+        max-height: 0;
+        transition: max-height .2s ease-out;
+        /* outline: solid 1px rgb(255, 0, 0); */
+        overflow: hidden;
+        width: 30vw;
+        height: 50vw;
+        border-radius: 3vw 0px 0px 3vw;
+        background: var(--color-brown);
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 15vw;
+    
+    }
+    .header .menu li a{
+        font-size: 3.5vw;
+        /* outline: solid 1px rgb(123, 255, 0); */
+        padding: 3.5vw 2vw;
+        font-weight: 500;
+    }
+    
+    /* menu icon */
+    .header .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    padding: 18px 11px;
+    position: relative;
+    user-select: none;
+    background-color: #363636;
+    border-radius: 2vw;
+    border: 0.2px solid rgba(124, 124, 124, 0.10);
+    background: linear-gradient(138deg, rgba(255, 255, 255, 0.20) 2.46%, rgba(115, 115, 115, 0.06) 97.54%);
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.15);
+    position: absolute;
+    right: 20px;
+    }
+    
+    /* 삼줄 */
+    .header .menu-icon .navicon {
+    background: #fff;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 16px;
+    }
+    .header .menu-icon .navicon:before,
+    .header .menu-icon .navicon:after {
+    background: #fff;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+    }
+    
+    .header .menu-icon .navicon:before {
+    top: 7px;
+    }
+    
+    .header .menu-icon .navicon:after {
+    top: -7px;
+    }
+    
+    /* menu btn */
+    
+    .header .menu-btn:checked ~ .menu {
+    max-height: 240px;
+    }
+    
+    .header .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+    }
+    
+    .header .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+    }
+    
+    .header .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+    }
+    
+    .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+    .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0;
+    }
+    
+    .advantages .marquee_wrap {
+        position: absolute;
+        bottom: 70vw;
+    }
+    .contacts .marquee_wrap {
+        position: absolute;
+        bottom: 30vw;
+    }
+
+    .advantages .marqueeTwo, .contacts .marqueeTwo {
+        font-size: 30vw;
+        line-height: 1em;
+    }
+
+    .marqueeOne, .marqueeTwo {
+        font-size: 20vw;
+    }
+
+    .marquee_container {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 34%; 
+        width: 100%;
+        z-index: 1;
+        transform: translateY(-50%);
+    }
+}
+
+
+/* 모든 요소의 기본 커서 제거 */
+* {
+    cursor: none !important;
+}
+
+/* 모바일에서는 커스텀 커서 숨김 */
+@media (max-width: 768px) {
+    .cursor {
+        display: none;
+    }
+    * {
+        cursor: auto !important;
+    }
+}
