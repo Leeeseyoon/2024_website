@@ -1,0 +1,156 @@
+/* 기본 스타일 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+
+}
+
+
+
+
+body {
+    background-color: #ffffff;
+    font-family: Arial, sans-serif;
+    color: #333;
+    overflow-y: scroll; /* 스크롤 가능하게 설정 */
+}
+
+/* 네비게이션 스타일 */
+.navbar ul {
+    display: flex;
+    justify-content: flex-end;
+    padding:50px;
+    list-style-type: none;
+    position: sticky;
+    top: 0;
+    background-color: #FFE6F1;
+    z-index: 1000;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #f773aa;
+    font-family: "COOPBL";  
+}
+
+@font-face {
+    font-family: "COOPBL";
+    src: url("cooper-black/COOPBL.TTF") format("truetype");
+}
+@font-face {
+    font-family: "GmarketSansTTFBold";
+    src: url("GmarketSansTTF/GmarketSansTTFBold.ttf") format("truetype");
+}
+@font-face {
+    font-family: "GmarketSansTTFLight";
+    src: url("GmarketSansTTF/GmarketSansTTFLight.ttf") format("truetype");
+}
+
+/* 메인 로고 이미지 스타일 */
+.intro {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 0px;
+    padding:0px 0;
+}
+
+.logo-image {
+    width: 1915px; /* 원하는 크기로 조정 */
+    height: 825px;
+    image-rendering: crisp-edges;
+    background-color: #FFE6F1;
+}
+
+/* Fairytale 이미지 스타일 */
+.fairytale {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 0;
+    image-rendering: crisp-edges;
+    background-color: #FFFFFF;
+    }
+
+
+.fairytale-image {
+    width: 1920px; /* 원하는 크기로 조정 */
+    height: auto;
+    
+}
+
+
+/* 설명 텍스트 */
+.description {
+    text-align: center; /* 텍스트 가운데 정렬 */
+    max-width: 1920px;
+    background-color: #FFFFFF;
+    justify-content: center;
+    display: flex;
+    flex-direction: column; /* 세로 방향 정렬 */
+    align-items: center; /* 이미지와 텍스트를 수직 가운데 정렬 */
+    position: relative;
+}
+
+#des_upper {
+    font-weight: bold;
+    margin-top: 200px;
+    font-size: 14pt;
+    color: #f773aa;
+    font-family: GmarketSansTTFBold;
+}
+
+#des_lower {
+    font-size: 10pt;
+    color: #4d4c4c;
+    margin-bottom: 400px;
+    font-family: GmarketSansTTFlight;
+}
+
+.about_me {
+    display: flex;
+    flex-direction: column; /* 세로 방향 정렬 */
+    align-items: center; /* 이미지와 텍스트를 수직 가운데 정렬 */
+    position: relative;
+    }
+
+.bookcover {
+    display: flex;
+    flex-direction: column; /* 세로 방향 정렬 */
+    align-items: center; /* 이미지와 텍스트를 수직 가운데 정렬 */
+    position: relative;
+    }    
+
+.my_works {
+    display: flex;
+    flex-direction: column; /* 세로 방향 정렬 */
+    align-items: center; /* 이미지와 텍스트를 수직 가운데 정렬 */
+    position: relative;
+    }
+
+.guseul {
+    display: flex;
+    flex-direction: column; /* 세로 방향 정렬 */
+    align-items: center; /* 이미지와 텍스트를 수직 가운데 정렬 */
+    position: relative;
+    }
+    
+.saessac {
+    display: flex;
+    flex-direction: column; /* 세로 방향 정렬 */
+    align-items: center; /* 이미지와 텍스트를 수직 가운데 정렬 */
+    position: relative;
+    }
+
+.loopy {
+    display: flex;
+    flex-direction: column; /* 세로 방향 정렬 */
+    align-items: center; /* 이미지와 텍스트를 수직 가운데 정렬 */
+    position: relative;
+    }
