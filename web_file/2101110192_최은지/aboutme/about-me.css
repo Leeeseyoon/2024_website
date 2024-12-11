@@ -1,0 +1,154 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    background-color: #000;
+    color: #d1a7a7;
+    background-image: url('image/Background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.container {
+    position: relative;
+    height: 100vh;
+}
+
+/* 기존 personal-info 스타일 */
+.personal-info {
+    position: absolute;
+    top: 30%; /* 위쪽에서 떨어진 거리 (필요에 따라 조정) */
+    right: 40%; /* 오른쪽에서 떨어진 거리 (기존보다 더 왼쪽으로 이동) */
+    text-align: right; /* 텍스트 오른쪽 정렬 */
+    color: #d1a7a7;
+}
+
+.personal-info h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.personal-info p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+
+.personal-info h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.personal-info p {
+    font-size: 14px;
+    margin: 5px 0;
+    text-align: left;
+}
+
+
+.education {
+    position: absolute;
+    top: 50%; /* 위쪽에서 떨어진 거리 (필요에 따라 조정) */
+    right:29%; /* 오른쪽에서 떨어진 거리 (필요에 따라 조정) */
+    text-align: left; /* 텍스트 왼쪽 정렬 */
+    color: #d1a7a7;
+}
+
+.education h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.education p {
+    font-size: 14px;
+    margin: 5px 0;
+    text-align: left;
+}
+
+
+.work-experience {
+    position: absolute;
+    top: 70%; /* 위쪽에서 떨어진 거리 (필요에 따라 조정) */
+    right: 33%; /* 오른쪽에서 떨어진 거리 (필요에 따라 조정) */
+    text-align: left; /* 텍스트 오른쪽 정렬 */
+    color: #d1a7a7;
+}
+
+.work-experience h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.work-experience p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+
+.main-skills {
+    position: absolute;
+    top: 40%; /* 위쪽에서 떨어진 거리 (필요에 따라 조정) */
+    right: 11%; /* 오른쪽에서 떨어진 거리 (기존보다 더 왼쪽으로 이동) */
+    text-align: left; /* 텍스트 오른쪽 정렬 */
+    color: #d1a7a7;
+}
+
+.main-skills h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.main-skills p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+
+.working-skill {
+    position: absolute;
+    top: 60%; /* 위쪽에서 떨어진 거리 (필요에 따라 조정) */
+    right:11.2%; /* 오른쪽에서 떨어진 거리 (기존보다 더 왼쪽으로 이동) */
+    text-align: left; /* 텍스트 오른쪽 정렬 */
+    color: #d1a7a7;
+}
+
+.working-skill h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.working-skill p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+
+.profile-image {
+    position: absolute;
+    top: 5%; /* 위쪽에서 떨어진 거리 (필요에 따라 조정) */
+    left: 5%; /* 왼쪽에서 떨어진 거리 (필요에 따라 조정) */
+    width: 640px; /* 이미지의 너비 (필요에 따라 조정) */
+    height: auto; /* 비율에 맞게 높이 조정 */
+}
+
+.profile-image img {
+    width: 100%; /* 부모 요소의 너비에 맞게 조정 */
+    height: auto; /* 비율 유지 */
+    border-radius: 10px; /* 필요 시 모서리 둥글게 */
+}
+
+
+
+
+

@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+*{margin: 0; padding: 0;
+    font-family: "Noto Sans KR", sans-serif;}
+
+ul, li {list-style-type: none;}
+a {
+    text-decoration: none;
+    color: black;
+  }
+
+#wrap{
+    width: 100%;
+    background-color: white;    
+}
+#content{
+    text-align: center;
+}
+
+#con6 .txt_box{
+    padding-top: 40px;
+}
+#con5 .con5_box1{
+    padding-top: 40px;
+}
+/* span{background: linear-gradient(to top, #ffea98 50%, transparent 40%);} */
+span {
+    position: relative;
+    font-weight: bold;
+    z-index: 3;
+  }
+  span::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 50%;
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    background: rgba(255, 240, 31, 0.6);
+    bottom: 10%;
+  }
+  p:hover span::after {
+    width: 100%;
+    transition: width .3s;
+    z-index: -1;
+  }
+  H1:hover span::after {
+    width: 100%;
+    transition: width .3s;
+    z-index: -1;
+  }
+  
+
+
+
+/* 랜딩 페이지  */
+#landing{
+    width: 100%; 
+    height: 100vh;
+    background: linear-gradient(180deg, #FFFAD2, #FFD735);}
+
+
+#landing .b_img { position: absolute; z-index: 1; margin-top: 20%; opacity: 0.9;}
+
+#landing .main_txt{
+
+    position: absolute; 
+    margin-left: 35%; 
+    font-size: 30px;
+    z-index: 2;
+    margin-top: 10%;    
+} 
+#landing .logobox{
+    display: flex;
+    justify-self: center;
+    gap: 4%;
+    margin-top: 3%;
+}
+#landing .logobox div{
+    background-color: #333;
+    border-radius: 50px;
+    text-align: center;
+    width: 300px;
+    height: 84px;
+    color: white;
+    box-shadow: 0 4px 20px -2px rgba(133, 71, 20, 0.5);
+    
+    transition: 0.5s;
+}
+
+#landing .logobox div:hover{
+    box-shadow: 0 4px 20px -2px rgba(86, 44, 10, 0.5);
+    transform: translateY(-8px);
+    transition: 0.5s;
+    background-color: #eea300;
+}
+#landing .logobox div a{
+    color: white;
+}
+#landing .logobox div p{
+    margin-top: 5%;
+}
+#landing .logobox div img{
+    margin-top: 9%;
+}
+
+
+.google a{
+    display: flex;
+    justify-self: center;
+}
+.googleimg{
+    padding-right: 10px;
+    
+}
+.googlep {
+    padding-top: 3%;
+}
+.apple a{
+    
+    display: flex;
+    justify-self: center;
+    gap: 20px;
+}
+.appleimg{
+    padding-bottom: 1px;
+}
+.applep{
+    padding-top: 2%;
+    padding-right: 25px;
+}
+
+
+.txtbox{
+    font-size: 38px; 
+    background-color: white;
+    padding-top: 5%;
+    /* line-height: 1.5; */
+    margin-bottom: 10%;
+}
+.txtbox .under{
+    margin-top: 2%;
+}
+.txtbox .under span{
+    font-weight: bold;
+    
+}
+
+
+/* 컨텐츠 공통설정 */
+.title_txt h1{
+    font-size: 65px;
+}
+.title_txt p{font-size: 32px; margin-bottom: 1%;}
+.sub_p{font-size: 25px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* it 금융 */
+#con7{
+    width: 100%;
+    height: 100vh;
+}
+
+#con7 h1{
+    padding-top: 5%;
+    font-size: 48px;
+}
+
+.con7_box{
+    display: block;
+    justify-content: center;
+    margin:5% 20% 0 20%;  
+}
+.circle{
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    position: relative;
+    z-index: 1;
+}
+.circle::after{
+    width: 532px;
+    height: 532px;
+    content: "";
+    border-radius: 50%;
+    background-color: #ffe120e6;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0.4;
+}
+.circle .tbox h3{font-size: 35px;}
+.circle .tbox p{font-size: 20px; margin-top: 5%;}
+.tbox2 h3{font-size: 35px;margin-top: 27%;}
+.tbox2 p{font-size: 20px; margin-top: 5%;}
+
+.con7_box .tbox{
+    margin-top: 35%;
+}
+
+
+.circle:nth-child(1){position: absolute;
+    }
+.circle:nth-child(2){position: absolute;
+    margin-left: 18%; 
+
+    }
+.circle:nth-child(3){
+    
+    position: absolute;
+    margin-left: 35%; 
+    }

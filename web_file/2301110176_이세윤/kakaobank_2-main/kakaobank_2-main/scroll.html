@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .infinite-scroll-container {
+        overflow: hidden;
+        white-space: nowrap;
+        width: 20%;
+        border: 1px solid red;
+    }
+
+    .content {
+        display: inline-block;
+        animation: scroll 15s linear infinite; /* 애니메이션 속도 조정 */
+    }
+
+    .content img {
+        width: 200px; /* 이미지 너비 조정 */
+        height: auto;
+        margin: 0 10px; /* 이미지 간격 조정 */
+    }
+
+    @keyframes scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-100%); } /* 전체 콘텐츠의 너비만큼 이동 */
+        110% {transform: translateX(-110);}
+    }
+</style>
+<body>
+    <div class="infinite-scroll-container">
+        <div class="content">
+            <img src="image1.jpg" alt="Image 1">
+            <img src="image2.jpg" alt="Image 2">
+            <img src="image3.jpg" alt="Image 3">
+            <!-- 추가 이미지들... -->
+        </div>
+    </div>
+    <script>
+        const container = document.querySelector('.infinite-scroll-container');
+        const content = document.querySelector('.content');
+    
+        function cloneContent() {
+            const clonedContent = content.cloneNode(true);
+            container.appendChild(clonedContent);
+        }
+    
+        // 초기 콘텐츠 복제
+        cloneContent();
+    </script>
+</body>
+</html>

@@ -1,0 +1,282 @@
+/* 부드러운 스크롤 설정 */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Britannic 서체 추가 */
+@font-face {
+    font-family: 'Britannic';
+    src: url('./fonts/OPTIBritannic-Bold.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 기본 스타일 */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Britannic-Bold.otf', Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+/* 첫 번째 섹션 스타일 */
+.intro-section {
+    height: 100vh; /* 전체 뷰포트 높이 설정 */
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    background-image: url('image/Main\ background.png');
+    background-size: cover;
+    background-position: center;
+    color: #573d3e;
+    overflow: hidden;
+}
+
+/* 첫 번째 섹션의 텍스트 오른쪽 배치 */
+.small-text {
+    position: absolute;
+    top: 50%;
+    right: 12%;
+    transform: translateY(-50%);
+    font-size: 50px;
+    color: #f0f0f0;
+    line-height: 1;
+    opacity: 0.8;
+    font-family: 'Britannic', Arial, sans-serif;
+    font-style: italic;
+    text-align: left;
+}
+
+.additional-text {
+    position: absolute;
+    top: 60%;
+    right: 5%;
+    font-size: 10px;
+    font-style: italic;
+    color: #f0f0f0;
+    font-family: 'Britannic', Arial, sans-serif;
+    text-align: left;
+}
+
+/* 두 번째 섹션 기본 스타일 */
+.hidden-section {
+    height: 100vh; /* 뷰포트의 100% 높이 */
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #222;
+    background-image: url('image/Character3.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #f0e0d6;
+    overflow: hidden;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* 기타 스타일 */
+.content {
+    max-width: 800px;
+    width: 100%;
+    padding: 20px;
+    margin: 0; /* 불필요한 마진 제거 */
+}
+
+.date-range {
+    display: block;
+    font-size: 1.2rem;
+    color: #573d3e;
+    margin-bottom: 40px;
+    font-family: 'OPTIBritannic-Bold', sans-serif;
+}
+
+.section-links {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.section-item {
+    text-align: center;
+    font-family: 'OPTIBritannic-Bold', sans-serif;
+}
+
+.section-item h2 {
+    font-size: 30px;
+    color: #573d3e;
+    margin-bottom: 10px;
+    font-family: 'OPTIBritannic-Bold', sans-serif;
+    padding-top: 200px;
+    font-weight: bold;
+}
+
+.section-item p {
+    font-size: 10px;
+    color: #dfdfdf;
+    line-height: 1.5;
+    font-family: 'OPTIBritannic-Bold', sans-serif;
+    transition: color 0.3s ease;
+}
+
+.section-item p:hover {
+    color: #e90000;
+}
+
+h2:hover {
+    color: #a00000;
+    cursor: default;
+    transition: color 0.3s ease;
+}
+
+.menu-link {
+    color: #573d3e;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.menu-link:hover {
+    color: #e90000;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.strengths-section {
+    padding: 40px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+    color: #d1a7a7;
+}
+
+p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+.sub-link {
+    color: #573d3e;
+    text-decoration: none;
+    font-size: 12px;
+    transition: color 0.3s ease;
+}
+
+.sub-link:hover {
+    color: #e90000;
+}
+
+/* 기본 스타일 설정 */
+.section-links {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.section-item {
+    text-align: center;
+    font-family: 'OPTIBritannic-Bold', sans-serif;
+    position: relative;
+}
+
+.section-item h2 {
+    font-size: 30px;
+    color: #573d3e;
+    margin-bottom: 10px;
+    font-family: 'OPTIBritannic-Bold', sans-serif;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.section-item h2:hover {
+    color: #a00000; /* 텍스트 색상 변경 */
+    cursor: default;
+}
+
+.menu-link {
+    color: #573d3e;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.menu-link:hover {
+    color: #e90000;
+}
+
+/* 서브 메뉴 스타일 */
+.sub-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    opacity: 0; /* 기본 상태에서 투명 */
+    transform: translateY(-20px); /* 위로 약간 이동된 상태 */
+    pointer-events: none; /* 초기에는 클릭 불가 */
+}
+
+.sub-link {
+    color: #573d3e;
+    text-decoration: none;
+    font-size: 12px;
+    transition: color 0.3s ease;
+    opacity: 0; /* 기본 투명 상태 */
+    transform: translateY(-10px); /* 초기 위치 위로 이동 */
+    margin-bottom: 10px; /* 서브 메뉴 항목 사이의 간격 조절 */
+}
+
+/* WORKS에 마우스를 올렸을 때 서브 메뉴 애니메이션 */
+.section-item:hover .sub-links {
+    opacity: 1;
+    pointer-events: auto; /* 클릭 가능 상태로 변경 */
+    transform: translateY(0); /* 기본 위치로 이동 */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.section-item:hover .sub-link:nth-child(1) {
+    animation: slideIn 0.3s forwards 0.1s; /* 첫 번째 서브 메뉴 */
+}
+
+.section-item:hover .sub-link:nth-child(2) {
+    animation: slideIn 0.3s forwards 0.3s; /* 두 번째 서브 메뉴 */
+}
+
+.section-item:hover .sub-link:nth-child(3) {
+    animation: slideIn 0.3s forwards 0.5s; /* 세 번째 서브 메뉴 */
+}
+
+/* 서브 메뉴 애니메이션 */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px); /* 위에서 아래로 */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 서브 링크 호버 스타일 */
+.sub-link:hover {
+    color: #e90000;
+}
+
+.works-link {
+    cursor: default; /* 클릭 불가한 느낌 제공 */
+    pointer-events: none; /* 링크 클릭 자체를 비활성화 */
+}
+
+

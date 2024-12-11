@@ -1,0 +1,172 @@
+.skills{
+    position: absolute;
+    top: 0;
+    left: 120%;
+}
+
+.box{
+    position: relative;
+
+    align-items: center;
+}
+.u_box, .d_box{
+    display: flex;
+    justify-content: center;
+}
+
+
+.percent,
+.percent2,
+.percent3,
+.percent4,
+.percent5,
+.percent6,
+.percent7,
+.percent8 {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin-top: 3%;
+    
+}
+.percent svg,
+.percent2 svg,
+ .percent3 svg,
+.percent4 svg,
+.percent5 svg,
+.percent6 svg,
+ .percent7 svg,
+.percent8 svg {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    transform: rotate(-90deg);
+    
+}
+.box .percent svg circle,
+.box .percent2 svg circle,
+.box .percent3 svg circle,
+.box .percent4 svg circle,
+.box .percent5 svg circle,
+.box .percent6 svg circle,
+.box .percent7 svg circle,
+.box .percent8 svg circle {
+    width: 100px;
+    height: 100px;
+    fill: none;
+    stroke-width: 6;
+
+    transform: translate(5px, 5px);
+    stroke-dasharray: 440;
+    stroke-linecap: round;
+    
+}
+.box .percent svg circle:nth-child(1),
+.box .percent2 svg circle:nth-child(1),
+.box .percent3 svg circle:nth-child(1),
+.box .percent4 svg circle:nth-child(1),
+.box .percent5 svg circle:nth-child(1),
+.box .percent6 svg circle:nth-child(1),
+.box .percent7 svg circle:nth-child(1),
+.box .percent8 svg circle:nth-child(1){
+    stroke-dashoffset: 0;
+    stroke: #f3f3f3;
+}
+.percent svg circle:nth-child(2) {
+    stroke: #31A8FF;
+    animation: progress95 1s linear forwards;
+}
+.percent2 svg circle:nth-child(2) {
+    stroke: #FF9A00;
+    animation: progress87 1s linear forwards;
+}
+.percent3 svg circle:nth-child(2) {
+    stroke:#b3b3b3;
+    animation: progress87 1s linear forwards;
+}
+.percent4 svg circle:nth-child(2) {
+    stroke: #9a99ff;
+    animation: progress60 1s linear forwards;
+}
+.percent5 svg circle:nth-child(2) {
+    stroke: #97270b;
+    animation: progress85 1s linear forwards;
+}
+.percent6 svg circle:nth-child(2) {
+    stroke: #379ad6;
+    animation: progress85 1s linear forwards;
+}
+.percent7 svg circle:nth-child(2) {
+    stroke: #f2bf22;
+    animation: progress60 1s linear forwards;
+}
+.percent8 svg circle:nth-child(2) {
+    stroke: #5a5a5a;
+    animation: progress95 1s linear forwards;
+}
+
+@keyframes progress95 {
+    0%{
+        stroke-dashoffset: 440;
+    }
+    100% {
+        stroke-dashoffset: 220; /* 440 - (440 * 95 / 100) */
+    }
+}
+
+@keyframes progress87 {
+    0%{
+        stroke-dashoffset: 440;
+    }
+    100% {
+        stroke-dashoffset: 210; /* 440 - (440 * 87 / 100) */
+    }
+}
+
+@keyframes progress60 {
+    0%{
+        stroke-dashoffset: 440;
+    }
+    100% {
+        stroke-dashoffset: 245; /* 440 - (440 * 60 / 100) */
+    }
+}
+@keyframes progress85 {
+    0%{
+        stroke-dashoffset: 440;
+    }
+    100% {
+        stroke-dashoffset: 225; /* 440 - (440 * 60 / 100) */
+    }
+}
+
+.box .percent .number,
+.box .percent2 .number,
+.box .percent3 .number,
+.box .percent4 .number,
+.box .percent5 .number,
+.box .percent6 .number,
+.box .percent7 .number,
+.box .percent8 .number {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #111;
+    float: left;
+    
+}
+.skills .text{
+    text-align: center;
+    margin-left: 5%;
+    font-size: 1rem;
+}
+.skills .d_box{
+    margin-top: 3%;
+}
+
+

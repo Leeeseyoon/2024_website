@@ -1,0 +1,172 @@
+button.dark {
+  --background: #2F3545;
+  --shadow: 0 2px 8px -1px rgba(21, 25, 36, 0.32);
+  --shadow-hover: 0 4px 20px -2px rgba(21, 25, 36, 0.5);
+}
+button.white {
+  --background: #fff;
+  --text: #363636;
+  --shadow: 0 2px 8px -1px rgba(18, 22, 33, 0.04);
+  --shadow-hover: 0 4px 20px -2px rgba(18, 22, 33, 0.12);
+}
+button.fast {
+  --duration: .32s;
+}
+
+button {
+  cursor: pointer;
+  --background: #363636;
+  --text: #fff;
+  --font-size: 24px; /* 기본 폰트 크기 설정 */
+  --duration: .44s;
+  --move-hover: -4px;
+  --shadow: 0 2px 8px -1px rgba(254, 136, 39, 0.32);
+  --shadow-hover: 0 4px 20px -2px rgba(133, 71, 20, 0.5);
+  --font-shadow: var(--font-size);
+  padding: 16px 50px;
+  font-family: "Roboto";
+  font-weight: 500;
+  line-height: var(--font-size);
+  border-radius: 30px;
+  display: block;
+  outline: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  text-decoration: none;
+  font-size: var(--font-size); /* 여기서 변수를 사용하여 폰트 크기 설정 */
+  letter-spacing: 0.5px;
+  background: var(--background);
+  color: var(--text);
+  box-shadow: var(--shadow);
+  transform: translateY(var(--y)) translateZ(0);
+  transition: transform var(--duration) ease, box-shadow var(--duration) ease;
+}
+button div {
+  display: flex;
+  overflow: hidden;
+  text-shadow: 0 var(--font-shadow) 0 var(--text);
+}
+button div span {
+  display: block;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  font-style: normal;
+  transition: transform var(--duration) ease;
+  transform: translateY(var(--m)) translateZ(0);
+}
+button div span:nth-child(1) {
+  transition-delay: 0.05s;
+}
+button div span:nth-child(2) {
+  transition-delay: 0.1s;
+}
+button div span:nth-child(3) {
+  transition-delay: 0.15s;
+}
+button div span:nth-child(4) {
+  transition-delay: 0.2s;
+}
+button div span:nth-child(5) {
+  transition-delay: 0.25s;
+}
+button div span:nth-child(6) {
+  transition-delay: 0.3s;
+}
+button div span:nth-child(7) {
+  transition-delay: 0.35s;
+}
+button div span:nth-child(8) {
+  transition-delay: 0.4s;
+}
+button div span:nth-child(9) {
+  transition-delay: 0.45s;
+}
+button div span:nth-child(10) {
+  transition-delay: 0.5s;
+}
+button div span:nth-child(11) {
+  transition-delay: 0.55s;
+}
+
+
+button:hover {
+  --y: var(--move-hover);
+  --shadow: var(--shadow-hover);
+}
+button:hover span {
+  --m: calc(var(--font-size) * -1.1);
+}
+button.reverse {
+  --font-shadow: calc(var(--font-size) * -1);
+}
+button.reverse:hover span {
+  --m: calc(var(--font-size));
+}
+
+/* 해외제출서류 */
+button.selected {
+  background: #ffcc00;
+  color: #000;
+  box-shadow: 0 4px 20px -2px rgba(21, 25, 36, 0.5);
+}
+button:hover {
+  transition: 0.5s;
+  background: #eea300;
+  color: #000;
+  box-shadow: 0 4px 20px -2px rgba(21, 25, 36, 0.5);
+}
+
+button:not(.selected) {
+  /* background: #275efe; */
+  color: #fff;
+}
+
+html {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: inherit;
+}
+*:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  font-family: "Roboto", Arial;
+  justify-content: center;
+  align-items: center;
+  background: #E4ECFA;
+}
+body .button-list {
+  display: flex;
+}
+body .button-list button {
+  margin: 0 12px;
+}
+body .dribbble {
+  position: fixed;
+  display: block;
+  right: 20px;
+  bottom: 20px;
+}
+body .dribbble img {
+  display: block;
+  height: 28px;
+}
+
+button.large {
+  --font-size: 37px; /* 큰 버튼의 폰트 크기 설정 */
+  padding: 30px 40px; /* 패딩을 늘려서 텍스트가 잘리지 않도록 설정 */
+  line-height: 1.27; /* 라인하이트 값을 높임 */
+}
+
+button.large:hover span {
+  --m: calc(var(--font-size) * -1.25); /* 큰 버튼의 텍스트가 올라가는 거리 */
+
+}

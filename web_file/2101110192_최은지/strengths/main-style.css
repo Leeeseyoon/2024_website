@@ -1,0 +1,52 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    color: #d1a7a7;
+    background-color: #000;
+    overflow-x: hidden;
+}
+
+.hero-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('image/paper\ material.png'); /* 이미지 경로 */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 20px;
+}
+
+.text-container {
+    max-width: 800px;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+    color: #d1a7a7; /* 메인 제목 색상 */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* 텍스트 그림자 효과 */
+}
+
+p {
+    font-size: 10px;
+    line-height: 1.6;
+    color: #d1a7a7; /* 본문 텍스트 색상 */
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* 텍스트 그림자 효과 */
+}
+
+/* .highlight 클래스를 추가하여 특정 텍스트에만 다른 스타일을 적용 */
+.highlight {
+    font-size: 28px; /* 원하는 크기로 설정 */
+    font-weight: bold; /* 필요 시 굵기 조정 */
+    color: #d1a7a7; /* 필요 시 색상 조정 */
+}
+

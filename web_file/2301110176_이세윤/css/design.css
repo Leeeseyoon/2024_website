@@ -1,0 +1,255 @@
+/* 디자이너 */
+
+#design{
+    margin: 0;
+    background-color: #FAA4BC;
+    transition: background-color 0.5s ease-in-out; /* 배경색 전환 효과 추가 */
+}
+
+#design .titlename{
+    margin-left: 20%;
+}
+.d_con {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+    /* 목업이미지와 텍스트박스 가로정렬 */
+    .back {
+    margin-top: 2%;
+    background-color: lightpink;
+    position: absolute;
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18%;
+    transition: background-color 0.5s ease-in-out;
+    z-index: 1;
+}
+    .back img{
+        margin-left: 34%;
+        
+    }
+    .mockup {
+
+        flex: 1; /* 남은 공간을 차지하도록 설정 */
+    }
+
+    
+    #modalOpenButton1 {
+        transition: transform 0.2s ease; /* 부드러운 변환 효과 */
+        will-change: transform; /* 성능 최적화를 위한 속성 */
+    }
+    
+    /* 호버 시 애니메이션 추가 */
+    #modalOpenButton1:hover {
+        animation: float 0.8s ease-in-out infinite; /* 애니메이션 적용 */
+    }
+    #modalOpenButton2:hover {
+        animation: float 0.8s ease-in-out infinite; /* 애니메이션 적용 */
+    }
+    #modalOpenButton3:hover {
+        animation: float 0.8s ease-in-out infinite; /* 애니메이션 적용 */
+    }
+
+    /* 애니메이션 정의 */
+    @keyframes float {
+        0%, 100% {
+            transform: translateY(0); /* 원래 위치 */
+        }
+        50% {
+            transform: translateY(-10px); /* 위로 10px 이동 */
+        }
+    }
+
+    .d_txtbox{
+        align-self: center;
+        flex: 1;
+        margin-top: -5%;
+        position: relative;
+        z-index: 2;
+    }
+
+    /* 텍스트박스요소 가로정렬 */
+    .d_txtbox .text {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .d_txtbox .text .l_txt, .d_txtbox .text .r_txt {
+        flex: 1; /* 동일한 너비로 공간 분배 */
+    }
+    .r_txt {
+        flex: 1;
+        margin-left: -50%; /* 왼쪽 여백을 음수값으로 설정하여 간격을 좁힘 */
+    }
+
+
+
+.d_txtbox .title{
+    line-height: 1.5;
+    font-family: 'LINESeedKR-Bd';
+}
+.d_txtbox .title p{
+    font-size: 1.5rem;
+}
+    
+.d_txtbox .title h2{
+    font-size: 2.5rem;
+}
+.d_txtbox .text{
+    line-height: 2;
+    margin-top: 5%;
+    font-family: 'Pretendard-Regular';
+    font-size: 1.2rem;
+}
+
+.d_txtbox .butbox{
+    margin-top: 5%;
+}
+.d_txtbox .butbox button:hover{
+    background-color: #d60700;
+    color: #000;
+    transition: 0.2s ease;
+    font-family: 'Pretendard-Regular';  
+}
+.d_txtbox .butbox a{
+    text-decoration: none;
+    color: white;
+}
+.d_txtbox .butbox button{
+    font-size: 26px;
+    font-weight: 500;
+    background-color: #000;
+    padding: 10px 20px;
+    border-radius: 30px; /* 라운드 스타일 */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border: 2px solid #000;
+    color: white;
+    font-family: 'Pretendard-Regular';
+    
+}
+.d_txtbox .butbox button:nth-child(2){margin-left: 1.5%;}
+
+    /* 슬라이드 */
+    .slider-container {
+        position: relative;
+        width: 100%;
+        height: 70vh;  /* 높이 조정 */
+        overflow: hidden;
+    }
+
+    .slider-wrapper {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        width: 100%;
+        height: 100%;
+    }
+
+    .slide {
+        min-width: 100%;
+        flex-shrink: 0;
+    }
+
+    .slide.active {
+        display: block; /* 활성화된 슬라이드만 표시 */
+    }
+
+    .slide-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 65px;
+        height: 65px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.5);
+        color: #333;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        z-index: 1;
+    }
+
+    .prev {
+        left: 12%;
+    }
+    .prev img {
+        margin-right: 11%;
+    }
+
+    .next {
+        right: 10%;
+    }
+    .next img {
+        margin-left: 11%;
+    }
+    .slide-button:hover {
+        background: rgb(255, 194, 194);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        transform: translateY(-50%) scale(1.1); /* 호버 시 10% 커지도록 설정 */
+    }
+
+    /* 리플 효과 */
+    .slide-button::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        transition: transform 0.3s ease;
+    }
+
+    .slide-button:active::after {
+        transform: translate(-50%, -50%) scale(2);
+        opacity: 0;
+    }
+
+@media (max-width: 768px) {
+    .d_con {
+        flex-direction: column; /* 세로 방향으로 정렬 */
+    }
+
+    .back {
+        flex-direction: column; /* 세로 방향으로 정렬 */
+        align-items: center; /* 중앙 정렬 */
+        height: 100vh;
+    }
+
+    .d_txtbox {
+        margin-top: 0; /* 여백 조정 */
+    }
+
+    .d_txtbox .text {
+        flex-direction: column; /* 세로 방향으로 정렬 */
+        
+    }
+    .d_txtbox .title h2{
+        font-size: 1.5rem;
+    }
+
+
+    .mockup img {
+        flex-direction: column;
+        width: 100%; /* 부모 요소에 맞게 너비를 100%로 설정 */
+        height: auto; /* 비율에 맞게 높이 자동 조정 */
+    }
+}
+
+
+
+
+
+

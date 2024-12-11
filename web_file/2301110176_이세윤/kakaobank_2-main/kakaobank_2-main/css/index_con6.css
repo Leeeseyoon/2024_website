@@ -1,0 +1,100 @@
+/* 서류 제출페이지 */
+#con6{
+    width: 100%;
+    height: 100vh;
+    background-color: #e9c62b;
+    overflow: hidden; 
+    position: relative;
+    
+}
+.con6{
+    color: white;
+    float: left;
+    text-align: left;
+    margin: 0 20% 0 20%;    
+    position: relative; z-index: 2;
+}
+
+
+.scroll-trigger{
+    position: absolute; 
+    width: 100%;
+    height: 100vh;
+    transform: translateY(00%); 
+    background-color: #333B58;
+    transition: transform 3s;
+    top: 0; left: 0; right: 0;
+    z-index: 1;
+    
+}
+
+.con6 h1{
+    
+    margin-top: 10%;
+    font-size: 48px;}
+.con6 p{
+    font-size: 24px;
+}
+.con6 .but_box{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+
+    gap: 2%;
+    margin-left: 4%;
+}
+
+.con6 .but_box button{
+    z-index: 10;
+    margin-top: 2%;
+    width: 200px; height: 68px;
+
+    border-radius: 50px;
+    
+}
+.con6 .but_box button:nth-child(1){
+    width: 290px;
+}
+.con6 .but_box button:nth-child(3){
+    width: 275px;
+}
+.con6 .but_box button:nth-child(4){
+    width: 290px;
+}
+#con6 .box1, .box2, .box3, .box4{
+    margin-top: 3%;
+    transform: translateY(80%);
+    margin-left: 20%;
+    width: 1140px;
+    height: 472px; 
+    position: relative;
+    z-index: 2;
+    transition: transform 0.5s ease;
+}
+
+/* 선택된 박스에 대한 스타일 */
+.selected-box {
+    transform: translateY(0);
+}
+
+#con6 .box1 {
+    background-image: url(../image/Group\ 1.svg);
+    object-fit: cover;
+
+    }
+#con6 .box2{
+    background-image: url(../image/Group\ 2.svg);
+    object-fit: cover;
+    }
+#con6 .box3{
+    background-image: url(../image/Group\ 3.svg);
+    object-fit: cover;
+    }
+#con6 .box4{ 
+    background-image: url(../image/Group\ 4.svg);
+    object-fit: cover;
+    }
+    
+#con6 .box1, .box2, .box3, .box4{
+    cursor: pointer;
+}

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="http://findmatthew.com/favicon.ico" type="image/x-icon">
+
+    <!-- HOSTED -->
+    <script src="JS/prefixfree.min.js"></script>
+    <script src="JS/jquery.min.js"></script>
+    <script src="JS/jquery.mixitup.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
+
+    <!-- LOCAL -->
+    <script src="JS/pt.min.js"></script>
+    <script src="JS/index.js"></script>
+    <script src="JS/modal.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 상단 내비 -->
+    <section id="home" class="flex">
+        <div class="flex">
+          <nav class="flex desk" style="">
+            <div class="link-wrap">
+              <div class="page-link active" dest="home">home</div>
+              <div class="page-link" dest="about">about</div>
+              <div class="page-link" dest="portfolio">portfolio</div>
+              <div class="page-link" dest="contact">contact</div>
+            </div>
+            <i class="mdi mdi-menu"></i>
+          </nav>
+        </div>
+    </section>
+
+    <!-- about -->
+    <section id="about">
+        <div class="container flex">
+          <div class="header waypoint animated slide-in-left" data-animation="slide-in-left">
+            ABOUT
+          </div>
+          <div class="header-bar waypoint animated slide-in-left" data-animation="slide-in-left" data-delay=".5s" style="animation-delay: 0.5s;"></div>
+<!-- iwantuse -->
+
+          <div class="skills-wrapper flex row-gt-sm">
+            <div class="flex flex-50-gt-sm waypoint animated slide-in-left" data-animation="slide-in-left">
+              <img src="./findmatthew.com_files/.jpg" class="me">
+              <!-- <div><img class="up-arrow" src="img/up-arrow.png"></div> -->
+              <div class="label bold">Hun Seock Choi</div>
+              <div>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis quisquam modi tenetur quae, eveniet in, ratione id ipsum recusandae mollitia vitae architecto atque. Ad, iure! Fuga labore id architecto nam.
+              </div>
+            </div>
+
+            <div class="flex flex-50-gt-sm waypoint bars-wrap animated slide-in-right" data-animation="slide-in-right">
+              <div class="bar flex">
+                <div class="bar fill" style="width:70%">
+                  <div class="tag bold flex">Photoshop</div>
+                </div>
+              </div>
+
+              <div class="bar flex">
+                <div class="bar fill" style="width:80%">
+                  <div class="tag bold flex">Illustrator</div>
+                </div>
+              </div>
+
+              <div class="bar flex">
+                <div class="bar fill" style="width:70%">
+                  <div class="tag bold flex">After Effects</div>
+                </div>
+              </div>
+
+              <div class="bar flex">
+                <div class="bar fill" style="width:90%">
+                  <div class="tag bold flex">Premiere Pro</div>
+                </div>
+              </div>
+
+              <div class="bar flex">
+                <div class="bar fill" style="width:65%">
+                  <div class="tag bold flex">HTML</div>
+                </div>
+              </div>
+              <div class="bar flex">
+                <div class="bar fill" style="width:50%">
+                  <div class="tag bold flex">C4D</div>
+                </div>
+              </div>
+
+            </div>
+        </div>
+        
+      </div>
+      </section>
+
+      <!-- PORTFOLIO -->
+      <section class="flex" id="portfolio">
+        <div class="header waypoint animated slide-in-right" data-animation="slide-in-right">
+          PROJECTS
+        </div>
+        <div class="header-bar waypoint animated slide-in-right" data-animation="slide-in-right" data-delay=".3s" style="animation-delay: 0.3s;"></div>
+
+        <div class="filter-wrap waypoint animated fade-in" data-animation="fade-in">
+            <!-- 카테고리 -->
+          <div class="flex row">
+            <div class="filter" data-filter="all">ALL</div>
+            <div class="filter" data-filter=".Ps">Ps, Ai</div>
+            <div class="filter" data-filter=".Pr">Pr, Ae</div>
+            <div class="filter active" data-filter=".Ph">Photos</div>
+          </div>
+          <div class="float-bar" style="left: 25px; width: 112px;">
+            <div class="flex row" style="left: -25px;">
+              <div class="filter" data-filter="all">ALL</div>
+              <div class="filter" data-filter=".rails">Ps, Ai</div>
+              <div class="filter" data-filter=".react">Pr, Ae</div>
+              <div class="filter" data-filter=".Ph">Photos</div>
+            </div>
+          </div>
+        </div>
+
+        <div id="gallery" class="container flex row wrap animated">
+            <!-- 에펙 -->
+          <div class="mix Pr" data-my-order="1" data-bound="">
+            
+            <div>
+              <div class="card"></div>
+              <div class="text">
+                <div class="bold">Intro</div>
+                <span class="highlight">After Effects</span>
+              </div>
+              <!-- <div class="button" id="ordering">LEARN MORE</div> -->
+            </div>
+          </div>
+<!-- 프리미어 -->
+          <div class="mix Pr" data-my-order="1" data-bound="">
+            <div>
+              <div class="card"></div>
+              <div class="text">
+                <div class="bold">Cinematography and Editing                </div>
+                <span class="highlight">Premiere Pro</span>
+              </div>
+              <!-- <div class="button" id="discover">LEARN MORE</div> -->
+            </div>
+          </div>
+<!-- 시포디 -->
+          <div class="mix all" data-my-order="1" data-bound="">
+            <div>
+              <div class="card"></div>
+              <div class="text">
+                <div class="bold">Isometric</div>
+                <span class="highlight">Cinema4D</span>
+              </div>
+              <!-- <div class="button" id="newrelic">LEARN MORE</div> -->
+            </div>
+          </div>
+<!-- 포토 -->
+          <div class="mix Ph" data-my-order="1" data-bound="">
+            <div>
+              <div class="card"></div>
+              <div class="text">
+                <div class="bold">Photos</div>
+                <span class="highlight">Snap, Ps</span>
+              </div>
+              <!-- <div class="button" id="brave">LEARN MORE</div> -->
+            </div>
+          </div>
+
+          <div class="mix Ph" data-my-order="1" data-bound="">
+            <div>
+              <div class="card"></div>
+              <div class="text">
+                <div class="bold">Photos</div>
+                <span class="highlight">Snap, Ps</span>
+              </div>
+              <!-- <div class="button" id="walker">LEARN MORE</div> -->
+            </div>
+          </div>
+
+          <div class="mix Ph" data-my-order="1" data-bound="" style="display: inline-block;">
+            <div>
+              <div class="card"></div>
+              <div class="text">
+                <div class="bold">Photos</div>
+                <span class="highlight">Snap, Ps</span>
+              </div>
+              <!-- <div class="button" id="mystand">Snap, Ps</div> -->
+            </div>
+          </div>
+<!-- 포토샵 -->
+          <div class="mix Ps" data-my-order="1" data-bound="" style="display: inline-block;">
+            <div>
+              <div class="card"></div>
+              <div class="text">
+                <div class="bold">Manipulated Photo</div>
+                <span class="highlight">Photo Shop</span>
+              </div>
+              <!-- <div class="button" id="never">LEARN MORE</div> -->
+            </div>
+          </div>
+<!-- 상세페이지 포토샵 -->
+          <div class="mix Ps" data-my-order="1" data-bound="">
+            <div>
+              <div class="card"></div>
+              <div class="text">
+                <div class="bold"> information page</div>
+                <span class="highlight">Photo Shop</span>
+              </div>
+              <!-- <div class="button" id="powur">LEARN MORE</div> -->
+            </div>
+          </div>
+<!-- 일러스트 -->
+          <div class="mix Ps" data-my-order="1" data-bound="" style="display: inline-block;">
+            <div>
+              <div class="card"></div>
+              <div class="text">
+                <div class="bold">line</div>
+                <span class="highlight">Illustrator</span>
+              </div>
+              <!-- <div class="button" id="themall">LEARN MORE</div> -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+</body>
+</html>

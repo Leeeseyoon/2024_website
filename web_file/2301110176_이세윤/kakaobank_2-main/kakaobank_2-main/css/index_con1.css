@@ -1,0 +1,36 @@
+/* 계좌이체 */
+#con1 .imgbox{
+    width: 365px;
+    height: 750px;
+
+    border-radius: 50px;
+
+}
+
+#con1{
+    margin-top: 40%;
+    height: 100vh;
+    
+    margin: 0 20% 20% 20%;
+    text-align: left;
+}
+#con1 .title_txt{ 
+    float: left;
+    padding-top: 10%;
+}
+
+#con1 .L_img{float: right; margin-right: 15%;margin-top: 10%;}
+#con1 .R_img{ float: left; margin-left: 14%;
+    margin-top: 5%;}
+
+#con1 .txt1{
+    font-size: 25px;
+    line-height: 1.5;
+    float:right; 
+    margin-top: 5%;
+    margin-right: 8.7%;
+    vertical-align: bottom;}
+#con1 .txt1 button{
+    padding: 20px 35px;
+    border-radius: 30px;
+    margin-top: 5%;}

@@ -1,0 +1,98 @@
+.block-container {
+  position: relative;
+  width: 265px;
+  height: 265px;
+  transition: 250ms;
+  perspective: 500px;
+}
+.block-container .btn-back {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: inherit;
+  height: inherit;
+  border-radius: 76px;
+  transition: 250ms;
+  transform-style: preserve-3d;
+  transform-origin: bottom right;
+  transform: rotateZ(15deg);
+  will-change: transform;
+  box-shadow: 16px 0 40px #e4e4e4;
+}
+.block-container .btn-back-1 {
+  background: linear-gradient(135deg, #4682eb -20%, #01beff 120%);
+  
+}
+.block-container .btn-back-2 {
+  background: linear-gradient(135deg, #11910b -20%, #2fd255 120%);
+  
+}
+.block-container .btn-back-3 {
+  background: linear-gradient(135deg, #ebe046 -20%, #ffac01 120%);
+}
+.block-container .btn-back-4 {
+  background: linear-gradient(135deg, #b721ff 0%, #21d4fd 100%);
+}
+#con2 .imgbox .btn-img img{
+    margin-top: 20%;
+    z-index: 1;
+}
+#con2 .subbox .btn-img img{
+    margin-top: 8%;
+}
+#con2 .subbox .leftimg{
+    margin-right: 10%;
+
+}
+.block-container .btn-front {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: inherit;
+  height: inherit;
+  border-radius: 76px;
+  background-color: #ffffff33;
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  transition: 250ms;
+  transform-style: preserve-3d;
+  transform-origin: top left;
+  overflow: hidden;
+  outline: 3px solid rgba(185, 255, 187, 0.5);
+  
+}
+.block-container .front2{
+    outline: 3px solid rgba(208, 252, 255, 0.5);
+}
+.block-container .front3{
+    outline: 3px solid rgba(255, 250, 175, 0.5);
+}
+.block-container .btn-front svg.frame {
+  width: inherit;
+  height: inherit;
+}
+.block-container .btn-front svg.frame rect {
+  width: inherit;
+  height: inherit;
+  fill: none;
+  stroke-width: 4;
+  outline: 2px solid rgba(158, 158, 158, 0.5);
+}
+.block-container .btn-front svg.icon {
+  position: absolute;
+  inset: 50% 0 0 50%;
+  transform: translate(-50%, -50%);
+}
+.block-container:hover > .btn-back {
+    
+  transform: translateZ(20px) rotateZ(15deg) rotateX(-20deg) rotateY(-20deg);
+}
+.block-container:hover > .btn-front {
+    transition: 0.5s;
+    outline: none;
+  transform: translateZ(80px) translateY(-5px) rotateX(15deg) rotateY(15deg);
+}
+.block-container:hover > .btn-img {
+    transition: 0.3s;
+  transform: translateZ(80px) translateY(-5px) rotateX(15deg) rotateY(15deg);
+}

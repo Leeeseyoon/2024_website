@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Trigger Animation</title>
+    <!-- AOS CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <style>
+        .content1 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px;
+        }
+        .c1_txt, .c1_img {
+            flex: 1;
+        }
+        .c1_img img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <section class="content1">
+        <div class="c1_txt" data-aos="fade-right">
+            <p>Environment and Sustainability</p>
+            <h1><i>“ Vegan ”</i></h1>
+            <h3>이브 비건 (EVE VEGAN)</h3>
+            <p class="p1">AMUSE는 환경과 지속가능성을 생각하는 비건 & 웰니스 뷰티 큐레이션을 선보입니다. </p>
+            <button class="but3"><a href="index3.html">Show More</a></button>
+        </div>
+        <div class="c1_img" data-aos="fade-left">
+            <img src="./img/c1-1.jpg" alt="">
+        </div>
+    </section>
+
+    <!-- AOS JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>
