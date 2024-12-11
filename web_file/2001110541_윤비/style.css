@@ -1,0 +1,433 @@
+/* 모든 요소에 기본 여백 제거 및 박스 크기 설정 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* body 스타일 */
+body {
+    margin: 0; 
+    background-image: url('img/bg1920_6200.png'); 
+    background-size: contain; /* 이미지를 최대 크기 내로 조정 */
+    background-position: left;
+    background-repeat: no-repeat; 
+    max-height: 6200px; 
+    max-width: 1900px;
+}
+
+html {
+    scroll-behavior: smooth; /* 부드러운 스크롤 효과 */
+}
+
+
+/* 헤더 스타일 */
+#header {
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 1900px; 
+    height: 100px; 
+    background-image: url('img/header_bg.png'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    z-index: 10; 
+    overflow: hidden; 
+}
+
+/* 헤더 박스 스타일 */
+#header .header_box {
+    position: relative;
+    height: 100%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    padding: 0 20px; 
+}
+
+/* 로고 이미지 스타일 */
+#header .header_box img {
+    position: absolute; 
+    top: 20px; 
+    left: 190px; 
+    max-width: 150px; 
+    max-height: 60px; 
+}
+
+/* 네비게이션 스타일 */
+#header .nav_container {
+    flex: 1; 
+    display: flex; 
+    justify-content: center; 
+}
+
+#header .header_nav {
+    display: flex; 
+    gap: 40px; 
+    justify-content: center; 
+    align-items: center; 
+    margin-top: 30px; 
+}
+
+#header .header_nav a {
+    text-decoration: none; 
+    color: rgb(0, 0, 0); 
+    font-size: 32px; 
+    font-family: 'Pretendard', sans-serif; 
+    font-weight: 500; 
+    transition: font-weight 0.2s ease, padding 0.2s ease; 
+}
+
+#header .header_nav a:hover {
+    text-decoration: underline; 
+    font-weight: 800; 
+}
+
+/* Swiper 슬라이더 스타일 */
+.swiper {
+    width: 1900px; 
+    height: 850px; 
+    z-index: 1; 
+    position: relative; 
+}
+
+/* 슬라이드 스타일 */
+.swiper-slide {
+    height: 980px; 
+    position: relative; 
+    text-align: center; 
+}
+
+
+
+
+.swiper-slide img {
+    display: block; 
+    max-width: 1900px; 
+    max-height: 980px; 
+    object-fit: contain; 
+    margin-top: 175px; 
+    margin-left: 295px; 
+}
+
+/* 두 번째 Swiper의 슬라이드 스타일 */
+.second-swiper .swiper-slide {
+    margin-top: 50px; /* 두 번째 Swiper에만 50px 마진 추가 */
+}
+
+.second-swiper .swiper-slide img {
+    display: block;
+    max-width: 1900px;
+    max-height: 980px;
+    object-fit: contain;
+    margin-top: 225px;
+    margin-left: 300px;
+}
+
+/* 텍스트 스타일 */
+.swiper-slide h1, 
+.swiper-slide h2,
+.swiper-slide h3
+.swiper-slide h5
+.swiper-slide h5
+.swiper-slide h6 {
+    position: absolute; 
+    font-family: 'Pretendard', sans-serif; 
+}
+
+.swiper-slide h1 {
+    top: 39%; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    font-size: 128px; 
+    font-weight: 700; 
+    color: black; 
+}
+
+.swiper-slide h2 {
+    top: 60%; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    font-size: 24px; 
+    font-weight: 500; 
+    color: #515151; 
+    line-height: 1.2; 
+    width: 1300px; 
+}
+
+.swiper-slide h3 {
+    top: 60%; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    font-size: 24px; 
+    font-weight: 300; 
+    color: #515151; 
+    line-height: 1.2; 
+    width: 1300px; 
+    position: absolute;
+    margin-top: 0px;
+}
+
+/* 강조 텍스트 스타일 */
+.highlight {
+    font-weight: 700; 
+    color: black; 
+    font-size: 25px; 
+}
+
+/* Swiper 버튼 스타일 */
+.swiper-button-next, 
+.swiper-button-prev {
+    display: none; 
+}
+
+.swiper-button-next-custom, 
+.swiper-button-prev-custom {
+    z-index: 5;
+    position: absolute; 
+    top: 490px; 
+    transform: translateY(-25px); 
+    width: 50px; 
+    height: 50px; 
+    background-size: contain; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    cursor: pointer; 
+    z-index: 11; 
+}
+
+.swiper-button-next-custom {
+    right: 10px; 
+    background-image: url('img/next_arrow.png'); 
+    margin-right: 185px; 
+}
+
+.swiper-button-prev-custom {
+    left: 10px; 
+    background-image: url('img/prev_arrow.png'); 
+    margin-left: 185px; 
+}
+
+.third-swiper .swiper-button-next-custom,
+.third-swiper .swiper-button-prev-custom {
+position: absolute;
+top: 38%;
+transform: translateY(-50%); /* 수직 중앙 정렬 */
+z-index: 10; /* 버튼이 다른 콘텐츠보다 위에 위치하도록 설정 */
+}
+
+.third-swiper .swiper-button-next-custom {
+  right: 375px; /* 오른쪽에 위치 */
+}
+
+.third-swiper .swiper-button-prev-custom {
+  left: 375px; /* 왼쪽에 위치 */
+}
+
+/* 페이지네이션 스타일 */
+.swiper-pagination {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 30px; 
+    margin-top: 20px; 
+    z-index: 5;
+}
+
+.swiper-pagination .swiper-pagination-bullet {
+    width: 16px; 
+    height: 16px; 
+    opacity: 1; 
+    transition: transform 0.3s ease; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+.swiper-pagination .swiper-pagination-bullet img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: contain; 
+}
+
+.swiper-pagination .swiper-pagination-bullet-active img {
+    content: url("img/square_button_on.png"); 
+    transform: scale(1.1); 
+}
+
+/* 두 번째 Swiper 페이지네이션 스타일 조정 */
+.second-swiper .swiper-pagination {
+    position: relative; /* 위치를 상대적으로 설정 */
+    margin-top: -170px;
+}
+
+/* 세 번째 Swiper 페이지네이션 스타일 조정 */
+
+.third-swiper.swiper {
+    width: 1900px; 
+    height: 1070px; 
+    z-index: 1; 
+    position: relative; 
+}
+
+.third-swiper .swiper-slide {
+    display: flex; /* Flexbox 사용 */
+    flex-direction: column; /* 세로 방향으로 나열 */
+    align-items: center; /* 수평 가운데 정렬 */
+    justify-content: center; /* 수직 가운데 정렬 */
+}
+
+
+
+.third-swiper .swiper-pagination {
+    position: absolute; /* 절대 위치 설정 */
+    z-index: 10; /* 다른 요소 위에 표시 */
+}
+
+/* 캐릭터 프레임 스타일 */
+.character_frame {
+    width: 1900px; 
+    height: 1800px; 
+    z-index: 1; 
+    position: relative; 
+}
+
+.character_box1, 
+.character_box2 {
+    position: absolute; 
+}
+
+.character_box1 {
+    top: 360px; 
+    left: 340px; 
+}
+
+.character_box2 {
+    top: 1130px; 
+    right: 310px; 
+}
+
+/* 소개 박스 스타일 */
+.word_box {
+    margin-top: 1130px;
+    position: absolute; 
+}
+
+.p1, 
+.p2 {
+    font-family: 'Pretendard', sans-serif;
+}
+
+.p1 {
+    font-size: 28px;
+    font-weight: 400;
+    margin-bottom: 8px; 
+    letter-spacing: -5%; 
+}
+
+.p2 {
+    font-size: 18px;
+    font-weight: 200;
+    color: #515151;
+    letter-spacing: -5%; 
+}
+
+/* 각 박스 스타일 */
+.introduce_box,
+.tool_box,
+.education_box,
+.qualifications_box {
+    margin-bottom: 35px; 
+    margin-left: 340px;
+}
+
+.overview_box {
+    margin-bottom: 10px; 
+    margin-left: 830px;
+    text-align: right; 
+}
+
+/* work_box_all 스타일 */
+.work_box_all {
+    display: flex;
+    gap: 25px; /* 각 work_box 간의 간격 */
+    justify-content: center; /* 가로로 가운데 정렬 */
+}
+
+/* work_box 스타일 */
+.work_box {
+    display: flex;
+    flex-direction: column; /* 세로로 배치 */
+    align-items: flex-start; /* 왼쪽 정렬 */
+}
+
+.work_box img {
+    width: auto; /* 원본 크기 유지 */
+    height: auto; /* 원본 크기 유지 */
+    margin: 0; /* 이미지 아래의 여백 제거 */
+    margin-bottom: 10px;
+}
+
+.work_box h4 {
+    margin: 0; /* h4의 기본 여백 제거 */
+    font-size: 24px; /* 원하는 글자 크기 */
+    font-weight: 500; /* 폰트 두께 */
+}
+
+.work_box h5 {
+    margin: 0; /* h5의 기본 여백 제거 */
+    font-size: 16px; /* 원하는 글자 크기 */
+    font-weight: 300; /* 폰트 두께 */
+}
+
+.third_img {
+    display: flex; /* Flexbox 사용 */
+    margin-left: -300px;
+    margin-bottom: 20px; /* 필요에 따라 여백 추가 */
+}
+
+.connect_frame {
+    display: flex; /* Flexbox 사용 */
+    align-items: center; /* 세로 가운데 정렬 */
+    justify-content: space-between; /* 요소 간의 간격 조정 */
+    width: 1900px;
+    height: 850px;
+}
+
+.img_container {
+    display: flex; /* 이미지들을 나란히 배치 */
+    gap: 30px; /* 간격 조정 */
+    position: absolute;
+    margin-top: -250px;
+    left: 280px;
+}
+
+.bord_text_container {
+    display: flex;
+    flex-direction: column; /* 세로 정렬 */
+    position: absolute;
+    margin-top: 0px;
+    left: 740px;
+}
+
+.bord_text {
+    display: flex; /* 텍스트와 아이콘을 가로로 나란히 배치 */
+    align-items: center; /* 수직 가운데 정렬 */
+    margin-bottom: 15px; /* 각 텍스트 간의 간격 */
+    position: relative; /* 위치 조정을 위해 상대 위치 설정 */
+}
+
+.bord_text img {
+    margin-right: 10px; /* 아이콘과 텍스트 사이의 간격 */
+}
+
+
+.bottom_image {
+    margin-top: 555px; /* 다른 콘텐츠와 겹치게 하기 위해 여백 추가 */
+}
+
+h6 {
+    font-size: 20px;
+    font-weight: 300;
+}
