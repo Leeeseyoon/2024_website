@@ -1,0 +1,313 @@
+@font-face {
+  font-family: 'DungGeunMo';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+ }
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
+     *{
+     cursor: url('img/cursor.png'), auto;
+     margin: 0;
+     padding: 0;
+ }
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Aldrich", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    background-color: rgb(254, 204, 224);
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    padding-top: 15vh;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navi {
+  position: fixed;
+  overflow: hidden;
+  width: 100vw;
+  left: 0;
+  top: 0;
+  z-index: 999;
+}
+
+.top_img{
+  width: 100vw;
+}
+
+.navi_icon {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 50%; 
+display: flex;
+justify-content: center; 
+align-items: center; 
+z-index: 1;
+color: rgb(170, 20, 125);
+font-weight: normal; 
+}
+
+.navi_icon li {
+font-family: "Aldrich", sans-serif;
+cursor: pointer;
+transition: transform 0.1s;
+list-style: none;
+margin-right: 80px;
+text-align: center;
+font-weight: normal;
+}
+
+.navi_icon li:last-child {
+  margin-right: 0;
+}
+
+.navi li a:hover img {
+      transform: scale(0.95);
+      box-shadow: 0 0px 10px rgba(66, 6, 43, 0.3);
+}
+
+.home-icon img {
+  border: 3px solid white;
+  border-radius: 5px;
+}
+
+.home-icon h4 {
+  color: white; 
+}
+
+@keyframes fadeInSilhouette {
+  0% {
+      filter: brightness(0) blur(2px);
+      opacity: 0;
+  }
+  100% {
+      filter: brightness(1) blur(0);
+      opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+      transform: translateX(-145%) translateY(0);
+  }
+  50% {
+      transform: translateX(-145%) translateY(-5px);
+  }
+}
+
+
+.button {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1;
+}
+
+.button_item {
+  position: fixed;
+  width: auto;
+  height: 100vh;
+  background-color: #FECCE0;
+  display: flex;
+  align-items: center;
+  z-index: 3;
+}
+
+#leftBtn {
+  left: 0;
+}
+
+#rightBtn {
+  right: 0;
+}
+
+.button_item img {
+  display: block;
+  width: 70%;
+  margin: 0 auto;
+  height: auto;
+  transition: transform 0.2s;
+}
+
+.button_item a:hover img {
+  transform: scale(0.95);
+}
+
+.blink {
+  position: relative;
+  display: inline-block;
+}
+
+.blink::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10%;
+  width: 80%;
+  height: 100%;
+  border-radius: 15%;
+  background-color: rgba(255, 0, 0, 0.144); 
+  animation: blink-animation 1s infinite;
+  z-index: 1;
+}
+
+.blink img {
+  position: relative;
+  z-index: 0; 
+  display: block;
+}
+
+@keyframes blink-animation {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.video-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
+video {
+    width: 100%;
+}
+
+
+.skill_thought {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 110px;
+  right: 19.5%;
+  opacity: 0; 
+  transition: opacity 1s ease;
+}
+
+.skill_thought.show { 
+  opacity: 1;
+}
+
+
+.burst {
+  animation: burstAnimation 0.7s ease-in-out; 
+}
+
+@keyframes burstAnimation {
+  0% {
+      transform: scale(0);
+      opacity: 0; 
+  }
+  50% {
+      transform: scale(1.1); 
+      opacity: 1; 
+  }
+  100% {
+      transform: scale(1); 
+      opacity: 1; 
+  }
+}
+
+  .skill_box {
+    position: absolute;
+    transform: translateX(-50%);
+    z-index: 1;
+    width: 45vw; 
+    height: auto; 
+    transform: translate(-100%, 0) scale(0); 
+    opacity: 0;
+    animation: pullAndGrow 0.35s forwards, fadeInSilhouette 0.4s ease-in-out forwards; 
+    position: relative; 
+  }
+
+
+  .skill-graph-container {
+    position: absolute;
+    top:40%;
+    left:65%;
+  }
+
+  .overlay-image1 {
+    width: 20vw;
+    transform: translateX(-145%); 
+    left: 50%;
+    top: 80%;
+    padding: 0;
+    position: absolute;
+    cursor: pointer;
+    animation: fadeInSilhouette 0.8s ease-in-out forwards, bounce 1.8s ease-in-out infinite 0.7s; /* 페이드인 후 바운스 애니메이션 */
+}
+
+.overlay-container {
+    text-align: center;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+.click-container {
+    animation: fadeInSilhouette 0.8s ease-in-out forwards;
+    position: absolute;
+    top:160%;
+    transform: translateX(-272%); 
+    text-align: center; 
+}
+
+.click-me {
+    background-color: rgba(0, 0, 0, 0.534);
+    font-size: 30px; 
+    color: #fff;
+    transition: color 0.3s; 
+}
+
+
+.skill-graph-container {
+    display: none;
+    position: absolute;
+    transform: translateX(-50%);
+    z-index: 2; 
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+
+@keyframes pullAndGrow {
+    0% {
+        transform: translate(-100%, 0) scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(0, 0) scale(1); 
+        opacity: 1; 
+    }
+}
+
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

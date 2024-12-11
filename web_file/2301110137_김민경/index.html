@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style1.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aldrich&display=swap" rel="stylesheet">
+    <title>Home</title>
+</head>
+<body>
+    <audio src="img/audio.mp3" autoplay loop muted></audio>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        const audio = document.querySelector('audio');
+        audio.muted = false; 
+        audio.volume = 1;});
+    </script>
+
+    <div class="button_item" id="leftBtn">
+        <a href="index4.html"><img src="img/back_button_web_img.png" alt=""></a>
+    </div>
+    <div class="button_item" id="rightBtn">
+        <a href="index1.html" class="blink"><img src="img/next_button_web_img.png" alt=""></a>
+    </div>
+
+    <div class="container">
+        <div class="navi">
+            <div class="navi_icon">
+                <li><a href="index3.html"><img src="img/navi_icon1.png" alt=""></a><h4>WEB</h4></li>
+                <li><a href="index4.html"><img src="img/navi_icon2.png" alt=""></a><h4>CONTACT</h4></li>
+                <li class="home-icon"><a href="index.html"><img src="img/navi_icon3.png" alt=""></a><h4>HOME</h4></li>
+                <li><a href="index1.html"><img src="img/navi_icon4.png" alt=""></a><h4>INFO</h4></li>
+                <li><a href="index2.html"><img src="img/navi_icon5.png" alt=""></a><h4>ILLUST</h4></li>
+            </div>
+            <img class="top_img"
+            src="img/navi_img.png" alt="">
+        </div>
+        
+        <div class="video-container">
+            <video autoplay loop muted>
+                <source src="img/loading_re.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <img class="overlay-image2" src="img/room_img.png" alt="Overlay Image">
+        <div class="overlay-image">
+            <img class="overlay-image1" src="img/message_web.png" alt="Overlay Image">
+            <div class="message">
+                <h1 id="typewriter-text1">Hello!</h1>
+                <h1 id="typewriter-text2">Welcome come to my world.▼</h1>
+            </div>
+        </div>
+        
+        <script>
+            document.querySelector('.overlay-image1').addEventListener('click', function() {
+                window.location.href = 'index1.html';
+            });
+        </script>
+    
+    <script>
+        window.onload = function() {
+        // 페이지가 로드될 때 2초 후에 .message의 불투명도를 변경
+        setTimeout(function() {
+            document.querySelector('.message').style.opacity = '1';
+        }, 2000); // 2초 후에 .message가 나타나도록 설정
+
+        // 기존 overlay-image2와 overlay-image3의 지연 애니메이션
+        setTimeout(function() {
+            document.querySelector('.overlay-image2').style.opacity = '1';
+        }, 1200);
+
+        setTimeout(function() {
+            document.querySelector('.overlay-image3').style.opacity = '1';
+        }, 1000);
+    };
+
+    // 타이핑 효과 설정
+    document.addEventListener('DOMContentLoaded', (event) => {
+        function typeEffect(element, speed, delay, callback) {
+            const text = element.innerText;
+            element.innerHTML = "";
+
+            setTimeout(() => {
+                element.style.opacity = '1';
+                let i = 0;
+                const timer = setInterval(() => {
+                    if (i < text.length) {
+                        element.innerHTML += text.charAt(i);
+                        i++;
+                    } else {
+                        clearInterval(timer);
+                        if (callback) callback();
+                    }
+                }, speed);
+            }, delay);
+        }
+
+        const text1 = document.getElementById('typewriter-text1');
+        const text2 = document.getElementById('typewriter-text2');
+        const messageDiv = document.querySelector('.message');
+
+        const speed = 50;
+
+        typeEffect(text1, speed, 2500); // 2.5초 후에 첫 번째 텍스트 타이핑 시작
+        typeEffect(text2, speed, 3000, () => { // 3초 후에 두 번째 텍스트 타이핑 시작
+            // 타이핑이 완료된 후에 깜빡이는 애니메이션 클래스 추가
+            messageDiv.classList.add('blinking-message');
+        });
+    });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style5.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aldrich&display=swap" rel="stylesheet">
+    <title>Contact</title>
+</head>
+<body>
+    <audio src="img/audio.mp3" autoplay loop muted></audio>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const audio = document.querySelector('audio');
+    audio.muted = false; // 음소거 해제
+    audio.volume = 1; // 최대 볼륨으로 설정
+});
+    </script>
+
+    <div class="button_item" id="leftBtn">
+        <a href="index3.html"><img src="img/back_button_web_img.png" alt=""></a>
+    </div>
+    <div class="button_item" id="rightBtn">
+        <a href="index.html" class="blink"><img src="img/next_button_web_img.png" alt=""></a>
+    </div>
+    <div class="container">
+        <div class="navi">
+            <div class="navi_icon">
+                <li><a href="index3.html"><img src="img/navi_icon1.png" alt=""></a><h4>WEB</h4></li>
+                <li class="home-icon"><a href="index4.html"><img src="img/navi_icon2.png" alt=""></a><h4>CONTACT</h4></li>
+                <li><a href="index.html"><img src="img/navi_icon3.png" alt=""></a><h4>HOME</h4></li>
+                <li><a href="index1.html"><img src="img/navi_icon4.png" alt=""></a><h4>INFO</h4></li>
+                <li><a href="index2.html"><img src="img/navi_icon5.png" alt=""></a><h4>ILLUST</h4></li>
+            </div>
+            <img class="top_img"
+            src="img/navi_img.png" alt="">
+        </div>
+        
+        
+        <div class="video-container">
+            <video autoplay loop muted>
+                <source src="img/no_loading.mp4" type="video/mp4">
+            </video>
+        </div>
+
+
+        <div class="select_container">
+            <div class="photo-container">
+                <div class="photo-box1" id="box1">
+                    <img src="img/photobox1.png" alt="증명사진 1" class="photo" id="photo1">
+                </div>
+                <div class="mini-boxes" id="mini-boxes1">
+                    <div class="mini-box">
+                        <img src="img/photobox1.png" alt="작은 이미지 1" onclick="changeImage('photo1', 'img/photobox1.png')" class="mini-image">
+                    </div>
+                    <div class="mini-box">
+                        <img src="img/photobox2.png" alt="작은 이미지 2" onclick="changeImage('photo1', 'img/photobox2.png')" class="mini-image">
+                    </div>
+                    <div class="mini-box">
+                        <img src="img/photobox3.png" alt="작은 이미지 3" onclick="changeImage('photo1', 'img/photobox3.png')" class="mini-image">
+                    </div>
+                </div>
+                <h3>Choose my character!</h3>
+            </div>
+    
+            <div class="overlay">
+                <h1>CONTACT</h1>
+                <a href="" class="overlay-button">send</a>
+            </div>
+    
+            <div class="photo-container">
+                <div class="photo-box2" id="box2">
+                    <img src="img/photobox4.png" alt="증명사진 2" class="photo" id="photo2">
+                </div>
+                <div class="mini-boxes" id="mini-boxes2">
+                    <div class="mini-box">
+                        <img src="img/photobox4.png" alt="작은 이미지 4" onclick="changeImage('photo2', 'img/photobox4.png')" class="mini-image">
+                    </div>
+                    <div class="mini-box">
+                        <img src="img/photobox5.png" alt="작은 이미지 5" onclick="changeImage('photo2', 'img/photobox5.png')" class="mini-image">
+                    </div>
+                    <div class="mini-box">
+                        <img src="img/photobox6.png" alt="작은 이미지 6" onclick="changeImage('photo2', 'img/photobox6.png')" class="mini-image">
+                    </div>
+                </div>
+                <h3>Choose your character!</h3>
+            </div>
+        </div>
+   
+        <div class="contact-container">
+            <div class="form_left">
+                <div class="form-group">
+                    <label for="name">*Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">*Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+            </div>
+        
+            <div class="form_right">
+                <div class="form-group">
+                    <label for="message">*Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    
+
+    <script>
+        function changeImage(photoId, newSrc) {
+            const photo = document.getElementById(photoId);
+            photo.src = newSrc;
+        }
+    </script>
+</body>
+</html>
