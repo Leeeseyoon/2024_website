@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Portfolio</title>
+    <style>
+        /* 기본 스타일 */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: black;
+            overflow-x: hidden;
+        }
+
+        /* 밝은 회색 배경과 노이즈 질감 */
+        body {
+            background-color: #f0f0f0;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiM4ODg4ODgiIG9wYWNpdHk9IjAuMyIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHg9IjIiIHk9IjIiIGZpbGw9IiM4ODg4ODgiIG9wYWNpdHk9IjAuMyIvPjwvc3ZnPg==');
+        }
+
+        /* 왼쪽 상단 로고 스타일 */
+        .logo {
+            position: absolute;
+            top: 2%;
+            left: 2%;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+            z-index: 10;
+            opacity: 0;
+            animation: fadeInMove 1s ease forwards;
+            animation-delay: 0.5s;
+        }
+
+        section {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            opacity: 1;
+            overflow: hidden;
+        }
+
+        /* 인트로 섹션 스타일 */
+        #intro {
+            position: relative;
+            flex-direction: column;
+            overflow: visible;
+            height: 100vh;
+        }
+
+        /* 타이포그래피 스타일 */
+        #intro h1 {
+            font-size: 8rem;
+            margin: 0;
+            position: absolute;
+            top: 30%;
+            left: 40%;
+            color: black;
+            text-transform: uppercase;
+            z-index: 2;
+            cursor: pointer;
+            line-height: 1;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInMove 1s ease forwards;
+            animation-delay: 1s;
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3); /* 음영 효과 */
+        }
+
+        #intro h1:hover {
+            color: orange;
+        }
+
+        #intro h1:active {
+            animation: shake 0.5s ease-in-out;
+            color: orange;
+        }
+
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-5px); }
+            100% { transform: translateX(0); }
+        }
+
+        @keyframes fadeInMove {
+            0% { opacity: 0; transform: translateY(50px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        #intro h1 span {
+            display: block;
+        }
+
+        /* 원형 도형 애니메이션 */
+        .large-circle {
+            position: absolute;
+            width: 41.25vw;
+            height: 41.25vw;
+            background: linear-gradient(to top, #16cbcb, transparent);
+            border-radius: 50%;
+            left: 50%;
+            margin-top: 50px;
+            transform: translate(-50px, -50px); /* 정확히 화면 중앙에 배치 */
+            opacity: 0;
+            animation: fadeInMove 1.5s ease forwards;
+            animation-delay: 1.5s;
+            z-index: 1;
+        }
+
+        .year {
+            position: absolute;
+            top: 2%;
+            right: 2%;
+            font-size: 1vw;
+            color: #888888;
+            opacity: 0.8;
+            z-index: 3;
+            opacity: 0;
+            animation: fadeInMove 1s ease forwards;
+            animation-delay: 1s;
+        }
+
+        /* 프로필 페이지 스타일 */
+        #section1 .profile-content {
+            max-width: 600px;
+            padding: 20px;
+            border-radius: 10px;
+            background: white;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-content h2 {
+            font-size: 2rem;
+            margin: 0 0 20px;
+            color: #333;
+        }
+
+        .profile-item {
+            margin: 10px 0;
+        }
+
+        .profile-item h3 {
+            font-size: 1.5rem;
+            color: #666;
+            margin: 5px 0;
+        }
+
+        .profile-item p {
+            font-size: 1.2rem;
+            margin: 5px 0;
+            color: #333;
+        }
+
+        /* 스킬 아이콘 스타일 */
+        .skills {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 20px;
+            gap: 20px;
+        }
+
+        .skills .icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 각 프로그램의 색상 */
+        .ai { background-color: #FF9A00; }
+        .ps { background-color: #31A8FF; }
+        .id { background-color: #FF3366; }
+        .ae { background-color: #9999FF; }
+        .pr { background-color: #e499ff; }
+
+        nav {
+            position: fixed;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            z-index: 10;
+        }
+
+        nav button {
+            background-color: #ffffff;
+            color: #1e90ff;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        nav button:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <!-- 왼쪽 상단 로고 -->
+    <div class="logo">IM YUL</div>
+
+    <!-- 인트로 섹션 -->
+    <section id="intro">
+        <h1 onclick="scrollToSection(1)">
+            <span class="design">Design</span>
+            <span class="portfolio">Portfolio</span>
+        </h1>
+        <div class="large-circle"></div>
+        <div class="year">2024</div>
+    </section>
+
+    <!-- 프로필 섹션 -->
+    <section id="section1">
+        <div class="profile-content">
+            <h2>Profile</h2>
+            <div class="profile-item">
+                <h3>Name</h3>
+                <p>임율 / IM YUL</p>
+            </div>
+            <div class="profile-item">
+                <h3>Birth</h3>
+                <p>2003.12.21</p>
+            </div>
+            <div class="profile-item">
+                <h3>Skills</h3>
+                <div class="skills">
+                    <div class="icon ai">Ai</div>
+                    <div class="icon ps">Ps</div>
+                    <div class="icon id">Id</div>
+                    <div class="icon ae">Ae</div>
+                    <div class="icon pr">Pr</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- 프로젝트 섹션 -->
+<section id="section2" style="background-color: #58D4CC; padding: 40px; display: flex; flex-direction: column; align-items: center; text-align: center;">
+    <h1 style="font-size: 4rem; color: rgb(0, 0, 0); margin-bottom: 20px;">Projects</h1>
+    
+    <!-- 프로젝트 설명 추가 -->
+    <p style="font-size: 1.5rem; color: rgb(0, 0, 0); margin-bottom: 40px;">
+        도서 "광염 소나타" 리디자인
+    </p>
+    
+    <!-- 중앙에 배치된 이미지 스타일 -->
+    <img src="images/KakaoTalk_20241106_183345373.jpg" alt="" style="width: 100%; max-width: 800px; height: auto; border-radius: 10px; box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);" />
+</section>
+
+
+ 
+
+<style>
+    /* 이미지 오른쪽 배치 및 크기 조정 */
+    #section2 {
+        display: flex;  
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    #section2 h1 {
+        color: white; /* 배경색에 어울리게 텍스트 색상 조정 */
+    }
+</style>
+
+    
+
+    <!-- 내비게이션 버튼 -->
+    <nav>
+        <button onclick="scrollToSection(1)">1</button>
+        <button onclick="scrollToSection(2)">2</button>
+    </nav>
+
+    <script>
+        // 텍스트 클릭 애니메이션
+        function animateText(element) {
+            element.classList.add("clicked");
+            setTimeout(() => {
+                element.classList.remove("clicked");
+            }, 600);
+        }
+
+        // 섹션으로 이동
+        function scrollToSection(sectionNumber) {
+            document.getElementById(`section${sectionNumber}`).scrollIntoView({
+                behavior: "smooth"
+            });
+        }
+    </script>
+</body>
+</html>
