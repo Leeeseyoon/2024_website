@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DASHU - 프리미엄 헤어 스타일링 제품">
+    <title>DASHU | 프리미엄 헤어 스타일링</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header__container">
+            <h1 class="header__logo">
+                <a href="index.html">
+                    <img src="images/다슈로고.png" alt="DASHU">
+                </a>
+            </h1>
+            
+            <nav class="header__nav">
+                <ul class="nav__list">
+                    <li><a href="index.html">홈</a></li>
+                    <li><a href="index2.html">제품</a></li>
+                    <li><a href="/styling">스타일링</a></li>
+                    <li><a href="/about">브랜드</a></li>
+                </ul>
+            </nav>
+
+            <div class="header__utils">
+                <a href="/search" class="utils__btn"><i class="fas fa-search"></i><span class="sr-only">검색</span></a>
+                <a href="/account" class="utils__btn"><i class="fas fa-user"></i><span class="sr-only">마이페이지</span></a>
+                <a href="/cart" class="utils__btn"><i class="fas fa-shopping-cart"></i><span class="sr-only">장바구니</span></a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+<!-- hero 섹션만 수정된 부분 -->
+<section class="hero">
+    <div class="slider">
+        <div class="slide fade">
+            <img src="images/p__bn_241014_01.jpg" alt="스타일링 제품 이미지">
+        </div>
+
+        <div class="slide fade">
+            <img src="images/p__bn_241014_03.jpg" alt="헤어 스타일링 이미지">
+        </div>
+
+        <div class="slide fade">
+            <img src="images/p__bn_241028.jpg" alt="브랜드 이미지">
+        </div>
+
+        <!-- 이전/다음 버튼 -->
+        <button class="slider__btn slider__btn--prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="slider__btn slider__btn--next" onclick="changeSlide(1)">&#10095;</button>
+
+        <!-- 하단 닷 네비게이션 -->
+        <div class="slider__dots">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </div>
+</section>
+ 
+<!-- 브랜드 스토리 섹션만 수정 -->
+<section class="brand-story">
+    <div class="scroll-text-container">
+        <div class="scroll-text scroll-right">GET READY WITH ME,</div>
+        <div class="scroll-text scroll-left">DASHU</div>
+    </div>
+    <div class="brand-story-content">
+        <div class="brand-image">
+            <img src="images/다슈.png" alt="DASHU 로고">
+        </div>
+        <div class="brand-text">
+            <h2>GET READY</h2>
+            <p>가꾸는 남자를 바라보는 시선에는 남성의 본질에 대한 가장<br>
+            기본적인 물음표가 있다. <br>
+            저마다 다른 시선의 경계에서 다슈가 선택한 해답은 시작도 끝도 남자다. <br>
+            다슈는 가장 남자다운 섬세함으로<br>
+            당신을 위한 의미있는 변화를 만들고자 한다. <br>
+            다르지만 튀지않게, 절제된 멋과 위트 안에서<br>
+            원칙과 품격을 균형있게 지켜낸다. <br>
+            남자만의 그루밍, 다슈에서 당신의 매력과 특별함은 더욱 깊어진다.</p>
+        </div>  
+        </div>
+        <div class="bottom-slogan">
+            <span class="light">어차피,</span>
+            <span class="bold">남자는 다슈</span>
+        </div>
+        <div class="second-section">
+            <div class="second-content">
+                <h2>WITH ME DASHU</h2>
+                <p>다슈가 제시하는 남자를 위한 제품의 조건과 기준은 늘 까다롭다. <br> 보기도 좋아야하고, 당신의 가치를 올릴 수 있어야 한다.</p>
+            </div>
+            <div class="second-image">
+                <img src="images/종석.png" alt="종석">
+            </div>
+        </div>
+    </section>
+
+    <section class="featured-products">
+        <div class="container">
+            <h2 class="section__title">BEST SELLER</h2>
+            <div class="product-slider">
+                <div class="product-track">
+                    <div class="product-card">
+                        <img src="images/파데 (1).jpg" alt="제품1">
+                        <h3>다슈 맨즈 멀티 커버 스틱 파운데이션 (3Color)</h3>
+                        <p class="price">26,200원</p>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/톤업로션.jpg" alt="제품2">
+                        <h3>다슈 맨즈 브라이트닝 톤업 로션 50ml</h3>
+                        <p class="price">16,800원</p>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/쿠션.jpg" alt="제품3">
+                        <h3>다슈 맨즈 아쿠아 매트 비비 쿠션</h3>
+                        <p class="price">17,800원</p>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/컨실러.jpg" alt="제품4">
+                        <h3>다슈 맨즈 퍼펙트 커버 컨실러</h3>
+                        <p class="price">10,800원</p>
+                    </div>
+                    <!-- 필요한 만큼 제품 카드 추가 -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__info">
+                <div class="footer__logo-info">
+                    <div class="footer__logo">
+                        <img src="images/다슈로고.png" alt="">
+                    </div>
+                    <p class="company-details">
+                        사업자정보<br>
+                        회사명 : 다슈코리아(주) | 대표 : 정재환<br>
+                        주소 : 22661 인천광역시 서구 검단로326번길 35-43 (왕길동)<br>
+                        사업자등록번호 256-87-00147 통신판매업신고 제2016-인천서구-0477호
+                    </p>
+                </div>
+                <div class="footer__contact">
+                    <p>고객센터: 1544-0000</p>
+                    <p>평일 09:00 - 18:00</p>
+                    <!-- 인스타그램과 유튜브 아이콘 추가 -->
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/dashu_official/" target="_blank" class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCP2kDkT8fPPucv4SwkjJI-w" target="_blank" class="social-icon">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__links">
+                <ul>
+                    <li><a href="/privacy">개인정보처리방침</a></li>
+                    <li><a href="/terms">이용약관</a></li>
+                    <li><a href="/contact">제휴문의</a></li>
+                </ul>
+            </div>
+            <p class="footer__copyright">&copy; 2024 DASHU. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
