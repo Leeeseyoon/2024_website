@@ -1,0 +1,636 @@
+@font-face {
+    font-family: 'Paperlogy-1Thin';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-1Thin.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Paperlogy-3Light';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-3Light.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Paperlogy-4Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-4Regular.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Paperlogy-6SemiBold';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-6SemiBold.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Paperlogy-7Bold';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-7Bold.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Paperlogy-8ExtraBold';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-8ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.line_{
+    width: 1px;
+    height: 6534px;
+    background-color: #777777;
+    position: absolute;
+    left: 168px;
+}
+.line__{
+    width: 1px;
+    height: 6534px;
+    background-color: #777777;
+    position: absolute;
+    right: 160px;
+}
+
+/* cover */
+
+/* text */
+.cover{
+    position: relative;
+    user-select: none;
+    height: 912px;
+}
+.cover .text_1{
+    display: flex;
+}
+.cover .text_1 h1{
+    position: absolute;
+    font-size: 250px;
+    margin-left: -18px;
+    margin-top: -26px;
+    font-family: 'Paperlogy-8ExtraBold';
+}
+.cover .text_1 h3{
+    position: absolute;
+    font-size: 50px;
+    top: 170px;
+    right: 386px;
+    color : #777777;
+    font-family: 'Paperlogy-4Regular';
+}
+.cover .text_2 h1{
+    position: absolute;
+    font-size: 200px;
+    font-family: 'Paperlogy-8ExtraBold';
+    top: 449px;
+    left: 580px;
+}
+.cover .text_3 h3{
+    font-family: 'Paperlogy-1Thin';
+    position: absolute;
+    color : #777777;
+}
+.cover .text_3 .essential{
+    top: 820px;
+    font-size: 95px;
+    left: 160px;
+}
+.cover .text_3 .salt{
+    top: 636px;
+    font-size: 70px;
+    right: 610px;
+}
+
+/* line */
+.cover .line_1{
+    background-color: #777777;
+    height: 1px;
+    width: 100%;
+    position: absolute;
+    top: 218px;
+}
+.cover .line_2{
+    background-color: #777777;
+    height: 100%;
+    overflow: hidden;
+    width: 1px;
+    position: absolute;
+    right: 881px;
+}
+/* .cover .line_3{
+    background-color: #777777;
+    height: 928px;
+    width: 2px;
+    position: absolute;
+    right: 729px;
+} */
+.cover .line_4{
+    background-color: #777777;
+    height: 100%;
+    overflow: hidden;
+    width: 1px;
+    position: absolute;
+    right: 612px;
+}
+.cover .line_5{
+    background-color: #777777;
+    height: 1px;
+    width: 100%;
+    position: absolute;
+    top: 645px;
+}
+.cover .line_6{
+    background-color: #777777;
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    top: 912px;
+}
+
+/* mind */
+
+.mind{
+    position: relative;
+    height: 928px;
+}
+.mind .line{
+    background-color: #777777;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    top: 145px;
+}
+.mind .line2{
+    background-color: #777777;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    top: 928px;
+}
+
+.mind .title br{
+    display: none;
+}
+.mind .title ,.mind .main{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+}
+.mind .title{
+    font-family: 'Paperlogy-8ExtraBold';
+    font-size: 65px;
+    left: 163px;
+    top: 12px;
+}
+.mind .main{
+    left: 167px;
+}
+.mind .main .subtitle{
+    font-family: 'Paperlogy-4Regular';
+    font-size: 54px;
+    padding: 20px 0;
+}
+
+.mind .salt, .mind .grid{
+    display: block;
+}
+.mind .main .salt{
+    margin-top: 200px;
+    padding: 50px 0;
+}
+.mind .main .text{
+    font-family: 'Paperlogy-4Regular';
+    font-size: 24px;
+}
+.mind .img{
+    background-image: url(img/소금이미지v002.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 0px 0px;
+    position: absolute;
+    right: 162px;
+    top: 147px;
+    width: 800px;
+    height: 782px;
+}
+
+/* about */
+
+.about{
+    position: relative;
+    height: 928px;
+}
+.about .line{
+    background-color: #777777;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    top: 145px;
+}
+.about .title{
+    font-family: 'Paperlogy-8ExtraBold';
+    position: absolute;
+    font-size: 65px;
+    left: 163px;
+    top: 12px;
+}
+.about .title br{
+    display: none;
+}
+.about .main{
+    position: absolute;
+    left: 164px;
+    width: 1730px;
+}
+
+.about .main .image{
+    position: absolute;
+    top: 200px;
+    left: 100px;
+}
+.about .main .image img{
+    width: 430px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, .2);
+}
+.about .main .subtitle{
+    position: absolute;
+    left: 600px;
+    top: 220px;
+}
+
+.about .main .subtitle h3{
+    font-family: 'Paperlogy-3Light';
+    font-size: 48px;
+}
+.about .main .subtitle h1{
+    font-family: 'Paperlogy-7Bold';
+    font-size: 65px;
+}
+.about .main .subtitle h5{
+    font-family: 'Paperlogy-3Light';
+    font-size: 18px;
+}
+
+.about .main .education{
+    position: absolute;
+    left: 600px;
+    top: 430px;
+}
+.about .main .education h2{
+    font-family: 'Paperlogy-6SemiBold';
+    font-size: 36px;
+    padding: 10px 0;
+}
+.about .main .education p{
+    font-family: 'Paperlogy-4Regular';
+    font-size: 24px;
+    padding: 10px 0;
+}
+.about .main .education p span{
+    font-size: 18px;
+}
+
+.about .main .tool{
+    position: absolute;
+    left: 600px;
+    top: 670px;
+}
+.about .main .tool .box{
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+.about .main .tool h2{
+    font-family: 'Paperlogy-6SemiBold';
+    font-size: 36px;
+    padding: 10px 0;
+}
+
+.about .main .tool .box .percent svg {
+    width: 100px;
+    height: 100px;
+    padding-right: 20px;
+    position: relative;
+    transform: rotate(-90deg);
+}
+
+.box .percent svg circle {
+    width: 90px;
+    height: 90px;
+    fill: none;
+    stroke-width: 5;
+    stroke: #000;
+    transform: translate(5px, 5px);
+    stroke-linecap: round;
+    stroke-dasharray: 283; /* 2 * Math.PI * 45 (where 45 is the radius) */
+}
+
+.box .percent svg circle:nth-child(1) {
+    stroke-dashoffset: 0;
+    stroke: #f3f3f3;
+}
+
+.box .percent.illust svg circle:nth-child(2) {
+    stroke-dashoffset: 283; /* Full circle dash offset */
+    stroke: #f39c12;
+    animation: progressCircleIllust 1s linear forwards;
+}
+
+.box .percent.photoshop svg circle:nth-child(2) {
+    stroke-dashoffset: 283;
+    stroke: #3a8ddb;
+    animation: progressCirclePhotoshop 1s linear forwards;
+}
+
+.box .percent.html svg circle:nth-child(2) {
+    stroke-dashoffset: 283;
+    stroke: #e75c32;
+    animation: progressCircleHtml 1s linear forwards;
+}
+
+.box .percent.css svg circle:nth-child(2) {
+    stroke-dashoffset: 283;
+    stroke: #3498db;
+    animation: progressCircleCss 1s linear forwards;
+}
+
+.box .percent.figma svg circle:nth-child(2) {
+    stroke-dashoffset: 283;
+    stroke: #000000;
+    animation: progressCircleCss 1s linear forwards;
+}
+
+@keyframes progressCircleIllust {
+    100% {
+        stroke-dashoffset: 85;
+    }
+}
+
+@keyframes progressCirclePhotoshop {
+    100% {
+        stroke-dashoffset: 141;
+    }
+}
+
+@keyframes progressCircleHtml {
+    100% {
+        stroke-dashoffset: 87;
+    }
+}
+
+@keyframes progressCircleCss {
+    100% {
+        stroke-dashoffset: 113;
+    }
+}
+
+@keyframes progressCircleFigma {
+    100% {
+        stroke-dashoffset: 121;
+    }
+}
+.box .percent img{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    top: 95px;
+    margin-left: 30px;
+    justify-content: center;
+    align-items: center;
+}
+.box .illust img, .box .photoshop img, .box .figma img{
+    border-radius: 30px;
+    top: 92px;
+}
+
+.about .line2{
+    background-color: #777777;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    top: 928px;
+}
+
+/* portfolio */
+
+.portfolio{
+    position: relative;
+    height: 3600px;
+}
+
+.portfolio .line{
+    background-color: #777777;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    top: 145px;
+}
+.portfolio .title{
+    font-family: 'Paperlogy-8ExtraBold';
+    position: absolute;
+    font-size: 65px;
+    left: 166px;
+    top: 12px;
+}
+
+.portfolio .work__project {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    top: 200px;
+    left: 250px;
+}
+.portfolio .project {
+    display: block;
+    text-decoration: none;
+    color: black;
+    margin-bottom: 20px; /* Add spacing between projects */
+}
+.portfolio .project__img {
+    width: 1350px;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+.portfolio .project__img:hover {
+    transform: scale(1.03);
+}
+.portfolio .project__description {
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+/* footer */
+
+.footer{
+    position: relative;
+    height: 166px;
+}
+
+.footer .line{
+    background-color: #777777;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+/*     top: 3800px; */
+}
+
+.footer h3{
+    position: absolute;
+    left: 760px;
+    top: 50px;
+    font-size: 20px;
+    font-family: 'Paperlogy-4Regular';
+}
+
+/* script */
+
+
+.back-to-position {
+    opacity: 0;
+    transition: 1s;
+}
+.back-to-position.to-right {
+    transform: translateX(-150px);
+}
+.back-to-position.to-left {
+    transform: translateX(150px);
+}
+.back-to-position.to-top {
+    transform: translateY(-150px);
+}
+.show .back-to-position {
+    opacity: 1;
+    transform: translate(0);
+} 
+
+@keyframes draw {
+    from {
+        stroke-dasharray: 0, 282.7433388230814;
+    }
+    to {
+        stroke-dasharray: 282.7433388230814, 0;
+    }
+}
+
+.svg-animate {
+    stroke: #000;
+    stroke-width: 2;
+    fill: none;
+}
+
+.animate .svg-animate {
+    animation: draw 2s forwards;
+}
+
+.project {
+    opacity: 0; /* 요소를 처음에는 보이지 않게 설정 */
+    transform: translateY(20px); /* 아래로 20px 이동 */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* 부드러운 전환 효과 */
+}
+
+.project.visible {
+    opacity: 1; /* 보이게 설정 */
+    transform: translateY(0); /* 원래 위치로 이동 */
+}
+
+
+@media screen and (max-width: 528px) {
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    .line_{
+        left: 49px;
+    }
+    .line__{
+        right:49px;
+    }
+    .text_1{
+        display: flex;
+    }
+    .cover{
+        height: 728px;
+    }
+    .cover .text_1 h1{
+        font-size: 73px;
+        padding-left: 13px;
+        padding-top: 19px;
+    }
+    .cover .line_1{
+        top: 64px;
+    }
+    .cover .line_2{
+        right: 206px;
+    }
+    .cover .line_4{
+        display: none;
+    }
+    .cover .line_5{
+        top: 240px;
+    }
+    .cover .line_6{
+        top: 728px;
+    }
+    .cover .text_1 h3{
+        font-size: 24px;
+        top: 78px;
+        right: 61px;
+        opacity: .5;
+    }
+    .cover .text_2 h1{
+        font-size: 92px;
+        top: 120px;
+        right: 72px;
+    }
+    .cover .text_3 .essential{
+        font-size: 77px;
+        left: 42px;
+        top: 653px;
+    }
+
+    .mind .title,.about .title, .portfolio .title {
+        font-size: 28px;
+        left: 46px;
+    }
+    .mind .main{
+        left: 62px;
+    }
+    .mind .main .subtitle{
+        font-size: 20px;
+    }
+    .mind .main .text{
+        font-size: 16px;
+    }
+
+    .about .main{
+        left: 0;
+        max-width: 528px;
+    }
+    .about .title{
+        left: 47px;
+    }
+    .about .title br{
+        display: block;
+    }
+    .about .main .image{
+        left: 108px;
+    }
+    .about .main .image img{
+        width: 200px;
+        h
+    }
+
+    .portfolio .title{
+        left: 48px;
+    }
+}
