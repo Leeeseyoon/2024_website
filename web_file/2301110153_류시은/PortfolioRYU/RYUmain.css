@@ -1,0 +1,153 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+*{
+    margin: 0; 
+    padding: 0;
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+
+body{
+    margin: auto;
+}
+
+
+
+.all{
+    padding: 37px;
+}
+
+.top{
+    width: 884px;
+    float: right;
+}
+.top h1{
+    font-size: 105px;
+    font-weight: 900;
+    line-height: 100px;
+    float: left;
+}
+.top .DD{
+    float: right;
+}
+
+
+
+.main{
+    width: 1845px;
+    height: 949px;
+    background-image: url(image/Gradient-back.png);
+}
+.main .img2024{
+    margin: 30px;
+    float: left;
+}
+.main .serif-1{
+    font-size: 180px;
+    float: left;
+    margin-bottom: 30px;
+}
+.main .serif-1 p{
+    font-family: "Noto Serif KR", serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    line-height: 190px;
+    letter-spacing: -5px;
+}
+.main .serif-1 .sf-under{
+    float: left;
+    margin-left: -243px;
+}
+
+.main .img img{
+    margin-top: 235px;
+    margin-left: -800px;
+}
+
+
+
+.main .round{
+    width: 393px;
+    margin-top: -390px;
+    margin-right: 30px;
+    float: right;
+}
+.main .round img{
+    float: left;
+}
+
+
+
+.main .sans{
+    float: right;
+    margin-right: 30px;
+    margin-top: -130px;
+}
+.main .sans p{
+    font-size: 83px;
+    font-weight: 900;
+    line-height: 68px;
+}
+.main .sans .sn-under{
+    margin-left: -130px;
+}
+
+
+
+.main .serif-2{
+    float: right;
+    margin-right: -255px;
+    margin-top: 40px;
+}
+.main .serif-2 p{
+    font-size: 180px;
+    font-family: "Noto Serif KR", serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    line-height: 190px;
+    letter-spacing: -5px;
+}
+
+
+.main .ryu{
+    float: right;
+    margin-top: 80px;
+    margin-right: 40px;
+}
+
+
+.button{
+    height: 222px;
+    margin-top: -222px;
+}
+.button a .M,
+.button a .D,
+.button a .O{
+    width: 290px; height: 222px;
+    background-color: black;
+    float: left;
+    border-radius: 50px;
+    margin-right: 19px;
+}
+.button a .M:hover,
+.button a .D:hover,
+.button a .O:hover{
+    background-color: #f7f7f7;
+    box-shadow: inset 0px 0px 15px 5px rgba(0, 0, 0, 0.2);
+}
+
+.button p{
+    width: 290px; height: 222px;
+    display: block;
+    color: white;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 900;
+    margin-top: 85px;
+}
+.button p:hover{
+    color: black;
+}
+
+

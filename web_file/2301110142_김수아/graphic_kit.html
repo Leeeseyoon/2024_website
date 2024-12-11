@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="details.css">
+    <title>GRAPHICS</title>
+</head>
+<body>
+    <div class="all_wrap">
+        <!--상단 내비게이션 바-->
+        <div class="container">
+            <div class="tabs">
+                <input type="radio" id="radio1" name="tabs" checked  onClick="window.close()"/>
+                <label class="tab" for="radio1">CLOSE</label>
+                <input type="radio" id="radio2" name="tabs" onClick="location.href='graphic_poster.html'"/>
+                <label class="tab" for="radio2">PREV</label>
+                <input type="radio" id="radio3" name="tabs" onClick="location.href='graphic_illust.html'"/>
+                <label class="tab" for="radio3">NEXT</label>
+                <span class="slide"></span>
+            </div>
+        </div>
+
+        <!-- 프로그래스 바 -->
+        <div class="progress-container">
+            <div class="progress-bar" id="myBar"></div>
+        </div>
+
+        <!-- 백투탑 플로팅 버튼 -->
+        <button class="arrow-up"></button>
+        
+        <section id="main" class="scroll-spy">
+            <div class="main_bg magic-slide to-down delay-0">
+                <img src="images/details/graphic_kit/thumbnail.png" alt="">
+            </div>
+            <!--프로젝트 제목 & 기간 입력-->
+            <div class="title magic-slide to-up delay-0">
+                <h1>봉공! 뛰공! 경기일주 러닝키트</h1>
+                <div class="subtitle">
+                    <h3>2024.09.26</h3>
+                    <div class="hr"></div>
+                    <h3>2024.10.31</h3>
+                </div>
+            </div>
+        </section>
+        
+        <section id="intro" class="scroll-spy">
+            <div class="minititle magic-slide to-up delay-0">
+                <h3>GRAPHICS</h3>
+            </div>
+            <div class="desc magic-slide to-up delay-1">
+                2024 경기도 브랜드 홍보 콘텐츠 공모전 출품작
+                <br>
+                경기도 관광과 러닝을 합친 봉공이 러닝 키트 디자인
+            </div>
+            <div class="kit magic-slide to-up delay-2">
+                <img src="images/details/graphic_kit/box_design.png" alt="">
+            </div>
+        </section>
+
+        <section id="article" class="scroll-spy">
+            <div class="text magic-slide to-up delay-0">
+                <h3>OVERVIEW</h3>
+                <p><봉공! 뛰공! 경기일주 러닝키트>는 '경기도의 장점'과 '러닝'을 결합한 굿즈입니다. 패키지 내부에는 러닝에 도움이 되는 물건과 함께 경기도의 다양한 지역을 방문하고 즐길 수 있는 굿즈들이 담겨 있습니다. 사용자들은 봉공이와 함께 경기도의 아름다운 자연환경을 러닝 코스 삼아 뛰어보고 온몸으로 느껴볼 수 있습니다.</p>
+            </div>
+            <div class="img-nolimit magic-slide to-up delay-1">
+                <img src="images/details/graphic_kit/details_1.jpg" alt="">
+            </div>
+            <div class="img-nolimit magic-slide to-up delay-1">
+                <img src="images/details/graphic_kit/details_2.jpg" alt="">
+            </div>
+        </section>
+
+    </div>
+
+
+        <!-- GSAP CDN -->
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+        <!-- GSAP 퍼블릭 -->
+        <script src="gsap/gsap.min.js"></script>
+        <script src="gsap/gsap.min.js.map"></script>
+        <script src="gsap/ScrollTrigger.min.js"></script>
+        <script src="gsap/ScrollTrigger.min.js.map"></script>
+
+    <script>
+
+         // 스크롤에 따른 표시 애니메이션
+        document.querySelectorAll('.scroll-spy').forEach((spyEl) => {
+            gsap.to(spyEl, {
+                scrollTrigger: {
+                    trigger: spyEl,
+                    start: "top 80%",
+                    toggleClass: {targets: spyEl, className: "show"},
+                    markers: false
+                }
+            });
+        });
+
+        //프로그래스 바 스크립트
+        const progressBar = document.getElementById("myBar");
+
+        window.addEventListener("scroll", function () {
+        const scrollHeight =
+            document.documentElement.scrollHeight - window.innerHeight;
+        const scrolled = (window.scrollY / scrollHeight) * 100;
+
+        progressBar.style.width = scrolled + "%";
+        });
+
+        // 카테고리 버튼 누르면 각 페이지로 스크롤 이동
+        const sectionHome = document.querySelector('#main');
+
+        // 탑 페이지로 돌아가는 버튼 표시
+        const arrowUp = document.querySelector('.arrow-up')
+        document.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                arrowUp.classList.add('show');
+            } else {
+                arrowUp.classList.remove('show');
+            }
+        })
+        arrowUp.addEventListener('click', function() {
+            sectionHome.scrollIntoView({behavior:"smooth", block:'center'})
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This is me</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'CookieRun-Regular';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/CookieRun-Regular.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+    font-family: 'PartialSansKR-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/PartialSansKR-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+    margin: 0;
+    padding: 0;
+    background-color: #ff4311;
+    overflow-x: hidden; /* 이미 있음 */
+    transition: background-color 0.5s ease;
+    width: 100vw; /* 추가 */
+    position: relative; /* 추가 */
+}
+
+section {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* 추가 */
+}
+
+#home {
+    position: relative;
+    display: flex; /* Flexbox 사용 */
+    justify-content: center; /* 수평 중앙 정렬 */
+    align-items: center; /* 수직 중앙 정렬 */
+    height: 100vh; /* 전체 화면 높이 */
+    overflow: hidden; /* 오버플로우 숨기기 */
+}
+
+        .portfolio-section {
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #portfolio1 {
+            background-color: transparent;
+            position: relative;
+            display: block;
+            padding: 20px;
+        }
+
+        #portfolio2 {
+            background-color: transparent;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        #portfolio3 {
+            background-color: transparent;
+        }
+
+        .text-container.this {
+            position: absolute;
+            top: 5%;
+            left: -20%;
+            width: 80%;
+            height: 100px;
+            display: flex;
+            align-items: center;
+        }
+
+        .text-container.is-me {
+            position: absolute;
+            top: 20%;
+            left: -20%;
+            width: 80%;
+            height: 100px;
+            display: flex;
+            align-items: center;
+        }
+
+        .text-container.skills {
+            position: relative;
+            top: -100px;
+            left: -44%;
+            width: 100%;
+            height: 100px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding-right: 65%;
+            margin-bottom: -80px;
+            z-index: 1;
+        }
+
+        .text-container.projects {
+    position: relative;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 0;
+    margin-bottom: -80px;
+    z-index: 1;
+}
+
+.category-buttons {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+    position: absolute;
+    top: 70px;
+    right: 450px; /* 600px에서 450px로 수정 */
+    z-index: 10;
+}
+
+.category-btn {
+    padding: 10px 30px; /* 좌우 패딩 */
+    border: none; /* 테두리 제거 */
+    border-radius: 25px; /* 둥근 모서리 */
+    background-color: #ffffff; /* 배경색 */
+    color: rgb(0, 0, 0); /* 글자 색상 */
+    font-family: 'CookieRun-Regular', sans-serif; /* 글꼴 */
+    font-size: 18px; /* 글자 크기 */
+    cursor: pointer; /* 커서 포인터 */
+    transition: all 0.3s ease; /* 전환 효과 */
+}
+
+.category-btn:hover {
+    background-color: #ff255b; /* 호버 시 배경색 변경 */
+}
+
+        .category-btn.active {
+            background-color: #ff255b;
+            color: white;
+        }
+
+        .category-btn:hover {
+    background-color: #ff255b; /* 호버 시 배경색 변경 */
+}
+
+        .intro-text {
+    position: absolute;
+    top: 40%;
+    left: 20%;
+    width: 80%;
+    text-align: left;
+    line-height: 1.6;
+    font-size: 1.2em;
+    color: #333;
+    font-family: 'Noto Sans', sans-serif; /* 고딕체로 변경 */
+    word-break: keep-all;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 2s;
+    padding-right: 20%;
+}
+
+        .software-icons {
+            position: relative;
+            top: 0;
+            left: 0;
+            transform: none;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .software-icon {
+            position: relative !important;
+            width: 100px !important;
+            height: 100px !important;
+            top: auto !important;
+            left: auto !important;
+            transform: none !important;
+            opacity: 1 !important;
+            max-width: 100% !important;
+        }
+
+        .progress-bar {
+            width: 150px;
+            height: 10px;
+            background-color: rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+
+        .progress {
+            width: 0;
+            height: 100%;
+            background-color: #6325ff;
+            border-radius: 5px;
+            transition: width 1.5s ease-in-out;
+        }
+
+        /* 프로젝트 그리드 스타일 */
+        .project-item {
+    background-color: #f0f0f0;
+    border-radius: 15px;
+    height: 400px;
+    width: 280px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    display: none;
+    background-size: 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+}
+
+.portfolio-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 20px;
+    justify-items: center;
+    min-height: 850px; /* 최소 높이 설정 */
+}
+
+
+        .project-item.show {
+            display: block;
+        }
+
+        .project-item.graphic.show {
+            display: block;
+        }
+
+        .project-item.web.show {
+            display: block;
+        }
+
+        .project-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-item:nth-child(2),
+.project-item:nth-child(3),
+.project-item:nth-child(4),
+.project-item:nth-child(5),
+.project-item:nth-child(6),
+.project-item:nth-child(7),
+.project-item:nth-child(8) {
+    background-size: cover !important;
+    background-position: center !important;
+}
+
+
+                /* 모달 스타일 */
+                .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+        }
+
+        .modal-content {
+    position: relative;
+    background-color: white;
+    width: 90%;
+    max-width: 1200px; /* 800px에서 1200px로 증가 */
+    margin: 30px auto;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #333;
+        }
+
+        .software-icon.bounce-in {
+            animation: iconFadeIn 0.5s ease forwards !important;
+        }
+
+        @keyframes iconFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .skills-box {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 40px;
+            padding-top: 100px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .projects-box {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    padding: 40px;
+    padding-top: 100px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto; /* margin-right 제거 */
+    z-index: 1;
+}
+
+
+        .text-image {
+            position: relative;
+            max-width: 10%;
+            margin-right: 0.5%;
+            transform: none !important;
+            opacity: 1 !important;
+        }
+
+        .image-container {
+            position: relative;
+            width: 1200px;
+            height: 1200px;
+            overflow: visible;
+        }
+
+        img {
+            position: absolute;
+            max-width: 100%;
+            max-height: 100%;
+            height: auto;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0) rotate(180deg);
+            opacity: 0;
+        }
+
+        img[src="images/현준.png"] {
+            top: 40%;
+            left: 14.5%;
+            z-index: 1;
+        }
+
+        .bounce-in {
+            animation: bounce 0.3s ease forwards;
+            opacity: 1;
+        }
+
+        @keyframes bounce {
+            0% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0) rotate(10deg);
+            }
+            50% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1.2) rotate(10deg);
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(1) rotate(10deg);
+            }
+        }
+
+
+        .nav {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .nav a {
+    color: rgb(0, 0, 0); /* 글자 색상 */
+    text-decoration: none; /* 밑줄 제거 */
+    margin-left: 20px; /* 버튼 간격 */
+    padding: 10px 20px; /* 패딩 조정 */
+    border-radius: 25px; /* 둥근 모서리 */
+    background: #ffffff; /* 배경색을 Projects 버튼과 동일하게 설정 */
+    transition: background 0.3s; /* 배경색 전환 효과 */
+    font-family: 'CookieRun-Regular', sans-serif; /* 쿠키런 폰트 설정 */
+}
+
+.nav a:hover {
+    background: #ff255b; /* 호버 시 배경색 변경 */
+}
+
+        .skills-text {
+            position: relative;
+            top: 20px;
+            left: -29%;
+            width: 100%;
+            text-align: center;
+            line-height: 1.6;
+            font-size: 40px;
+            color: #6325ff;
+            font-family: 'CookieRun-Regular', sans-serif;
+            word-break: keep-all;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s ease forwards;
+            animation-delay: 2s;
+            margin-bottom: 40px;
+            text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px  1px 0 #000,
+                1px  1px 0 #000;
+        }
+
+        .software-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .software-name {
+            font-family: 'CookieRun-Regular', sans-serif;
+            color: #000;
+            font-size: 20px;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .content-box {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            position: absolute;
+            width: 90%;
+            max-width: 1200px;
+            height: 80vh;
+            top: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 0;
+            margin-bottom: 100px;
+
+            .profile-section {
+                position: absolute;
+                top: 30%;
+                right: 5%;
+                transform: translateY(-50%);
+                width: 250px;
+                background: transparent; /* 배경색 제거 */
+                text-align: center;
+                font-family: 'CookieRun-Regular', sans-serif;
+}
+
+/* 프로필 이미지 스타일 수정 */
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: static !important; /* relative 대신 static으로 변경 */
+    transform: none !important;
+    opacity: 1 !important;
+}
+
+/* 기존 img 스타일에서 프로필 이미지 제외 */
+img:not(.profile-image) {
+    position: absolute;
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0) rotate(180deg);
+    opacity: 0;
+}
+
+/* bounce-in 애니메이션에서 프로필 이미지 제외 */
+img:not(.profile-image).bounce-in {
+    animation: bounce 0.3s ease forwards;
+    opacity: 1;
+}
+.contact-info {
+    text-align: left;
+    margin-top: 25px;
+    margin-left: -20px;
+    width: 300px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin: 10px 0; /* 20px에서 10px로 줄임 */
+    color: #333;
+    font-size: 20px;
+    line-height: 1.2; /* 행간 추가 */
+}
+
+.contact-item i {
+    width: 30px;
+    color: #000000;
+    font-size: 22px;
+}
+
+/* 이름 특별 스타일 */
+.contact-item:first-child {
+    margin-bottom: 15px; /* 이름과 다른 항목 사이 간격 */
+}
+
+.contact-item:first-child span {
+    font-size: 28px;
+    color: #000000;
+}
+
+/* 이메일 줄바꿈 방지 */
+.contact-item:last-child span {
+    word-break: keep-all;
+    white-space: nowrap;
+}
+
+/* content-box 스타일이 있다면 position: relative 추가 */
+.content-box {
+    position: relative;
+}
+        }
+
+        .project-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.project-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.project-image {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.project-image:hover {
+    transform: scale(1.02);
+}
+
+.project-info {
+    padding: 20px;
+}
+
+.project-title {
+    font-family: 'PartialSansKR-Regular', sans-serif;
+    font-size: 32px;
+    color: #ff2c7d;
+    margin-bottom: 20px;
+}
+
+.project-description {
+    font-family: 'CookieRun-Regular', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* 모달 내 이미지 스타일 추가 */
+.modal .project-image {
+    position: static !important;
+    transform: none !important;
+    opacity: 1 !important;
+    width: 100%;
+    height: auto;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal .project-images {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 기존 이미지 스타일 덮어쓰기 */
+.modal img {
+    position: static !important;
+    transform: none !important;
+    opacity: 1 !important;
+    max-width: 100%;
+    height: auto;
+}
+
+.tool-icons {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 10px;
+}
+
+.tool-icon {
+    width: 24px;
+    height: 24px;
+    position: static !important;
+    transform: none !important;
+    opacity: 1 !important;
+}
+
+/* 모달 관련 스타일 추가 */
+.project-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.project-images {
+    width: 100%;
+}
+
+.project-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tool-icons {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 10px;
+}
+
+.tool-icon {
+    width: 24px;
+    height: 24px;
+    position: static !important;
+    transform: none !important;
+    opacity: 1 !important;
+}
+
+/* 모션그래픽 비디오 스타일 수정 */
+/* 모션그래픽 비디오 스타일 수정 */
+/* 모션그래픽 비디오 스타일 수정 */
+/* 모션그래픽 비디오 스타일 수정 */
+.project-item.motion {
+    width: 100%;
+    height: auto;
+    display: none;
+    background: none;
+    cursor: default;
+    grid-column: 1 / -1; /* 그리드 전체 너비 사용 */
+}
+
+.project-item.motion.show {
+    display: block;
+}
+
+.project-item.motion video {
+    width: 100%;
+    height: 600px; /* 비디오 높이 고정 */
+    object-fit: contain;
+    border-radius: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.motion-info {
+    width: 100%;
+    max-width: 1200px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    text-align: center; /* 텍스트 중앙 정렬 추가 */
+}
+
+.motion-title {
+    font-family: 'PartialSansKR-Regular', sans-serif;
+    font-size: 32px;
+    color: #ff2c7d;
+    margin-bottom: 20px;
+    text-align: center; /* 제목 중앙 정렬 */
+}
+
+.motion-description {
+    font-family: 'CookieRun-Regular', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    text-align: center; /* 설명 텍스트 중앙 정렬 */
+
+    /* 웹 프로젝트 아이템에 호버 효과 추가 */
+.project-item.web {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.project-item.web:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* 선택적: 클릭 가능함을 나타내는 오버레이 추가 */
+.project-item.web::after {
+    content: '사이트 바로가기';
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-family: 'CookieRun-Regular', sans-serif;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-item.web:hover::after {
+    opacity: 1;
+}
+
+
+
+}
+
+    </style>
+</head>
+<body></body>
+    <nav class="nav">
+        <a href="#home">Home</a>
+        <a href="#portfolio1">This is me</a>
+        <a href="#portfolio2">Skills</a>
+        <a href="#portfolio3">Projects</a>
+    </nav>
+
+    <section id="home">
+        <div class="image-container">
+            <img src="images/Layer 1.png" alt="Image 1">
+            <img src="images/Starburst 1.png" alt="Image 2">
+            <img src="images/Layer 6.png" alt="Image 3">
+            <img src="images/PORTFOLIO.png" alt="Image 4">
+            <img src="images/현준.png" alt="Image 5">
+            <img src="images/스마일.png" alt="" style="top: 37.8%; left: 33%; z-index: 1;">
+        </div>
+    </section>
+
+    <section id="portfolio1" class="portfolio-section">
+        <div class="content-box">
+            <!-- 프로필 섹션을 content-box 안으로 이동 -->
+            <div class="profile-section">
+                <div class="profile-image-container">
+                    <img src="images/프로필2.png" alt="Profile" class="profile-image">
+                </div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>임현준</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>010-5339-6944</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>superg2284103@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-container this">
+            <img src="images/T.png" alt="T" class="text-image">
+            <img src="images/h.png" alt="h" class="text-image">
+            <img src="images/i-1.png" alt="i" class="text-image">
+            <img src="images/s-1.png" alt="s" class="text-image">
+        </div>
+        <div class="text-container is-me">
+            <img src="images/i.png" alt="i" class="text-image">
+            <img src="images/s.png" alt="s" class="text-image">
+            <img src="images/M.png" alt="M" class="text-image">
+            <img src="images/e.png" alt="e" class="text-image">
+        </div>
+        <div class="intro-text">
+            안녕하세요! 저는 창의적인 디자인으로 이야기를 전하는 디자이너 임현준입니다. <br>
+            사용자 경험을 최우선으로 생각하며, 매력적인 비주얼을 통해 메시지를 전달합니다. <br>
+            다양한 프로젝트에 참여하며 지속적으로 성장하고 있습니다. <br>
+            함께 협업하며 새로운 아이디어를 만들어가고 싶습니다!
+        </div>
+    </section>
+
+    <section id="portfolio2" class="portfolio-section">
+        <div class="skills-box">
+            <div class="text-container skills">
+                <img src="images/Skills.png" alt="Skills" class="text-image" style="max-width: 10%;">
+            </div>
+            <div class="skills-text">
+                사용 가능한 소프트웨어
+            </div>
+
+            <div class="software-icons">
+                <div class="software-item">
+                    <img src="images/Photoshop.png.png" alt="Photoshop" class="software-icon">
+                    <span class="software-name">Photoshop</span>
+                    <div class="progress-bar">
+                        <div class="progress" data-progress="90"></div>
+                    </div>
+                </div>
+
+                <div class="software-item">
+                    <img src="images/일러.png" alt="Illustrator" class="software-icon">
+                    <span class="software-name">Illustrator</span>
+                    <div class="progress-bar">
+                        <div class="progress" data-progress="85"></div>
+                    </div>
+                </div>
+                <div class="software-item">
+                    <img src="images/인디.png" alt="InDesign" class="software-icon">
+                    <span class="software-name">InDesign</span>
+                    <div class="progress-bar">
+                        <div class="progress" data-progress="60"></div>
+                    </div>
+                </div>
+                <div class="software-item">
+                    <img src="images/애프터이펙트.png" alt="After Effects" class="software-icon">
+                    <span class="software-name">After Effects</span>
+                    <div class="progress-bar">
+                        <div class="progress" data-progress="60"></div>
+                    </div>
+                </div>
+                <div class="software-item">
+                    <img src="images/비주얼스튜디오.png" alt="Visual Studio" class="software-icon">
+                    <span class="software-name">Visual Studio</span>
+                    <div class="progress-bar">
+                        <div class="progress" data-progress="60"></div>
+                    </div>
+                </div>
+                <div class="software-item">
+                    <img src="images/피그마.png" alt="Figma" class="software-icon">
+                    <span class="software-name">Figma</span>
+                    <div class="progress-bar">
+                        <div class="progress" data-progress="85"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio3" class="portfolio-section">
+        <div class="projects-box">
+            <div class="text-container projects">
+                <img src="images/Projects.png" alt="Projects" class="text-image" 
+                    style="margin-left: -2100px; max-width: 20% !important;">
+            </div>
+            <div class="category-buttons">
+                <button class="category-btn active" data-category="graphic">그래픽 디자인</button>
+                <button class="category-btn" data-category="web">웹 디자인</button>
+                <button class="category-btn" data-category="motion">모션그래픽</button>
+            </div>
+            <div class="portfolio-content">
+                <!-- 그래픽 디자인 프로젝트 -->
+                <div class="project-item graphic show" onclick="openModal(1)" style="background-image: url('images/아이들\ 로고.png');"></div>
+                <div class="project-item graphic show" onclick="openModal(2)" style="background-image: url('images/밀키스썸네일.png');"></div>
+                <div class="project-item graphic show" onclick="openModal(3)" style="background-image: url('images/춘식이썸네일.png');"></div>
+                <div class="project-item graphic show" onclick="openModal(4)" style="background-image: url('images/안티블레미쉬썸네일.png');"></div>
+                <div class="project-item graphic show" onclick="openModal(5)" style="background-image: url('images/유튜브썸네일.png');"></div>
+                
+                <!-- 웹 디자인 프로젝트 -->
+<!-- HTML 수정 -->
+<!-- HTML 수정 --><!-- HTML 수정 -->
+<a href="두번째/index.html" class="project-item web" style="background-image: url('images/롯데리아썸네일.png');"></a>
+<a href="다슈/index.html" class="project-item web dashu-thumb" style="background-image: url('images/다슈썸네일.png');"></a>
+
+                    <!-- 모션그래픽 프로젝트 -->
+                    <div class="project-item motion">
+                        <div class="motion-container">
+                            <video width="100%" height="100%" controls style="object-fit: cover; border-radius: 15px;">
+                                <source src="images/슈퍼마리오.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="motion-info">
+                                <h2 class="motion-title">슈퍼마리오 모션그래픽</h2>
+                                <p class="motion-description">
+                                    슈퍼마리오 게임을 모티브로 한 모션그래픽 프로젝트입니다.<br><br>
+                                    • 프로젝트 기간: 2024.06<br>
+                                    • 사용 툴: <div class="tool-icons">
+                                        <img src="images/애프터이펙트.png" alt="After Effects" class="tool-icon">
+                                        <img src="images/Photoshop.png.png" alt="Photoshop" class="tool-icon">
+                                    </div>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    </section>
+
+    <!-- 모달 -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <div id="modalContent">
+                <!-- 모달 내용은 JavaScript에서 동적으로 추가됩니다 -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            gsap.registerPlugin(ScrollTrigger);
+            window.scrollTo(0, 0);
+
+            const images = document.querySelectorAll('img');
+            images.forEach((img, index) => {
+                setTimeout(() => {
+                    img.classList.add('bounce-in');
+                }, index * 500);
+            });
+
+            // 카테고리 버튼 기능
+            document.querySelectorAll('.category-btn').forEach(button => {
+                button.addEventListener('click', () => {
+                    // 활성 버튼 스타일 변경
+                    document.querySelectorAll('.category-btn').forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    button.classList.add('active');
+
+                    // 프로젝트 필터링
+                    const category = button.dataset.category;
+                    document.querySelectorAll('.project-item').forEach(item => {
+                        item.classList.remove('show');
+                        if (item.classList.contains(category)) {
+                            item.classList.add('show');
+                        }
+                    });
+                });
+            });
+
+            function animateProgress() {
+                const progressBars = document.querySelectorAll('.progress');
+                progressBars.forEach(progress => {
+                    const value = progress.getAttribute('data-progress');
+                    progress.style.width = '0%';
+                    
+                    gsap.to(progress, {
+                        width: value + '%',
+                        scrollTrigger: {
+                            trigger: progress,
+                            start: "top 80%",
+                            end: "bottom 20%",
+                            toggleActions: "play none none reverse"
+                        }
+                    });
+                });
+            }
+
+            animateProgress();
+
+            gsap.to("body", {
+                backgroundColor: "#ffcdcd",
+                scrollTrigger: {
+                    trigger: "#portfolio1",
+                    start: "top center",
+                    end: "bottom center",
+                    scrub: true
+                }
+            });
+
+            gsap.to("body", {
+                backgroundColor: "#aa92f0",
+                scrollTrigger: {
+                    trigger: "#portfolio2",
+                    start: "top center",
+                    end: "bottom center",
+                    scrub: true
+                }
+            });
+
+            gsap.to("body", {
+                backgroundColor: "#ebebeb",
+                scrollTrigger: {
+                    trigger: "#portfolio3",
+                    start: "top center",
+                    end: "bottom center",
+                    scrub: true
+                }
+            });
+        });
+
+        function openModal(projectId) {
+    const modal = document.getElementById('projectModal');
+    const modalContent = document.getElementById('modalContent');
+    
+    let content = '';
+    switch(projectId) {
+        case 1:
+            content = `
+                <div class="project-details">
+                    <div class="project-images">
+                        <img src="images/아이들굿즈.png" alt="아이들 굿즈" class="project-image" style="max-width: 100%; height: auto;">
+                    </div>
+                    <div class="project-info">
+                        <h2 class="project-title">(여자)아이들 굿즈 디자인</h2>
+                        <p class="project-description">
+                            걸그룹 (여자)아이들의 굿즈 디자인 프로젝트입니다.<br><br>
+                            • 프로젝트 기간: 2023.06<br>
+                            • 사용 툴: <div class="tool-icons">
+                                <img src="images/Photoshop.png.png" alt="Photoshop" class="tool-icon">
+                                <img src="images/일러.png" alt="Illustrator" class="tool-icon">
+                            </div>
+                        </p>
+                    </div>
+                </div>`;
+            break;
+        case 2:
+            content = `
+                <div class="project-details">
+                    <div class="project-images">
+                        <img src="images/밀키스원본.png" alt="밀키스" class="project-image" style="max-width: 100%; height: auto;">
+                    </div>
+                    <div class="project-info">
+                        <h2 class="project-title">밀키스 패키지 리디자인</h2>
+                        <p class="project-description">
+                            밀키스 패키지 디자인 프로젝트입니다.<br><br>
+                            • 프로젝트 기간: 2024.05<br>
+                            • 사용 툴: <div class="tool-icons">
+                                <img src="images/Photoshop.png.png" alt="Photoshop" class="tool-icon">
+                            </div><br>
+                        </p>
+                    </div>
+                </div>`;
+            break;
+        case 3:
+            content = `
+                <div class="project-details">
+                    <div class="project-images">
+                        <img src="images/춘식이 목업.png" alt="밀키스" class="project-image" style="max-width: 100%; height: auto;">
+                    </div>
+                    <div class="project-info">
+                        <h2 class="project-title">춘식이 포켓 선풍기 <br> 상세페이지 디자인</h2>
+                        <p class="project-description">
+                            춘식이 포켓 선풍기 상세페이지 디자인 프로젝트입니다.<br><br>
+                            • 프로젝트 기간: 2024.05<br>
+                            • 사용 툴: <div class="tool-icons">
+                                <img src="images/Photoshop.png.png" alt="Photoshop" class="tool-icon">
+                            </div><br>
+                        </p>
+                    </div>
+                </div>`;
+            break;
+            case 4:
+    content = `
+        <div class="project-details">
+            <div class="project-images">
+                <img src="images/안티블레미쉬 목업.png" alt="안티블레미쉬" class="project-image" style="max-width: 100%; height: auto;">
+            </div>
+            <div class="project-info">
+                <h2 class="project-title">안티블레미쉬 상세페이지 디자인</h2>
+                <p class="project-description">
+                    안티블레미쉬 제품의 상세페이지 디자인 프로젝트입니다.<br><br>
+                    • 프로젝트 기간: 2024.09<br>
+                    • 사용 툴: <div class="tool-icons">
+                        <img src="images/피그마.png" alt="Photoshop" class="tool-icon">
+                    </div><br>
+                </p>
+            </div>
+        </div>`;
+    break;
+    case 5:
+    content = `
+        <div class="project-details">
+            <div class="project-images">
+                <img src="images/유튜브 목업.png" alt="안티블레미쉬" class="project-image" style="max-width: 100%; height: auto;">
+            </div>
+            <div class="project-info">
+                <h2 class="project-title">유튜브 UX/UI 리디자인</h2>
+                <p class="project-description">
+                    유튜브 UX/UI 리디자인 프로젝트입니다.<br><br>
+                    • 프로젝트 기간: 2024.11<br>
+                    • 사용 툴: <div class="tool-icons">
+                        <img src="images/피그마.png" alt="Photoshop" class="tool-icon">
+                    </div><br>
+                </p>
+            </div>
+        </div>`;
+    break;
+    }
+    
+    modalContent.innerHTML = content;
+    modal.style.display = 'block';
+
+    // 이미지 로딩 확인
+    const modalImage = modal.querySelector('.project-image');
+    if (modalImage) {
+        modalImage.onload = function() {
+            console.log('이미지 로드 성공');
+        };
+        modalImage.onerror = function() {
+            console.log('이미지 로드 실패:', this.src);
+        };
+    }
+}
+
+        function closeModal() {
+            const modal = document.getElementById('projectModal');
+            modal.style.display = 'none';
+        }
+
+        // 모달 외부 클릭시 닫기
+        window.onclick = function(event) {
+            const modal = document.getElementById('projectModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+    </script>
+</body>
+</html>

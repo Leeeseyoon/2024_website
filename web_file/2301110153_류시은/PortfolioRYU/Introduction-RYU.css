@@ -1,0 +1,149 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+*{
+    margin: 0; 
+    padding: 0;
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+
+body{
+    margin: auto;
+    padding: 37px;
+}
+
+.top{
+    float: left;
+    margin-left: 15px;
+    margin-right: 40px;
+}
+.top h1{
+    font-size: 120px;
+    font-weight: 900;
+}
+.top p{
+    font-size: 72px;
+    font-weight: 300;
+}
+
+
+
+.main{
+    width: 1845px;
+    height: 950px;
+    margin-top: -150px;
+    background-image: url(image/gray-back.png);
+}
+.main .tool{
+    width: 845px;
+    float: right;
+    margin: 35px;
+}
+.main .tool .Tools{
+    float: left;
+    margin-right: 30px;
+}
+.main .tool .possible{
+    width: 400px;
+    float: left;
+}
+.main .tool .possible .PsAi{
+    float: right;
+    margin-top: -145px;
+}
+.main .tool .possible .Htmlcss{
+    margin-top: 5px;
+}
+
+
+.main .Introduce{
+    float: left;
+    margin: 65px;
+}
+.main .Introduce h2{
+    font-size: 82px;
+    font-weight: 900;
+}
+.main .Introduce .bottom{
+    margin-top: -30px;
+    margin-left: 240px;
+}
+
+
+.main .details{
+    float: left;
+    margin-top: 270px;
+    margin-left: -600px;
+}
+.main .details h3{
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: -2px;
+}
+.main .details p{
+    font-size: 20px;
+    font-weight: 400;
+    word-spacing: 10px;
+    margin-top: 8px;
+}
+
+.main .details .ACTIVITIES,
+.main .details .QUALIFICATIONS{
+    margin-top: 50px;
+}
+
+
+.main .round img{
+    margin-top: -85px;
+    margin-left: -20px;
+}
+
+
+.main .serif{
+    width: 600px;
+    float: right;
+}
+.main .serif p{
+    font-size: 160px;
+    font-family: "Noto Serif KR", serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    line-height: 190px;
+    letter-spacing: -5px;
+    margin-top: -430px;
+    margin-left: -120px;
+}
+
+
+.Hashtag{
+    height: 222px;
+    margin-left: 933px;
+    margin-top: -222px;
+    float: left;
+}
+.Hashtag .black,
+.Hashtag .white{
+    width: 290px; height: 222px;
+    background-color: #F7F7F7;
+    box-shadow: inset 0px 0px 15px 5px rgba(0, 0, 0, 0.2);
+    float: left;
+    border-radius: 50px;
+    margin-right: 19px;
+}
+.Hashtag .block{
+    width: 290px; height: 222px;
+    background-color: #F7F7F7;
+    box-shadow: inset 0px 0px 15px 5px rgba(0, 0, 0, 0.3);
+    float: right;
+    border-radius: 50px;
+    margin-right: -19px;
+}
+.Hashtag p{
+    color: black;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 900;
+    margin-top: 95px;
+}
+
+

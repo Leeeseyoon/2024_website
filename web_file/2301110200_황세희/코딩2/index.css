@@ -1,0 +1,75 @@
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 1920px;
+    height: 940px;
+    background: linear-gradient(to bottom,rgb(186,230,231,0.8),rgb(183,226,196,0.8));
+    background-repeat: no-repeat ;
+    background-size: cover;
+    cursor: url('img/캐릭터1.png'), auto;
+}
+
+.window{
+    width: 1920px;
+    height: 940px;
+    position: relative;
+    background-image: url(img/background_2.png); 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 1350px;
+}
+
+.terminal-window {
+    text-align: left;
+    width: 1000px;
+    height: 500px;
+    border-radius: 20px;
+    margin: auto;
+    position: relative;
+    top: 250px;
+}
+
+.terminal-window section.terminal {
+    color: rgb(68, 68, 68);
+    font-family: Menlo, Monaco, "Consolas", "Courier New", "Courier";
+    font-size: 20pt;
+    padding: .625rem;
+    box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+    top: 2.875rem;
+    left: 3.875rem;
+    bottom: 0;
+    overflow: auto;
+    border-radius: 0 0 20px 20px;
+}
+
+.terminal-window section.terminal .typed-cursor {
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+
+.terminal-data { display: none; }
+.terminal-window .gray { color: gray; }
+.terminal-window .green { color: green;}

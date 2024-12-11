@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>김수빈 포트폴리오 사이트</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js" integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+    <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <link rel="icon" href="./images/파비콘.ico" type="image/x-icon">
+</head>
+<body>
+    <nav class="navigation">
+        <div class="nav-container">
+            <div class="nav-buttons">
+                <button class="nav-btn home" data-target="#home">
+                    <span class="btn-text">홈</span>
+                    <div class="equalizer">
+                        <div class="equalizer-bar"></div>
+                        <div class="equalizer-bar"></div>
+                        <div class="equalizer-bar"></div>
+                        <div class="equalizer-bar"></div>
+                    </div>
+                </button>
+                <button class="nav-btn about" data-target="#about">
+                    <span class="btn-text">작업물</span>
+                    <div class="equalizer">
+                        <div class="equalizer-bar"></div>
+                        <div class="equalizer-bar"></div>
+                        <div class="equalizer-bar"></div>
+                        <div class="equalizer-bar"></div>
+                    </div>
+                </button>
+                <button class="nav-btn works" data-target="#works">
+                    <span class="btn-text">소개</span>
+                    <div class="equalizer">
+                        <div class="equalizer-bar"></div>
+                        <div class="equalizer-bar"></div>
+                        <div class="equalizer-bar"></div>
+                        <div class="equalizer-bar"></div>
+                    </div>
+                </button>
+                <button class="nav-btn contact" data-target="#contact">
+                    <span class="btn-text">다짐</span>
+                    <div class="equalizer">
+                        <div class="equalizer-bar"></div>
+                        <div class="equalizer-bar"></div>
+                        <div class="equalizer-bar"></div>
+                        <div class="equalizer-bar"></div>
+                    </div>
+                </button>
+                <button class="nav-btn music">
+                    <span class="btn-text">♬</span>
+                    <div class="equalizer">
+                        <div class="equalizer-bar"></div>
+                        <div class="equalizer-bar"></div>
+                        <div class="equalizer-bar"></div>
+                        <div class="equalizer-bar"></div>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!-- 오디오 요소 추가 -->
+<audio id="background-music" src="./380 - [플레로마] Cloud9.mp3" preload="auto"></audio>
+
+    <section id="home">
+        <div class="bg-inner">
+            <div class="wrap">
+                <section class="visual">
+                    <div class="inner">
+                        <div class="pcup3 fade-in">
+                            <img src="./images/최종로고.png" alt="">
+                        </div>
+                        <div class="pcup2 fade-in">
+                            <img src="./images/마법집.png" alt="" class="cup2 image">
+                            <div class="star star1"></div>
+                            <div class="star star2"></div>
+                            <div class="star star3"></div>
+                            <div class="star star4"></div>
+                        </div>
+                        <div class="pcup1-wrapper">
+                            <div class="pcup1 fade-in">
+                                <img src="./images/메인진짜최종.png" alt="">
+                            </div>
+                        </div>
+                        <div class="pcup5 fade-in">
+                            <img src="./images/이펙트.png" alt="">
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="about-container">
+        <div class="about-images">
+            <img src="./images/종이모음.png" alt="배경" class="background-img">
+            <img src="./images/커피.png" alt="커피" class="coffee-img">
+            <img src="./images/일러스트용.png" alt="일러스트" class="about-img" data-category="illust">
+            <img src="./images/포스터용.png" alt="포스터" class="about-img" data-category="poster">
+            <img src="./images/웹사이트용.png" alt="웹사이트" class="about-img" data-category="website">
+            <img src="./images/상세페이지용.png" alt="상세페이지" class="about-img" data-category="detail">
+        </div>
+        </div>
+
+        <!-- 일러스트 모달 -->
+        <div class="modal-container" id="illust-modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <div class="slider-container">
+                    <button class="slider-btn prev">&#10094;</button>
+                    <div class="modal-image-container">
+                        <img src="" alt="" class="modal-image">
+                    </div>
+                    <div class="modal-description"></div>
+                    <button class="slider-btn next">&#10095;</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 포스터 모달 -->
+        <div class="modal-container" id="poster-modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <div class="slider-container">
+                    <button class="slider-btn prev">&#10094;</button>
+                    <div class="modal-image-container">
+                        <img src="" alt="" class="modal-image">
+                    </div>
+                    <div class="modal-description"></div>
+                    <button class="slider-btn next">&#10095;</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 웹사이트 모달 -->
+        <div class="modal-container" id="website-modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <div class="slider-container">
+                    <button class="slider-btn prev">&#10094;</button>
+                    <div class="modal-image-container">
+                        <img src="" alt="" class="modal-image">
+                    </div>
+                    <div class="modal-description"></div>
+                    <button class="slider-btn next">&#10095;</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 상세페이지 모달 -->
+        <div class="modal-container" id="detail-modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <div class="slider-container">
+                    <button class="slider-btn prev">&#10094;</button>
+                    <div class="modal-image-container">
+                        <img src="" alt="" class="modal-image">
+                    </div>
+                    <div class="modal-description"></div>
+                    <button class="slider-btn next">&#10095;</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="works" class="section"> 
+        <div class="works-container">
+            <!-- 기존 팝업창 -->
+            <div class="popup-container">
+                <img src="./images/자기소개용 그림(예시).png" alt="팝업창" class="popup-image">
+                <img src="./images/아이콘들.png" alt="아이콘" class="icon-image">
+            </div>
+            <!-- 오른쪽 정보 박스 -->
+            <div class="info-container">
+                <div class="right-box">
+                    <img src="./images/이름.png" alt="이름" class="name-image">
+                    <img src="./images/소개문구.png" alt="소개문구" class="intro-image">
+                    <div class="tools">
+                        <img src="./images/연락처.png" alt="사용 가능한 툴" class="tools-image">
+                    </div>
+                    <div class="education-experience">
+                        <img src="./images/소갸글.png" alt="학력소개글" class="education-image">
+                    </div>
+                </div>
+            </div>
+            <div class="folder-container">
+                <img src="./images/소개풍선.png" alt="폴더" class="folder-image">
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="contact-container">
+            <!-- 왼쪽 영역 -->
+            <div class="message-area">
+                <img src="./images/말풍선 수정.png" alt="말풍선" class="speech-bubble">
+                <!-- 폼을 말풍선 안에 배치 -->
+                <form class="email-form" id="email-form">
+                    <input type="text" name="from_name" placeholder="보내는 분 이름" required>
+                    <input type="text" name="to_name" value="김수빈" readonly hidden>
+                    <textarea name="message" placeholder="메시지를 입력하세요" required></textarea>
+                    <button type="submit" class="submit-btn">보내기</button>
+                </form>
+                <div class="pobu">
+                    <img src="./images/다짐.png" alt="다짐" class="pobu-image">
+                </div>
+            </div>
+            
+            <div class="illustration-area">
+                <img src="./images/인형.png" class="about-img" data-category="illustration" alt="일러스트레이션">
+            </div>
+            
+            <!-- 일러스트레이션 모달 수정된 구조 -->
+            <div id="illustration-modal" class="modal-container">
+                <div class="modal-content">
+                    <span class="close-btn">&times;</span>
+                    <div class="slider-container">
+                        <div class="modal-image-container">
+                            <img src="" class="modal-image">
+                        </div>
+                        <p class="modal-description"></p>
+                        <button class="slider-btn prev">&#10094;</button>
+                        <button class="slider-btn next">&#10095;</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 김수빈 포트폴리오</p>
+                <p>무단 캡쳐, 배포 금지</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <div class="custom-cursor">
+        <div class="cursor-dot"></div>
+        <div class="cursor-ring"></div>
+    </div>
+</body>
+</html>
