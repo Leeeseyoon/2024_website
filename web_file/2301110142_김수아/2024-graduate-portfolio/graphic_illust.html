@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="details.css">
+    <title>GRAPHICS</title>
+</head>
+<body>
+    <div class="all_wrap">
+        <!--상단 내비게이션 바-->
+        <div class="container">
+            <div class="tabs">
+                <input type="radio" id="radio1" name="tabs" checked  onClick="window.close()"/>
+                <label class="tab" for="radio1">CLOSE</label>
+                <input type="radio" id="radio2" name="tabs" onClick="location.href='graphic_kit.html'"/>
+                <label class="tab" for="radio2">PREV</label>
+                <input type="radio" id="radio3" name="tabs" onClick="location.href='uiux_mcdelivery.html'"/>
+                <label class="tab" for="radio3">NEXT</label>
+                <span class="slide"></span>
+            </div>
+        </div>
+
+        <!-- 프로그래스 바 -->
+        <div class="progress-container">
+            <div class="progress-bar" id="myBar"></div>
+        </div>
+
+        <!-- 백투탑 플로팅 버튼 -->
+        <button class="arrow-up"></button>
+        
+        <section id="main" class="scroll-spy">
+            <div class="main_bg magic-slide to-down delay-0">
+                <img src="images/details/graphic_illust/thumbnail.jpg" alt="">
+            </div>
+            <!--프로젝트 제목 & 기간 입력-->
+            <div class="title magic-slide to-up delay-0">
+                <h1>시간의 기억</h1>
+                <div class="subtitle">
+                    <h3>2024.09.05</h3>
+                    <div class="hr"></div>
+                    <h3>2024.09.15</h3>
+                </div>
+            </div>
+        </section>
+        
+        <section id="intro" class="scroll-spy">
+            <div class="minititle magic-slide to-up delay-0">
+                <h3>GRAPHICS</h3>
+            </div>
+            <div class="desc magic-slide to-up delay-1">
+                식물을 키우며 성장과정을 기록했던 경험을 바탕으로 "시간의 기억"이라는 주제를 동화 같은 따뜻한 감성으로 표현한 일러스트
+            </div>
+            <div class="poster magic-slide to-up delay-2">
+                <img src="images/details/graphic_illust/sketch_03.jpg" alt="">
+            </div>
+        </section>
+
+        <section id="article2" class="scroll-spy">
+            <div class="text magic-slide to-up delay-0">
+                <h3>CONCEPT & SKETCH</h3>
+                <p>
+                    시간이 흐름에 따라 변화하는 식물의 형태를 한 화면에 배치하여 시간의 흐름을 나타내고자 하였습니다. 시선의 흐름에 따라 씨앗에서 싹이 트고, 점점 잎이 자라나며 성장하는 과정을 확인할 수 있도록 스케치를 진행했습니다.
+                    <br>
+                    식물의 배치나 형태가 지나치게 단조로워지지 않도록 식물의 특징을 자세히 관찰하여 생동감 넘치게 표현하고자 했습니다. 
+                </p>
+            </div>
+            <div class="img-vertical magic-slide to-up delay-1">
+                <img src="images/details/graphic_illust/sketch_01.jpg" alt="">
+            </div>
+        </section>
+
+        <section id="article2" class="scroll-spy">
+            <div class="text magic-slide to-up delay-0">
+                <h3>PROCESS</h3>
+                <p>밑색을 칠해 전체적인 색감을 통일하고, 캐릭터와 소품 등 장식적인 요소를 추가적으로 배치하였습니다. 각기 다른 동작을 하고 있는 오리 캐릭터는 식물이 자라는 과정마다 배치하여 자연스럽게 시선을 유도하고, 보는 이의 흥미를 끌도록 했습니다.</p>
+            </div>
+            <div class="img-vertical magic-slide to-up delay-1">
+                <img src="images/details/graphic_illust/sketch_02.jpg" alt="">
+            </div>
+        </section>
+
+        <section id="article2" class="scroll-spy">
+            <div class="text magic-slide to-up delay-0">
+                <h3>FINISH</h3>
+                <p>아날로그 특유의 따뜻하고 부드러운 동화 삽화 같은 질감을 내기 위해 엷은 색상을 쌓아가며 채색하고, 텍스처를 더해 수채화와 색연필화 같은 느낌을 주었습니다.</p>
+            </div>
+            <div class="img-vertical magic-slide to-up delay-1">
+                <img src="images/details/graphic_illust/sketch_03.jpg" alt="">
+            </div>
+        </section>
+
+
+    </div>
+
+
+        <!-- GSAP CDN -->
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+        <!-- GSAP 퍼블릭 -->
+        <script src="gsap/gsap.min.js"></script>
+        <script src="gsap/gsap.min.js.map"></script>
+        <script src="gsap/ScrollTrigger.min.js"></script>
+        <script src="gsap/ScrollTrigger.min.js.map"></script>
+
+    <script>
+
+         // 스크롤에 따른 표시 애니메이션
+        document.querySelectorAll('.scroll-spy').forEach((spyEl) => {
+            gsap.to(spyEl, {
+                scrollTrigger: {
+                    trigger: spyEl,
+                    start: "top 80%",
+                    toggleClass: {targets: spyEl, className: "show"},
+                    markers: false
+                }
+            });
+        });
+
+        //프로그래스 바 스크립트
+        const progressBar = document.getElementById("myBar");
+
+        window.addEventListener("scroll", function () {
+        const scrollHeight =
+            document.documentElement.scrollHeight - window.innerHeight;
+        const scrolled = (window.scrollY / scrollHeight) * 100;
+
+        progressBar.style.width = scrolled + "%";
+        });
+
+        // 카테고리 버튼 누르면 각 페이지로 스크롤 이동
+        const sectionHome = document.querySelector('#main');
+
+        // 탑 페이지로 돌아가는 버튼 표시
+        const arrowUp = document.querySelector('.arrow-up')
+        document.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                arrowUp.classList.add('show');
+            } else {
+                arrowUp.classList.remove('show');
+            }
+        })
+        arrowUp.addEventListener('click', function() {
+            sectionHome.scrollIntoView({behavior:"smooth", block:'center'})
+        })
+    </script>
+</body>
+</html>
