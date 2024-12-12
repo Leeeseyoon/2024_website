@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="order.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com/)">
+    <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com/)" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/83ff0e0a6f.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <title>Order</title>
+</head>
+<body>
+    <div class="wrap"></div>
+        <!-- header -->
+        <div id="header">
+            <div class="line_header"><a href="#">회원가입 시 쿠폰 즉시 발급</a></div>
+    
+            <div id="header_wrap">
+                    <div class="header_top">
+                        <div class="header_top_con r_box">
+                            <a href="#">회원가입</a>
+                            <div class="line"></div>
+                            <a href="#">로그인</a>
+                            <div class="line"></div>
+                            <a href="#">고객센터</a>
+                        </div>
+                    </div> <!-- header_top -->
+                    <div class="header">
+                        <div class="l_box">
+                            <div class="h1_logo">
+                                <h1><a href="index.html"><img src="images/logo.png" alt=""></a></h1>
+                            </div>
+                            <div class="gnb">
+                                <div class="con n1"><a href="#">베스트</a></div>
+                                <div class="gnb_menu_box">
+                                    <div class="bg dn"></div>
+                                    <ul class="dp0 gnb_menu0">
+                                        <li class="gnb_brand">
+                                            <a href="#">브랜드별</a>
+                                            <ul class="dp2">
+                                                <li class="has_dep"><a href="#">ALIVE</a></li>
+                                                <li class="has_dep"><a href="#">VAP</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">성분별</a>
+                                            <ul class="dp2">
+                                                <li class="has_dp" data-toggle>
+                                                    <a href="#">비타민 <svg class="arrow-icon" width="14" height="7" viewBox="0 0 14 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M1 1L6.83333 6L12.6667 1" stroke="#ACACAC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    </svg></a>
+                                                    <ul class="dp3">
+                                                        <li><a href="#">- 멀티/종합비타민</a></li>
+                                                        <li><a href="#">- 비타민 C</a></li>
+                                                        <li><a href="#">- 비타민 D</a></li>
+                                                        <li><a href="#">- 비타민 B, K</a></li>
+                                                        <li><a href="#">- 비오틴</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="has_dp" data-toggle>
+                                                    <a href="#">미네랄 <svg class="arrow-icon" width="14" height="7" viewBox="0 0 14 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M1 1L6.83333 6L12.6667 1" stroke="#ACACAC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    </svg></a>
+                                                    <ul class="dp3">
+                                                        <li><a href="#">- 엽산</a></li>
+                                                        <li><a href="#">- 마그네슘</a></li>
+                                                        <li><a href="#">- 칼슘</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="has_dp" data-toggle>
+                                                    <a href="#">영양제 <svg class="arrow-icon" width="14" height="7" viewBox="0 0 14 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M1 1L6.83333 6L12.6667 1" stroke="#ACACAC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    </svg></a>
+                                                    <ul class="dp3">
+                                                        <li><a href="#">- 밀크씨슬</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">대상별</a>
+                                            <ul class="dp2" data-toggle>
+                                                <li><a href="#">맨</a></li>
+                                                <li><a href="#">우먼</a></li>
+                                                <li><a href="#">시니어</a></li>
+                                                <li><a href="#">패밀리</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">타입별</a>
+                                            <ul class="dp2" data-toggle>
+                                                <li><a href="#">알약</a></li>
+                                                <li><a href="#">구미</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">이벤트</a>
+                                            <ul class="dp2" data-toggle>
+                                                <li class="has_dp">
+                                                    <a href="#">이벤트 <svg class="arrow-icon" width="14" height="7" viewBox="0 0 14 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M1 1L6.83333 6L12.6667 1" stroke="#ACACAC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    </svg></a>
+                                                    <ul class="dp3">
+                                                        <li><a href="#">- 진행 중인 이벤트</a></li>
+                                                        <li><a href="#">- 당첨자 확인</a></li>
+                                                        <li><a href="#">- 종료된 이벤트</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="has_dp">
+                                                    <a href="#">멤버십 회원
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">브랜드스토리</a>
+                                            <ul class="dp2" data-toggle>
+                                                <li class="has_dep"><a href="#">ALIVE</a></li>
+                                                <li class="has_dep"><a href="#">VAP</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="order.html">정기배송</a>
+                                            <ul class="dp2" data-toggle>
+                                                <li class="has_dep"><a href="#">ALIVE</a></li>
+                                                <li class="has_dep"><a href="#">VAP</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="r_box">
+                            <ul class="top_member_box">
+                                <li><div class="top_search"><img src="images/search.png" alt=""></div></li>
+                                <li><span class="top_mypage"><a href="#"><img src="images/user.png" alt=""></a></span></li>
+                                <li class="cart"><a href="#"><img src="images/shopping-cart.png" alt=""></a></li>
+                            </ul>
+                        </div>
+                    </div> <!-- /.header -->
+            </div>
+        </div>
+
+        <!-- 팝업창 -->
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <img src="images/popup.png" alt="정기배송 안내">
+                <div class="popup-footer">
+                    <button class="close-btn">오늘 하루 열지 않기</button>
+                    <button class="close-btn">닫기</button>
+                </div>
+            </div>
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+        const popup = document.getElementById('popup');
+        const closeBtns = document.querySelectorAll('.close-btn'); // 모든 닫기 버튼 선택
+        
+        // 쿠키 확인
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+
+        // 쿠키 설정
+        function setCookie(name, value, days) {
+            const date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            document.cookie = `${name}=${value};expires=${date.toUTCString()};path=/`;
+        }
+
+        // 팝업 닫기 함수
+        function closePopup(isToday) {
+            popup.style.display = 'none';
+            
+            // '오늘 하루 열지 않기' 버튼을 눌렀을 경우에만 쿠키 설정
+            if (isToday) {
+                setCookie('popupClosed', 'true', 1);
+            }
+        }
+
+        // 각 닫기 버튼에 이벤트 리스너 추가
+        closeBtns.forEach((btn, index) => {
+            btn.addEventListener('click', () => {
+                // 첫 번째 버튼('오늘 하루 열지 않기')일 경우 true 전달
+                closePopup(index === 0);
+            });
+        });
+
+        // 팝업 외부 클릭시 닫기
+        popup.addEventListener('click', function(e) {
+            if (e.target === popup) {
+                closePopup(false);
+            }
+        });
+
+        // 페이지 로드시 쿠키 확인하여 팝업 표시
+        if (!getCookie('popupClosed')) {
+            popup.style.display = 'block';
+        }
+    });
+        </script>
+
+        <!-- main -->
+        <div id="container">
+            <div class="con_wrap">
+                <div class="l_box">
+                    <div class="product_info_wrap">
+                        <div class="brand">얼라이브</div>
+                        <div class="pro_tit">얼라이브 멀티비타민</div>
+                        <div class="pro_info">한 알에 꽉 채운 온가족 종합 비타민</div>
+                    </div>
+                    <div class="btn_wrap">
+                        <div class="heart">
+                            <svg class="heart-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none">
+                                <path class="default" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M27.787 6.147a7.333 7.333 0 0 0-10.374 0L16 7.56l-1.413-1.413A7.335 7.335 0 0 0 4.213 16.52l1.414 1.413L16 28.307l10.373-10.374 1.414-1.413a7.333 7.333 0 0 0 0-10.373Z"/>
+                            </svg>
+                            <svg class="heart-icon filled" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none">
+                                <path class="filled-path" fill="#FF8D29" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M27.787 6.147a7.333 7.333 0 0 0-10.374 0L16 7.56l-1.413-1.413A7.335 7.335 0 0 0 4.213 16.52l1.414 1.414L16 28.307l10.373-10.373 1.414-1.414a7.333 7.333 0 0 0 0-10.373Z"/>
+                            </svg>
+                            <svg class="heart-icon hover" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none">
+                                <path class="hover-path" stroke="#FF8D29" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M27.787 6.147a7.333 7.333 0 0 0-10.374 0L16 7.56l-1.413-1.413A7.335 7.335 0 0 0 4.213 16.52l1.414 1.414L16 28.307l10.373-10.373 1.414-1.414a7.333 7.333 0 0 0 0-10.373Z"/>
+                            </svg>
+                        </div>
+                        <div class="line"></div>
+                        <div class="share">
+                            <svg class="share-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none">
+                                <path class="share-path" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M24 10.666a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM8 20a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM24 29.334a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM11.453 18.013l9.107 5.307M20.547 8.68l-9.094 5.307"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="product_img_wrap">
+                        <div class="pro_img"><img src="images/원스데일리.jpg" alt=""></div>
+                    </div>  
+                </div>
+                <div class="r_box">
+                        <!-- 정기결제 추가 내용-->
+                        <div class="regularDelivery option_select_area">
+                            <h2>구매방법 <span class="s_title">Select your purchase plan</span></h2>
+                            <div class="head btn_wrap">
+                                <label class="gLabel regular_btn" onclick="location.href='order.html'">
+                                    <input id="is_subscriptionT" class="EC_regular_delivery" name="is_subscription" value="T" type="radio" checked="checked" />
+                                    <span>정기배송 (-41%)</span>
+                                </label>
+                                <label class="gLabel onetime_btn" onclick="location.href='onetime.html'">1회구매</label>
+                            </div>
+                            <div class="shippingCycle" id="regular_cycle_period">
+                                <ul class="regular_price_wrap">
+                                    <li class="routine">
+                                        <div class="name">
+                                            <d>정</d><d>기</d><d>배</d><d>송</d><d>가</d>
+                                        </div>
+                                        <div class="price">10,325원</div>
+                                    </li>
+                                    <li class="arrow">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="21" fill="none"><path stroke="#1E1D1C" stroke-width="2" d="M11.5 1 2 10.5l9.5 9.5"/></svg>
+                                    </li>
+                                    <li class="onetime">
+                                        <div class="name">1회 구매가</div>
+                                        <div class="price">12,900원</div>
+                                    </li>
+                                </ul>
+                                <div class="title">
+                                    <span class="title_text">배송주기 <span class="s_title">Delivery cycle</span></span>
+                                    <span class="info">정기배송 유의사항 +</span>
+                                </div>
+                                <div class="subtitle">
+                                    <input name="subscription_cycle_count" class="EC_regular_cycle_count" id="EC_cycle_count" value="1M" type="hidden" />
+                                    <p>2개월마다 정기 결제됩니다.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 정기결제 추가 내용 끝 -->
+                        
+                        <div class="prd_option">
+                            <div class="fix_flex">
+                            <table class="xans-element- xans-product xans-product-option prd_normal_option xans-record-">
+                                <tbody class="xans-element- xans-product xans-product-option xans-record-">
+                                    <tr>
+                                        <th scope="row">섭취플랜 <span class="s_title">Select your intake plan</span></th>
+                                        <td>
+                                            <ul option_product_no="42" option_select_element="ec-option-select-finder" option_sort_no="1" option_type="T" item_listing_type="S" option_title="섭취플랜" product_type="product_option" product_option_area="product_option_42_0" option_style="preview" ec-dev-id="product_option_id1" ec-dev-name="option1" ec-dev-class="ProductOption0" class="ec-product-button ec-product-preview" required="true">
+                                                <li class="" option_value="1인x30일플랜 30정 x 1통 41% 10,325원 17,500원" data-price="10325">
+                                                    <a href="#none" style="background-color:" onclick="addProduct(this)">
+                                                        <img src="images/1인X30일플랜.png" alt="">
+                                                        <span>1인x30일플랜 30정 x 1통 41% 10,325원 17,500원</span>
+                                                    </a>
+                                                </li>
+                                                <li class="" option_value="1인x60일플랜 30정 x 2통 41% 박스당 10,325원 총 20,650원" data-price="20650">
+                                                    <a href="#none" style="background-color:" onclick="addProduct(this)">
+                                                        <img src="images/1인X60일플랜.png" alt="">
+                                                        <span>1인x60일플랜 30정 x 2통 41% 박스당 10,325원 총 20,650원</span>
+                                                    </a>
+                                                </li>
+                                                <li class="" option_value="2인x30일플랜 60정 x 1통 41% 20,650원 35,000원" data-price="20650">
+                                                    <a href="#none" style="background-color:" onclick="addProduct(this)">
+                                                        <img src="images/2인X30일플랜.png" alt="">
+                                                        <span>2인x30일플랜 60정 x 1통 41% 20,650원 35,000원</span>
+                                                    </a>
+                                                </li>
+                                                <li class="" option_value="2인x60일플랜 60정 x 2통 41% 박스당 20,650원 총 41,300원" data-price="41300">
+                                                    <a href="#none" style="background-color:" onclick="addProduct(this)">
+                                                        <img src="images/2인X60일플랜.png" alt="">
+                                                        <span>2인x60일플랜 60정 x 2통 41% 박스당 20,650원 총 41,300원</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <tbody><!-- tr class="option_product">
+										<td>
+											<p class="product">
+												$상품명<br />
+												<span>$옵션</span>
+											</p>
+										</td>
+										<td>
+											<span class="quantity">
+												<input type="text" class="quantity_opt" />
+												&nbsp;<a href="javascript:;" class="up eProductQuantityUpClass"><img src="//img.echosting.cafe24.com/skin/base_ko_KR/product/btn_count_up.gif" alt="수량증가" /></a>
+												<a href="javascript:;" class="down eProductQuantityDownClass"><img src="//img.echosting.cafe24.com/skin/base_ko_KR/product/btn_count_down.gif" alt="수량감소" /></a>
+											</span>
+											<a href="#none"><img src="//img.echosting.cafe24.com/design/skin/default/product/btn_price_delete.gif" alt="삭제" class="option_box_del" /></a>
+										</td>
+										<td class="right">
+											<span>$가격</span>
+											<span class="mileage">(<img src="//img.echosting.cafe24.com/design/skin/admin/ko_KR/product/ico_pay_point.gif" /> &nbsp;<span class="mileage_price">$적립금</span>)</span>
+										</td>
+									</tr --></tbody>
+
+                        <div id="totalPrice" class="totalPrice">
+                            <strong class="title">합계</strong><span class="total"><strong><em>0원</em></strong> (0개)</span>
+                        </div>
+
+                        <div class="pay_btns">
+                            <button class="order">정기배송 신청하기</button>
+                            <button class="cart">장바구니</button>
+                        </div>
+                        </div> <!-- prd_option -->
+                </div> <!-- /r_box -->
+            </div> <!-- /con_wrap -->
+            <div class="detail_wrap">
+                <div class="tab_sec" id="n1">
+                    <ul class="tab">
+                        <li><a href="#n1" class="scroll-to"><span>상품상세정보</span></a></li>
+                        <li><a href="#n2" class="scroll-to">리뷰(0)</a></li>
+                        <li><a href="#n3" class="scroll-to">Q&A(0)</a></li>
+                    </ul>
+                    <hr>
+                </div>
+                <div class="detail_img_wrap">
+                    <div class="detail_img">
+                        <img src="images/상세페이지.jpg" alt="">
+                    </div>
+                </div>
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <span>상품결제정보</span>
+                            <svg class="arrow" width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1.5L11 13.5L21 1.5" stroke="#6D6D6D" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <div class="accordion-content">
+                            <p>고액결제의 경우 안전을 위해 카드사에서 확인전화를 드릴 수도 있습니다. 확인과정에서 도난 카드의 사용이나 타인 명의의 주문등 정상적인 주문이 아니라고고 판단될 경우 임의 주문을 보류 또는 취소할 수 있습니다.  <br>
+                            <br>무통장 입금은 상품 구매 대금은 PC뱅킹, 인터넷뱅킹, 텔레뱅킹 혹은 가까운 은행에서 직접 입금하시면 됩니다. 주문시 입력한 입금자명과 실제입금자의 성명이 반드시 일치하여야 하며, 7일 이내로 입금을 하셔야 하며 입금되지 않은 주문은 자동취소 됩니다.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <span>배송정보</span>
+                            <svg class="arrow" width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1.5L11 13.5L21 1.5" stroke="#6D6D6D" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <div class="accordion-content">
+                            <p>
+                                · 배송 방법 : 택배 <br>
+                                · 배송 지역 : 전국지역 <br>
+                                · 배송 비용 : 3,000원 <br>
+                                · 배송 기간 : 2일 ~ 7일 <br>
+                                · 배송 안내 : - 산간벽지나 도서지방은 별도의 추가금액을 지불하셔야 하는 경우가 있습니다. <br>
+                                고객님께서 주문하신 상품은 입금 확인후 배송해 드립니다. 다만, 상품종류에 따라서 상품의 배송이 다소 지연될 수 있습니다.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <span>교환 및 반품정보</span>
+                            <svg class="arrow" width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1.5L11 13.5L21 1.5" stroke="#6D6D6D" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <div class="accordion-content">
+                            <p>교환 및 반품 주소 <br>
+                                - 경기도 이천시 부발읍 황무로 2037-37 로지스밸리SLK물류센터 <br><br>
+                                
+                                교환 및 반품이 가능한 경우<br>
+                                - 상품을 공급 받으신 날로부터 7일이내 단, 가전제품의 경우 포장을 개봉하였거나 포장이 훼손되어 상품가치가 상실된 경우에는 교환/반품이 불가능합니다. <br>
+                                - 공급받으신 상품 및 용역의 내용이 표시.광고 내용과 다르거나 다르게 이행된 경우에는 공급받은 날로부터 3월이내, 그사실을 알게 된 날로부터 30일이내<br><br>
+                                
+                                교환 및 반품이 불가능한 경우<br>
+                                - 고객님의 책임 있는 사유로 상품등이 멸실 또는 훼손된 경우. 단, 상품의 내용을 확인하기 위하여 포장 등을 훼손한 경우는 제외<br>
+                                - 포장을 개봉하였거나 포장이 훼손되어 상품가치가 상실된 경우<br>
+                                (예 : 가전제품, 식품, 음반 등, 단 액정화면이 부착된 노트북, LCD모니터, 디지털 카메라 등의 불량화소에 따른 반품/교환은 제조사 기준에 따릅니다.)<br>
+                                - 고객님의 사용 또는 일부 소비에 의하여 상품의 가치가 현저히 감소한 경우 단, 화장품 등의 경우 사용 제품을 제공한 경우에 한 합니다.<br>
+                                - 시간의 경과에 의하여 재판매가 곤란할 정도로 상품등의 가치가 현저히 감소한 경우<br>
+                                - 복제가 가능한 상품등의 포장을 훼손한 경우<br>
+                                (자세한 내용은 고객만족센터 1:1 E-MAIL상담을 이용해 주시기 바랍니다.)<br><br>
+                                
+                                ※ 고객님의 마음이 바뀌어 교환, 반품을 하실 경우 상품반송 비용은 고객님께서 부담하셔야 합니다.<br>
+                                (색상 교환, 사이즈 교환 등 포함)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab_sec none" id="n2">
+                    <ul class="tab">
+                        <li><a href="#n1" class="scroll-to">상품상세정보</a></li>
+                        <li><a href="#n2" class="scroll-to"><span>리뷰(0)</span></a></li>
+                        <li><a href="#n3" class="scroll-to">Q&A(0)</a></li>
+                    </ul>
+                    <hr>
+                </div>
+                <div class="tab_sec none" id="n3">
+                    <ul class="tab">
+                        <li><a href="#n1" class="scroll-to">상품상세정보</a></li>
+                        <li><a href="#n2" class="scroll-to">리뷰(0)</a></li>
+                        <li><a href="#n3" class="scroll-to"><span>Q&A(0)</span></a></li>
+                    </ul>
+                    <hr>
+                </div>
+            </div>
+        </div><!-- /container -->
+        <!-- 상단 하단 이동 버튼 -->
+        <div class="scroll-buttons">
+            <button class="scroll-top" onclick="scrollToTop()">
+                <svg width="65" height="65" viewBox="0 0 65 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="32.5" cy="32.5" r="32" stroke="#757575"/>
+                    <path d="M40 36.5L32.5 29L25 36.5" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <button class="scroll-bottom" onclick="scrollToBottom()">
+                <svg width="65" height="65" viewBox="0 0 65 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="32.5" cy="32.5" r="32" stroke="#757575"/>
+                    <path d="M25 28.5L32.5 36L40 28.5" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+        <!-- 상하단 이동 버튼 -->
+        <script>
+            function scrollToTop() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
+
+            function scrollToBottom() {
+                window.scrollTo({
+                    top: document.documentElement.scrollHeight,
+                    behavior: 'smooth'
+                });
+            }
+
+            // 스크롤 위치에 따라 버튼 표시/숨김
+            window.addEventListener('scroll', function() {
+                const scrollButtons = document.querySelector('.scroll-buttons');
+                const footer = document.getElementById('footer_wrap');
+                const footerTop = footer.getBoundingClientRect().top;
+                
+                // 스크롤이 400px 이상이고 푸터가 보이지 않을 때만 버튼 표시
+                if (window.scrollY > 400 && footerTop > window.innerHeight) {
+                    scrollButtons.style.display = 'flex';
+                } else {
+                    scrollButtons.style.display = 'none';
+                }
+            });
+        </script>
+        <script>
+            //아코디언 js
+            function toggleAccordion(header) {
+                const content = header.nextElementSibling;
+                const arrow = header.querySelector('.arrow');
+
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                    arrow.innerHTML = '<path d="M1 1.5L11 13.5L21 1.5" stroke="#6D6D6D" stroke-width="2"/>'; // 화살표 방향 변경
+                } else {
+                    content.style.display = "block";
+                    arrow.innerHTML = '<path d="M21 14.5L11 2.5L1 14.5" stroke="#6D6D6D" stroke-width="2"/>'; // 화살표 방향 변경
+                }
+            }
+            //스크롤 이동
+            document.addEventListener('DOMContentLoaded', function() {
+                const scrollLinks = document.querySelectorAll('.scroll-to');
+
+                scrollLinks.forEach(link => {
+                    link.addEventListener('click', function(event) {
+                        event.preventDefault(); // 기본 링크 동작 방지
+                        const targetId = this.getAttribute('href'); // href 속성에서 ID 가져오기
+                        const targetElement = document.querySelector(targetId); // 해당 ID의 요소 선택
+
+                        if (targetElement) {
+                            targetElement.scrollIntoView({ behavior: 'smooth' }); // 부드럽게 스크롤 이동
+                        }
+                    });
+                });
+            });
+        </script>
+
+        <!-- footer -->
+        <div id="footer_wrap">
+            <div class="content_info_wrap">
+                <section class="notice_rolling_banner">
+                    <div class="inner">
+                        <div id="js_notice_list" class="notice_rolling">
+                            <ul>
+                                <li><a href="../board/view.php?bdId=notice&sno=26"><span class="dn">[공지사항]&nbsp;</span>24년 10월 카드사 무이자 할부</a></li>
+                                <li><a href="../board/view.php?bdId=notice&sno=25"><span class="dn">[공지사항]&nbsp;</span>추석 배송 안내</a></li>
+                                <li><a href="../board/view.php?bdId=notice&sno=22"><span class="dn">[공지사항]&nbsp;</span>현대웰니스 회원 등급 변경</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </div> <!-- //content_info_wrap -->
+
+            <div id="footer">
+                <div class="foot_wrap">
+                    <div class="l_box">
+                        <div class="foot_logo"><img src="images/nl_logo_2.png" alt="츄럴라이프"></div>
+                        <div class="detail_list">
+                            <ul>
+                                <li><a href="#">회사소개</a></li>
+                                <li><a href="#">이용약관</a></li>
+                                <li><a href="#" class="privacy">개인정보처리방침</a></li>
+                                <li><a href="#">임직원몰</a></li>
+                                <li><a href="#">제휴업체몰</a></li>
+                            </ul>
+                        </div>
+                        <div class="info">
+                            <p>회사명 : (주)네츄럴라이프 / 02789 서울특별시 성북구 화랑로32길 76 (석관동) / 대표자명 : 김경락 <br> 사업자등록번호 : 134-81-82847 / 통신판매업신고번호 : 2012-서울성북-00235 <br> 개인정보관리책임자 : 최정수 / 문의전화 : 1668-3057 / FAX : 02-6234-6092</p>
+                        </div>
+                    </div>
+
+                    <div class="r_box">
+                        <div class="insta">
+                            <a href="#" target="_blank">
+                                <img src="https://cdn-pro-web-152-57.cdn-nhncommerce.com/puritatr4136_godomall_com/data/skin/front/musign_test/img/etc/ic_insta2.png" alt="인스타그램">
+                            </a>
+                        </div>
+                        <div class="site_map">
+                            <div class="select_box">
+                                <p class="tit">
+                                    <a href="#">FAMILY SITE<i></i></a>
+                                </p>
+                                <div class="option_wrap">
+                                    <ul class="option">
+                                        <li><a href="#" target="_blank">한화제약약</a></li>
+                                        <li><a href="#" target="_blank">얼라이브</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="center">
+                            <strong>고객만족센터</strong>
+                            <h2>1668-3057</h2>
+                            <p>상담가능시간: 09:00~18:00 (점심시간: 12:30~13:30) / 주말, 공휴일 휴무</p>
+                        </div>
+                    </div>
+                    
+                </div>
+                <hr style="border: solid 1px #7b7b7b;">
+                    <div class="right">
+                        <p class="copyright">Copyright © 2016 NaturaLife Co., Ltd. All rights reserved.</p>
+                    </div>
+            </div>
+        </div> <!-- footer_wrap -->
+
+    </div> <!-- /wrap -->
+
+<!-- 옵션선택 또는 세트상품 선택시 상품이 추가되는 영역 -->
+    <script>
+    let selectedProducts = new Map(); // 선택된 상품들을 저장할 Map 객체
+    
+    function addProduct(element) {
+        const li = element.closest('li');
+        const productId = li.getAttribute('option_value');
+        const price = parseInt(li.getAttribute('data-price'));
+        
+        // 이미 선택된 상품인지 확인
+        if (selectedProducts.has(productId)) {
+            alert('이미 선택된 상품입니다.');
+            return;
+        }
+    
+        // 상품 정보 생성
+        const productInfo = {
+            id: productId,
+            name: li.querySelector('span').textContent,
+            price: price,
+            quantity: 1
+        };
+    
+        // 선택된 상품 목록에 추가
+        selectedProducts.set(productId, productInfo);
+    
+        // HTML에 상품 추가
+        const tbody = document.querySelector('.prd_option tbody');
+        const tr = document.createElement('tr');
+        tr.setAttribute('data-product-id', productId);
+        tr.classList.add('option_product');
+        tr.innerHTML = `
+            <td>
+                <p class="product">
+                    얼라이브 멀티비타민<br />
+                    <span>-${productInfo.name}</span>
+                </p>
+            </td>
+            <td>
+                <div class="quantity-wrap">
+                    <span class="quantity">
+                        &nbsp;<a href="javascript:;" class="up" onclick="changeQuantity('${productId}', 1)">
+                            <img src="//img.echosting.cafe24.com/skin/base_ko_KR/product/btn_count_up.gif" alt="수량증가" />
+                        </a>
+                        <input type="text" class="quantity_opt" value="1" readonly />
+                        <a href="javascript:;" class="down" onclick="changeQuantity('${productId}', -1)">
+                            <img src="//img.echosting.cafe24.com/skin/base_ko_KR/product/btn_count_down.gif" alt="수량감소" />
+                        </a>
+                    </span>
+                    <a href="javascript:;" onclick="removeProduct('${productId}')" class="delete-btn">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 3L13 13M13 3L3 13" stroke="#666666" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                    </a>
+                </div>
+            </td>
+            <td class="right">
+                <span class="product-price">${price.toLocaleString()}원</span>
+            </td>
+        `;
+        tbody.appendChild(tr);
+    
+        updateTotalPrice();
+    }
+    
+    function changeQuantity(productId, change) {
+        const product = selectedProducts.get(productId);
+        const newQuantity = product.quantity + change;
+        
+        // 수량 제한 확인
+        if (newQuantity < 1 || newQuantity > 999) return;
+        
+        // 수량 업데이트
+        product.quantity = newQuantity;
+        
+        // HTML 업데이트
+        const tr = document.querySelector(`tr[data-product-id="${productId}"]`);
+        tr.querySelector('.quantity_opt').value = newQuantity;
+        tr.querySelector('.product-price').textContent = 
+            (product.price * newQuantity).toLocaleString() + '원';
+        
+        updateTotalPrice();
+    }
+    
+    function removeProduct(productId) {
+        // Map에서 상품 제거
+        selectedProducts.delete(productId);
+        
+        // HTML에서 상품 제거
+        const tr = document.querySelector(`tr[data-product-id="${productId}"]`);
+        tr.remove();
+        
+        updateTotalPrice();
+    }
+    
+    function updateTotalPrice() {
+        let totalPrice = 0;
+        let totalQuantity = 0;
+        
+        selectedProducts.forEach(product => {
+            totalPrice += product.price * product.quantity;
+            totalQuantity += product.quantity;
+        });
+        
+        // 총 합계 업데이트
+        const totalElement = document.querySelector('#totalPrice .total');
+        totalElement.innerHTML = 
+            `<strong><em>${totalPrice.toLocaleString()}원</em></strong> (${totalQuantity}개)`;
+    }
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    // 드롭다운 기능
+    const dropdowns = document.querySelectorAll('.dp0 > li');
+
+    dropdowns.forEach(dropdown => {
+        const link = dropdown.querySelector('a');
+        const submenu = dropdown.querySelector('.dp2');
+
+        link.addEventListener('mouseenter', () => {
+            if (submenu) submenu.style.display = 'block';
+        });
+
+        dropdown.addEventListener('mouseleave', () => {
+            if (submenu) submenu.style.display = 'none';
+        });
+    });
+
+    // 아코디언 기능
+    const accordionItems = document.querySelectorAll('.dp2 > li.has_dp');
+
+    accordionItems.forEach(item => {
+        const accordionLink = item.querySelector('a');
+        const arrowIcon = accordionLink.querySelector('.arrow-icon');
+
+        accordionLink.addEventListener('click', function(event) {
+            event.preventDefault(); 
+
+            const subMenu = item.querySelector('.dp3');
+            const isOpen = subMenu.style.display === 'block';
+
+            // 모든 아코디언 닫기 및 아이콘 초기화
+            accordionItems.forEach(otherItem => {
+                const otherSubMenu = otherItem.querySelector('.dp3');
+                const otherArrowIcon = otherItem.querySelector('.arrow-icon');
+                if (otherSubMenu) otherSubMenu.style.display = 'none';
+                if (otherArrowIcon) {
+                    otherArrowIcon.innerHTML = `
+                        <path d="M1 1L6.83333 6L12.6667 1" stroke="#ACACAC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    `;
+                }
+            });
+
+            // 현재 아이템 토글
+            if (subMenu) {
+                subMenu.style.display = isOpen ? 'none' : 'block';
+
+                // 아이콘 상태 및 색상 토글
+                arrowIcon.innerHTML = isOpen
+                    ? `<path d="M1 1L6.83333 6L12.6667 1" stroke="#ACACAC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>`
+                    : `<path d="M13 7L7 1L1 7" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>`;
+            }
+        });
+    });
+
+    // 문서의 다른 부분 클릭 시 드롭다운과 아코디언 닫기
+    document.body.addEventListener('click', function(event) {
+        if (!event.target.closest('.dp0')) {
+            dropdowns.forEach(dropdown => {
+                const submenu = dropdown.querySelector('.dp2');
+                if (submenu) submenu.style.display = 'none';
+            });
+
+            accordionItems.forEach(item => {
+                const subMenu = item.querySelector('.dp3');
+                const arrowIcon = item.querySelector('.arrow-icon');
+                if (subMenu) subMenu.style.display = 'none';
+                if (arrowIcon) {
+                    arrowIcon.innerHTML = `
+                        <path d="M1 1L6.83333 6L12.6667 1" stroke="#ACACAC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    `;
+                }
+            });
+        }
+    });
+    });
+
+
+
+    </script>
+
+    <script>
+        $(function () {
+            var $scroller = $('#js_notice_list ul');
+            var itemHeight = $scroller.find('li:first').outerHeight();
+            var currentIndex = 0;
+
+            function scrollBanner() {
+                currentIndex++;
+                if (currentIndex >= $scroller.find('li').length) {
+                    currentIndex = 0;
+                }
+                $scroller.animate({ top: -itemHeight * currentIndex }, 500);
+            }
+
+            var intervalId = setInterval(scrollBanner, 10000); // 3초마다 자동 스크롤
+
+            $(".btn_notice_rolling .prev").click(function(event){
+                event.preventDefault();
+                clearInterval(intervalId);
+                currentIndex--;
+                if (currentIndex < 0) {
+                    currentIndex = $scroller.find('li').length - 1;
+                }
+                $scroller.animate({ top: -itemHeight * currentIndex }, 500);
+                intervalId = setInterval(scrollBanner, 3000);
+            });
+
+            $(".btn_notice_rolling .next").click(function(event){
+                event.preventDefault();
+                clearInterval(intervalId);
+                scrollBanner();
+                intervalId = setInterval(scrollBanner, 3000);
+            });
+
+            $(".btn_notice_rolling .prev, .btn_notice_rolling .next").hover(function(){
+                clearInterval(intervalId);
+            }, function(){
+                intervalId = setInterval(scrollBanner, 3000);
+            });
+        });
+    </script>
+    <!-- footer  -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const selectBox = document.querySelector('.select_box');
+    const title = selectBox.querySelector('.tit');
+    const optionWrap = selectBox.querySelector('.option_wrap');
+
+    title.addEventListener('click', function(e) {
+        e.preventDefault();
+        this.classList.toggle('active');
+        optionWrap.style.display = optionWrap.style.display === 'block' ? 'none' : 'block';
+    });
+
+    document.addEventListener('click', function(e) {
+        if (!selectBox.contains(e.target)) {
+        title.classList.remove('active');
+        optionWrap.style.display = 'none';
+        }
+    });
+    });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const slider = document.querySelector('.slider');
+    const slides = document.querySelectorAll('.slide');
+    const navItems = document.querySelectorAll('.nav-item');
+    let currentIndex = 0;
+    let startX;
+    let isDragging = false;
+
+    function goToSlide(index) {
+        slider.style.transform = `translateX(-${index * 100}%)`;
+        currentIndex = index;
+        updateNavItems();
+    }
+
+    function updateNavItems() {
+        navItems.forEach((item, index) => {
+            item.classList.toggle('active', index === currentIndex);
+            if (index === currentIndex) {
+                item.querySelector('.progress-bar').style.animation = 'progress 5s linear';
+            } else {
+                item.querySelector('.progress-bar').style.animation = 'none';
+            }
+        });
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        goToSlide(currentIndex);
+    }
+
+    setInterval(nextSlide, 5000);
+
+    navItems.forEach((item, index) => {
+        item.addEventListener('click', () => goToSlide(index));
+    });
+
+    slider.addEventListener('mousedown', (e) => {
+        startX = e.pageX - slider.offsetLeft;
+        isDragging = true;
+    });
+
+    slider.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = e.pageX - slider.offsetLeft;
+        const walk = (x - startX) / slider.offsetWidth * 100;
+        slider.style.transform = `translateX(${-currentIndex * 100 + walk}%)`;
+    });
+
+    slider.addEventListener('mouseup', finishDragging);
+    slider.addEventListener('mouseleave', finishDragging);
+
+    function finishDragging(e) {
+        if (!isDragging) return;
+        isDragging = false;
+        const x = e.pageX - slider.offsetLeft;
+        const walk = (x - startX) / slider.offsetWidth * 100;
+        if (Math.abs(walk) > 20) {
+            if (walk > 0 && currentIndex > 0) {
+                currentIndex--;
+            } else if (walk < 0 && currentIndex < slides.length - 1) {
+                currentIndex++;
+            }
+        }
+        goToSlide(currentIndex);
+    }
+
+    updateNavItems();
+});
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const heartIcon = document.querySelector('.heart-icon.default');
+    const filledIcon = document.querySelector('.heart-icon.filled');
+
+    heartIcon.addEventListener('click', function() {
+        heartIcon.classList.toggle('active'); // 기본 아이콘 상태 토글
+        filledIcon.classList.toggle('active'); // 채워진 아이콘 상태 토글
+    });
+});
+    </script>
+</body>
+</html>
