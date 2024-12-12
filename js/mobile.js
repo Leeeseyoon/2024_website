@@ -42,7 +42,7 @@ function initializeMobile() {
             { title: 'A NEW Encounter with Ohui', author: '양성우', image: 'images/works/양성우.jpg', link: 'works_web_file/2301110165_양성우/index.html' },
             { title: '그린피스 웹사이트 리디자인', author: '우수지', image: 'images/works/우수지.jpg', link: 'web_file/2301110168_우수지/index.html' },
             { title: '그리드와 소금', author: '원세연', image: 'images/works/원세연.png', link: 'web_file/2301110169_원세연/index.html' },
-            { title: 'What’s on my desk', author: '유지수', image: 'images/works/유지수.jpg', link: 'https://wltn510.github.io/1107/' },
+            { title: 'What’s on my desk', author: '유지수', image: 'images/works/유지수.jpg', link: 'web_file/2301110170_유지수/index.html' },
             { title: '서울 자전거 따릉이', author: '윤 비', image: 'images/works/윤비.png', link: 'web_file/2001110541_윤비/index.html' },
             { title: '카카오뱅크 웹사이트 리디자인', author: '이세윤', image: 'images/works/이세윤1.jpg', link: 'web_file/2301110176_이세윤/kakaobank_2-main/kakaobank_2-main/index.html' },
             { title: '위홈 앱 리디자인', author: '이세윤', image: 'images/works/이세윤2.jpg', link: 'https://drive.google.com/file/d/13hy-fX0RTd7LBDh5lOAvT34jYPpwB-FR/view?usp=sharing' },
