@@ -1,0 +1,336 @@
+/* 기본 스타일 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%; /* 페이지 전체 높이를 채우기 위해 필요 */
+}
+
+h2 {
+    font-size: 20px;
+}
+
+section {
+    width: 100vw; /* 뷰포트 전체 너비 */
+    height: 100vh; /* 뷰포트 전체 높이 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+#intro h3 {
+    font-size: 5rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* 왼쪽 정렬 */
+    position: absolute;
+    left: 12vw; /* 초기 위치를 고정 */
+    top: 27vh;
+}
+
+#intro h3 .line {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid white;
+    visibility: hidden; /* 초기 상태에서 보이지 않게 */
+    height: auto; /* 높이를 텍스트에 맞게 자동 설정 */
+    line-height: 1; /* 기본 줄 높이 설정 */
+    padding-bottom: 0.1em; /* 아래쪽 여백을 조금 추가하여 잘림 방지 */
+    margin-bottom: -0.1em; /* 줄 간격을 조정하기 위한 음수 마진 */
+}
+
+
+
+
+
+
+/* 커서 깜박임 애니메이션 */
+.blinking-cursor {
+    animation: blink 0.7s step-end infinite;
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+
+
+#intro, #profile {
+    background-image: url(images/hexagon\ line\ background-03.jpg);
+    background-size: 100% 200%; /* 이미지가 두 섹션에 걸쳐 보이도록 세로로 2배 확장 */
+    background-repeat: no-repeat;
+    background-position: top; /* intro는 이미지의 상단 부분을 보여줌 */
+}
+
+#profile {
+    background-position: bottom;
+    
+}
+
+.contents {
+/*     outline: solid 3px greenyellow; */
+    position: relative;
+}
+
+.skills {
+    position: absolute;
+    bottom: 1vw;
+    right: 0.3vw;
+    width: 860px;
+    height: 375px;
+/*     outline: solid 2px red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+}
+
+.box {
+    position: relative;
+    width: 200px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+    border-radius: 20px; 
+}
+
+.box .percent {
+    position: relative;
+    width: 150px;
+    height: 150px;
+}
+
+.box .percent svg {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    transform: rotate(-90deg);
+}
+
+.box .percent svg circle {
+    fill: none;
+    stroke-width: 10;
+    transform: translate(5px, 5px);
+    stroke-dasharray: 440;
+    stroke-linecap: round;
+}
+
+.box .percent svg circle:nth-child(1) {
+    stroke-dashoffset: 0;
+    stroke: #f3f3f3;
+}
+
+.box:nth-child(1) .percent svg circle:nth-child(2) {
+    stroke: #006acd;
+    stroke-dashoffset: 440;
+    animation: progressCircle1 1s linear forwards;
+}
+
+.box:nth-child(2) .percent svg circle:nth-child(2) {
+    stroke: #e9981e; 
+    stroke-dashoffset: 440;
+    animation: progressCircle2 1s linear forwards;
+}
+
+.box:nth-child(3) .percent svg circle:nth-child(2) {
+    stroke: #72009c; 
+    stroke-dashoffset: 440;
+    animation: progressCircle3 1s linear forwards;
+}
+
+@keyframes progressCircle1 {
+    100% {
+        stroke-dashoffset: 22;
+    }
+}
+
+@keyframes progressCircle2 {
+    100% {
+        stroke-dashoffset: 44;
+    }
+}
+
+@keyframes progressCircle3 {
+    100% {
+        stroke-dashoffset: 154;
+    }
+}
+
+.box .percent .number {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #111;
+}
+
+.box .text {
+    margin-top: 10px;
+    font-size: 20px;
+    color: #333;
+}
+
+
+#works {
+    position: relative; 
+    background-image: url(images/works_bg.jpg);
+    background-size: cover; /* 이미지가 화면에 맞게 확장 */
+    background-position: center; /* 이미지의 중심을 맞춤 */
+    background-repeat: no-repeat; /* 이미지 반복 방지 */
+}
+
+.mock {
+    position: absolute; /* 부모(#works) 요소를 기준으로 위치 */
+}
+
+.mock img {
+    transition: transform 0.3s ease; /* 애니메이션 효과 추가 */
+}
+
+.mock:hover img {
+    transform: scale(1.1); /* 이미지가 1.1배 커짐 */
+}
+
+/* 개별 위치 설정 */
+.poster {
+    left: 28vw;
+    top: 4vw;
+}
+
+.book {
+    left: 20vw;
+    bottom: 7vw;
+}
+
+.web {
+    left: 30%;
+    top: 35%;
+}
+
+.photo {
+    right: 23vw;
+    top: 4vw;
+}
+
+.ui {
+    right: 27vw;
+    bottom: 8vw;
+}
+
+
+/* Contact 버튼 스타일 */
+.contact-btn {
+    position: fixed;
+    bottom: 2vw;
+    right: 2vw;
+    padding: 0.8em 2em;
+    font-size: 1rem;
+    color: white;
+    background-color: #757575;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.contact-btn:hover {
+    background-color: #000000;
+    transform: scale(1.05);
+}
+
+.contact-btn:active {
+    background-color: #000000;
+    transform: scale(0.95);
+}
+
+/* Contact 이미지 컨테이너 스타일 - 버튼 위에 위치하도록 조정 */
+.contact-image-container {
+    display: none;
+    position: fixed;
+    bottom: 5vw; /* 버튼 바로 위로 조정 */
+    right: 2.5vw;
+    z-index: 1000;
+
+}
+
+.contact-image-container img {
+
+}
+
+
+
+
+.modal {
+    display: none; /* 초기에는 보이지 않도록 설정 */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1200px;
+    height: 675px; /* 모달 창의 고정된 높이 */
+    background-color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    overflow: hidden; /* 모달 창의 기본 상태는 숨김 */
+    border-radius: 10px;
+}
+
+.modal-content {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto; /* 세로 스크롤 가능 */
+}
+
+.modal-content img {
+    width: 100%; /* 가로 크기에 맞게 조정 */
+    height: auto; /* 세로 비율 유지 */
+}
+
+
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #ffffff;
+    cursor: pointer;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); 
+}
+
+
+.overlay {
+    display: none; /* 초기에는 보이지 않도록 설정 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* 불투명한 검은색 배경 */
+    z-index: 999; /* 모달 뒤에 위치 */
+}
+
