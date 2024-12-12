@@ -1,0 +1,264 @@
+@font-face {
+  font-family: 'DungGeunMo';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
+ *{
+ cursor: url('img/cursor.png'), auto;
+ margin: 0;
+ padding: 0;
+ font-weight: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  background-color: rgb(254, 204, 224);
+  font-family: "Aldrich", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.navi {
+  position: fixed;
+  overflow: hidden;
+  width: 100vw;
+  left: 0;
+  top: 0;
+  font-weight: normal;
+  z-index: 999;
+}
+
+.top_img{
+  width: 100vw;
+}
+
+.navi_icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    z-index: 1;
+    color: rgb(170, 20, 125);
+    font-weight: normal;
+}
+  
+.navi_icon li {
+    font-family: "Aldrich", sans-serif;
+    cursor: pointer;
+    transition: transform 0.1s;
+    list-style: none;
+    margin-right: 80px;
+    text-align: center;
+    font-weight: normal;
+}
+  
+
+.navi_icon li:last-child {
+  margin-right: 0;
+}
+
+.navi li a:hover img {
+      transform: scale(0.95);
+      box-shadow: 0 0px 10px rgba(66, 6, 43, 0.3);
+  }
+
+.home-icon img {
+  border: 3px solid white;
+  border-radius: 5px;
+}
+.home-icon h4 {
+  color: white; 
+}
+
+
+.container {
+  width: 100%;
+  height: 100%;
+  padding-top: 15vh;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.button {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1;
+}
+
+
+.button_item {
+  position: fixed;
+  width: auto;
+  height: 100vh;
+  background-color: #FECCE0;
+  display: flex;
+  align-items: center;
+  z-index: 3;
+}
+
+
+#leftBtn {
+  left: 0;
+}
+
+
+#rightBtn {
+  right: 0;
+}
+
+
+.button_item img {
+  display: block;
+  width: 70%;
+  margin: 0 auto;
+  height: auto;
+  transition: transform 0.2s;
+}
+
+
+.button_item a:hover img {
+  transform: scale(0.95);
+}
+
+
+.blink {
+  position: relative;
+  display: inline-block;
+}
+
+
+.blink::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10%;
+  width: 80%;
+  height: 100%;
+  border-radius: 15%;
+  background-color: rgba(255, 0, 0, 0.144); 
+  animation: blink-animation 1s infinite;
+  z-index: 1;
+}
+
+
+.blink img {
+  position: relative;
+  z-index: 0; 
+  display: block;
+}
+
+
+@keyframes blink-animation {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+
+video {
+  width: 100%;
+}
+
+.video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  left: 50%;
+    transform: translateX(-50%);
+  z-index: -1;
+  }
+  
+
+#container {
+  display: flex;
+  padding: 60px;
+}
+
+
+#imageContainer {
+  width: 24vw;
+  height: 70vh;
+  overflow: hidden;
+  padding: 0 50px;
+}
+
+#displayedImage {
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.788);
+}
+
+.class{
+  border: 2.5px solid rgb(255, 37, 208);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#thumbnailContainerTop{
+  margin-top:20px;
+}
+
+#thumbnailContainerBottom{
+  margin-bottom: 0;
+}
+
+#thumbnailContainerTop,
+#thumbnailContainerBottom {
+  display: flex;
+  flex-direction: row;
+}
+
+
+.thumbnail {
+  width: 10vw;
+  height: 28vh;
+  padding: 0 20px;
+  cursor: pointer;
+  transition: transform 0.4s ease; 
+}
+
+.thumbnail:active {
+  transform: scale(0.88);
+}
+
+
+.thumbnail-caption{
+  color: #ff7aaf;
+  background-color: #000000a2;
+  font-size: 1.3em;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-family: 'DungGeunMo';
+     src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+}
+
+
+#imageDetails {
+  margin-top: -50px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+} 
+

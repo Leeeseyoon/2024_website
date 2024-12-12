@@ -1,0 +1,73 @@
+/* 예적금 */
+#con2{
+    margin: 0 20% 0% 20%;
+    text-align: left;
+}
+
+#con2 .title_txt{
+    text-align: right;padding-top: 7.5%;
+}
+#con2 .sub_p{margin-top: 2%; font-size: 25px;}
+
+
+#con2 .con2box{ margin-top: 10%;}
+#con2 .con2box .imgbox{
+    
+    display: flex ; justify-content: space-between;
+}
+#con2 .con2box .block{
+    display: flex;
+    justify-items: center;
+    flex-direction: column;
+}
+#con2 .con2box .block p{
+    margin-top: 15%;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.5;
+}
+
+#con2 .con2box{ text-align: center;
+    display: block ; justify-content: space-around; }
+
+
+
+    /* 예적금 텍스트설정 */
+
+    #con2 .con2_subbox1, .con2_subbox2 p{font-size: 25px;}
+    #con2 .con2_subbox1 h1, .con2_subbox2 h1{font-size: 50px;}
+
+    #con2 .con2_subbox1{margin-top: 13%;}
+    #con2 .con2_subbox2{margin-top: 20%; text-align: right;}
+
+/* 정기예금 */
+.subbox{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.foderbox{
+    margin-top: 12%;
+}
+
+#con2 .but_box{
+    display: flex;
+    justify-self: center;
+    margin-top: 5%;
+    gap: 20px;
+
+}
+#con2 .but_box button{
+    font-weight: 300;
+}
+
+#con2 .but_sub_box{
+    margin-top: 5%;
+}
+#con2 .but_sub_box2{
+    margin-top: 5%;
+    float: right;
+}
+
+

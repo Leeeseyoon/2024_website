@@ -1,0 +1,272 @@
+/* 워크 */
+#works{
+    width: 100%;
+    height: 100vh;
+    background-color: #FF3434;
+}
+#works .titlename{
+    margin-left: 20%;
+}
+#works .con_box{
+    margin-left: 20%;
+}
+
+
+
+.boxsize {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+    margin-top: 1%;
+}
+
+#uxui .work-item{
+    width: 650px;
+    height: 500px;
+    background-color: #999;
+    flex: 0 0 calc(37% - 10px); /* 2개씩 한 줄에 표시하도록 50%로 변경 */
+    margin-bottom: 20px;
+}
+/* #graphic .boxsize {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+} */
+#graphic .work-item.size-large{
+
+    display: flex;
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+
+}
+#graphic .work-item.size-small{
+    width: 360px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 세로 정렬 */
+    margin-bottom: 20px; /* 세로 간격 조정 */
+    
+}
+
+#graphic .work-item.size-small img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+#edit .work-item{
+    width: 400px;
+    height: 620px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 세로 정렬 */
+    margin-bottom: 20px; /* 세로 간격 조정 */
+}
+#edit .work-item img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+
+
+
+#other .work-item{
+    width: 80%;
+    height: 620px;
+}
+#other .work-item video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+.work-item {
+    position: relative;
+    mix-blend-mode: multiply;
+    background: linear-gradient(rgba(89, 8, 8, 0.6), rgba(247, 202, 202, 0.5));
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.work-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    
+}
+
+#uxui .work-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    mix-blend-mode: multiply;
+}
+#graphic .work-item img {
+    object-fit: cover;
+}
+#graphic .r_small img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.work-info  {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    
+    padding: 20px;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    transition: background 1s ease;
+    color: white;
+}
+
+
+
+.work-info h4 {
+    font-size: 1.5rem; /* 18px -> 1.125rem */
+    margin: 0 0 8px 0;
+    font-family: 'Pretendard-Regular';
+    font-weight: 600;
+}
+
+.work-info p {
+    font-size: 1.15rem; /* 14px -> 0.875rem */
+    color: white;
+    margin: 0 0 5px 0;
+}
+
+.work-info .date {
+    font-size: 1rem; /* 12px -> 0.75rem */
+    color: white;
+}
+
+
+#uxui .work-item
+{
+    flex: 0 0 calc(37.2% - 14px); /* 2개씩 한 줄에 표시하도록 60%로 변경 */
+    margin-bottom: 20px;
+}
+#graphic .work-item
+{
+    flex: 0 0 calc(25% - 10px); /* 3개씩 한 줄에 표시하도록 60%로 변경 */
+    margin-bottom: 20px;
+    overflow:hidden;
+    
+}
+
+#graphic .work-item img {
+    object-fit: cover;
+}
+
+
+
+
+
+/* 기본적으로 모든 탭 콘텐츠를 숨김 */
+.tab-works {
+    display: none;
+    margin-top: 1%;
+}
+.tab-works h3{
+    font-size: 40px;
+}
+/* active 클래스가 있는 탭만 보이도록 설정 */
+.tab-works.active {
+    display: block;
+}
+
+/* 탭 버튼 컨테이너 스타일 */
+.butbox {
+    display: flex;
+    gap: 11px;
+    margin-top: 1%;
+}
+
+/* 탭 버튼 스타일 수정 */
+.tab-button {
+    min-width: 160px;  /* 최소 너비 설정 */
+    padding: 12px 25px;
+    font-size: 26px;
+    font-weight: 500;
+    border: 2px solid #000;
+    border-radius: 30px;
+    background-color: #FF3434;
+    color: black;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* 호버 효과 - 크기 변화 제거 */
+.tab-button:hover {
+    background-color: #000;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+
+/* 활성화된 버튼 스타일 - font-weight만 변경 */
+.tab-button.active {
+    background-color: #000;
+    color: white;
+    font-weight: 400;
+    box-shadow: 0 4px 10px rgba(255, 52, 52, 0.3);
+    
+}
+
+
+/* 미디어쿼리 */
+@media (max-width: 768px) {
+    #works .con_box {
+        margin-left: 0; /* 여백 조정 */
+    }
+
+    .boxsize {
+        flex-direction: column; /* 세로 방향으로 정렬 */
+        align-items: center; /* 중앙 정렬 */
+    }
+
+    #uxui .work-item,
+    #graphic .work-item {
+        width: 90%; /* 모바일에서의 너비 조정 */
+    }
+}
+
+/* Graphic, Edit, Other 탭의 work-item 스타일 수정 */
+#graphic .work-item,
+#edit .work-item,
+#other .work-item {
+    position: relative;
+    mix-blend-mode: multiply;
+    background: linear-gradient( rgba(89, 8, 8, 0.6), rgba(247, 202, 202, 0.5));
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+#graphic .work-item img,
+#edit .work-item img,
+#other .work-item img {
+
+    object-fit: cover;
+    mix-blend-mode: multiply; /* 이미지에 곱하기 블렌드 모드 적용 */
+}
+
+.work-item video {
+    width: 100%; /* 비디오의 너비를 100%로 설정 */
+    height: auto; /* 비디오의 높이를 자동으로 설정 */
+    cursor: pointer; /* 마우스 커서를 포인터로 변경 */
+}
+
+

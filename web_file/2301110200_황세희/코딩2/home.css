@@ -1,0 +1,346 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+body{
+    width: 1920px;
+    height: 1080px;
+    background: linear-gradient(to bottom,rgb(186,230,231,0.8),rgb(183,226,196,0.8));
+    background-repeat: no-repeat ;
+    background-size: cover;
+    cursor: url('img/캐릭터1.png'), auto;
+}
+
+
+
+/* 네비 */
+
+.btns {
+    position: absolute;
+    top: 144px;
+    left: 550px;
+    z-index: 1;
+}
+.btns .container {
+    position: relative;
+    max-width: 900px;
+    padding: 20px;
+    margin: auto;
+}
+.btns__menu {
+    display: flex;
+    justify-content: center;
+}
+.btns__menu .btn {
+    font-size: 20px;
+    font-weight: 600;
+    color: rgba(68, 68, 68, 0.7);
+    width: 180px;
+    height: 38px;
+    border-radius: 20px;
+    margin: 4px;
+    background-color: #ffffff;
+    margin-right: -35px;
+}
+button {
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+.btns__menu .btn:hover {
+    color: rgb(255, 255, 255);
+    background-color: #b7e2c4;
+    z-index: 2;
+}
+.btns__menu img{
+    width: 20px;
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-top: 7px;
+}
+
+
+/* window */
+.window{
+    width: 1920px;
+    height: 1080px;
+    position: relative;
+    background-image: url(img/background_png.png); 
+}
+
+/* 창 */
+
+.contain{
+    width: 1420px;
+    height: 727px;
+    position: absolute;
+    left: 250px;
+    top: 225px;
+    overflow: scroll;
+    scrollbar-width: none;
+    
+}
+
+/* home */
+
+.home {
+    height: 727px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* profile */
+
+.profile{
+    height: 727px;
+
+}
+
+.profile .top{
+    position: relative;
+    text-align: center;
+    top: 40px;
+    color: #b7e2c4;
+    font-size: 32px;
+}
+
+/* p_left */
+.profile_left{
+    width: 330px;
+    position: relative;
+    top: 90px;
+    left: 240px;
+}
+
+.profile_left h3{
+    color: rgba(68, 68, 68);
+    font-size: 14px;
+    font-weight: 500;
+}
+.profile .profile_left h1{
+    color: rgba(68, 68, 68);
+    font-size: 30px;
+    font-weight: 1000;
+}
+.profile_left p{
+    font-size: 14px;
+    color: rgba(68, 68, 68);
+    margin-top: 5px;
+}
+
+
+.profile_left .img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    box-shadow: 2px 2px 13px 6px #d5d5d560;
+    background-image: url(img/profile_img.jpg);
+    background-size: 155px;
+    background-position: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.profile_left h2{
+    font-size: 16px;
+    color: rgba(68, 68, 68);
+    font-weight: 400;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+/* p_right */
+.profile_right{
+    width: 550px;
+    position: absolute;
+    top: 862px;
+    right: 165px;
+}
+
+.profile_right h2{
+    font-size: 21px;
+    color: rgba(68, 68, 68);
+    font-weight: 1000;
+    margin-bottom: 5px;
+}
+.profile_right p{
+    font-size: 18px;
+    color: rgba(68, 68, 68);
+    line-height: 2;
+    font-weight: 400;
+    margin-bottom: 55px;
+}
+.profile_right p span{
+    font-weight: 600;
+    margin-right: 10px;
+}
+
+.profile_right img{
+    position: relative;
+    top: -225px;
+    left: 220px;
+}
+
+/* works */
+.works{
+    height: 727px;
+} 
+.works h1{
+    position: relative;
+    text-align: center;
+    top: 30px;
+    color: #b7e2c4;
+    font-size: 32px;
+}
+
+.works .works_menu{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+.works .works_menu h2{
+    width: 250px;
+    text-align: center;
+    color: rgb(68, 68, 68);
+    font-size: 20px;
+    font-weight: 400;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+/* works_content */
+.works .works_content .up ,.works .works_content .down{
+    display: flex;
+    justify-content: center;
+}
+
+.w1, .w2, .w3, .w4{
+    width: 250px;
+    height: 250px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 2px 2px 13px 6px #d5d5d560;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 30px;
+    outline: 1px solid rgb(230, 230, 230);
+}
+.w5, .w6, .w7, .w8{
+    width: 250px;
+    height: 250px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 2px 2px 13px 6px #d5d5d560;
+    margin-left: 15px;
+    margin-right: 15px;
+    outline: 1px solid rgb(230, 230, 230);
+}
+
+.w1{
+    background-image: url(img/던킨목업white.jpg);
+    background-size: cover;
+    background-size: 350px;
+    background-position: center;
+    opacity: 70%;
+}
+.w2{
+    background-image: url(img/크린나라\ 목업.jpg);
+    background-size: cover;
+    background-position: center;
+    opacity: 70%;
+}
+.w3{
+    background-image: url(img/시간포스터\ 목업.jpg);
+    background-size: cover;
+    background-size: 380px;
+    background-position: center;
+    opacity: 70%;
+}
+.w4{
+    background-image: url(img/상세1\ 목업.jpg);
+    background-size: cover;
+    opacity: 70%;
+}
+.w5{
+    background-image: url(img/돌하루팡\ 목업.jpg);
+    background-size: cover;
+    background-size: 350px;
+    background-position: center;
+    opacity: 70%;
+}
+.w6{
+    background-image: url(img/카카오\ 목업.jpg);
+    background-size: cover;
+    background-position: center;
+    opacity: 70%;
+}
+.w7{
+    background-image: url(img/초록포스터\ 목업.jpg);
+    background-size: cover;
+    background-size: 380px;
+    background-position: center;
+    opacity: 70%;
+}
+.w8{
+    background-image: url(img/상세2\ 목업.jpg);
+    background-size: cover;
+    opacity: 70%;
+}
+
+.w1:hover, .w2:hover, .w3:hover, .w4:hover, .w5:hover, .w6:hover, .w7:hover, .w8:hover{
+    opacity: 100%;
+}
+
+
+
+/* 모달 */
+.modal {
+    display: none;
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+    background: #fff;
+    width: 1400px;
+    height: 800px;
+    border-radius: 20px;
+    text-align: center;
+    box-sizing:border-box;
+    box-shadow:0 0 20px rgba(0,0,0,.2);
+    &.visible {
+    display: block;
+    overflow: scroll;
+    scrollbar-width: none;
+    }
+    z-index: 3;
+}
+
+.modal img{
+    width: 900px;
+}
+
+.modal__header {
+    color:rgb(68, 68, 68);
+    line-height: 50px;
+    text-align: center;
+    position: relative;
+    height:50px;
+    box-sizing:border-box;
+    
+    a {
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-decoration: none;
+    color:rgb(68, 68, 68);
+    font-weight: bold;
+    display: block;
+    padding: 0 20px;
+    font-size:16px;
+    height: 100%;  
+    }
+}

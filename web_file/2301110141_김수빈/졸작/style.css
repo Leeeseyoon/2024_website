@@ -1,0 +1,1194 @@
+/* 전체 페이지에 적용 */
+* {
+    -webkit-user-select: none;  /* Safari */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;          /* 표준 문법 */
+    -webkit-user-drag: none;    /* 이미지 드래그 방지 */
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+}
+
+/* 이미지에 대해 추가로 적용 */
+img {
+    pointer-events: none;       /* 이미지 마우스 이벤트 방지 */
+    -webkit-touch-callout: none;  /* iOS 길게 터치 방지 */
+}
+
+
+.visual .inner {
+    width: 1100px;
+    margin: 0 auto;
+    height: 646px;
+    position: relative;
+}
+
+.visual .pcup1 img {  /* img 태그에 직접 스타일 적용 */
+    width: auto;  /* 너비는 자동으로 조정 */
+    height: 650px;  /* 원하는 높이 값으로 조정 (예: 400px) */
+    object-fit: contain;  /* 이미지 비율 유지 */
+}
+
+.visual .pcup1 {
+    position: absolute;
+    bottom: 0;
+    opacity: 0; /* 초기 상태에서 보이지 않음 */
+    animation: diagonalIn 1.5s ease forwards 1.5s, bounceUp 0.4s ease-in-out 3s forwards; /* 애니메션 적용 */
+    /* diagonalIn은 1.5초 후에 시작되고, bounceUp은 3.5초 후에 시작 */
+}
+
+.pcup1 {
+    opacity: 0;
+    animation: diagonalIn 1.5s ease forwards 1.5s, bounceUp 0.4s ease-in-out 3s forwards, screenShake 0.5s ease-in-out 3s; ;
+}
+
+.pcup1-wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 200px; /* 원래 위치 */
+    top: 800px; /* 원래 위치 */
+    z-index: 2;
+}
+
+.visual .pcup5 {
+    position: absolute;
+    bottom: 0;
+    top: 100px; /* 상단 위치 유지 */
+    opacity: 0; /* 초기 상태에 보이지 않음 */
+    animation: diagonalIn 1.5s ease forwards 1.5s, bounceUp 0.4s ease-in-out 3s forwards, blink 2s infinite 3.4s; /* 애니메이션 적용 */
+    /* blink는 bounceUp 후 3.4초 후에 시작 */
+}
+
+@keyframes diagonalIn {
+    0% {
+        transform: translate(100%, -300%); /* 오른쪽 위에서 시작 */
+        opacity: 0; /* 완전히 투명 */
+    }
+    100% {
+        transform: translate(0, 0); /* 원래 위로 이동 */
+        opacity: 1; /* 완전히 보임 */
+    }
+}
+
+@keyframes bounceUp {
+    0% {
+        transform: translate(0, 0); /* 원래 위치 */
+    }
+    100% {
+        transform: translate(5px, -10px); /* 오른쪽으로 살짝 이동하며 위로 튀어오름 */
+    }
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1; /* 완전히 보임 */
+    }
+    50% {
+        opacity: 0; /* 완전히 투명 */
+    }
+}
+
+.visual .pcup2 {
+    position: absolute; /* 절대 위치 설정 */
+    z-index: 1; /* 로고보다 낮은 z-index 설정 */
+    top: 15%; /* 화면 상단에 55% 위치 */
+    right: -10%; /* 화면 오른쪽에서 6.4% 위치 */
+    transform: translate(50%, -50%); /* 요소의 중심을 기준으로 이동 */
+    opacity: 0; /* 초기 상태에서 보이지 않음 */
+    animation: fadeIn 1s ease forwards; /* 빛 이미지 애니메이션 적용 */
+    animation-delay: 0.6s; /* 0.5초 후에 애니메이션 시작 */
+}
+
+
+.visual .pcup3 img{
+    width: auto;
+    height: 430px;
+    position: relative;
+    bottom: 0;
+    top: 550px;
+    z-index: 3;
+    opacity: 0;
+    animation: fadeIn 2.5s forwards ease-out 3.5s;
+}
+
+/* 단순 페이드인 효과 */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.visual .pcup4 img{
+    width: 150px;
+    height: 200px;
+    position: relative;
+    bottom: 0;
+    top: 150px;
+    left: 450px;
+    animation:ani 1s infinite alternate;
+}
+@keyframes ani{
+0%{transform:translate(0,0);}
+100%{transform:translate(0,20px);}
+}  
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #151516;
+    background-image: url(./images/오로라\ 큰버전.png);
+    width: 100%;
+    height: auto;  /* 400vh 대신 auto로 변경 */
+    min-height: 100vh; 
+    /*background-size: 1920px 4320px;  /* 원본 크기 유지 */
+    background-position: center top;  /* 중앙 정렬 */
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+    background-size: cover;
+    cursor: none;
+}
+
+
+#home {
+    position: relative; /* 자식 요소의 절대 위치를 위함 */
+    width: 100%;
+    height: 100vh; /* 화면 전체 높이를 차지 */
+}
+
+.bg-inner {
+    position: absolute; /* 배경을 절대 위치로 설정 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* 높이를 100% 설정하여 전체 화면을 덮게 합니다. */
+    background-size: cover; /* 배경 이미지가 요소를 가득 채우지 않도록 설정 */
+    background-position: center; /* 배경 이미지 중앙 정렬 */
+    background-repeat: no-repeat; /* 이미지 반복 방지 */
+}
+
+/* 작업물 섹션 스타일 */
+#about {
+    width: 100%;  /* 1920px에서 100%로 변경 */
+    margin: 0;    /* auto 제거 */
+    min-height: 2000px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+
+.about-container {
+    width: 100%;  /* 1920px에서 100%로 변경 */
+    max-width: 1920px;  /* 최대 너비 설정 */
+    margin: 0 auto;
+    position: relative;
+}
+
+/* 이미지 컨테이너 */
+.about-images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    padding: 50px;
+    width: 100%;
+}
+
+/* 이미지 기본 스타일 */
+.about-img {
+    width: 30%;
+    height: auto;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    pointer-events: auto !important;  /* 호버 효과 활성화 */
+}
+
+.background-img {
+    top: 120px;
+    position: absolute;
+    width: 90%;
+    height: auto;
+    z-index: -1;  /* 다른 이미지들 뒤에 위치 */
+    pointer-events: none;  /* 클릭 이벤트 무시 */
+}
+
+.coffee-img {
+    position: absolute;
+    width: 200px;  /* 원하는 크기로 조정 */
+    z-index: 1;    /* 종이모음보다 위에 */
+    top: 77%;
+    margin-right: 60%;
+}
+
+/* 이미지 호버 효과 */
+.about-img:hover {
+    transform: translateY(-5px) !important;
+    filter: brightness(1.1) !important;
+}
+
+
+/* 초기 상태 */
+.about-img[data-category="illust"] {
+    margin-top: 200px;
+    margin-right: 25%;
+}
+
+.about-img[data-category="poster"] {
+    margin-top: -700px;
+    margin-right: 20%;
+    align-self: flex-end;
+}
+
+.about-img[data-category="website"] {
+    margin-top: -300px;
+    margin-right: 20%;
+    align-self: flex-end;
+    z-index: 4;
+}
+
+.about-img[data-category="detail"] {
+    margin-right: 40%;
+    margin-top: -700px;
+}
+
+/* 섹션 제목 이미지 스타일 */
+.section-title {
+    margin: 20px 0; /* 제목 위아래 여백 */
+    width: auto; /* 너비 자동 조정 */
+    height: 80px; /* 높이 조정 (원하는 크기로 설정) */
+    position: absolute; /* 절대 위치로 설정 */
+    top: 20px; /* 상단에서의 위치 조정 */
+    left: 50%; /* 중앙 정렬을 위한 왼쪽 위치 */
+    transform: translateX(-50%); /* 왼쪽 위치를 앙으로 이동 */
+}
+
+
+#works {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.works-container {
+    position: relative;
+    width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 50px;
+    transform: translateY(-200px);
+}
+
+
+.popup-container {
+    position: absolute;
+    width: 400px;
+    top: 20%;
+    right: 45%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.profile-image {
+    position: absolute;
+    width: 260px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, 10%);
+    z-index: 1;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.profile-image:hover {
+    width: 280px;
+}
+
+.popup-image {
+    position: absolute;
+    height: auto;
+    top: 0;
+    right: -10px;
+    transform: translateX(-400px); /* 왼쪽 끝으로 시작 위치 설정 */
+    opacity: 0;
+    transition: transform 1s ease-out, opacity 1s ease-out;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.popup-image.show {
+    transform: translateX(-200px); /* 원래 위치로 이동 */
+    opacity: 1;
+}
+
+/* 아이콘 이미지 스타일 */
+.icon-image {
+    position: absolute;
+    width: 200px;
+    height: auto;
+    right: 170px;
+    object-fit: contain;
+    z-index: 2;
+    margin-top: 150px;
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
+
+.icon-image.show {
+    opacity: 1;
+}
+
+.icon-image.float {
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0% { transform: translate(0, 0px); }
+    50%  { transform: translate(0, 15px); }
+    100%   { transform: translate(0, -0px); }
+}
+
+.folder-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: auto;
+    top: 20px;
+    left: 25%;
+    transform: scale(0.9);  /* 90% 크기로 축소 (0.9 = 90%) */
+}
+
+.folder-image {
+    width: auto; /* 70vw 제거하고 auto로 변경 */
+    height: auto;
+    max-width: none; /* max-width 제한 해제 */
+    object-fit: none; /* object-fit 제거 */
+}
+
+.text-image {
+    position: absolute;
+    z-index: 2;
+    width: auto; /* 필요한 경우 크기 조절 */
+    top: -4%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.info-container {
+    position: absolute;
+    width: 400px;
+    top: 30%;
+    left: 50%;
+    z-index: 2;
+}
+
+.right-box {
+    padding: 20px;
+    text-align: left;
+}
+
+.name-image {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.intro-image {
+    width: auto;
+    height: auto;
+    transform: translateX(-65px) scale(0.8);  /* scale 값을 1보다 크게 해서 키우기 */
+}
+
+.tools {
+    transform: translateY(17px);  /* margin-top 대신 translateY 사용 */
+}
+
+.tools-image {
+    height: auto;
+    position: relative;
+    margin-top: 30px;
+    transform: translateX(-37px) scale(0.9);
+    opacity: 0;  /* 초기 상태는 투명 */
+}
+
+
+
+
+.education-image {
+    position: relative;
+    margin-top: 30px;
+    transform: translateX(-37px) scale(0.9);
+    opacity: 0;  /* 초기 상태는 투명 */
+}
+
+/* 섹션이 보일 때 애니메이션 실행 */
+.education-image.show {
+    animation: fadeInRight 0.7s ease forwards;
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-37px) scale(0.9);
+    }
+}
+
+
+#contact {
+    min-height: 100vh;
+    padding: 100px 0;    /* 패딩 더 늘림 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    position: relative;  /* 위치 기준점 추가 */
+}
+
+
+.contact-container {
+    position: relative;
+    width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.message-area {
+    position: relative;
+    width: 50%;
+    right: 10%;
+}
+
+.speech-bubble {
+    height: auto;
+}
+
+.email-form {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    z-index: 2;
+}
+
+.email-form input,
+.email-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.email-form textarea {
+    height: 80px;
+    resize: none;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 8px;
+    background: #ff9eb1;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+}
+
+.illustration-area {
+    width: 50%;
+    position: relative;
+    height: fit-content;  /* 또는 구체인 높이 값 */
+    transform: translateX(-150px);  /* 부모 요소를 살짝 왼쪽으로 */
+}
+
+.illustration-area img {
+    position: absolute;
+    width: 600px;
+    max-width: 100%;
+    height: auto;
+    z-index: 2;
+    top: -400px;
+    opacity: 0;
+    transform: translateX(150px); /* 시작 위치 조절 */
+    transition: transform 1s ease-out, opacity 1s ease-out;
+    cursor: pointer;
+}
+
+.illustration-area img.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.illustration-area img.float {
+    animation: floating-illustration 3s ease-in-out infinite;
+}
+
+@keyframes floating-illustration {
+    0% { transform: translate(0, 0px); }
+    50% { transform: translate(0, 15px); }
+    100% { transform: translate(0, 0px); }
+}
+.pobu {
+    position: absolute;
+    top: 60px;
+    left: 60px;  /* 왼쪽 여백과 동일 */
+    z-index: 2;
+}
+
+.pobu-image {
+    width: 900px;
+    height: auto;
+    opacity: 0;
+    animation: slideInFade 1s ease forwards;
+}
+
+@keyframes slideInFade {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* 섹션 기본 설정 */
+section {
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+}
+
+.wrapper {
+    padding-top: 88px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+
+/* 폰트 설정 */
+@font-face {
+    font-family: 'PyeongChangPeace';
+    src: url('./fonts/PyeongChangPeace-Bold.ttf') format('truetype');
+
+}
+
+@font-face {
+    font-family: 'Paperlogy';
+    src: url('./fonts/Paperlogy-4Regular.ttf') format('truetype');
+}
+
+/* 폰트 변수 설정 */
+:root {
+    --main-font: 'PyeongChangPeace', sans-serif;
+    --sub-font: 'Paperlogy', sans-serif;
+}
+
+/* 메인 폰트 적용 */
+.main-font {
+    font-family: var(--main-font);
+}
+
+/* 서브 폰트 적용 */
+.sub-font {
+    font-family: var(--sub-font);
+}
+
+
+/* 애니메이션 코드 추가 */
+.name-image {
+    opacity: 0;
+}
+
+.name-image.show {
+    animation: fadeInName 0.7s ease forwards;
+}
+
+.intro-image {
+    opacity: 0;
+}
+
+.intro-image.show {
+    animation: fadeInIntro 0.7s ease forwards;
+}
+
+.tools-image {
+    opacity: 0;
+}
+
+.tools-image.show {
+    animation: fadeInTools 0.7s ease forwards;
+}
+
+
+
+@keyframes fadeInName {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInIntro {
+    from {
+        opacity: 0;
+        transform: translateX(50px) scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-65px) scale(0.8);
+    }
+}
+
+@keyframes fadeInTools {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* 별 기본 스타일 */
+.star {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    color: #fff1f4;
+    text-shadow: 0 0 10px rgb(255, 255, 255);
+    z-index: 1;
+}
+
+/* 각 별의 크기 */
+.star:nth-child(1) { font-size: 45px; }
+.star:nth-child(2) { font-size: 38px; }
+.star:nth-child(3) { font-size: 42px; }
+.star:nth-child(4) { font-size: 35px; }
+
+/* 반짝임 클래스 */
+.star.twinkling {
+    animation: twinkle 2s infinite;
+}
+
+/* 반짝임 애니메이션 */
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+        filter: brightness(1.2);
+    }
+    50% {
+        opacity: 0.7;
+        transform: translate(-50%, -50%) scale(0.85);
+        filter: brightness(0.8);
+    }
+}
+
+
+
+.navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;  /* 전체 너비 사용 */
+    padding: 20px 0;  /* 좌우 패딩 제거 */
+    z-index: 1000;
+    display: flex;
+    justify-content: center;  /* 가로 중앙 정렬 */
+    align-items: center;  /* 세로 중앙 정렬 */
+}
+
+.nav-container {
+    display: flex;
+    justify-content: center;  /* 가로 중앙 정렬 */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    border-radius: 50px;
+    padding: 10px 25px;
+    box-shadow: 0 0 20px rgba(255, 192, 203, 0.2);
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 30px;
+    justify-content: center;  /* 가로 중앙 정렬 */
+}
+
+.nav-btn {
+    position: relative;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    padding: 12px 30px;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 192, 203, 0.3);
+}
+
+.btn-text {
+    position: relative;
+    color: #333;
+    font-size: 15px;
+    font-family: var(--sub-font);  /* Paperlogy 폰트를 var()로 적용 */
+    font-weight: 600;
+    letter-spacing: 2px;
+    z-index: 3;
+}
+
+/* 이퀄라이저 바 효과 */
+.equalizer {
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 3px;
+    height: 3px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.equalizer-bar {
+    width: 3px;
+    height: 100%;
+    background: #FF69B4;
+    animation: equalize 1s ease-in-out infinite;
+    transform-origin: bottom;
+}
+
+.equalizer-bar:nth-child(1) { animation-delay: 0.1s; }
+.equalizer-bar:nth-child(2) { animation-delay: 0.3s; }
+.equalizer-bar:nth-child(3) { animation-delay: 0.5s; }
+.equalizer-bar:nth-child(4) { animation-delay: 0.2s; }
+
+/* 호버 효과 */
+.nav-btn:hover {
+    transform: translateY(-2px);
+    background: #fff;
+    box-shadow: 
+        0 5px 15px rgba(255, 192, 203, 0.3),
+        0 0 30px rgba(255, 105, 180, 0.2);
+}
+
+.nav-btn:hover .btn-text {
+    color: transparent;
+    background-image: linear-gradient(45deg, #FF1493, #FF69B4);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 15px rgba(255, 20, 147, 0.5);
+}
+
+.nav-btn:hover .equalizer {
+    opacity: 1;
+}
+
+/* 활성화 상태 */
+.nav-btn.active {
+    background: #fff;
+    box-shadow: 
+        0 5px 20px rgba(255, 192, 203, 0.4),
+        0 0 40px rgba(255, 105, 180, 0.3);
+}
+
+.nav-btn.active .btn-text {
+    color: transparent;
+    background-image: linear-gradient(45deg, #FF1493, #FF69B4);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 15px rgba(255, 20, 147, 0.5);
+}
+
+.nav-btn.active .equalizer {
+    opacity: 1;
+}
+
+/* 이퀄라이저 애니메이션 */
+@keyframes equalize {
+    0%, 100% {
+        transform: scaleY(0.3);
+    }
+    50% {
+        transform: scaleY(1);
+    }
+}
+
+
+/* 기본 상태 */
+.nav-btn.music .btn-text {
+    color: #000000;
+    transition: all 0.3s ease;
+}
+
+/* 음악 재생 중일 때 글로우 효과 */
+.nav-btn.music.active .btn-text {
+    color: #FF69B4;
+    text-shadow: 0 0 10px rgba(255, 105, 180, 0.8);
+    animation: glowPulse 1.5s infinite;
+}
+
+/* 글로우 애니메이션 */
+@keyframes glowPulse {
+    0%, 100% {
+        text-shadow: 0 0 10px rgba(255, 105, 180, 0.8);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(255, 105, 180, 1);
+    }
+}
+
+
+/* 여기서부터 모달 스타일 추가 */
+.modal-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.95);
+    z-index: 1000;
+    backdrop-filter: blur(8px);
+}
+
+.modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 1400px;
+    height: 85vh;
+    margin: 50px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.close-btn {
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(90deg);
+}
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    gap: 40px;
+}
+
+.modal-image-container {
+    position: relative;
+    width: 70%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.modal-image {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.modal-description {
+    width: 30%;
+    padding: 35px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    height: fit-content;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.modal-title {
+    font-family: var(--main-font);
+    font-size: 50px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.modal-desc-text {
+    font-family: var(--sub-font);
+    font-size: 16px;
+    line-height: 1.8;
+    color: #f0f0f0;
+    word-break: keep-all;
+}
+
+.modal-info {
+    margin-top: 25px;
+    padding-top: 25px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 14px;
+    color: #b0b0b0;
+}
+
+.slider-btn {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+}
+
+.slider-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+.prev {
+    left: -25px;
+}
+
+.next {
+    right: -25px;
+}
+
+.modal-link a {
+    color: #ffffff; /* 원하는 색상 코드로 변경 */
+    text-decoration: underline; /* 호버 시 밑줄 추가 */
+}
+
+.modal-link a:hover {
+    color: #f33b3b; /* 호버 시 색상 */
+    text-decoration: underline; /* 호버 시 밑줄 추가 */
+}
+
+/* 상세페이지 모달용 특별 스타일 */
+#detail-modal .modal-image-container {
+    overflow-y: scroll;
+    align-items: flex-start;
+}
+
+#detail-modal .modal-image {
+    width: initial;
+    height: initial;
+    max-width: none;
+    max-height: none;
+}
+
+/* 스크롤바 스타일링 */
+#detail-modal .modal-image-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+#detail-modal .modal-image-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+#detail-modal .modal-image-container::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+}
+
+#detail-modal .modal-image-container::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+
+
+@media screen and (max-width: 1920px) {
+    body {
+        width: 100%;
+        overflow-x: hidden;
+    }
+}
+
+
+@keyframes slideFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideFromRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes floating-about {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* 왼쪽에서 나타나는 요소들 */
+.about-img[data-category="illust"].animate,
+.about-img[data-category="detail"].animate {
+    animation: 
+        slideFromLeft 1s ease forwards,
+        floating-about 3s ease-in-out infinite 1s;
+}
+
+/* 오른쪽에서 나타나는 요소들 */
+.about-img[data-category="poster"].animate,
+.about-img[data-category="website"].animate {
+    animation: 
+        slideFromRight 1s ease forwards,
+        floating-about 3s ease-in-out infinite 1s;
+}
+
+/* 초기 상태 - opacity: 0 추가 */
+.about-img[data-category="illust"],
+.about-img[data-category="poster"],
+.about-img[data-category="website"],
+.about-img[data-category="detail"] {
+    opacity: 0;
+}
+
+footer {
+    width: 100%;
+    margin: 0;
+    padding: 10px 0;
+    box-sizing: border-box;
+}
+
+.footer-bottom {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    background-color: #000000;
+    box-sizing: border-box;
+    margin-bottom: 0;
+}
+
+.footer-bottom p {
+    color: #b3b3b3;
+    font-size: 14px;
+    margin: 0;
+}
+
+
+.custom-cursor {
+    width: 100px;
+    height: 100px;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: transform 0.05s linear;
+}
+
+.custom-cursor.hover {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.custom-cursor.hover::before,
+.custom-cursor.hover::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    border: 2px solid rgb(255, 0, 64);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: continuousTargetRing 1.5s ease-out infinite;
+}
+
+.custom-cursor.hover::after {
+    animation-delay: 0.75s;
+}
+
+@keyframes continuousTargetRing {
+    0% {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1.4);
+        opacity: 0;
+    }
+}
+
+/* transform 초기화 방지를 위한 추가 */
+.modal-image-container img {
+    transform: none !important;
+}
+

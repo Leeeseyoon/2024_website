@@ -1,0 +1,159 @@
+:root {  
+    --purple: #D9E5FD;
+    --violet: #E7A5E3;
+    --pink: #F3F6A9;
+  }
+
+  #typing-text {
+    height: 270px; /* 원하는 높이로 설정 */
+    overflow: hidden; /* 내용이 넘칠 경우 숨김 처리 */
+}
+  @keyframes background-pan {
+    from {
+      background-position: 0% center;
+    }
+    
+    to {
+      background-position: -200% center;
+    }
+  }
+  
+  @keyframes scale {
+    from, to {
+      transform: scale(0);
+    }
+    
+    50% {
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    
+    to {
+      transform: rotate(180deg);
+    }
+  }
+
+#about .txt_box h1{
+    font-weight: normal;
+    font-size: 30px;
+}
+#about .txt_box h1 > .magic > .magic-star {
+    --size: clamp(20px, 1.5vw, 30px);
+    
+    animation: scale 700ms ease forwards;
+    display: block;
+    height: var(--size);
+    left: var(--star-left);
+    position: absolute;
+    top: var(--star-top);
+    width: var(--size);
+}
+
+#about .txt_box h1 > .magic {
+    display: inline-block;
+    position: relative;
+}
+
+#about .txt_box h1 > .magic > .magic-star > svg {
+    animation: rotate 1000ms linear infinite;
+    display: block;
+    opacity: 0.7;
+}
+
+#about .txt_box h1 > .magic > .magic-star > svg > path {
+    fill: var(--violet);
+}
+
+/* 자바설정 */
+.magic-text {
+  font-family: 'Pretendard-Regular';
+    animation: background-pan 3s linear infinite;
+    background: linear-gradient(
+        to right,
+        var(--purple),
+        var(--violet),
+        var(--pink),
+        var(--purple)
+    );
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    white-space: nowrap;
+}
+.nomal-text{
+  font-family: 'Pretendard-Regular';
+  font-weight: lighter;
+}
+
+
+  /* -- YouTube Link Styles -- */
+
+#source-link {
+    top: 60px;
+}
+
+#source-link > i {
+color: rgb(94, 106, 210);
+}
+
+#yt-link {  
+top: 10px;
+}
+
+#yt-link > i {
+color: rgb(239, 83, 80);
+}
+
+.meta-link {
+    align-items: center;
+    backdrop-filter: blur(3px);
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;  
+    display: inline-flex;
+    gap: 5px;
+    left: 10px;
+    padding: 10px 20px;
+    position: fixed;
+    text-decoration: none;
+    transition: background-color 600ms, border-color 600ms;
+    z-index: 10000;
+}
+
+.meta-link:hover {
+background-color: rgba(255, 255, 255, 0.1);
+border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.meta-link > i, .meta-link > span {
+height: 20px;
+line-height: 20px;
+}
+
+.meta-link > span {
+color: white;
+font-family: "Rubik", sans-serif;
+transition: color 600ms;
+}
+
+
+
+
+.typing-text::after {
+  content: '';
+  margin-left: .6rem;
+  border-right: 2px solid #777;
+  animation: cursor .9s infinite steps(2);
+}
+
+@keyframes cursor {
+  from { border-right: 2px solid #222; }
+  to { border-right: 2px solid #777; }
+}

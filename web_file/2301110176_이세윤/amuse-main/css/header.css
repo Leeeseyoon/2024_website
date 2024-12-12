@@ -1,0 +1,149 @@
+@font-face {
+    font-family: 'LINESeedKR-Rg';
+    src: url('https://cdn.jsdelivr.net/gh/wizfile/font/LINESeedKR-Rg.eot');
+    src:url('https://cdn.jsdelivr.net/gh/wizfile/font/LINESeedKR-Rg.woff') format('woff');
+    font-style: normal;
+}
+@font-face {
+    font-family: 'LINESeedKR-Bd';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+*{margin: 0; padding: 0;}
+
+
+
+
+
+
+
+
+
+
+
+#wrapper{
+    height : auto;
+    
+    min-height: 100%;
+    padding-bottom: 500px;
+  }
+#header{
+    font-family: 'LINESeedKR-Bd';
+    font-weight: 400;
+    width: 100%;
+    position: fixed;
+    top: 7.5%;
+    left: 0;  
+    right: 0;
+    z-index: 1000;}
+#header ul{
+    position: absolute;
+    right: 10%;
+    float: right;}
+#header li{float: left; margin-left: 40px;}
+#header .logo{position: absolute;left:10% ;}
+#header li img{margin-top: 3px;}
+
+#header ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#header ul li {
+    position: relative;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+#header ul li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black; /* 원하는 색상으로 변경 가능 */
+    position: relative;
+    z-index: 1;
+}
+
+#header ul li::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 0;
+    background-color: rgba(0, 0, 0, 0.1); /* 원하는 색상으로 변경 가능 */
+    z-index: 0;
+    transition: height 0.3s ease;
+}
+
+#header ul li:hover::after {
+    height: 100%;
+    top: 0;
+    background-color: #ef5983;
+}
+
+
+
+
+
+
+    /* Top */
+            /* 하단 버튼 */
+.moveTopBtn { 
+    position: fixed;
+    bottom: 1rem;
+        right: 1rem;
+        width: 4rem;
+        height: 4rem;
+        background: #fc8dad; 
+        border-radius: 50%;
+        color: #fff;
+}
+.moveTopBtn h1{font-size: 2.5rem; margin-top: 3%; margin-left: 18%;}
+.button-container {position: relative;z-index: 1;}
+
+.button-container button {
+position: absolute;
+font-size: 16px;
+}
+.moveTopBtn:hover{
+    transition: 0.5s ease;
+    background-color: #ef5983;
+    scale: 1.2;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* 푸터 css */
+#footer {position : relative;font-weight: 200;
+    transform : translateY(0%); height: 680px; background-color: #f9e0e5; z-index: 999;}
+.footer .logo{margin-left: 10%; }
+.footer .logo img{margin-top: 5%;}
+.f_content{
+
+    color: #3a3a3a;
+    font-family: 'LINESeedKR'; 
+    font-weight: 200;
+    font-size: 23px;
+    gap: 20%;
+    margin-top: 1%;
+    margin-left: 10%;
+    display: flex; justify-content: left;
+}
+.f_l li{margin-top: 5%; font-weight: 400;}
+.f_2 li{margin-top: 4%;}
+.f_2 p{font-weight: 200}
+.f_2 .©AMUSE{font-size: 15px; }
+.f_2 span{font-weight: 600; font-size: 33px;}
+.f_2 li:nth-of-type(1){font-weight: 600;}

@@ -1,0 +1,121 @@
+@font-face {
+    font-family: 'LINESeedKR-Bd';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2') format('woff2');
+    font-weight: 700;
+    font-weight: 400;
+    font-weight: 200;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'LINESeedKR-Rg';
+    src: url('https://cdn.jsdelivr.net/gh/wizfile/font/LINESeedKR-Rg.eot');
+    src:url('https://cdn.jsdelivr.net/gh/wizfile/font/LINESeedKR-Rg.woff') format('woff');
+    font-style: normal;
+}
+
+
+h1 { font-family: "Lucida Bright", Georgia, serif; }
+*{margin: 0; padding: 0;}
+#wrap{width: 100%;}
+
+/* 메인 */
+.main{width: 100%; height: 100vh;}
+.video{object-position: center bottom; object-fit: cover;}
+
+
+/* 컨텐츠1 */
+
+.content1 {
+    opacity: 0; /* 초기 상태 설정 */
+    transform: translateY(-100px); /* 초기 상태 설정 */
+    transition: all 0.2s ease-out; /* 부드러운 전환 효과 */
+    height: 100vh;
+    
+}
+
+
+#content{width: 100%;}
+.content1{margin-top: 213px;}
+.content1 .logo{display: flex; justify-content: center;}
+
+.c1_box {margin-top: 90px;}
+.c1_img .box{width: 390px; height: 550px; 
+    
+}
+
+.box { z-index: -1;
+    opacity: 0; /* 초기 상태 설정 */
+    transform: translateY(-50px); /* 초기 상태 설정 */
+    transition: all 0.5s ease-out; /* 부드러운 전환 효과 */
+}
+.c1_img .box:nth-of-type(1){background-image: url(../img/301.png); object-fit:contain; 
+margin-top: 9%;
+}
+.c1_img .box:nth-of-type(2){background-image: url(../img/302.png);}
+.c1_img .box:nth-of-type(3){background-image: url(../img/303.png);margin-top: 10%;}
+.c1_img .box:nth-of-type(4){background-image: url(../img/304.png);margin-top: 5%;}
+
+.c1_img{display: flex; justify-content: center;}
+.c1_img{margin-top: 3%; margin-right: 3%;}
+
+
+.c1_box{display: flex; justify-content: center; gap: 20;}
+.c1_box h1{font-family: "Lucida Bright", Georgia, serif;font-size: 120px;
+    color: white; margin-top: 10%; 
+    position: absolute;left: 20%; font-style: italic;}
+.c1_box h1:nth-of-type(2){top: 28%; left: 40%;}
+.c1_box p{font-family: 'Pretendard-Regular'; font-size: 24px; 
+    position: absolute; top: 60%; color: white;
+    text-align: center;}
+
+
+
+
+
+/* 컨텐츠 2 */
+.content2 {
+    opacity: 0; /* 초기 상태 설정 */
+    transform: translateY(-100px); /* 초기 상태 설정 */
+    transition: all 0.5s ease-out; /* 부드러운 전환 효과 */
+    height: 350vh;
+    margin-bottom: 10%;
+}
+.content2{width: 100%;}
+.c2_title{margin-top: 100px;display: flex; justify-content: center;}
+
+.c2_box{ width: 1524px; height: 3500px; margin: auto; margin-top: 200px;
+}
+.c2_box h1{font-style: italic;letter-spacing: -0.7rem; margin-left: 10%; margin-top: 10%;}
+.c2_box p{margin-left: 10%;}
+
+.txt{width: 762px;}
+.box1{ display: flex;width: 1524px;}
+.box1 .imgbox{width: 762px; height: 780px; background-image: url(../img/401.jpg);}
+
+.box2{ display: flex;width: 1524px;;}
+.box2 .imgbox{width: 762px; height: 780px; background-image: url(../img/402.jpg); }
+
+.box3{ display: flex;width: 1524px;}
+.box3 .imgbox{width: 762px; height: 780px; background-image: url(../img/403.jpg);}
+
+.box4{ display: flex;width: 1524px;}
+.box4 .imgbox{width: 762px; height: 780px; background-image: url(../img/297.jpg); }
+.imgbox{object-fit: cover; background-repeat: no-repeat;}
+
+
+.box1, .box2, .box3, .box4 {
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: all 0.5s ease-out;
+}
+
+/* 컨텐츠 3 */
+.txt h1{font-size:105px ; color: #da5074;}
+.txt p{margin-top: 8%; 
+    font-family: 'LINESeedKR-Rg'; font-size: 35px; color: #da5074;}

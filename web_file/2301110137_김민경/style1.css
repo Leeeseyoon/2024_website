@@ -1,0 +1,250 @@
+@font-face {
+    font-family: 'DungGeunMo';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    cursor: url('img/cursor.png'), auto;
+    font-weight: normal;
+}
+
+body {
+    background-color: rgb(254, 204, 224);
+}
+
+.navi {
+    position: fixed;
+    overflow: hidden;
+    width: 100vw;
+    left: 0;
+    top: 0;
+    z-index: 999;
+}
+
+.top_img{
+    width: 100vw;
+}
+
+.navi_icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    z-index: 1;
+    color: rgb(170, 20, 125);
+    font-weight: normal;
+}
+
+.navi_icon li {
+    font-family: "Aldrich", sans-serif;
+    cursor: pointer;
+    transition: transform 0.1s;
+    list-style: none;
+    margin-right: 80px;
+    text-align: center;
+    font-weight: normal;
+}
+
+.navi_icon li:last-child {
+    margin-right: 0;
+}
+
+.navi li a:hover img {
+    transform: scale(0.95);
+    box-shadow: 0 0px 10px rgba(66, 6, 43, 0.3);
+    cursor: url('img/cursor.png'), auto;
+}
+
+.home-icon img {
+    border: 3px solid white;
+    border-radius: 5px;
+}
+
+.home-icon h4 {
+    color: white; 
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    padding-top: 15vh;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1;
+}
+
+.button_item {
+    position: fixed;
+    width: auto;
+    height: 100vh;
+    background-color: #FECCE0;
+    display: flex;
+    align-items: center;
+    z-index: 3;
+}
+
+#leftBtn {
+    left: 0;
+}
+
+#rightBtn {
+    right: 0;
+}
+
+.button_item img {
+    display: block;
+    width: 70%;
+    margin: 0 auto;
+    height: auto;
+    transition: transform 0.2s;
+}
+
+.button_item a:hover img {
+    transform: scale(0.95);
+}
+
+.blink {
+    position: relative;
+    display: inline-block;
+}
+
+.blink::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 80%;
+    height: 100%;
+    border-radius: 15%;
+    background-color: rgba(255, 0, 0, 0.144); 
+    animation: blink-animation 1s infinite;
+    z-index: 1;
+}
+
+.blink img {
+    position: relative;
+    z-index: 0;
+    display: block;
+}
+
+@keyframes blink-animation {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.video-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
+video {
+    width: 100%;
+}
+
+.overlay-image {
+    width: 50%;
+    position: relative;
+    display: flex;
+    margin-top: -15vh;
+    flex-direction: column;
+    align-items: center;
+}
+
+.overlay-image1 {
+    width: 100%;
+    z-index: 0;
+    opacity: 0;
+    animation: slideFromBottom 1.5s ease forwards;
+    animation-delay: 1.5s;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.message {
+    color: white;
+    font-family: "Aldrich", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    position: absolute;
+    top: 45%;
+    left: 5%;
+    font-size: 1vw;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.typewriter-text {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    opacity: 0;
+    width: 0;
+    animation: blink-caret .75s step-end infinite;
+    position: absolute;
+    bottom: -20px; 
+    font-family: "Aldrich", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: orange; }
+}
+
+@keyframes slideFromBottom {
+    from {
+        margin-top: 0%;
+        opacity: 0;
+    }
+    to {
+        margin-top: 2%;
+        opacity: 1;
+    }
+}
+
+@keyframes blink-animation-message {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.blinking-message {
+    animation: blink-animation-message 1.3s infinite;
+}
+
+.overlay-image2 {
+    width: 43%;
+    margin-top: 60px;
+    height: auto;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.8s;
+}

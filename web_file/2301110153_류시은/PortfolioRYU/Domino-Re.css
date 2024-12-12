@@ -1,0 +1,160 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+*{
+    margin: 0; 
+    padding: 0;
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+
+body{
+    margin: auto;
+    background-color: #111111;
+}
+
+
+.top{
+    margin-top: 73px;
+}
+.top img{
+    margin: auto;
+    display: block;
+    border-radius: 71.5px;
+    background-color: #111111;
+}
+.top img:hover{
+    background-color: #000000;
+}
+
+
+.main-text{
+    width: 962px;
+    margin: 73px auto;
+    display: block;
+}
+.main-text h1{
+    font-size: 100px;
+    font-weight: 900;
+    color: white;
+    line-height: 80px;
+}
+.main-text p{
+    width: 481px;
+    font-size: 24px;
+    font-weight: 400;
+    color: white;
+    float: right;
+    margin-top: 35px;
+}
+
+.middle-text{
+    width: 962px;
+    margin: 73px auto;
+    display: block;
+}
+.middle-text h2{
+    font-size: 36px;
+    font-weight: 700;
+    color: white;
+    margin-left: 481px;
+    margin-top: 250px;
+}
+.middle-text p{
+    font-size: 16px;
+    font-weight: 400;
+    color: white;
+    margin-left: 481px;
+    margin-top: 25px;
+    line-height: 26px;
+}
+
+
+.process{
+    width: 1650px;
+    margin: auto;
+    display: block;
+}
+.process .oorder{
+    float: left;
+}
+.process .half-half{
+    float: left;
+}
+.process .one-plus-one{
+    float: right;
+}
+.process p{
+    font-size: 20px;
+    font-weight: 400;
+    color: white;
+    padding: 3px 18px;
+}
+.process .half-half,
+.process .one-plus-one{
+    padding-top: 47px;
+}
+.process .one-plus-one img{
+    margin-top: -5px;
+}
+
+
+.Redesign-history{
+    width: 1505px;
+    margin: auto;
+    margin-top: 200px;  
+    margin-bottom: 100px;
+}
+.Redesign-history h3{
+    color: white;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+.Redesign-history p{
+    color: white;
+    font-size: 16px;
+}
+.Redesign-history .redesign-1{
+    width: 662px;
+    float: left;
+    margin-top: 400px;
+}
+.Redesign-history .redesign-1 img{
+    float: left;
+}
+.Redesign-history .redesign-1 .text-1{
+    float: left;
+    margin-top: 100px;
+    margin-left: 40px;
+}
+.Redesign-history.redesign-2{
+    margin-top: 500px;
+    float: left;
+}
+.Redesign-history .redesign-2 img{
+    margin-top: 500px;
+    position:absolute;
+    margin-left: 100px;
+    box-shadow: 5px 5px 30px rgb(0, 0, 0, 0.5);
+    border-radius: 50px 0px 50px 0px;
+}
+.Redesign-history .redesign-2 .side{
+    margin-top: -100px;
+    margin-left: 500px;
+    float: left;
+    position:absolute;
+    z-index: 1;
+}
+.Redesign-history .redesign-2 .text-2{
+    float: left;
+    width: 260px;
+    margin-top: 500px;
+    margin-left: 500px;
+}
+.Redesign-history .redesign-2 .text-3{
+    float: left;
+    width: 260px;
+    margin-top: 500px;
+    margin-left: 500px;
+}
+
+
+

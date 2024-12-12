@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aldrich&display=swap" rel="stylesheet">
+    <title>Info</title>
+</head>
+<body>
+    <audio src="img/audio.mp3" autoplay loop muted></audio>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const audio = document.querySelector('audio');
+            audio.muted = false; // 음소거 해제
+            audio.volume = 1; // 최대 볼륨으로 설정
+
+            const overlayImage = document.querySelector('.overlay-image1');
+            const skillGraph = document.getElementById('skillGraph');
+
+            overlayImage.addEventListener('click', function() {
+                skillGraph.style.display = 'block'; // skill-graph-container를 보여줌
+                skillGraph.classList.add('fadeIn'); // 선택 사항: 부드러운 나타남을 위한 클래스 추가
+            });
+
+            setTimeout(function() {
+                document.querySelector('.skill_thought').classList.add('show', 'burst');
+            }, 500); // 500ms 후에 'show' 및 'burst' 클래스 추가
+
+            // 일정 시간이 지난 후 해당 클래스를 제거하여 애니메이션 종료
+            setTimeout(function() {
+                document.querySelector('.skill_thought').classList.remove('burst');
+            }, 500); 
+        });
+    </script>
+
+    <div class="button_item" id="leftBtn">
+        <a href="index.html"><img src="img/back_button_web_img.png" alt=""></a>
+    </div>
+    <div class="button_item" id="rightBtn">
+        <a href="index2.html" class="blink"><img src="img/next_button_web_img.png" alt=""></a>
+    </div>
+
+    <div class="container">
+        <div class="navi">
+            <div class="navi_icon">
+                <li><a href="index3.html"><img src="img/navi_icon1.png" alt=""></a><h4>WEB</h4></li>
+                <li><a href="index4.html"><img src="img/navi_icon2.png" alt=""></a><h4>CONTACT</h4></li>
+                <li><a href="index.html"><img src="img/navi_icon3.png" alt=""></a><h4>HOME</h4></li>
+                <li class="home-icon"><a href="index1.html"><img src="img/navi_icon4.png" alt=""></a><h4>INFO</h4></li>
+                <li><a href="index2.html"><img src="img/navi_icon5.png" alt=""></a><h4>ILLUST</h4></li>
+            </div>
+            <img class="top_img" src="img/navi_img.png" alt="">
+        </div>
+
+        <div class="video-container">
+            <video autoplay loop muted>
+                <source src="img/no_loading.mp4" type="video/mp4">
+            </video>
+        </div>
+
+
+        <div class="overlay-container">
+            <img class="overlay-image1" src="img/character.png" alt="Overlay Image">
+            <div class="click-container">
+                <p class="click-me">Click me!</p>
+            </div>
+        </div>
+        
+        <div class="skill_thought">
+            <img class="overlay-image2" src="img/thought.png" alt="Overlay Image">
+        </div>
+
+        <div class="skill-graph-container" id="skillGraph">
+            <img class="skill_box" src="img/skill-window.png" alt="">
+        </div>
+    </div>
+          
+
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(function() {
+        document.querySelector('.skill_thought').classList.add('show', 'burst');
+    }, 500); 
+});
+
+setTimeout(function() {
+    document.querySelector('.skill_thought').classList.remove('burst');
+}, 500); 
+    </script>
+
+
+</body>
+</html>

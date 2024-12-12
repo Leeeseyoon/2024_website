@@ -1,0 +1,119 @@
+/* 헤더 */
+#header {
+    width: 100%;
+    height: 10%;
+    background-color: #FF3434;
+    position: fixed;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    z-index: 1000;
+}
+
+#header .h_logo {
+
+    margin-left: 20%; /* 왼쪽 여백 */
+}
+#header .h_logo img{
+    margin-top: 13%;
+}
+#header .h_nav {
+    margin-right: 20%; /* 오른쪽 여백 */
+}
+
+#header .h_nav ul {
+    display: flex; /* Flexbox 사용 */
+    
+}
+
+#header .h_nav li {
+    list-style-type: none; /* 기본 리스트 스타일 제거 */
+    margin-left: 5px; /* 아이템 간격 */
+    
+}
+#header .h_nav li a{
+    color: #560205;
+}
+
+/* 헤더 호버효과 */
+
+#header .h_logo:hover img {
+    content: ''; /* 기존 content 속성 제거 */
+    transition: all 3s ease-in; /* 부드러운 전환 효과 */
+}
+
+/* 이미지 변경을 위한 추가 스타일 */
+#header .h_logo img {
+    transition: all 3s ease-in; /* 부드러운 전환 효과 */
+}
+
+#header .h_nav li:hover{
+
+    background-color: rgb(234, 234, 234);
+    transition: all .3s ease-out;
+    border-radius: 5px;
+}
+
+.h_nav a{
+    text-decoration: none;
+    position: relative;
+    padding: 6px 12px; 
+}
+.h_nav a::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 4px;
+    background-color:  #ffffff;
+    transition: all .3s ease-out;
+}
+
+.h_nav a:hover::after{
+    width: 100%;
+}
+
+
+/* Top */
+/* 하단 버튼 */
+.moveTopBtn { 
+    margin-right: 2%;
+    position: fixed;
+    bottom: 1.3rem;
+        right: 1rem;
+        width: 4rem;
+        height: 4rem;
+        background-color: rgb(60, 46, 28);
+        border-radius: 50%;
+
+}
+.moveTopBtn h1{font-size: 2.3rem; margin-top: 4%; margin-left: 32%;}
+.button-container {position: relative;z-index: 1;}
+
+.button-container button {
+position: absolute;
+font-size: 16px;
+}
+.moveTopBtn:hover{
+    transition: 0.5s ease;
+    background-color: #790400;
+    scale: 1.2;
+}
+
+
+#footer{
+    width: 100%;
+    height: 200px;
+    text-align: center;
+    
+    color: rgb(255, 118, 118);
+    font-family: 'Pretendard-Regular';
+    background-color: #4b0300;
+}
+#footer p{
+    padding-top: 2%;
+    font-size: 1.2rem;
+    font-family: 'NanumBarunGothic';
+}

@@ -1,0 +1,93 @@
+a {
+    text-decoration: none;
+    color: black;
+  }
+
+
+/* 헤더 */
+  #header {
+    width: 100%;
+    height: 10%;
+    background-color: white;
+    position: fixed;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    z-index: 1000;
+}
+
+#header .h_logo {
+    margin-left: 20%; /* 왼쪽 여백 */
+}
+
+#header .h_nav {
+    margin-right: 20%; /* 오른쪽 여백 */
+}
+
+#header .h_nav ul {
+    display: flex; /* Flexbox 사용 */
+}
+
+#header .h_nav li {
+    list-style-type: none; /* 기본 리스트 스타일 제거 */
+    margin-left: 35px; /* 아이템 간격 */
+}
+
+
+/* 헤더 호버효과 */
+#header .h_logo:hover{
+
+    transition: all .3s ease-out;
+
+}
+#header .h_nav li:hover{
+
+    transition: all .3s ease-out;
+    border-radius: 5px;
+}
+
+.h_nav a{
+    text-decoration: none;
+    position: relative;
+    padding: 6px 12px; 
+}
+.h_nav a::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 4px;
+    background-color:  #FFD735;
+    transition: all .3s ease-out;
+}
+
+.h_nav a:hover::after{
+    width: 100%;
+}
+
+/* Top */
+/* 하단 버튼 */
+.moveTopBtn { 
+    position: fixed;
+    bottom: 1rem;
+        right: 1rem;
+        width: 4rem;
+        height: 4rem;
+        background-color: rgb(60, 46, 28);
+        border-radius: 50%;
+        color: #fff;
+}
+.moveTopBtn h1{font-size: 2.3rem; margin-top: 7%;}
+.button-container {position: relative;z-index: 1;}
+
+.button-container button {
+position: absolute;
+font-size: 16px;
+}
+.moveTopBtn:hover{
+    transition: 0.5s ease;
+    background-color: #ffb623;
+    scale: 1.2;
+}

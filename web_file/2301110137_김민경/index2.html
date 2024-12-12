@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style3.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aldrich&display=swap" rel="stylesheet">
+    <title>Illust</title>
+</head>
+<body>
+    <audio src="img/audio.mp3" autoplay loop muted></audio>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const audio = document.querySelector('audio');
+    audio.muted = false; // 음소거 해제
+    audio.volume = 1; // 최대 볼륨으로 설정
+});
+    </script>
+
+        <div class="navi">
+            <div class="navi_icon">
+                <li><a href="index3.html"><img src="img/navi_icon1.png" alt=""></a><h4>WEB</h4></li>
+                <li><a href="index4.html"><img src="img/navi_icon2.png" alt=""></a><h4>CONTACT</h4></li>
+                <li><a href="index.html"><img src="img/navi_icon3.png" alt=""></a><h4>HOME</h4></li>
+                <li><a href="index1.html"><img src="img/navi_icon4.png" alt=""></a><h4>INFO</h4></li>
+                <li class="home-icon"><a href="index2.html"><img src="img/navi_icon5.png" alt=""></a><h4>ILLUST</h4></li>
+            </div>
+            <img class="top_img"
+            src="img/navi_img.png" alt="">
+        </div>
+        
+    
+
+    <div class="button_item" id="leftBtn">
+        <a href="index1.html"><img src="img/back_button_web_img.png" alt=""></a>
+    </div>
+    <div class="button_item" id="rightBtn">
+        <a href="index3.html" class="blink"><img src="img/next_button_web_img.png" alt=""></a>
+    </div>
+
+
+    <div class="container">
+        
+        <div class="video-container">
+            <video autoplay loop muted>
+                <source src="img/no_loading.mp4" type="video/mp4">
+            </video>
+        </div>
+
+<div id="container">
+    <div id="imageContainer">
+        <img id="displayedImage" src="" alt="Displayed Image">
+    </div>
+
+    <div class="class">
+        <div id="thumbnailContainerTop">
+            <div class="thumbnail-container">
+                <img class="thumbnail" src="img/illust6.png" alt="Thumbnail 1">
+                <div class="thumbnail-caption">- 알록달록 빙수 -</div>
+            </div>
+            <div class="thumbnail-container">
+                <img class="thumbnail" src="img/illust7.png" alt="Thumbnail 3" >
+                <div class="thumbnail-caption">- 여름의 추억 -</div>
+            </div>
+            <div class="thumbnail-container">
+                <img class="thumbnail" src="img/illust8.png" alt="Thumbnail 2" >
+                <div class="thumbnail-caption">- 따끈따끈 만두 -</div>
+            </div>
+        </div>
+
+        <div id="thumbnailContainerBottom">
+            <div class="thumbnail-container">
+                <img class="thumbnail" src="img/illust1.png" alt="Thumbnail 4" >
+                <div class="thumbnail-caption">- 오뚜기와 소풍 -</div>
+            </div>
+            <div class="thumbnail-container">
+                <img class="thumbnail" src="img/illust5.png" alt="Thumbnail 5" >
+                <div class="thumbnail-caption">- 뒤바뀐 마음 -</div>
+            </div>
+            <div class="thumbnail-container">
+                <img class="thumbnail" src="img/illust9.png" alt="Thumbnail 6" >
+                <div class="thumbnail-caption">- 자화상 -</div>
+            </div>
+        </div>
+
+        <div id="imageDetails">
+            <h2 id="title"></h2>
+            <p id="description"></p>
+        </div>
+    </div>
+
+</div>
+
+
+
+    <script>
+            window.onload = function() {
+        var thumbnails = document.querySelectorAll('.thumbnail');
+        var displayedImage = document.getElementById('displayedImage');
+        var title = document.getElementById('title');
+        var description = document.getElementById('description');
+
+        // 디폴트 이미지 설정
+        var defaultImage = "img/illust6.png";
+        displayedImage.setAttribute('src', defaultImage);
+        title.innerHTML = thumbnails[0].getAttribute('data-title');
+        description.innerHTML = thumbnails[0].getAttribute('data-description');
+
+        thumbnails.forEach(function(thumbnail) {
+            thumbnail.addEventListener('click', function() {
+                var imagePath = this.getAttribute('src');
+                displayedImage.setAttribute('src', imagePath);
+
+                var titleText = this.getAttribute('data-title');
+                var descriptionText = this.getAttribute('data-description');
+                title.innerHTML = titleText;
+                description.innerHTML = descriptionText;
+            });
+        });
+    };
+    </script>
+</body>
+</html>

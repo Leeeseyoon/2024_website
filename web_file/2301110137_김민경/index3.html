@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style4.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aldrich&display=swap" rel="stylesheet">
+    <title>Web</title>
+</head>
+<body>
+    <audio src="img/audio.mp3" autoplay loop muted></audio>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const audio = document.querySelector('audio');
+            audio.muted = false; // 음소거 해제
+            audio.volume = 1; // 최대 볼륨으로 설정
+        });
+    </script>
+
+    <div class="navi">
+        <div class="navi_icon">
+            <li class="home-icon"><a href="index3.html"><img src="img/navi_icon1.png" alt=""></a><h4>WEB</h4></li>
+            <li><a href="index4.html"><img src="img/navi_icon2.png" alt=""></a><h4>CONTACT</h4></li>
+            <li><a href="index.html"><img src="img/navi_icon3.png" alt=""></a><h4>HOME</h4></li>
+            <li><a href="index1.html"><img src="img/navi_icon4.png" alt=""></a><h4>INFO</h4></li>
+            <li><a href="index2.html"><img src="img/navi_icon5.png" alt=""></a><h4>ILLUST</h4></li>
+        </div>
+        <img class="top_img" src="img/navi_img.png" alt="">
+    </div>
+
+    <div class="button_item" id="leftBtn">
+        <a href="index2.html"><img src="img/back_button_web_img.png" alt=""></a>
+    </div>
+    <div class="button_item" id="rightBtn">
+        <a href="index4.html" class="blink"><img src="img/next_button_web_img.png" alt=""></a>
+    </div>
+
+    <div class="container">
+        <div class="video-container">
+            <video autoplay loop muted>
+                <source src="img/no_loading.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="img_container">
+            <div class="left-box popup-effect" id="leftBox">
+                <img src="img/left1.png" id="leftImage" alt="Left Image">
+            </div>
+            <div class="right popup-effect">
+                <div class="right-top">
+                    <img src="img/chara_icon1.png" id="icon1" alt="Icon 1" onclick="changeImages(1)">
+                    <img src="img/chara_icon2.png" id="icon2" alt="Icon 2" onclick="changeImages(2)">
+                    <img src="img/chara_icon3.png" id="icon3" alt="Icon 3" onclick="changeImages(3)">
+                </div>
+                <div class="click-text">Click icon!</div>
+                <div class="right-bottom" id="rightBottom">
+                    <img src="img/right1.png" id="rightImage" alt="Right Image">
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom-box popup-effect" id="textBox">
+            <p id="text">키즈푸드 정보사이트 자연드림입니다. <br>
+                캐릭터 밥독과 친구들의 조화로 친근하고 건강해 보이는 분위기를 연출하고 있습니다. <br>
+                *이미지를 창을 누르면 전체샷을 볼 수 있습니다.</p>
+        </div>
+
+        <!-- 모달 구조 -->
+        <div id="imageModal" class="modal">
+            <span class="close" id="closeModal">&times;</span>
+            <img class="modal-content" id="modalImage" alt="Modal Image">
+            <div id="caption"></div>
+        </div>
+
+        <script>
+            window.onload = function() {
+                const elements = document.querySelectorAll('.img_container > .popup-effect');
+                const textBox = document.getElementById('textBox');
+
+                // 각 img_container의 요소들에 팝업 효과 추가
+                elements.forEach((element, index) => {
+                    setTimeout(() => {
+                        element.classList.add('show'); // show 클래스 추가
+                    }, index * 200);
+                });
+
+                // bottom-box 요소는 마지막에 나타나도록 설정
+                setTimeout(() => {
+                    textBox.classList.add('show'); // bottom-box에 show 클래스 추가
+                }, elements.length * 200);
+            };
+
+            function changeImages(iconNumber) {
+                const leftImage = document.getElementById('leftImage');
+                const rightImage = document.getElementById('rightImage');
+                const text = document.getElementById('text');
+                const modalImage = document.getElementById('modalImage');
+                
+                switch (iconNumber) {
+                    case 1:
+                        leftImage.src = "img/left1.png";
+                        rightImage.src = "img/right1.png";
+                        text.innerText = "키즈푸드 정보사이트 자연드림입니다. 캐릭터 밥독과 친구들의 조화로 친근하고 건강해 보이는 분위기를 연출하고 있습니다. *이미지를 누르면 전체샷을 볼 수 있습니다.";
+                        text.innerText = text.innerText.replace(/(?<=\.)/g, '\n');
+                        modalImage.src = "img/pagefull1.png";
+                        break;
+                    case 2:
+                        leftImage.src = "img/left2.png";
+                        rightImage.src = "img/right2.png";
+                        text.innerText = "잡화쇼핑몰 사이트 문구살래입니다. 캐릭터 츄츄크레인과 사이트의 파스텔톤이 어우러지게 사랑스럽게 디자인했습니다. *이미지를 누르면 전체샷을 볼 수 있습니다.";
+                        text.innerText = text.innerText.replace(/(?<=\.)/g, '\n');
+                        modalImage.src = "img/pagefull2.png";
+                        break;
+                    case 3:
+                        leftImage.src = "img/left3.png";
+                        rightImage.src = "img/right3.png";
+                        text.innerText = "캐릭터 마크시티의 세계관과 캐릭터소개 사이트입니다. 마크시티만의 펑키하고 독자적인 세계관에 맞게 디자인했습니다. *이미지를 누르면 전체샷을 볼 수 있습니다.";
+                        text.innerText = text.innerText.replace(/(?<=\.)/g, '\n');
+                        modalImage.src = "img/pagefull3.png";
+                        break;
+                }
+            }
+
+            // 모달 제어 스크립트
+            const modal = document.getElementById("imageModal");
+            const closeModal = document.getElementById("closeModal");
+
+            // leftBox 클릭 시 모달 열기
+            document.getElementById("leftBox").onclick = function() {
+                const leftImageSrc = document.getElementById('leftImage').src; 
+                modal.style.display = "block"; 
+
+                switch (true) {
+                    case leftImageSrc.includes("left1.png"):
+                        document.getElementById("modalImage").src = "img/pagefull1.png";
+                        // document.getElementById("caption").innerText = "키즈푸드 자연드림";
+                        break;
+                    case leftImageSrc.includes("left2.png"):
+                        document.getElementById("modalImage").src = "img/pagefull2.png";
+                        // document.getElementById("caption").innerText = "잡화쇼핑몰 문구살래";
+                        break;
+                    case leftImageSrc.includes("left3.png"):
+                        document.getElementById("modalImage").src = "img/pagefull3.png";
+                        // document.getElementById("caption").innerText = "마크시티 세계관";
+                        break;
+                }
+            };
+
+            // rightBottom 클릭 시 모달 열기
+            document.getElementById("rightBottom").onclick = function() {
+                const rightImageSrc = document.getElementById('rightImage').src;
+                modal.style.display = "block";
+
+                switch (true) {
+                    case rightImageSrc.includes("right1.png"):
+                        document.getElementById("modalImage").src = "img/right1.png"; // right1의 전체 이미지 경로
+                        // document.getElementById("caption").innerText = "키즈푸드 자연드림 - 오른쪽 이미지";
+                        break;
+                    case rightImageSrc.includes("right2.png"):
+                        document.getElementById("modalImage").src = "img/right2.png"; // right2의 전체 이미지 경로
+                        // document.getElementById("caption").innerText = "잡화쇼핑몰 문구살래 - 오른쪽 이미지";
+                        break;
+                    case rightImageSrc.includes("right3.png"):
+                        document.getElementById("modalImage").src = "img/right3.png"; // right3의 전체 이미지 경로
+                        // document.getElementById("caption").innerText = "마크시티 세계관 - 오른쪽 이미지";
+                        break;
+                }
+            };
+
+            // 모달 닫기
+            closeModal.onclick = function() {
+                modal.style.display = "none"; 
+            };
+
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none"; 
+                }
+            };
+        </script>
+    </div>
+</body>
+</html>

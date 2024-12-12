@@ -1,0 +1,88 @@
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{font-family: 'GmarketSansMedium';}
+
+header{margin-left:510px; float:left; padding-top:15px; position:fixed;}
+header .floating_header{height: 70px; width: 900px; background-color: white; border-radius: 30px; box-shadow : 0 30px 60px -30px rgba(0, 0, 0, 0.9)}
+header .floating_header .text{}
+header .floating_header .text ul{list-style:none; display:block; line-height:70px;}
+header .floating_header .text ul li{float:left; margin-left:47px;}
+header .floating_header .text ul li a{text-decoration: none; color:dimgray}
+header .floating_header .text ul li a:hover{text-decoration: none; color:black}
+
+body{background-color: white;}
+body .main_text{padding-top: 100px; text-align:center;}
+body .main_text h1{}
+body .main_text h4{color: dimgray;}
+body .main_page{list-style:none; display:flex; margin-bottom:0;}
+body .main_page .left_text{width: 300px; margin-left:160px; float:left;}
+body .main_page .left_text .career1{}
+body .main_page .left_text .career1 h2{}
+body .main_page .left_text .career1 p{color:dimgray;}
+body .main_page .left_text .career2{}
+body .main_page .left_text .career2 h2{}
+body .main_page .left_text .career2 p{color:dimgray;}
+body .main_page .left_text .career3{}
+body .main_page .left_text .career3 h2{}
+body .main_page .left_text .career3 p{color:dimgray;}
+body .main_page .right_text{width: 300px; margin-left:20px; float:left;}
+body .main_page .right_text .edu1{}
+body .main_page .right_text .edu1 h2{}
+body .main_page .right_text .edu1 p{color:dimgray;}
+body .main_page .right_text .edu2{}
+body .main_page .right_text .edu2 h2{}
+body .main_page .right_text .edu2 p{color:dimgray;}
+body .main_page .right_text .edu3{}
+body .main_page .right_text .edu3 h2{}
+body .main_page .right_text .edu3 p{color:dimgray;}
+body .main_page .main_img{width: 500px; height:auto; float: left; margin-bottom:18px;}
+body .main_page .main_img img{width: 400px;}
+body .main_page .last_text{width: 300px;}
+body .main_page .last_text h2{}
+body .main_page .last_text p{color:dimgray;}
+
+.portfolo_card{width: 1920px; height: 1080px; background-color: lightgray; margin-top:-30px;}
+.portfolo_card .cards{list-style:none; display: inline-block;}
+.portfolo_card .cards .explain{list-style:none; float:left; margin-left:160px; margin-top:50px;}
+.portfolo_card .cards .explain h4{}
+.portfolo_card .cards .explain p{color:dimgray;}
+.portfolo_card .cards .card{list-style:none;}
+.portfolo_card .cards .card ul{list-style:none; float:left; margin-top:100px; display:flex;}
+.portfolo_card .cards .card ul li{margin-right:20px;}
+.portfolo_card .cards .card ul .editorial_card{text-align: center;}
+.portfolo_card .cards .card ul .editorial_card .ebox{width: 400px; height: 600px; background-color: white; border-radius: 30px;}
+.portfolo_card .cards .card ul .editorial_card .ebox:hover{
+    box-shadow: 200px 0 50px 30px white inset,-200px 0 50px 30px white inset,0 -200px 50px 30px white inset, 0 30px 60px -30px rgba(0, 0, 0, 0.9)}
+.portfolo_card .cards .card ul .editorial_card .ebox img{width: 300px; height:auto; margin-top:50px;}
+.portfolo_card .cards .card ul .uiux_card{text-align:center;}
+.portfolo_card .cards .card ul .uiux_card .ubox{width: 400px; height: 600px; background-color: white; border-radius: 30px;}
+.portfolo_card .cards .card ul .uiux_card .ubox:hover{
+    box-shadow: 200px 0 50px 30px white inset,-200px 0 50px 30px white inset,0 -200px 50px 30px white inset, 0 30px 60px -30px rgba(0, 0, 0, 0.9)}
+.portfolo_card .cards .card ul .uiux_card .ubox img{width: 300px; height:auto; margin-top:50px;}
+.portfolo_card .cards .card ul .illustration_card{text-align:center;}
+.portfolo_card .cards .card ul .illustration_card .ibox{width: 400px; height: 600px; background-color: white; border-radius: 30px;}
+.portfolo_card .cards .card ul .illustration_card .ibox:hover{
+    box-shadow: 200px 0 50px 30px white inset,-200px 0 50px 30px white inset,0 -200px 50px 30px white inset, 0 30px 60px -30px rgba(0, 0, 0, 0.9)}
+.portfolo_card .cards .card ul .illustration_card .ibox img{width: 300px; height:auto; margin-top:50px;}
+.portfolo_card .cards .card ul .detail_page{}
+.portfolo_card .cards .card ul .detail_page .dbox{width: 400px; height: 600px; background-color: white; border-radius: 30px; text-align:center;}
+.portfolo_card .cards .card ul .detail_page .dbox:hover{
+    box-shadow: 200px 0 50px 30px white inset,-200px 0 50px 30px white inset,0 -200px 50px 30px white inset, 0 30px 60px -30px rgba(0, 0, 0, 0.9)}
+.portfolo_card .cards .card ul .detail_page .dbox img{width: 300px; height:auto; margin-top:50px;}
+
+body .get_in_touch{text-align:center;}
+body .get_in_touch h1{}
+body .get_in_touch p{color:dimgray;}
+body .get_in_touch .btn{}
+body .get_in_touch .btn button{background-color:lightgray; border:dimgray; padding: 10px; border-radius: 10px; color:dimgray;}
+body .get_in_touch .btn button a{text-decoration:none; color:white;}
+
+footer{width: 1920px;}
+footer .footer{background-color: dimgray; width: 1920px;text-align: center; margin-top: 30px;padding-top: 50px; padding-bottom:50px;}
+footer .footer h4{color:lightgray;}
+footer .footer p{color: lightgray;}

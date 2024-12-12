@@ -1,0 +1,397 @@
+@import url('https://fastly.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css');
+
+body{
+    background-color: #D9DDFF;
+}
+
+a{
+    text-decoration: none;
+}
+
+/*게임기 버튼 포함 전체*/
+
+.container{
+    width: 1776px;
+    height: 690px;
+    margin: 0 auto;
+    margin-top: 127px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 조작버튼 */
+
+.controller{
+    width: 196px;
+    height: 196px;
+    margin-top: 247px;
+}
+
+.up, .down{
+    width: 58px;
+    height: 63px;
+    background-color: #93BED4;
+}
+
+.left, .right{
+    width: 66px;
+    height: 58px;
+    background-color: #93BED4;
+}
+
+.up{
+    border-top: 3px solid black;
+    border-left: 3px solid black;
+    border-right: 3px solid black;
+    margin: 0 auto;
+}
+
+.up .tri{
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0px 19.5px 33.774px 19.5px;
+    border-color: transparent transparent #4A7198 transparent;
+    margin: 0 auto;
+    margin-top: 13px;
+}
+
+.anrdma{
+    display: flex;
+    justify-content: center;
+}
+
+.left{
+    border-top: 3px solid black;
+    border-left: 3px solid black;
+    border-bottom: 3px solid black;
+}
+
+.left .tri{
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 19.5px 33.774px 19.5px 0px;
+    border-color: transparent #4A7198 transparent transparent;
+    margin-left: 13px;
+    margin-top: 9.5px;
+}
+
+.center{
+    width: 58px;
+    height: 64px;
+    background-color: #93BED4;
+    display: block;
+}
+
+.dnjs{
+    width: 41px;
+    height: 41px;
+    background-color: #4A7198;
+    border-radius: 50%;
+    display: inline-block;
+    margin-top: 11.5px;
+    margin-left: 8.5px;
+
+}
+
+.right{
+    border-top: 3px solid black;
+    border-right: 3px solid black;
+    border-bottom: 3px solid black;
+}
+
+.right .tri{
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 19.5px 0px 19.5px 33.774px;
+    border-color: transparent transparent transparent #4A7198;
+    margin-left: 17px;
+    margin-top: 9.5px;
+}
+
+.down{
+    border-bottom: 3px solid black;
+    border-left: 3px solid black;
+    border-right: 3px solid black;
+    margin: 0 auto;
+}
+
+.down .tri{
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 33.774px 19.5px 0px 19.5px;
+    border-color: #4A7198 transparent transparent transparent;
+    display: inline-block;
+    margin-top: 14px;
+    margin-left: 9.5px;
+}
+
+/* 게임기 모니터 */
+
+.screen_t{
+    width: 1240px;
+    height: 100%;
+    background-color: #343657;
+}
+
+.screen{
+    width: 1170px;
+    height: 571px;
+    background-color: #3D4594;
+    margin: 0 auto;
+    margin-top: 32px;
+    background-image: url(img/테트리스2.png);
+}
+
+.screen_sdw{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(63, 66, 109, 0.82);
+}
+
+.small_menu{
+    width: 842px;
+    height: 56px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 25px 0 0 0;
+}
+
+.small_menu a{
+    width: 230px;
+    height: 56px;
+    display: block;
+    background-image: url(img/메뉴.png);
+    text-align: center;
+}
+
+.small_menu a p{
+    font-size: 24px;
+    font-family: "Galmuri7", sans-serif;
+    color: black;
+    margin-top: 12px;
+}
+
+.game_window_t{
+    width: 1071px;
+    height: 426px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    margin-top: 25px;
+}
+
+
+/* 처음에 previous 버튼을 숨김 */
+.previous {
+    display: none;
+}
+
+.slide {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    width: 837px; /* 슬라이드 컨테이너 크기에 맞춤 */
+}
+
+.game_w_t {
+    min-width: 100%; /* 슬라이드 화면 크기에 맞게 조정 */
+    transition: transform 0.5s ease-in-out; /* 슬라이드 전환 애니메이션 */
+}
+
+.qkdgid{
+    width: 49px;
+    height: 64px;
+    margin-top: 185px;
+}
+
+.game_w_t{
+    width: 837px;
+    height: 426px;
+    border: 5px solid white;
+    box-sizing: border-box;
+}
+
+.game_w{
+    width: 823px;
+    height: 414px;
+    background-color: rgba(217, 221, 255, 0.34);
+    margin: 0 auto;
+    position: absolute;
+}
+
+.box1{
+    width: 696px;
+    height: 354px;
+    margin: 0 auto;
+    margin-top: 38px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.my_left p{
+    font-family: "Galmuri9", sans-serif;
+    font-size: 20px;
+    color: white;
+    margin: 0 auto;
+}
+
+.my_left p span{
+    font-size: 24px;
+}
+
+.my_right{
+    width: 320px;
+    height: 355px;
+}
+
+.photo{
+    width: 220px;
+    height: 224px;
+    background-color: #F3F3F3;
+    background-image: url(img/2301110168\ 우수지_졸업사진.png);
+    background-size: cover;
+    background-position: center;
+    margin: 0 auto;
+}
+
+.msg_box{
+    width: 320px;
+    height: 131px;
+    box-sizing: border-box;
+    border: 5px solid white;
+    background-color: rgba(217, 221, 255, 0.34);
+}
+
+.msg_box p{
+    font-size: 18px;
+    font-family: "Galmuri9", sans-serif;
+    color: white;
+    margin-top: 25px;
+    margin-left: 23px;
+}
+
+.slide2 .game_w{
+    margin-left: -12px;
+}
+
+.title{
+    font-size: 32px;
+    font-family: "Galmuri7", sans-serif;
+    color: white;
+    margin-top: 28px;
+    margin-left: 77px;
+}
+
+.skill_box{
+    width: 683px;
+    height: 288px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.img_box{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.skill_gage{
+    width: 509px;
+    height: 265px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin: 0 auto;
+    margin-top: 11px;
+}
+
+.gage{
+    width: 509px;
+    height: 39px;
+    border: 3px solid white;
+    box-sizing: border-box;
+    border-radius: 19.5px;
+}
+
+.gage_sz1{
+    width: 347px;
+    height: 29px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 3px;
+    margin-top: 2.5px;
+}
+
+.gage_sz2{
+    width: 297px;
+    height: 29px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 3px;
+    margin-top: 2.5px;
+}
+
+.gage_box{
+    width: 47px;
+    height: 29px;
+    background-color: white;
+}
+
+.first{
+    border-radius: 14.5px 0 0 14.5px;
+}
+
+.skill_text{
+    width: 64px;
+    height: 274px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.skill_text p{
+    font-family: "Galmuri7", sans-serif;
+    font-size: 32px;
+    color: white;
+    margin: 0;
+}
+
+/* A,B 버튼 */
+
+.button{
+    width: 196px;
+    height: 196px;
+    margin-top: 247px;
+    display: flex;
+    flex-direction: column;
+}
+
+.button a{
+    width: 89px;
+    height: 89px;
+    display: block;
+}
+
+.b_A{
+    background-image: url(img/A\ 버튼.png);
+}
+
+.b_A:hover{
+    background-image: url(img/A\ 버튼_선택완료.png);
+}
+
+.b_B{
+    background-image: url(img/B\ 버튼.png);
+    margin-top: 18px;
+    margin-left: 108px;
+}
+
+.b_B:hover{
+    background-image: url(img/B\ 버튼_선택완료.png);
+}

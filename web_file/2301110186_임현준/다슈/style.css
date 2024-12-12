@@ -1,0 +1,821 @@
+/* Reset & Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #333333;
+    --secondary-color: #666666;
+    --accent-color: #FF4B2B;
+    --background-color: #FFFFFF;
+    --gray-light: #F5F5F5;
+    --max-width: 1200px;
+}
+
+body {
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+    line-height: 1.6;
+    color: var(--primary-color);
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Utility Classes */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn--primary {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.btn--primary:hover {
+    background-color: #e63e1e;
+    transform: translateY(-2px);
+}
+
+/* Header Styles */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--background-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+.header__container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 1rem 20px;
+    display: flex;
+    align-items: center;
+    gap: 2rem; /* 로고와 네비게이션 사이 간격 */
+}
+
+.header__logo {
+    margin: 0;
+}
+
+.header__logo img {
+    height: 40px;
+    width: auto;
+}
+
+.header__nav {
+    margin-right: auto; /* 네비게이션을 왼쪽으로 붙임 */
+}
+
+.nav__list {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav__list li a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav__list li a:hover {
+    color: #000;
+}
+
+.header__utils {
+    display: flex;
+    gap: 1.5rem;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+    .header__container {
+        gap: 1rem;
+    }
+    
+    .nav__list {
+        gap: 1rem;
+    }
+    
+    .nav__list li a {
+        font-size: 0.9rem;
+    }
+}
+
+.nav__list a:hover {
+    color: #000;
+}
+
+.header__utils {
+    display: flex;
+    gap: 1rem;
+}
+
+.utils__btn {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    text-decoration: none;
+    padding: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.utils__btn:hover {
+    color: #000;
+}
+
+/* Hero Section */
+.hero {
+    margin-top: 80px;
+    height: 600px;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url('images/hero-bg.jpg') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero__content {
+    padding: 2rem;
+}
+
+.hero__content h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero__content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+/* Featured Products Section */
+.featured-products {
+    padding: 5rem 0;
+    background-color: var(--gray-light);
+}
+
+.section__title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 0 20px;
+}
+
+/* Brand Story Section */
+.brand-story {
+    padding: 5rem 0;
+}
+
+.brand-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #fff; /* 검정색에서 흰색으로 변경 */
+    color: #333; /* 텍스트 색상을 어두운 색으로 변경 */
+    padding: 4rem 0 2rem;
+    border-top: 1px solid #eee; /* 구분선 추가 */
+}
+
+.footer__container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer__info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+}
+
+.footer__logo img {
+    height: 30px;
+    filter: none; /* 이미지 필터 제거 */
+}
+
+
+.footer__links ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer__links a {
+    color: #333; /* 링크 색상도 어두운 색으로 변경 */
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.footer__copyright {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #666; /* ��작권 텍스트 색상 변경 */
+}
+
+
+.footer__logo-info {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.footer__logo {
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.footer__logo img {
+    width: 120px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header__nav {
+        display: none; /* 모바일 메뉴는 별도 구현 필요 */
+    }
+
+    .hero__content h2 {
+        font-size: 2rem;
+    }
+
+    .footer__info {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .footer__links ul {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero__content {
+    animation: fadeIn 1s ease-out;
+}
+
+/* 기존 hero 스타일을 수정하고 슬라이더 스타일 추가 */
+.hero {
+    margin-top: 80px;
+    height: 600px;
+    position: relative;
+    overflow: hidden;
+}
+
+.slider {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 2;
+    width: 100%;
+    padding: 0 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.slider__btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 16px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 2;
+    transition: background 0.3s ease;
+}
+
+.slider__btn:hover {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.slider__btn--prev {
+    left: 20px;
+}
+
+.slider__btn--next {
+    right: 20px;
+}
+
+.slider__dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 2;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgb(255, 255, 255);
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.dot.active {
+    background: white;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: 0.4}
+    to {opacity: 1}
+}
+
+/* 스크롤 텍스트 애니메이션 스타일 */
+.scroll-text-container {
+    overflow: hidden;
+    padding: 4rem 0;
+    background: #ffffff;
+    text-align: center;
+}
+
+.scroll-text {
+    font-size: 5rem;
+    color: var(--primary-color);
+    opacity: 0;
+    transform: translateX(0);
+    transition: all 0.8s ease-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* GET READY WITH ME 스타일 */
+.scroll-right {
+    margin-bottom: 2rem;
+    font-weight: 200;
+    letter-spacing: 2px;
+}
+
+/* DASHU 스타일 */
+.scroll-left {
+    font-weight: 800;
+}
+
+.scroll-text.active {
+    opacity: 1;
+}
+
+.scroll-right.active {
+    transform: translateX(50px);
+}
+
+.scroll-left.active {
+    transform: translateX(320px); /* 300px에서 400px로 증가 */
+}
+
+/* 반응형 조정 */
+@media (max-width: 1200px) {
+    .scroll-left.active {
+        transform: translateX(300px); /* 더 큰 화면에서의 이동 거리 조정 */
+    }
+}
+
+@media (max-width: 768px) {
+    .scroll-text {
+        font-size: 3rem;
+    }
+    
+    .scroll-right.active {
+        transform: translateX(30px);
+    }
+    
+    .scroll-left.active {
+        transform: translateX(150px); /* 모바일에서의 이동 거리 조정 */
+    }
+}
+
+/* 브랜드 스토리 콘텐츠 스타일 */
+.brand-story-content {
+    display: flex;
+    align-items: center;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 5rem 20px;
+    gap: 5rem;
+}
+
+.brand-image {
+    flex: 1;
+    text-align: center;
+}
+
+.brand-image img {
+    max-width: 300px;
+    height: auto;
+}
+
+.brand-text {
+    flex: 2;
+    line-height: 1.8;
+}
+
+.brand-text h2 {
+    font-size: 2.5rem;
+    font-weight: 200;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+}
+
+.brand-text p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+    .brand-story-content {
+        flex-direction: column;
+        padding: 3rem 20px;
+        gap: 3rem;
+    }
+
+    .brand-image img {
+        max-width: 200px;
+    }
+
+    .brand-text {
+        text-align: center;
+    }
+
+    .brand-text h2 {
+        font-size: 2rem;
+    }
+
+    .brand-text p {
+        font-size: 1rem;
+    }
+}
+
+.bottom-slogan-container {
+    overflow: hidden;
+    padding: 4rem 0;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.bottom-slogan {
+    font-size: 4rem;
+    color: #000;
+    text-align: center;
+    margin-top: 3rem;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: 0.3s;
+}
+
+.bottom-slogan .light {
+    font-weight: 200;
+    margin-right: 10px; /* 텍스트 사이 간격 */
+}
+
+.bottom-slogan .bold {
+    font-weight: 800;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+    .bottom-slogan {
+        font-size: 2.5rem;
+        margin-top: 2rem;
+    }
+}
+
+.second-section {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 4rem 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4rem;
+}
+
+.second-content {
+    flex: 2; /* 텍스트 영역 비율 증가 */
+    text-align: right;
+    padding-right: 2rem;
+}
+
+.second-content h2 {
+    font-size: 2.5rem;
+    font-weight: 200;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+}
+
+.second-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--secondary-color);
+    word-break: keep-all;
+}
+
+.second-image {
+    flex: 1; /* 이미지 영역 비율 */
+}
+
+.second-image img {
+    max-width: 300px; /* 다슈.png와 동일한 최대 너비 */
+    width: 100%;
+    height: auto;
+}
+
+/* 반응형 */
+@media (max-width: 968px) {
+    .second-section {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .second-content {
+        text-align: center;
+        padding-right: 0;
+    }
+    
+    .second-content h2 {
+        font-size: 2rem;
+    }
+    
+    .second-content p {
+        font-size: 1rem;
+    }
+    
+    .second-image img {
+        max-width: 200px; /* 모바일에서의 이미지 크기 */
+    }
+}
+
+.featured-products {
+    background-color: #fff;
+    padding: 5rem 0;
+    overflow: hidden;
+}
+
+.product-slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.product-track {
+    display: flex;
+    gap: 2rem;
+    animation: infiniteScroll 20s linear infinite;
+}
+
+.product-card {
+    flex: 0 0 300px;
+    padding: 1rem;
+    text-align: center;
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.product-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.product-card .price {
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+@keyframes infiniteScroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(calc(-100% - 2rem));
+    }
+}
+
+/* 호버 효과 */
+.product-track:hover {
+    animation-play-state: paused;
+}
+
+.second-section {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 4rem 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4rem;
+}
+
+.second-content {
+    flex: 2;
+    text-align: right;
+    padding-right: 2rem;
+    opacity: 0;
+    transform: translateX(-100px);
+    animation: slideInRight 1s ease forwards;
+}
+
+.second-content h2 {
+    font-size: 2.5rem;
+    font-weight: 200;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+}
+
+.second-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--secondary-color);
+    word-break: keep-all;
+}
+
+.second-image {
+    flex: 1;
+    opacity: 0;
+    transform: translateX(100px);
+    animation: slideInLeft 1s ease forwards;
+    animation-delay: 0.3s;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* 스크롤 트리거를 위한 클래스 */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
+
+.animate-on-scroll.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 반응형 */
+@media (max-width: 968px) {
+    .second-section {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .second-content {
+        text-align: center;
+        padding-right: 0;
+    }
+    
+    .second-content h2 {
+        font-size: 2rem;
+    }
+    
+    .second-content p {
+        font-size: 1rem;
+    }
+}
+
+.social-icons {
+    margin-top: 10px; /* 고객센터와 아이콘 사이의 간격 */
+}
+
+.social-icon {
+    color: #333; /* 아이콘 색상 */
+    font-size: 1.5rem; /* 아이콘 크기 */
+    margin-right: 10px; /* 아이콘 간격 */
+    transition: color 0.3s; /* 호버 효과를 위한 전환 */
+}
+
+.social-icon:hover {
+    color: var(--accent-color); /* 호버 시 색상 변경 */
+}

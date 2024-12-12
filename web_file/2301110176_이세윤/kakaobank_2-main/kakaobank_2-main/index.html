@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./kakobank/apple-icon-180x180.png">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="css/index_con4.css">
+    <link rel="stylesheet" href="css/button.css">
+
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/index_con1.css">
+    <link rel="stylesheet" href="css/index_con2.css">
+    <link rel="stylesheet" href="css/index_con3.css">
+    
+    <link rel="stylesheet" href="css/index_con5.css">
+    <link rel="stylesheet" href="css/index_con6.css">
+    <link rel="stylesheet" href="css/svgbuttun.css">
+
+
+
+
+
+
+
+
+
+
+
+    <title>KAKAOBANK</title>
+    
+    <!-- 페이드 효과 스크립트 링크 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
+</head>
+<style>
+    [data-aos] {
+            transition-duration: 4s; /* 애니메이션 지속 시간을 2초로 설정 */
+            transition: transform 1s ease-in-out;
+            
+        }
+    [data-aos="fade-down"] {
+            transform: translateY(-5%);
+            
+             /* 기본 위치에서 20px 아래로 이동 */
+        }
+    [data-aos="fade-left"] {
+        transform: translateX(20%); /* 기본 위치에서 20px 아래로 이동 */
+    }
+    [data-aos="fade-right"] {
+        transform: translateX(-20%); /* 기본 위치에서 20px 아래로 이동 */
+    }
+    [data-aos="fade-con2down"]{
+        transform: translateY(10%);
+        transition-duration: 0.5s;
+        
+    }
+    [data-aos="fade-con2right"]{
+        transform: translateX(-10%);
+    }
+    [data-aos="fade-con2left"]{
+        transform: translateX(10%);
+    }
+    [data-aos="fade-downimg"] {
+            transform: translateY(-5%); /* 기본 위치에서 20px 아래로 이동 */
+        }
+
+</style>
+<body>
+    <div id="wrap">
+        
+        <div id="header">
+            
+                <div class="h_logo">
+                    <h1><a class="scroll-link" href="#landing" ><img src="image/logo.png" alt="" width="141px" height="24px" ></a></h1><!-- 카카오 뱅크 로고 -->
+                </div>
+                <div class="h_nav">
+                    <ul>
+                        <li><a href="#landing" class="scroll-link">회사소개</a></li>
+                        <li><a href="#con1" class="scroll-link">모바일계좌</a></li>
+                        <li><a href="#con2" class="scroll-link">예금/적금</a></li>
+                        <li><a href="#con3" class="scroll-link">26주 적금</a></li>
+                        <li><a href="#con4" class="scroll-link">체크카드</a></li>
+                        <li><a href="#con5" class="scroll-link">해외송금</a></li>
+                        <li><a href="#con6" class="scroll-link">서류제출</a></li>
+                        <li><a href="#con7" class="scroll-link">IT금융</a></li>
+                    </ul>
+                </div>
+            
+        </div>
+        <script>
+            // 스크롤 애니메이션 추가
+            document.querySelectorAll('.scroll-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault(); // 기본 링크 동작 방지
+                    const targetId = this.getAttribute('href'); // 클릭한 링크의 href 속성 가져오기
+                    const targetElement = document.querySelector(targetId); // 해당 요소 선택
+                    targetElement.scrollIntoView({ behavior: 'smooth' }); // 부드럽게 스크롤
+                });
+            });
+        </script>
+
+        <div id="content">
+            <div id="landing"><!-- 랜딩 페이지 -->
+                <div class="b_img">
+                    <img src="image/img_friends.png" width="20%" height="20%" alt="" data-aos="fade-right" data-aos-delay="1000"> 
+                    <img src="image/img_niniz.png" width="40%" height="40%" alt="" data-aos="fade-left" data-aos-delay="1400"> 
+                </div>
+                    <!-- <video src="image/Main_KV_2line_ko.mp4" autoplay muted loop></video> -->
+                <div class="main_txt">
+                    <h1>이미 모두의 은행 <br>지금은 카카오뱅크</h1>
+                    <div class="logobox">
+                        <div class="google">
+                            <a target="_blank" href="https://play.google.com/store/apps/details?id=com.kakaobank.channel&hl=ko">
+                                <img class="googleimg" src="image/google.svg">
+                                <p class="googlep">Google Play</p>
+                            </a> 
+                        </div><!-- 구글플레이 로고 -->
+                        <div class="apple"><a target="_blank" href="https://apps.apple.com/kr/app/%EC%B9%B4%EC%B9%B4%EC%98%A4%EB%B1%85%ED%81%AC/id1258016944?mt=8">
+                            <img class="appleimg" src="image/apple.svg">
+                            <p class="applep">App store</p></a></div><!-- 앱스토어 로고 -->
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="txtbox" data-aos="fade-right">
+                <p >일상에서 더 쉽게, <br> 더 자주 이용하는 나만의 은행.</p>
+                <p class="under"><span>보내고, 받고, 모으고, 쓰는</span><br>당신의 모든 일이 바뀌고 있습니다.</p>
+            </div>
+
+            <div id="con1"><!-- 계좌이체 -->
+                <div class="title_txt">
+                    <p data-aos="fade-down"   data-aos-duration="1000">모바일 계좌</p>
+                    <h1 data-aos="fade-down"   data-aos-duration="1000">모바일로 더 손쉬운 <br> 계좌 개설,<br>간편한 이체</h1>
+                </div>
+                <div class="phone">
+                    <div class="L_img" data-aos="fade-left"  data-aos-delay="700" ><div class=""><img src="image/목업1.svg" alt=""></div></div>
+                    <div class="R_img" data-aos="fade-right"  data-aos-delay="710"><div class=""><img src="image/목업2.svg" width="364px" height="687px" alt=""></div></div>
+                    <div class="txt1"  data-aos="fade-down">
+                        <p>인증서, OTP 없이 계좌 개설이 간편합니다. <br>
+                            여러 건의 이체도 몇 번의 터치로 <br>
+                            손쉽게 송금 할 수 있습니다.
+                        </p>
+                        <a target="_blank" href="https://www.kakaobank.com/products/withdrawal"><button>카카오뱅크&nbsp입출금통장&nbsp ></button></a>
+                    </div>
+                </div>
+                
+
+            </div> 
+
+
+            <div id="con2"><!-- 예적금 -->
+                <div class="title_txt">
+                    <p data-aos="fade-down"  data-aos-delay="200" data-aos-duration="1000">예금 · 적금</p>
+                    <h1 data-aos="fade-down"  data-aos-delay="300" data-aos-duration="1000">우대조건 없이 <br>합리적인 예금과 적금</h1>
+                    <p class="sub_p" data-aos="fade-down"  data-aos-delay="500" data-aos-delay="700">기대했던 금리와 다르게 복잡한 우대조건에 실망한 적이 있었나요? <br>
+                        카카오뱅크의 예금, 적금은 숨겨진 우대조건 없이 <br>
+                        누구에게나 편리하고 합리적입니다.</p>
+                </div>
+                <div class="con2box" data-aos="fade-con2down" data-aos-delay="1000">
+                    <div class="imgbox">
+                        <div class="block">
+                            <div class="block-container">
+                                <div class="btn-back btn-back-2"></div>
+                                <div class="btn-img"><img src="image/won Union.svg"></img> </div>
+                                <div class="btn-front">
+                                    <svg class="frame">
+                                        <rect rx="32" stroke="url(#gradient-half)" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="48" height="48" viewBox="0 0 24 24" fill="none">
+                                    </svg>
+                                </div>
+                            </div>
+                            <div><p>적은 금액부터 <br> 큰 금액까지</p></div>
+                        </div>
+                        
+
+                        <div class="block">
+                            <div class="block-container">
+                                <div class="btn-back btn-back-1"></div>
+                                <div class="btn-img"><img src="image/time Union.svg"></img> </div>
+                                <div class="btn-front front2">
+                                    <svg class="frame">
+                                        <rect rx="32" stroke="url(#gradient-half)" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="48" height="48" viewBox="0 0 24 24" fill="none">
+                                    </svg>
+                                </div>
+                            </div>
+                            <div><p>짦은 기간부터 <br> 긴 기간까지</h></div>
+                        </div>
+
+
+                        <div class="block">
+                            <div class="block-container">
+                                <div class="btn-back btn-back-3"></div>
+                                <div class="btn-img"><img src="image/kakob logo.svg"></img> </div>
+                                <div class="btn-front front3">
+                                    <svg class="frame">
+                                        <rect rx="32" stroke="url(#gradient-half)" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="48" height="48" viewBox="0 0 24 24" fill="none">
+                                    </svg>
+                                </div>
+                                
+                            </div>
+                            <div><p>누구에게나 <br> 합리적인</p></div>
+                        </div>
+                        
+                    </div>
+                    <div class="but_box">
+                        <a target="_blank" href="https://www.kakaobank.com/products/deposit"><button>정기예금 ></button></a>
+                        <a target="_blank" href="https://www.kakaobank.com/products/savings"><button>자유적금 ></button></a>
+                    </div>
+                    
+                </div>
+                <div class="con2_subbox1" data-aos="fade-con2right" data-aos-duration="1000">
+                    <div class="subbox">
+                        <div class="sub_t">
+                            <p>정기예금</p>
+                            <h1>1개월 만기도 가능한 예금</h1>
+                            <p class="sub_p">아주 짧은 기간이라도 정기예금을 활용하면 효율적입니다. <br>
+                                최소 1개월부터 최대 36개월까지. <br>
+                                내가 원하는 만기날짜를 선택하여 가입할 수 있니다.</p>
+
+                            <div class="but_sub_box">
+                                <a target="_blank" href="https://www.kakaobank.com/products/deposit"><button>바로가기 ></button></a>
+                            </div>
+                        </div>
+                        <div class="foderbox">
+                            <div class="block-container">
+                                <div class="btn-back btn-back-3"></div>
+                                <div class="btn-img"><img src="./image/정기예금.svg"></img> </div>
+                                <div class="btn-front front3">
+                                    <svg class="frame">
+                                        <rect rx="32" stroke="url(#gradient-half)" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="48" height="48" viewBox="0 0 24 24" fill="none">
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="con2_subbox2" data-aos="fade-con2left" data-aos-duration="1000" data-aos-delay="100">
+                    <div class="subbox">
+                        <div class="foderbox">
+                            <div class="block-container">
+                                <div class="btn-back btn-back-3"></div>
+                                <div class="btn-img leftimg"><img src="image/자유적금.svg"></img> </div>
+                                <div class="btn-front front3">
+                                    <svg class="frame">
+                                        <rect rx="32" stroke="url(#gradient-half)" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="48" height="48" viewBox="0 0 24 24" fill="none">
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sub_t">
+                            <p>자유적금</p>
+                            <h1>매일, 매주, 매월 <br>원하는 주기로</h1>
+                            <p class="sub_p">자동이체로 적금 납입을 설정하시면, 안정적으로 적금 운용이 가능합니다. <br> 
+                                적은 금액을 원하는금액과 기간을 설정하여 이용해보세요.</p>
+
+                            <div class="but_sub_box2">
+                                <a target="_blank" href="https://www.kakaobank.com/products/savings"><button>바로가기 ></button></a>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+
+            </div> 
+
+
+            <div id="con3"><!-- 26주 적금 터랙션-->
+                <div class="title_txt" >
+                    <p data-aos="fade-down"  data-aos-delay="200" data-aos-duration="1000">26주 적금 챌린지</p>
+                    <h1 data-aos="fade-down"  data-aos-delay="300" data-aos-duration="1000">함께 도전해서<br>재미있는 26주 적금</h1>
+                    <p class="sub_p" data-aos="fade-down"  data-aos-delay="400" data-aos-duration="1000">26주동안 변화하는 재미에 빠져있는 사이 <br>어느덧 만기 달성 경험을 맛보게 됩니다.</p>
+                    
+                    
+                    <button data-aos="fade-down"  data-aos-delay="400" data-aos-duration="1000"> <a target="_blank" href="https://www.kakaobank.com/products/26weeks">바로가기 ></a></button>
+                </div>
+                <div class="phone">
+                    <div class="L_img" data-aos="fade-downimg"  data-aos-duration="1000">
+                        <a target="_blank" href="https://www.kakaobank.com/products/26weeks">
+                        <h1>지금 도전해보세요!</h1>
+                        <div class="emoji">
+                            <img class="emoji-img" src="image/26-3.svg" width="103px" height="103px" alt="">
+                            <img class="emoji-img" src="image/26-3.svg" width="103px" height="103px" alt="">
+                            <img class="emoji-img" src="image/26-3.svg" width="103px" height="103px" alt="">
+                            <img class="emoji-img" src="image/26-3.svg" width="103px" height="103px" alt="">
+                            <img class="emoji-img" src="image/26-3.svg" width="103px" height="103px" alt="">
+                            
+                        </div>
+                        <div class="emoji2">
+                            <img class="emoji-img" src="image/26-3.svg" width="103px" height="103px" alt="">
+                            <img class="emoji-img" src="image/26-3.svg" width="103px" height="103px" alt="">
+                            <img class="emoji-img" src="image/26-3.svg" width="103px" height="103px" alt="">
+                            <img class="emoji-img" src="image/26-3.svg" width="103px" height="103px" alt="">
+                            <img class="emoji-img" src="image/26-3.svg" width="103px" height="103px" alt="">
+                            <img class="emoji-img" src="image/26-3.svg" width="103px" height="103px" alt="">
+                            <img class="emoji-img" src="image/26-3.svg" width="103px" height="103px" alt="">
+                            
+                        </div>
+                        <div class="emoji3">
+                            <img class="emoji-img" src="image/26-3.svg" width="103px" height="103px" alt="">
+                            <img class="emoji-img" src="image/26-3.svg" width="103px" height="103px" alt="">
+                            <img class="emoji-img" src="image/26-3.svg" width="103px" height="103px" alt="">
+                            <img class="emoji-img" src="image/26-3.svg" width="103px" height="103px" alt="">
+                            <img class="emoji-img" src="image/26-3.svg" width="103px" height="103px" alt="">
+                            <img class="emoji-img" src="image/26-3.svg" width="103px" height="103px" alt="">
+                            <img class="emoji-img" src="image/26-3.svg" width="103px" height="103px" alt="">
+                            <img class="emoji-img" src="image/26-3.svg" width="103px" height="103px" alt="">
+                        </div>
+
+                        <div class="imgbox">
+                            <img src="image/26-2.svg" alt="">
+                            <img src="image/26-1.svg" alt="">
+                        </div>
+                    </a>
+                    </div>
+                    <!-- 페이드효과 설정 보류 -->
+                    
+                </div>
+                
+            </div> 
+
+
+            <div id="con4"> <!-- 체크카드 인터랙션 -->
+                <div class="title_txt">
+                    <h1 data-aos="fade-down"  data-aos-delay="200" data-aos-duration="1000"><span>프렌즈 체크카드</span><br>내가 고르는 선택의 즐거움</h1>
+                    <p data-aos="fade-down"  data-aos-delay="300" data-aos-duration="1000">프렌즈 디자인부터 멋스러운 블랙 컬러 카드까지 프렌즈 친구들 함께합니다.</p>
+                    <a target="_blank" href="https://www.kakaobank.com/products/checkcard"></a><button data-aos="fade-down"  data-aos-delay="300" data-aos-duration="1000" class="prevBtn">카카오프렌즈 &nbsp 체크카드</button>
+                </div>
+
+                <section>
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                        <div class="swiper-slide slide2">
+                            
+                            <img src="./image/card-1.png" alt="">
+                            
+                        </div>
+            
+                        <div class="swiper-slide">
+                            
+                            <img src="./image/card-2.png" alt="">
+                            
+                        </div>
+            
+                        <div class="swiper-slide">
+                            
+                            <img src="./image/card-3.png" alt="">
+                        </div>
+            
+                        <div class="swiper-slide">
+                            
+                            <img src="./image/card-4.png" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            
+                            <img src="./image/card-5.png" alt="">
+                        </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                        
+            
+            
+                        <!-- 내비게이션 버튼 추가 -->
+                        <div class="button-container">
+                            <div class="swiper-button-next"><img src="./image/right.svg" alt=""></div>
+                            <div class="swiper-button-prev"><img src="./image/left.svg" alt=""></div>
+                        </div>
+                    </div>
+                    
+                    <div class="blob-container">
+                        <div class="blob one"> </div>
+                        <div class="blob two"> </div>
+                    </div>
+                </section>
+                <!-- 스와이프 -->
+                <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+                <script src="./js/add.js"></script>
+                
+            </div>
+
+
+            <div id="con5"><!-- 해외 계좌 송금 -->
+                <div class="con5_box1">
+                    <img class="b_img" src="image/earth-6213.gif" alt="" width="900px" height="900px">
+                    <h1 data-aos="fade-down" data-aos-delay="200" data-aos-duration="1000">해외계좌송금과 <br>
+                        WU빠른해외송금을 <br>
+                        더 쉽고 저렴하게</h1>
+                    <p data-aos="fade-down" data-aos-delay="400" data-aos-duration="1000">이사 날짜가 주말이나 공휴일이어도 전월세보증금 대출을 신청할 수 있습니다.</p>
+                    <div class="infinite-scroll-container" style="overflow: hidden; white-space: nowrap; width: 100%;">
+                        <div class="content" style="display: inline-block; animation: scroll 20s linear infinite;">
+                            <img src="image/word1.png" alt="" style="display: inline-block; margin: 0 30px;">
+                            <img src="image/word2.png" alt="" style="display: inline-block; margin: 0 30px;">
+                            <img src="image/word3.png" alt="" style="display: inline-block; margin: 0 30px;">
+                            <img src="image/word4.png" alt="" style="display: inline-block; margin: 0 30px;">
+                            <img src="image/word5.png" alt="" style="display: inline-block; margin: 0 30px;">
+                            
+                            <!-- 추가 이미지들... -->
+                        </div>
+                    </div>
+                    
+                </div>
+            </div> 
+
+            
+
+            <div id="con6"><!-- 서제출페이지 인터랙션 -->
+                <div class="scroll-trigger"></div>
+                <div class="con6">
+                    
+                    <div class="txt_box">
+                        <h1 data-aos="fade-down" data-aos-duration="800">복잡한 서류 제출을 간편하게,<br>
+                            내가 원하는 시간에</h1>
+                        <p data-aos="fade-down" data-aos-duration="800">이사 날짜가 주말이나 공휴일이어도 전월세보증금 대출을 신청할 수 있습니다.</p>
+                    </div>
+                    <div class="but_box" data-aos="fade-down" data-aos-duration="800">
+                        <button class="selected" onclick="showBox(1)">마이너스&nbsp 통장 대출</button>
+                        <button onclick="showBox(2)">신용&nbsp 대출</button>
+                        <button onclick="showBox(3)">개인사업자&nbsp 대출</button>
+                        <button onclick="showBox(4)">전월세보증금 &nbsp대출</button>
+                    </div>
+                </div>
+                <a target="_blank" href="https://www.kakaobank.com/products/creditLine"><div class="box1" data-aos="fade-down" data-aos-delay="600" style="display: block; z-index: 2;"></div></a>
+                <a target="_blank" href="https://www.kakaobank.com/products/creditLoan"><div class="box2" ></div></a>
+                <a target="_blank" href="https://www.kakaobank.com/products/sohoLoans"><div class="box3"></div></a>
+                <a target="_blank" href="https://www.kakaobank.com/products/leaseLoan"><div class="box4"></div></a>
+                
+            </div>
+
+            <script>
+                window.addEventListener('scroll', function() {
+                    const trigger = document.querySelector('.scroll-trigger');
+                    const con6 = document.getElementById('con6');
+                    const rect = con6.getBoundingClientRect();
+
+                    if (rect.top < window.innerHeight && rect.bottom > 0) {
+                        trigger.style.transform = 'translateY(0)';
+                        con6.style.backgroundColor = '#e9c62b'; // 원래 색상으로 복원
+                    } else {
+                        trigger.style.transform = 'translateY(300%)';
+                        con6.style.backgroundColor = '#333B58'; // 원하는 색상으로 변경
+                    }
+                });
+
+                // 버튼 클릭 시 선택된 버튼 스타일 변경
+                document.querySelectorAll('.but_box button').forEach(button => {
+                    button.addEventListener('click', () => {
+                        // 모든 버튼에서 'selected' 클래스 제거
+                        document.querySelectorAll('.but_box button').forEach(btn => btn.classList.remove('selected'));
+                        // 클릭된 버튼에 'selected' 클래스 추가
+                        button.classList.add('selected');
+                    });
+                });
+            </script>
+
+
+            <div id="con7"><!-- IT 금융 -->
+                <div class="con7txtbox">
+                    <h1 data-aos="fade-down"  data-aos-duration="1000">IT 기술로 카카오뱅크를 <br>만들어 갑니다.</h1>
+                    <div class="con7_box">
+                        <div data-aos="fade-right"  data-aos-delay="200" data-aos-duration="1000" class="circle">
+                            <div class="tbox">
+                                <h3>간결하고 유리하게</h3>
+                                <p>작은 모바일 화면에 적합하도록 <br>복잡함을 덜어낸 <br>유려하고 친화적인 UX</p>
+                            </div>
+                        </div>
+                        <div data-aos="fade-right"  data-aos-delay="400" data-aos-duration="1000" class="circle" class="circle">
+                            <div class="tbox2">
+                                <h3>간편한 인증,<br>철저한 보안</h3>
+                                <p>지문, 비밀번호로 간편한 인증 <br>IT 기술의 강력한 보안 검증과 <br> 데이터 암호화</p>
+                            </div>
+                        </div>
+                        <div data-aos="fade-right"  data-aos-delay="600" data-aos-duration="1000" class="circle" class="circle">
+                            <div class="tbox">
+                                <h3>Mobile First, One App</h3>
+                                <p>모바일에서 뱅킹이 더 쉽고 편리하게 <br> 여러 앱을 설치할 필요 없이 <br>하나의 앱으로</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div> 
+            
+            <div class="button-container">
+                <div class="moveTopBtn"><h1>&uarr;</h1></div>
+              </div>
+        </div>
+
+
+        
+    </div>
+
+
+
+
+
+
+
+
+
+    <!-- 스크립트 시작  -->
+    
+
+
+
+
+    <!-- Top -->
+    <script>
+        const $topBtn = document.querySelector(".moveTopBtn");
+        $topBtn.onclick = () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });  
+        }
+    </script>
+
+
+<!-- 버튼 스크립트 -->
+    <script src="js/button.js"></script>
+    <!-- 스와이퍼 -->
+    
+
+
+
+        <!-- 타이틀 페이드인 -->
+    <!-- 페이드인 --> 
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/EasePack.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const fadeEls = document.querySelectorAll('.main_txt');
+            gsap.from(fadeEls, {
+                y: '-20%',
+                opacity: 0,
+                stagger: 0.7,
+                duration: 1
+            });
+            /* gsap.from(".fade-down", { 
+                y: '50%',
+                opacity: 0,
+                duration:21 
+            }); */
+        });
+    </script>
+    
+
+
+    <!-- // 스크롤 업 시에도 애니메이션이 다시 실행되도록 설정 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            // 스크롤 업 시에도 애니메이션이 다시 실행되도록 설정
+            once: false,
+            duration: 0 // 애니메이션 지속 시간을 500ms로 설정
+        });
+    </script>
+
+
+
+    <!-- con5 해외계좌 가로 무한스크롤 스크립트 -->
+    <script>
+        const container = document.querySelector('.infinite-scroll-container');
+        const content = document.querySelector('.content');
+    
+        function cloneContent() {
+            const clonedContent = content.cloneNode(true);
+            container.appendChild(clonedContent);
+        }
+    
+        // 초기 콘텐츠 복제
+        cloneContent();
+    </script>
+
+    <!-- con6 서류제출 버튼 스크립트 -->
+    <script>
+        function showBox(boxNumber) {
+            // 모든 박스를 숨김
+            document.querySelectorAll('.box1, .box2, .box3, .box4').forEach(box => {
+                box.style.display = 'none';
+            });
+        
+            // 선택한 박스만 보임
+            const selectedBox = document.querySelector('.box' + boxNumber);
+            selectedBox.style.display = 'block';
+        
+            // AOS 상태 초기화
+            AOS.refresh();
+        }
+        
+        // 페이지 로드 시 box1 표시
+        window.onload = function() {
+            AOS.init(); // AOS 초기화
+            showBox(1);
+        };
+    </script>
+        
+
+
+
+    <!-- con2 이모지 자동등장 스크립트 -->
+    <script>
+        const emojiImages = document.querySelectorAll('.emoji-img, .emoji2-img');
+
+        function fadeInEmojis() {
+            emojiImages.forEach((img, index) => {
+                img.style.opacity = 0; // 초기 투명도 설정
+                setTimeout(() => {
+                    img.style.transition = 'opacity 0.5s ease-in';
+                    img.style.opacity = 1; // 페이드 인
+                }, index * 500); // 각 이미지마다 0.5초 간격으로 애니메이션 실행
+            });
+        }
+
+        // Intersection Observer를 사용하여 con3에 접근할 때 애니메이션 실행
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    fadeInEmojis(); // con3에 접근할 때 애메이션 실행
+                }
+            });
+        });
+
+        observer.observe(document.getElementById('con3')); // con3 요소 관찰
+    </script>
+    <!-- 이모지박스 호버효과 -->
+    <script>
+    const lImgElement = document.querySelector('#con3.L_img');
+
+    document.addEventListener('mousemove', (event) => {
+        const mouseX = event.clientX; // 마우스 X 좌표
+        const mouseY = event.clientY; // 마우스 Y 좌표
+        const rect = lImgElement.getBoundingClientRect(); // 요소의 위치와 크기 정보
+        const offsetX = (mouseX - rect.left) / rect.width; // 요소 내에서의 X 위치 비율
+        const offsetY = (mouseY - rect.top) / rect.height; // 요소 내에서의 Y 위치 비율
+
+        // 각 모서리의 크기를 조정
+        const scaleX = 1 + (offsetX * 0.2); // X축 비율에 따라 크기 조정
+        const scaleY = 1 + (offsetY * 0.2); // Y축 비율에 따라 크기 조정
+
+        lImgElement.style.transform = `scale(${scaleX}, ${scaleY})`; // 스케일 적용
+    });
+    
+    lImgElement.addEventListener('mouseenter', () => {
+        const shakeInterval = setInterval(() => {
+            const randomDegree = Math.random() * 20 - 10; // -10도에서 10도 사이의 랜덤 각도
+            lImgElement.style.transform += ` rotateY(${randomDegree}deg) scale(1.05)`; // 기존 변환에 추가
+        }, 100); // 100ms마다 흔들기
+
+        lImgElement.addEventListener('mouseleave', () => {
+            clearInterval(shakeInterval); // 흔들기 중지
+            lImgElement.style.transform = 'translateY(-15px) rotateY(15deg) scale(1.05)'; // 최종 상태 유지
+        });
+    });
+    </script>
+
+
+
+
+        <!-- AOS 라이브러리 추가 -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
+
+    
+</body>
+</html>

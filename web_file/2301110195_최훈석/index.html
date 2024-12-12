@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <nav class="gnav">
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="#hero">HOME</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#gallery">PORTFOLIO</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- 히어로 섹션 -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <p class="byeol">2024</p>
+            <h1>PORTFOLIO</h1>
+            <p class="SF">Choi hun seock</p>
+        </div>
+    </section>
+
+
+        <section class="about" id="about">
+            <div class="about-container">
+                <!-- 좌측: 프로필 및 학력 정보 -->
+                <div class="profile-section">
+                    <div class="profile-image">
+                        <img src="img/2301110195_최훈석 (1) 복사.png" alt="프로필 사진">
+                    </div>
+                    <div class="profile-info">
+                        <h2>최훈석</h2>
+                        <p class="title">웹 디자이너</p>
+                        <div class="education">
+                            <h3>학력</h3>
+                            <ul>
+                                <li>
+                                    <span class="year">2022 - 2024</span>
+                                    
+                                    <span class="school">폴리텍1대학 정수캠퍼스 시각 디자인과</span>
+                                </li>
+                                <li>
+                                    <span class="year">2012 - 2015</span>
+                                    <span class="degree">늘푸른 고등학교</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 우측: 스킬과 연락처 -->
+                <div class="right-section">
+                    <div class="skills">
+                        <h2>Skill</h2>
+                        <div class="skill-bars">
+                            <div class="skill-item">
+                                <span class="skill-name">HTML</span>
+                                <div class="progress-bar">
+                                    <div class="progress" data-percent="90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">CSS</span>
+                                <div class="progress-bar">
+                                    <div class="progress" data-percent="85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Premiere Pro</span>
+                                <div class="progress-bar">
+                                    <div class="progress" data-percent="80%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">After Effects</span>
+                                <div class="progress-bar">
+                                    <div class="progress" data-percent="75%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <h3>연락처</h3>
+                        <ul>
+                            <li>
+                                <i class="fa-regular fa-envelope"></i>
+                                <span>snock203@gmail.com</span>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-mobile-screen"></i>
+                                <span>010-2182-2873</span>
+                            </li>
+                            <li>
+                                <i class="fa-brands fa-github"></i>
+                                <span>github.com/snock203</span>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="profile" id="profile">
+            <div class="profile-container">
+                <div class="profile-content">
+                    <div class="profile-text">
+                        <p class="intro">만월을 꿈꾸는 디자이너 최훈석입니다.</p>
+                        <p class="description">
+                            달은 태양처럼 강렬하진 않지만 은은하게 세상을 비춰줍니다. <br>
+                            옛날 사람들이 밤에는 달빛과 별에 의지하며 길을 찾아가듯 사람들이 불편함이나 어색함을 느끼지 않고 <BR>자연스럽게 새로운 경험을 할 수 있도록 도와주는
+                            디자인을 지향하고 있습니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery" id="gallery">
+            <div class="content-container">
+                            <!-- 선택적: 필터 버튼 -->
+                            <div class="gallery-filter">
+                                <button class="filter-btn active" data-filter="all">전체</button>
+                                <button class="filter-btn" data-filter="UI">UIUX</button>
+                                <button class="filter-btn" data-filter="IMG">IMAGE</button>
+                                <button class="filter-btn" data-filter="PR">Preimer pro</button>
+                                <!-- 필요한 만큼 필터 버튼 추가 -->
+                            </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item mix" data-category="UI">
+                        <div class="gallery-image">
+                            <img src="img/UI 화면 목업 copy.png" alt="프로젝트 1">
+                            <div class="overlay">
+                                <div class="gallery-content">
+                                    <h3>프라임 비디오 UI 리디자인</h3>
+                                    <p>프라임 비디오의 UI를 재구성해 보았습니다.</p>
+                                    <div class="gallery-buttons">
+                                        <a href="#" class="btn" data-pdf="img/2301110195_최훈석_works.pdf">자세히 보기</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item mix custom-size" data-category="IMG">
+                        <div class="gallery-image">
+                            <img src="img/인트로 copy.png" alt="프로젝트 2">
+                            <div class="overlay">
+                                <div class="gallery-content">
+                                    <h3>상세 페이지 제작</h3>
+                                    <p>상세 페이지의 형태를 분석 리디자인 해보았습니다.</p>
+                                    <div class="gallery-buttons">
+                                        <a href="#" class="btn" data-pdf="img/Artboard 2 copy.pdf">자세히 보기</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 새로운 프로젝트 3 -->
+                    <div class="gallery-item mix" data-category="IMG">
+                        <div class="gallery-image">
+                            <img src="img/2301110195_최훈석.jpg" alt="프로젝트 3">
+                            <div class="overlay">
+                                <div class="gallery-content">
+                                    <h3>제품 촬영</h3>
+                                    <p>제품의 이미지 컷을 만들기 위해 촬영 기획, 소품 준비, 촬영을 하였습니다. </p>
+                                    <!-- <div class="gallery-buttons">
+                                        <a href="#" class="btn" data-pdf="path/to/your/file.pdf">자세히 보기</a>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 새로운 프로젝트 4 -->
+                    <div class="gallery-item mix" data-category="PR">
+                        <div class="gallery-image">
+                            <img src="img/Sequence 01.00_02_02_08.Still001.png" alt="프로젝트 4">
+                            <div class="overlay">
+                                <div class="gallery-content">
+                                    <h3>뮤직비디오 기획 촬영</h3>
+                                    <p>장미여관의 장가가고 싶은 남자의 뮤직비디오를 기획 촬영한 프로젝트</p>
+                                    <!-- <div class="gallery-buttons">
+                                        <a href="#" class="btn" data-pdf="path/to/your/file.pdf">자세히 보기</a>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+            </div>
+        </section>
+
+        <footer>
+            <a href="#" class="top-button">
+                <i class="fas fa-chevron-up"></i>
+            </a>
+
+            <div class="footer-content">
+                <div class="social-links">
+                    <a href="mailto:your.email@example.com" target="_blank" class="social-icon">
+                        <i class="far fa-envelope"></i>
+                    </a>
+                    <a href="tel:+821012345678" target="_blank" class="social-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </a>
+                    <a href="https://github.com/your-username" target="_blank" class="social-icon">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+                <div class="copyright">
+                    © 2024 <span class="highlight">Portfolio</span>. All Rights Reserved.
+                </div>
+            </div>
+        </footer>
+
+
+    <script>
+        function handleScroll() {
+            const skillSection = document.querySelector('.skills');
+            const progressBars = document.querySelectorAll('.progress');
+            
+            if (!skillSection) return; // skills 섹션이 없는 경우 처리
+            
+            const sectionPosition = skillSection.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.3;
+            
+            if(sectionPosition < screenPosition) {
+                progressBars.forEach(progress => {
+                    const percent = progress.getAttribute('data-percent');
+                    progress.style.width = percent;
+                    console.log('Animation triggered:', percent); // 디버깅용
+                });
+            } else {
+                // 스크롤이 위로 올라갈 때 리셋
+                progressBars.forEach(progress => {
+                    progress.style.width = '0';
+                });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // 활성 버튼 스타일 변경
+                filterBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                const filter = this.getAttribute('data-filter');
+                
+                // 모든 아이템에 대해 필터링 적용
+                galleryItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.classList.remove('hide'); // 해당 카테고리 아이템 보이기
+                    } else {
+                        item.classList.add('hide'); // 해당 카테고리 아이템 숨기기
+                    }
+                });
+
+                // 필터링된 아이템을 첫 번째 위치로 이동
+                const visibleItems = Array.from(galleryItems).filter(item => !item.classList.contains('hide'));
+                visibleItems.forEach(item => {
+                    item.style.order = 0; // 모든 보이는 아이템의 order를 0으로 설정
+                });
+                galleryItems.forEach(item => {
+                    if (item.classList.contains('hide')) {
+                        item.style.order = 1; // 숨겨진 아이템의 order를 1로 설정
+                    }
+                });
+            });
+        });
+    });
+
+function updateActiveNav() {
+    const sections = document.querySelectorAll('section[id]');
+    const navHeight = document.querySelector('.gnav').offsetHeight;
+    let activeSectionId = null; // 현재 활성화된 섹션 ID
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - navHeight; // 여유 공간 제거
+        const sectionBottom = sectionTop + section.offsetHeight;
+        const scrollPosition = window.scrollY;
+
+        // 현재 섹션이 활성화되는지 확인
+        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+            activeSectionId = section.id; // 활성화된 섹션 ID 저장
+        }
+    });
+
+    // hero 섹션이 화면에 보일 때 HOME 링크 활성화
+    if (window.scrollY < window.innerHeight) {
+        activeSectionId = 'hero'; // hero 섹션이 보일 때 HOME 활성화
+    }
+
+    // about 섹션이 화면에 보일 때 ACTIVE 상태로 변경
+    if (activeSectionId === 'about') {
+        activeSectionId = 'about'; // about 섹션이 보일 때 ACTIVE 상태로 유지
+    }
+
+    // 모든 네비게이션 링크에서 active 클래스 제거
+    const navLinks = document.querySelectorAll('.nav-links a');
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+    });
+
+    // 활성화된 섹션에 해당하는 링크에 active 클래스 추가
+    if (activeSectionId) {
+        const activeNavLink = document.querySelector(`.nav-links a[href="#${activeSectionId}"]`);
+        if (activeNavLink) {
+            activeNavLink.classList.add('active');
+        }
+    }
+}
+
+
+
+
+
+    // 초기 활성화 상태 설정
+    updateActiveNav();
+
+
+
+// 스크롤 이벤트에 연결
+window.addEventListener('scroll', updateActiveNav);
+// 페이지 로드 시에도 실행
+document.addEventListener('DOMContentLoaded', updateActiveNav);
+
+        
+        // 스크롤 이벤트 리스너 추가
+        window.addEventListener('scroll', handleScroll);
+        
+        // DOM이 완전히 로드된 후 실행
+        document.addEventListener('DOMContentLoaded', handleScroll);
+
+        document.addEventListener('DOMContentLoaded', function() {
+        const lightbox = document.getElementById('lightbox');
+        const lightboxContent = document.getElementById('lightbox-content');
+        const closeBtn = document.querySelector('.lightbox .close');
+
+        // "자세히 보기" 버튼 클릭 시 Lightbox 열기
+        document.querySelectorAll('.gallery-buttons .btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const pdfUrl = this.getAttribute('data-pdf');
+                const modifiedPdfUrl = `${pdfUrl}#toolbar=0&navpanes=0&scrollbar=0`;
+                lightboxContent.src = modifiedPdfUrl;
+                lightbox.style.display = 'flex';
+            });
+        });
+
+        // 닫기 버튼 클릭 시 Lightbox 닫기
+        closeBtn.addEventListener('click', function() {
+            lightbox.style.display = 'none'; // Lightbox 숨기기
+            lightboxContent.src = ''; // iframe 초기화
+        });
+
+        // Lightbox 외부 클릭 시 닫기
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === lightbox) {
+                lightbox.style.display = 'none'; // Lightbox 숨기기
+                lightboxContent.src = ''; // iframe 초기화
+            }
+        });
+    });
+
+
+
+    </script>
+
+    <div id="lightbox" class="lightbox">
+        <span class="close">&times;</span>
+        <iframe id="lightbox-content" 
+            src="" 
+            frameborder="0"
+            scrolling="no"
+            style="width: 100%; height: 100%;"
+            #toolbar=0&navpanes=0&scrollbar=0">
+        </iframe>
+    </div>
+
+</body>
+</html>
+

@@ -1,0 +1,160 @@
+/* 컨택 */
+#contact{
+    width: 100%;
+    height: 100vh;
+    background-color: #FF3434;
+}
+#contact .conbox{
+    display: flex;
+    gap: 110px;
+}   
+#contact .titlename{
+    margin-left: 20%;
+    padding-top: 40px;
+}
+#contact .formbox{
+    width: 100%;
+    max-width: 600px;
+    margin: 30px 0 0 20%;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.contactbox {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.infobox{
+    display: flex;
+    justify-content: space-between;
+    width: 97%;
+
+}
+
+.namebox input,
+.emailbox input {
+    width: 230px;
+    padding: 15px 20px;
+    font-size: 16px;
+    border: 2px solid #c0c0c0;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    background-color: #e6e6e6;
+}
+
+.requestbox textarea {
+    width: 90%;
+    height: 200px;
+    padding: 20px;
+    font-size: 16px;
+    border: 2px solid  #c0c0c0;
+    border-radius: 12px;
+    resize: vertical;
+    min-height: 150px;
+    transition: all 0.3s ease;
+    background-color: #e6e6e6;
+    font-family: inherit;
+}
+
+.namebox input:focus,
+.emailbox input:focus,
+.requestbox textarea:focus {
+    border-color: #FF3434;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(250, 164, 188, 0.2);
+}
+
+.contactbox button {
+    font-size: 1.125rem;
+    width: 200px;
+    padding: 15px 30px;
+    margin: 20px auto;
+    background: #FF3434;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 26px;
+    font-weight: lighter;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Pretendard-Regular';
+}
+
+
+
+.contactbox button:hover {
+    background: #FF3434;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(250, 164, 188, 0.4);
+}
+
+.SNSbox {
+    height: 80px;
+    float: right;
+    margin-top: 20px;
+    margin-right: 20%;
+    margin-top: 28%;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.SNSbox div {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #eee;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #b30600;
+    transition: transform 0.3s ease;
+}
+.SNSbox div img{
+    width: 60%;
+    height: auto;
+    margin-top: 20%;
+    margin-left: 20%;
+}
+.SNSbox .blog img{
+    margin-top: 25%;
+    margin-left: 20%;
+}
+.SNSbox .behance img{
+    width: 60%;
+    margin-left: 20%;
+}
+
+.SNSbox div:hover {
+    transform: translateY(-6px) scale(1.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+/* 미디어쿼리 */
+@media (max-width: 768px) {
+    #contact .conbox {
+        flex-direction: column; /* 세로 방향으로 정렬 */
+        align-items: center; /* 중앙 정렬 */
+    }
+
+    #contact .formbox {
+        width: 90%; /* 모바일에서의 너비 조정 */
+        margin: 20px 5%; /* 여백 조정 */
+    }
+
+    .namebox input,
+    .emailbox input {
+        width: 100%; /* 입력 필드 너비 조정 */
+    }
+
+    .requestbox textarea {
+        width: 100%; /* 텍스트 영역 너비 조정 */
+    }
+
+    .SNSbox {
+        margin-top: 20px; /* 여백 조정 */
+    }
+}
