@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>2301110170_유지수_융합프로젝트2</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="main.js" defer></script>
+    </head>
+    
+<body>
+    <section id="intro">
+        <h3>
+            <span class="line" id="line1">2024</span><br>
+            <span class="line" id="line2">Design</span><br>
+            <span class="line" id="line3">Portfolio</span>
+        </h3>
+    </section>
+    
+    <section id="profile">
+        <div class="contents">
+            <img src="images/profile.png" alt="">
+            <div class="skills">
+                <div class="container">
+                    <div class="box">
+                        <div class="percent">
+                            <svg>
+                                <circle cx="70" cy="70" r="70"></circle>
+                                <circle cx="70" cy="70" r="70"></circle>
+                            </svg>
+                            <div class="number">
+                                <h2><span class="num" data-target="95">0</span>%</h2>
+                            </div>
+                        </div>
+                        <h2 class="text">Photoshop</h2>
+                    </div>
+                    <div class="box">
+                        <div class="percent">
+                            <svg>
+                                <circle cx="70" cy="70" r="70"></circle>
+                                <circle cx="70" cy="70" r="70"></circle>
+                            </svg>
+                            <div class="number">
+                                <h2><span class="num" data-target="90">0</span>%</h2>
+                            </div>
+                        </div>
+                        <h2 class="text">Illustrator</h2>
+                    </div>
+                    <div class="box">
+                        <div class="percent">
+                            <svg>
+                                <circle cx="70" cy="70" r="70"></circle>
+                                <circle cx="70" cy="70" r="70"></circle>
+                            </svg>
+                            <div class="number">
+                                <h2><span class="num" data-target="65">0</span>%</h2>
+                            </div>
+                        </div>
+                        <h2 class="text">After Effects</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+
+    <section id="works">
+        <!-- 기존 콘텐츠 -->
+        <a href="#" class="mock poster" onclick="openModal('images/graphic poster.jpg'); return false;"><img src="images/works_poster.png" alt="Poster"></a>
+        <a href="#" class="mock book" onclick="openModal('images/bookcover.jpg'); return false;"><img src="images/works_book.png" alt="Book"></a>
+        <a href="#" class="mock web" onclick="openModal('images/web.jpg'); return false;"><img src="images/works_web.png" alt="Web"></a>
+        <a href="#" class="mock photo" onclick="openModal('images/photography.jpg'); return false;"><img src="images/works_photo.png" alt="Photo"></a>
+        <a href="#" class="mock ui" onclick="openModal('images/uiux.jpg'); return false;"><img src="images/works_ui.png" alt="UI"></a>
+    
+        <!-- Contact 버튼 추가 -->
+        <button class="contact-btn" onclick="toggleContactImage()">Contact</button>
+    </section>
+
+    
+    <!-- Contact 이미지 요소 추가 -->
+    <div id="contactImageContainer" class="contact-image-container">
+        <img src="images/contact.png" alt="Contact Image" class="contact-image">
+    </div>
+    
+    
+    <!-- 검은 배경 overlay -->
+    <div id="overlay" class="overlay" onclick="closeModal()"></div>
+    
+    <!-- 모달 창 -->
+    <div id="modal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+            <img id="modal-image" src="" alt="Modal Image">
+        </div>
+    </div>
+    
+
+</body>
+
+</html>
+
+
