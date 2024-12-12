@@ -1,0 +1,67 @@
+
+.gLabel.regular_btn{
+    border: 1px solid var(--yellow);
+    background-color: var(--yellow-gray);
+}
+.gLabel.onetime_btn{
+    display: inline-block;
+    padding: 15px 15px;
+    border: 1px solid var(--orange);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    background-color: #fff;
+}
+.shippingCycle{
+    display: none;
+}
+
+.onetime_discount {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    padding: 20px 0;
+    margin-top: 10px;
+}
+.first_coupon {
+    display: block;
+    font-size: .9vw;
+    color: var(--black);
+    line-height: 1.1vw;
+    font-weight: 500;
+}
+
+.discount {
+    display: block;
+    font-size: .9vw;
+    color: var(--black);
+    line-height: 1.1vw;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.nobenefit {
+    font-size: 14px;
+    color: var(--black);
+    margin-top: 10px;
+}
+.npay{
+    border-radius: 10px;
+    display: inline-block;
+    padding: 15px 15px;
+    border: 1px solid var(--yellow);
+    background-color: var(--yellow-gray);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.npay:hover{
+    border: 1px solid var(--orange);
+    background-color: #fff;
+}
