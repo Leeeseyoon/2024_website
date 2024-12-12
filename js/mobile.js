@@ -40,7 +40,7 @@ function initializeMobile() {
             { title: 'I WILL MAKE MY DESIGN PATH', author: '박가람', image: 'images/works/박가람.png', link: 'web_file/2301110155_박가람/index.html' },
             { title: 'Communicative Designer', author: '심재정', image: 'images/works/심재정.png', link: 'web_file/2301110164_심재정/index.html' },
             { title: 'A NEW Encounter with Ohui', author: '양성우', image: 'images/works/양성우.jpg', link: 'works_web_file/2301110165_양성우/index.html' },
-            { title: '그린피스 웹사이트 리디자인', author: '우수지', image: 'images/works/우수지.jpg', link: 'web_file/2301110168_우수지/index.html' },
+            { title: '그린피스 웹사이트 리디자인', author: '우수지', image: 'images/works/우수지.jpg', link: 'works_web_file/2301110168_우수지/index.html' },
             { title: '그리드와 소금', author: '원세연', image: 'images/works/원세연.png', link: 'web_file/2301110169_원세연/index.html' },
             { title: 'What’s on my desk', author: '유지수', image: 'images/works/유지수.jpg', link: 'web_file/2301110170_유지수/index.html' },
             { title: '서울 자전거 따릉이', author: '윤 비', image: 'images/works/윤비.png', link: 'web_file/2001110541_윤비/index.html' },
